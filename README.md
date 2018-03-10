@@ -25,3 +25,10 @@ I want to try out the combination of PIC16F1825 and CAN controller(MCP2515)/tran
 ## My original PIC16F1825 evaluation board
 
 ![pico](https://docs.google.com/drawings/d/e/2PACX-1vTHoT0TZIyVhAgkDVHyuWkc1-_6oFHT2mF53g2q36bgH_qxplkvvRIkJ3PqJBNuTZauhhMmSiemMoZO/pub?w=480&h=360)
+
+## Datasheet
+
+- [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
+- [MCP2515](http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf)
+- [MCP2551](http://ww1.microchip.com/downloads/en/DeviceDoc/21667E.pdf)
+- [MCP2561](http://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf)
