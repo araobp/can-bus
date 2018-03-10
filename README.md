@@ -8,6 +8,8 @@ I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC176
 
 I want to use CAN with Microchip PIC MCUs and CAN controller(MCP2515) to see if the combination works OK.
 
+![board](./doc/board.jpg)
+
 ## Configuration
 
 ``` 
