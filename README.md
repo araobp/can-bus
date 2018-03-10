@@ -1,5 +1,7 @@
 # CAN bus evaluation
 
+![waveform](./doc/waveform.jpg)
+
 ## Motivation
 
 I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC1768 is expensive for my hobby.
