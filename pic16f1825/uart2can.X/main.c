@@ -1,6 +1,8 @@
 #include "mcc_generated_files/mcc.h"
 #include "stdlib.h"
 
+#define LED LATCbits.LATC3
+
 #define BUFSIZE 64
 
 const uint8_t max_char = BUFSIZE - 1;
@@ -36,8 +38,8 @@ void main(void)
 {
     SYSTEM_Initialize();
 
-    INTERRUPT_GlobalInterruptEnable();
-    INTERRUPT_PeripheralInterruptEnable();
+    //INTERRUPT_GlobalInterruptEnable();
+    //INTERRUPT_PeripheralInterruptEnable();
     
     set_sid(0);
     
@@ -46,6 +48,8 @@ void main(void)
         if (EUSART_DataReady) {
             c = EUSART_Read();
             printf("%c", c);
+            LED = !LED;
+            
             buf[cnt] = c;
             if (c == '\n') {
                 buf[cnt] = '\0';
@@ -61,9 +65,10 @@ void main(void)
             } else if (++cnt > max_char) {
                 buf[cnt] = '\0';
                 can_send(buf, cnt);
-                printf("CAN message sent: %s\n", buf);
+                printf("\nCAN message sent: %s\n", buf);
                 cnt = 0;
             }
+            
         }
         // Add your application code
     }

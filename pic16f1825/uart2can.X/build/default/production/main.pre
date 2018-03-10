@@ -3551,10 +3551,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 143 "mcc_generated_files/pin_manager.h"
+# 160 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 155
+# 172
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
@@ -3650,9 +3650,6 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
-# 108 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
-
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
@@ -3676,24 +3673,6 @@ bool SPI_HasWriteCollisionOccured(void);
 
 # 262
 void SPI_ClearWriteCollisionStatus(void);
-
-# 98 "mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
-
-# 127
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-
-# 163
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-
-# 188
-void FLASH_EraseBlock(uint16_t startAddr);
-
-# 219
-void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-
-# 245
-uint8_t DATAEE_ReadByte(uint8_t bAdd);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
@@ -3755,32 +3734,22 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 76 "mcc_generated_files/eusart.h"
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-# 103
+# 94 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
 
-# 123
+# 114
 uint8_t EUSART_Read(void);
 
-# 143
+# 134
 void EUSART_Write(uint8_t txData);
 
-# 164
-void EUSART_Transmit_ISR(void);
-
-# 185
-void EUSART_Receive_ISR(void);
-
-# 71 "mcc_generated_files/mcc.h"
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 84
+# 82
 void OSCILLATOR_Initialize(void);
 
-# 97
+# 95
 void WDT_Initialize(void);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
@@ -3852,7 +3821,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 6 "main.c"
+# 8 "main.c"
 const uint8_t max_char = 64 - 1;
 
 typedef struct {
@@ -3865,13 +3834,13 @@ uint8_t c;
 uint8_t cnt = 0;
 SID sid;
 
-# 24
+# 26
 void set_sid (uint16_t can_node) {
 sid.sidh = (can_node >> 8) & 0x00ff;
 sid.sidl = (can_node << 5) & 0x00e0;
 }
 
-# 32
+# 34
 void can_send(uint8_t *buf, uint8_t cnt) {
 }
 
@@ -3879,8 +3848,8 @@ void main(void)
 {
 SYSTEM_Initialize();
 
-(INTCONbits.GIE = 1);
-(INTCONbits.PEIE = 1);
+
+
 
 set_sid(0);
 
@@ -3889,22 +3858,27 @@ while (1)
 if ((PIR1bits.RCIF)) {
 c = EUSART_Read();
 printf("%c", c);
+LATCbits.LATC3 = !LATCbits.LATC3;
+
 buf[cnt] = c;
 if (c == '\n') {
 buf[cnt] = '\0';
 if (buf[0] == '@') {
 uint16_t sid = atoi(&buf[1]);
 set_sid(atoi(sid));
-printf("%d\n", sid);
+printf("Message ID set: %d\n", sid);
 } else {
 can_send(buf, cnt);
+printf("CAN message sent: %s\n", buf);
 }
 cnt = 0;
 } else if (++cnt > max_char) {
 buf[cnt] = '\0';
 can_send(buf, cnt);
+printf("\nCAN message sent: %s\n", buf);
 cnt = 0;
 }
+
 }
 
 }

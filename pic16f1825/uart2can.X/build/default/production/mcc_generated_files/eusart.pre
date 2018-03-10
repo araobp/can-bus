@@ -3707,42 +3707,18 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 76 "mcc_generated_files/eusart.h"
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-# 103
+# 94 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
 
-# 123
+# 114
 uint8_t EUSART_Read(void);
 
-# 143
+# 134
 void EUSART_Write(uint8_t txData);
 
-# 164
-void EUSART_Transmit_ISR(void);
-
-# 185
-void EUSART_Receive_ISR(void);
-
-# 59 "mcc_generated_files/eusart.c"
-volatile uint8_t eusartTxHead = 0;
-volatile uint8_t eusartTxTail = 0;
-volatile uint8_t eusartTxBuffer[8];
-volatile uint8_t eusartTxBufferRemaining;
-
-volatile uint8_t eusartRxHead = 0;
-volatile uint8_t eusartRxTail = 0;
-volatile uint8_t eusartRxBuffer[8];
-volatile uint8_t eusartRxCount;
-
-# 72
+# 53 "mcc_generated_files/eusart.c"
 void EUSART_Initialize(void)
 {
-
-PIE1bits.RCIE = 0;
-PIE1bits.TXIE = 0;
 
 
 
@@ -3755,66 +3731,39 @@ RCSTA = 0x90;
 TXSTA = 0x24;
 
 
-SPBRGL = 0xCF;
+SPBRGL = 0x40;
 
 
-SPBRGH = 0x00;
+SPBRGH = 0x03;
 
 
-
-eusartTxHead = 0;
-eusartTxTail = 0;
-eusartTxBufferRemaining = sizeof(eusartTxBuffer);
-
-eusartRxHead = 0;
-eusartRxTail = 0;
-eusartRxCount = 0;
-
-
-PIE1bits.RCIE = 1;
 }
 
 uint8_t EUSART_Read(void)
 {
-uint8_t readValue = 0;
-
-while(0 == eusartRxCount)
+while(!PIR1bits.RCIF)
 {
 }
 
-readValue = eusartRxBuffer[eusartRxTail++];
-if(sizeof(eusartRxBuffer) <= eusartRxTail)
-{
-eusartRxTail = 0;
-}
-PIE1bits.RCIE = 0;
-eusartRxCount--;
-PIE1bits.RCIE = 1;
 
-return readValue;
+if(1 == RCSTAbits.OERR)
+{
+
+
+RCSTAbits.CREN = 0;
+RCSTAbits.CREN = 1;
+}
+
+return RCREG;
 }
 
 void EUSART_Write(uint8_t txData)
 {
-while(0 == eusartTxBufferRemaining)
+while(0 == PIR1bits.TXIF)
 {
 }
 
-if(0 == PIE1bits.TXIE)
-{
 TXREG = txData;
-}
-else
-{
-PIE1bits.TXIE = 0;
-eusartTxBuffer[eusartTxHead++] = txData;
-if(sizeof(eusartTxBuffer) <= eusartTxHead)
-{
-eusartTxHead = 0;
-}
-eusartTxBufferRemaining--;
-}
-PIE1bits.TXIE = 1;
 }
 
 char getch(void)
@@ -3825,44 +3774,5 @@ return EUSART_Read();
 void putch(char txData)
 {
 EUSART_Write(txData);
-}
-
-void EUSART_Transmit_ISR(void)
-{
-
-
-if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
-{
-TXREG = eusartTxBuffer[eusartTxTail++];
-if(sizeof(eusartTxBuffer) <= eusartTxTail)
-{
-eusartTxTail = 0;
-}
-eusartTxBufferRemaining++;
-}
-else
-{
-PIE1bits.TXIE = 0;
-}
-}
-
-void EUSART_Receive_ISR(void)
-{
-
-if(1 == RCSTAbits.OERR)
-{
-
-
-RCSTAbits.CREN = 0;
-RCSTAbits.CREN = 1;
-}
-
-
-eusartRxBuffer[eusartRxHead++] = RCREG;
-if(sizeof(eusartRxBuffer) <= eusartRxHead)
-{
-eusartRxHead = 0;
-}
-eusartRxCount++;
 }
 

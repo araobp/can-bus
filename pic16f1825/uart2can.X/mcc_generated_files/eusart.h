@@ -66,15 +66,6 @@
 
 #define EUSART_DataReady  (PIR1bits.RCIF)
 
-/**
-  Section: Data Type Definitions
-*/
-
-/**
- Section: Global variables
- */
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
 
 /**
   Section: EUSART APIs
@@ -142,47 +133,7 @@ uint8_t EUSART_Read(void);
 */
 void EUSART_Write(uint8_t txData);
 
-/**
-  @Summary
-    Maintains the driver's transmitter state machine and implements its ISR.
 
-  @Description
-    This routine is used to maintain the driver's internal transmitter state
-    machine.This interrupt service routine is called when the state of the
-    transmitter needs to be maintained in a non polled manner.
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void EUSART_Transmit_ISR(void);
-
-/**
-  @Summary
-    Maintains the driver's receiver state machine and implements its ISR
-
-  @Description
-    This routine is used to maintain the driver's internal receiver state
-    machine.This interrupt service routine is called when the state of the
-    receiver needs to be maintained in a non polled manner.
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void EUSART_Receive_ISR(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
