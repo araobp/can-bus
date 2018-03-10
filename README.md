@@ -1,10 +1,14 @@
 # CAN bus evaluation
 
+![waveform](./doc/waveform.jpg)
+
 ## Motivation
 
-I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC1768 is expensive and some of libraries on mbed are unstable.
+I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC1768 is expensive for my hobby.
 
 I want to use CAN with Microchip PIC MCUs and CAN controller(MCP2515) to see if the combination works OK.
+
+![board](./doc/board.jpg)
 
 ## Configuration
 
