@@ -262,10 +262,10 @@ extern double round(double);
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c"
 #pragma warning disable 350
 
-# 354
-const static unsigned int dpowers[] = {1, 10, 100, 1000, 10000,
+# 362
+const static unsigned int hexpowers[] = {1, 0x10, 0x100, 0x1000,
 
-# 359
+# 366
 };
 
 # 455
@@ -279,7 +279,11 @@ va_list ap;
 # 499
 signed char c;
 
-# 506
+int width;
+
+
+
+
 signed char prec;
 
 unsigned char flag;
@@ -307,8 +311,34 @@ if(c != '%')
 continue;
 }
 
-# 548
+
+width = 0;
+
 flag = 0;
+
+for(;;) {
+switch(*f) {
+
+# 579
+case '0':
+flag |= 0x04;
+f++;
+continue;
+
+}
+break;
+}
+
+# 597
+if(isdigit((unsigned)*f)) {
+width = 0;
+do {
+width *= 10;
+width += *f++ - '0';
+} while(isdigit((unsigned)*f));
+
+# 608
+}
 
 # 635
 switch(c = *f++) {
@@ -316,12 +346,15 @@ switch(c = *f++) {
 case 0:
 goto alldone;
 
-# 697
-case 'd':
-case 'i':
+# 718
+case 'x':
+
+# 723
 break;
 
-# 728
+
+
+
 case 's':
 
 # 734
@@ -331,14 +364,32 @@ cp = (*(const char * *)__va_arg((*(const char * **)ap), (const char *)0));
 if(!cp)
 cp = "(null)";
 
-# 777
-while(*cp)
+
+
+len = 0;
+while(cp[len])
+len++;
+
+
+dostring:
+
+# 757
+if(width > len)
+width -= len;
+else
+width = 0;
+
+# 764
+while(width--)
+(putch(' ') );
+
+while(len--)
 (putch(*cp++) );
+
+# 774
 continue;
 
-
-
-
+# 784
 case 'c':
 
 # 799
@@ -347,37 +398,52 @@ c = (*(int *)__va_arg((*(int **)ap), (int)0));
 
 default:
 
-# 809
-(putch(c) );
-continue;
+
+cp = (char *)&c;
+len = 1;
+goto dostring;
 
 # 822
 }
 
-# 1253
+# 1273
 {
 
-# 1259
-val = (int)(*(int *)__va_arg((*(int **)ap), (int)0));
-
-if((int)val < 0) {
-flag |= 0x03;
-val = -val;
+# 1286
+val = (*(unsigned *)__va_arg((*(unsigned **)ap), (unsigned)0));
 }
 
-}
-
-# 1305
-for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
-if(val < dpowers[c])
+# 1316
+for(c = 1 ; c != sizeof hexpowers/sizeof hexpowers[0] ; c++)
+if(val < hexpowers[c])
 break;
 
-# 1422
+# 1381
+if(width > c)
+width -= c;
+else
+width = 0;
+
+
+if(flag & 0x04) {
+
+# 1415
+if(width)
+do
+(putch('0') );
+while(--width);
+
+} else
+
 {
 
-# 1438
-if(flag & 0x03)
-(putch('-') );
+if(width
+
+# 1428
+)
+do
+(putch(' ') );
+while(--width);
 
 # 1469
 }
@@ -390,8 +456,14 @@ while(prec--) {
 # 1478
 {
 
-# 1489
-c = (val / dpowers[prec]) % 10 + '0';
+# 1499
+{
+unsigned char idx = (val / hexpowers[prec]) & 0xF;
+
+# 1506
+c = "0123456789abcdef"[idx];
+
+}
 
 # 1523
 }

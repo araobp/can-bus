@@ -1,7 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"10 main.c
+"16 main.c
 [s S328 `uc 1 `uc 1 ]
 [n S328 . sidh sidl ]
+"195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"190 mcc_generated_files/spi.h
+[v _SPI_Exchange8bitBuffer `(uc ~T0 @X0 0 ef3`*uc`uc`*uc ]
 [p mainexit ]
 "69 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -15,8 +19,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS32 ~T0 @X0 0 e@17 ]
 "114 mcc_generated_files/eusart.h
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "1994 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
 [s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S103 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
@@ -2747,172 +2749,339 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> - -> 64 `i -> 1 `i `uc
 ]
 [; ;main.c: 8: const uint8_t max_char = 64 - 1;
-[; ;main.c: 10: typedef struct {
-[; ;main.c: 11: uint8_t sidh;
-[; ;main.c: 12: uint8_t sidl;
-[; ;main.c: 13: } SID;
-"15
+[; ;main.c: 16: typedef struct {
+[; ;main.c: 17: uint8_t sidh;
+[; ;main.c: 18: uint8_t sidl;
+[; ;main.c: 19: } SID;
+"21
 [v _buf `uc ~T0 @X0 -> 64 `i e ]
-[; ;main.c: 15: uint8_t buf[64];
-"16
+[; ;main.c: 21: uint8_t buf[64];
+"22
 [v _c `uc ~T0 @X0 1 e ]
-[; ;main.c: 16: uint8_t c;
-"17
+[; ;main.c: 22: uint8_t c;
+"23
 [v _cnt `uc ~T0 @X0 1 e ]
 [i _cnt
 -> -> 0 `i `uc
 ]
-[; ;main.c: 17: uint8_t cnt = 0;
-"18
+[; ;main.c: 23: uint8_t cnt = 0;
+"24
 [v _sid `S328 ~T0 @X0 1 e ]
-[; ;main.c: 18: SID sid;
-"26
+[; ;main.c: 24: SID sid;
+"31
+[v _txb_n_ctrl `Cuc ~T0 @X0 -> 3 `i e ]
+[i _txb_n_ctrl
+:U ..
+-> -> 48 `i `uc
+-> + -> 48 `i -> 16 `i `uc
+-> + -> 48 `i -> 32 `i `uc
+..
+]
+[; ;main.c: 31: const uint8_t txb_n_ctrl[3] = {0x30, 0x30+0x10, 0x30+0x20};
+"37
+[v _tx_buf `uc ~T0 @X0 -> 15 `i e ]
+[; ;main.c: 37: uint8_t tx_buf[15];
+"45
 [v _set_sid `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 26: void set_sid (uint16_t can_node) {
+[; ;main.c: 45: void set_sid (uint16_t can_node) {
 [e :U _set_sid ]
 [v _can_node `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 27: sid.sidh = (can_node >> 8) & 0x00ff;
-"27
-[e = . _sid 0 -> & >> _can_node -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;main.c: 28: sid.sidl = (can_node << 5) & 0x00e0;
-"28
-[e = . _sid 1 -> & << _can_node -> 5 `i -> -> 224 `i `ui `uc ]
-[; ;main.c: 29: }
-"29
+"46
+[v _sidh `uc ~T0 @X0 1 a ]
+[; ;main.c: 46: uint8_t sidh = (can_node >> 3) & 0x00ff;
+[e = _sidh -> & >> _can_node -> 3 `i -> -> 255 `i `ui `uc ]
+"47
+[v _sidl `uc ~T0 @X0 1 a ]
+[; ;main.c: 47: uint8_t sidl = (can_node << 5) & 0x00e0;
+[e = _sidl -> & << _can_node -> 5 `i -> -> 224 `i `ui `uc ]
+[; ;main.c: 48: sid.sidh = sidh;
+"48
+[e = . _sid 0 _sidh ]
+[; ;main.c: 49: sid.sidl = sidl;
+"49
+[e = . _sid 1 _sidl ]
+[; ;main.c: 50: printf("SID set: %02x %02x\n", sidh, sidl);
+"50
+[e ( _printf , , (. :s 1C -> _sidh `i -> _sidl `i ]
+[; ;main.c: 51: }
+"51
 [e :UE 329 ]
 }
-"34
-[v _can_send `(v ~T0 @X0 1 ef2`*uc`uc ]
-{
-[; ;main.c: 34: void can_send(uint8_t *buf, uint8_t cnt) {
-[e :U _can_send ]
-[v _buf `*uc ~T0 @X0 1 r1 ]
-[v _cnt `uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;main.c: 35: }
-"35
-[e :UE 330 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"37
-[v _main `(v ~T0 @X0 1 ef ]
-"38
-{
-[; ;main.c: 37: void main(void)
-[; ;main.c: 38: {
-[e :U _main ]
-[f ]
-[; ;main.c: 39: SYSTEM_Initialize();
-"39
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 44: set_sid(0);
-"44
-[e ( _set_sid (1 -> -> 0 `i `ui ]
-[; ;main.c: 46: while (1)
-"46
-[e :U 333 ]
-[; ;main.c: 47: {
-"47
-{
-[; ;main.c: 48: if ((PIR1bits.RCIF)) {
-"48
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 335  ]
-{
-[; ;main.c: 49: c = EUSART_Read();
-"49
-[e = _c ( _EUSART_Read ..  ]
-[; ;main.c: 50: printf("%c", c);
-"50
-[e ( _printf , (. :s 1C -> _c `i ]
-[; ;main.c: 51: LATCbits.LATC3 = !LATCbits.LATC3;
-"51
-[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;main.c: 53: buf[cnt] = c;
-"53
-[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux _c ]
-[; ;main.c: 54: if (c == '\n') {
-"54
-[e $ ! == -> _c `ui -> 10 `ui 336  ]
-{
-[; ;main.c: 55: buf[cnt] = '\0';
-"55
-[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 56: if (buf[0] == '@') {
 "56
-[e $ ! == -> *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 64 `ui 337  ]
+[v _can_start `(uc ~T0 @X0 1 ef ]
 {
-[v _sid `ui ~T0 @X0 1 a ]
-[; ;main.c: 57: uint16_t sid = atoi(&buf[1]);
+[; ;main.c: 56: bool can_start(void) {
+[e :U _can_start ]
+[f ]
+[v F2923 `uc ~T0 @X0 -> 3 `i s ]
+[i F2923
+:U ..
 "57
-[e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
-[; ;main.c: 58: set_sid(atoi(sid));
+-> -> 2 `i `uc
+-> -> 15 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _can_ctrl_buf `uc ~T0 @X0 -> 3 `i a ]
+[; ;main.c: 57: uint8_t can_ctrl_buf[3] = {0b00000010, 0x0f, 0x00};
+[e = _can_ctrl_buf F2923 ]
 "58
-[e ( _set_sid (1 -> ( _atoi (1 -> _sid `*Cuc `ui ]
-[; ;main.c: 59: printf("Message ID set: %d\n", sid);
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;main.c: 58: uint8_t bytes_written = SPI_Exchange8bitBuffer(can_ctrl_buf, 3, can_ctrl_buf);
+[e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , &U _can_ctrl_buf -> -> 3 `i `uc &U _can_ctrl_buf ]
+[; ;main.c: 59: if (bytes_written == 3) {
 "59
-[e ( _printf , (. :s 2C _sid ]
-"60
-}
-[; ;main.c: 60: } else {
-[e $U 338  ]
-[e :U 337 ]
+[e $ ! == -> _bytes_written `i -> 3 `i 331  ]
 {
-[; ;main.c: 61: can_send(buf, cnt);
+[; ;main.c: 60: return 1;
+"60
+[e ) -> -> 1 `i `uc ]
+[e $UE 330  ]
 "61
-[e ( _can_send (2 , &U _buf _cnt ]
-[; ;main.c: 62: printf("CAN message sent: %s\n", buf);
+}
+[; ;main.c: 61: } else {
+[e $U 332  ]
+[e :U 331 ]
+{
+[; ;main.c: 62: return 0;
 "62
-[e ( _printf , (. :s 3C -> &U _buf `*Cuc ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 330  ]
 "63
 }
-[e :U 338 ]
-[; ;main.c: 63: }
-[; ;main.c: 64: cnt = 0;
-"64
-[e = _cnt -> -> 0 `i `uc ]
-"65
-}
-[; ;main.c: 65: } else if (++cnt > max_char) {
-[e $U 339  ]
-[e :U 336 ]
-[e $ ! > -> =+ _cnt -> -> 1 `i `uc `i -> _max_char `i 340  ]
-{
-[; ;main.c: 66: buf[cnt] = '\0';
-"66
-[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 67: can_send(buf, cnt);
-"67
-[e ( _can_send (2 , &U _buf _cnt ]
-[; ;main.c: 68: printf("\nCAN message sent: %s\n", buf);
-"68
-[e ( _printf , (. :s 4C -> &U _buf `*Cuc ]
-[; ;main.c: 69: cnt = 0;
-"69
-[e = _cnt -> -> 0 `i `uc ]
-"70
-}
-[e :U 340 ]
-"72
-[e :U 339 ]
-}
-[e :U 335 ]
-"74
-}
 [e :U 332 ]
-"46
-[e $U 333  ]
-[e :U 334 ]
-[; ;main.c: 70: }
-[; ;main.c: 72: }
-[; ;main.c: 74: }
-[; ;main.c: 75: }
-"75
-[e :UE 331 ]
+[; ;main.c: 63: }
+[; ;main.c: 64: }
+"64
+[e :UE 330 ]
 }
-[p f _printf 9175168 ]
-[a 1C 37 99 0 ]
+"69
+[v _can_send `(uc ~T0 @X0 1 ef3`uc`*uc`uc ]
+{
+[; ;main.c: 69: bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
+[e :U _can_send ]
+[v _n `uc ~T0 @X0 1 r1 ]
+[v _buf `*uc ~T0 @X0 1 r2 ]
+[v _cnt `uc ~T0 @X0 1 r3 ]
+[f ]
+"71
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 71: uint8_t i;
+[; ;main.c: 72: tx_buf[0] = 0b00000010;
+"72
+[e = *U + &U _tx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 2 `i `uc ]
+[; ;main.c: 73: tx_buf[1] = txb_n_ctrl[n] + 1;
+"73
+[e = *U + &U _tx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> + -> *U + &U _txb_n_ctrl * -> _n `ux -> -> # *U &U _txb_n_ctrl `ui `ux `i -> 1 `i `uc ]
+[; ;main.c: 74: tx_buf[2] = sid.sidh;
+"74
+[e = *U + &U _tx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 0 ]
+[; ;main.c: 75: tx_buf[3] = sid.sidl;
+"75
+[e = *U + &U _tx_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 1 ]
+[; ;main.c: 76: tx_buf[4] = 0;
+"76
+[e = *U + &U _tx_buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 77: tx_buf[5] = 0;
+"77
+[e = *U + &U _tx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 78: tx_buf[6] = cnt;
+"78
+[e = *U + &U _tx_buf * -> -> -> 6 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux _cnt ]
+[; ;main.c: 79: for(i=0; i++; i<cnt) {
+"79
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 337  ]
+[e :U 334 ]
+{
+[; ;main.c: 80: tx_buf[7+i] = buf[i];
+"80
+[e = *U + &U _tx_buf * -> -> + -> 7 `i -> _i `i `ui `ux -> -> # *U &U _tx_buf `ui `ux *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux ]
+"81
+}
+"79
+[e < -> _i `i -> _cnt `i ]
+[e :U 337 ]
+[e $ != -> ++ _i -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 334  ]
+[e :U 335 ]
+"81
+}
+"82
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;main.c: 81: }
+[; ;main.c: 82: uint8_t bytes_written = 0;
+[e = _bytes_written -> -> 0 `i `uc ]
+"83
+[v _len `uc ~T0 @X0 1 a ]
+[; ;main.c: 83: uint8_t len = 7 + cnt;
+[e = _len -> + -> 7 `i -> _cnt `i `uc ]
+[; ;main.c: 84: bytes_written = SPI_Exchange8bitBuffer(tx_buf, len, tx_buf);
+"84
+[e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , &U _tx_buf _len &U _tx_buf ]
+[; ;main.c: 85: if (bytes_written == len) {
+"85
+[e $ ! == -> _bytes_written `i -> _len `i 338  ]
+{
+"86
+[v _txb_ctrl_buf `uc ~T0 @X0 -> 3 `i a ]
+[; ;main.c: 86: uint8_t txb_ctrl_buf[3];
+[; ;main.c: 87: txb_ctrl_buf[0] = 0b00000010;
+"87
+[e = *U + &U _txb_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txb_ctrl_buf `ui `ux -> -> 2 `i `uc ]
+[; ;main.c: 88: txb_ctrl_buf[1] = txb_n_ctrl[n];
+"88
+[e = *U + &U _txb_ctrl_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _txb_ctrl_buf `ui `ux *U + &U _txb_n_ctrl * -> _n `ux -> -> # *U &U _txb_n_ctrl `ui `ux ]
+[; ;main.c: 89: txb_ctrl_buf[2] = 0b00001011;
+"89
+[e = *U + &U _txb_ctrl_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _txb_ctrl_buf `ui `ux -> -> 11 `i `uc ]
+[; ;main.c: 90: bytes_written = SPI_Exchange8bitBuffer(txb_ctrl_buf, 3, txb_ctrl_buf);
+"90
+[e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , &U _txb_ctrl_buf -> -> 3 `i `uc &U _txb_ctrl_buf ]
+[; ;main.c: 91: if (bytes_written == 3) {
+"91
+[e $ ! == -> _bytes_written `i -> 3 `i 339  ]
+{
+[; ;main.c: 92: return 1;
+"92
+[e ) -> -> 1 `i `uc ]
+[e $UE 333  ]
+"93
+}
+[e :U 339 ]
+"94
+}
+[e :U 338 ]
+[; ;main.c: 93: }
+[; ;main.c: 94: }
+[; ;main.c: 95: return 0;
+"95
+[e ) -> -> 0 `i `uc ]
+[e $UE 333  ]
+[; ;main.c: 96: }
+"96
+[e :UE 333 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"98
+[v _main `(v ~T0 @X0 1 ef ]
+"99
+{
+[; ;main.c: 98: void main(void)
+[; ;main.c: 99: {
+[e :U _main ]
+[f ]
+[; ;main.c: 100: SYSTEM_Initialize();
+"100
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 105: set_sid(0);
+"105
+[e ( _set_sid (1 -> -> 0 `i `ui ]
+[; ;main.c: 106: can_start();
+"106
+[e ( _can_start ..  ]
+[; ;main.c: 108: while (1)
+"108
+[e :U 342 ]
+[; ;main.c: 109: {
+"109
+{
+[; ;main.c: 110: if ((PIR1bits.RCIF)) {
+"110
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 344  ]
+{
+[; ;main.c: 111: c = EUSART_Read();
+"111
+[e = _c ( _EUSART_Read ..  ]
+[; ;main.c: 112: printf("%c", c);
+"112
+[e ( _printf , (. :s 2C -> _c `i ]
+[; ;main.c: 113: LATCbits.LATC3 = !LATCbits.LATC3;
+"113
+[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[; ;main.c: 115: buf[cnt] = c;
+"115
+[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux _c ]
+[; ;main.c: 116: if (c == '\n') {
+"116
+[e $ ! == -> _c `ui -> 10 `ui 345  ]
+{
+[; ;main.c: 117: buf[cnt] = '\0';
+"117
+[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 118: if (buf[0] == '@') {
+"118
+[e $ ! == -> *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 64 `ui 346  ]
+{
+[v _sid `ui ~T0 @X0 1 a ]
+[; ;main.c: 119: uint16_t sid = atoi(&buf[1]);
+"119
+[e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
+[; ;main.c: 120: set_sid(atoi(sid));
+"120
+[e ( _set_sid (1 -> ( _atoi (1 -> _sid `*Cuc `ui ]
+"121
+}
+[; ;main.c: 121: } else {
+[e $U 347  ]
+[e :U 346 ]
+{
+[; ;main.c: 122: can_send(0, buf, cnt);
+"122
+[e ( _can_send (3 , , -> -> 0 `i `uc &U _buf _cnt ]
+[; ;main.c: 123: printf("CAN message sent: %s\n", buf);
+"123
+[e ( _printf , (. :s 3C -> &U _buf `*Cuc ]
+"124
+}
+[e :U 347 ]
+[; ;main.c: 124: }
+[; ;main.c: 125: cnt = 0;
+"125
+[e = _cnt -> -> 0 `i `uc ]
+"126
+}
+[; ;main.c: 126: } else if (++cnt > max_char) {
+[e $U 348  ]
+[e :U 345 ]
+[e $ ! > -> =+ _cnt -> -> 1 `i `uc `i -> _max_char `i 349  ]
+{
+[; ;main.c: 127: buf[cnt] = '\0';
+"127
+[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 128: can_send(0, buf, cnt);
+"128
+[e ( _can_send (3 , , -> -> 0 `i `uc &U _buf _cnt ]
+[; ;main.c: 129: printf("\nCAN message sent: %s\n", buf);
+"129
+[e ( _printf , (. :s 4C -> &U _buf `*Cuc ]
+[; ;main.c: 130: cnt = 0;
+"130
+[e = _cnt -> -> 0 `i `uc ]
+"131
+}
+[e :U 349 ]
+"133
+[e :U 348 ]
+}
+[e :U 344 ]
+"134
+}
+[e :U 341 ]
+"108
+[e $U 342  ]
+[e :U 343 ]
+[; ;main.c: 131: }
+[; ;main.c: 133: }
+[; ;main.c: 134: }
+[; ;main.c: 135: }
+"135
+[e :UE 340 ]
+}
+[p f _printf 13402116 ]
+[a 2C 37 99 0 ]
+[a 1C 83 73 68 32 115 101 116 58 32 37 48 50 120 32 37 48 50 120 10 0 ]
 [a 4C 10 67 65 78 32 109 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
 [a 3C 67 65 78 32 109 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
-[a 2C 77 101 115 115 97 103 101 32 73 68 32 115 101 116 58 32 37 100 10 0 ]
