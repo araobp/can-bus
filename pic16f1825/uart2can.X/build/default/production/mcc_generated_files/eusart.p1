@@ -2698,12 +2698,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.c: 64: TXSTA = 0x24;
 "64
 [e = _TXSTA -> -> 36 `i `uc ]
-[; ;eusart.c: 67: SPBRGL = 0x40;
+[; ;eusart.c: 67: SPBRGL = 0x33;
 "67
-[e = _SPBRGL -> -> 64 `i `uc ]
-[; ;eusart.c: 70: SPBRGH = 0x03;
+[e = _SPBRGL -> -> 51 `i `uc ]
+[; ;eusart.c: 70: SPBRGH = 0x00;
 "70
-[e = _SPBRGH -> -> 3 `i `uc ]
+[e = _SPBRGH -> -> 0 `i `uc ]
 [; ;eusart.c: 73: }
 "73
 [e :UE 324 ]

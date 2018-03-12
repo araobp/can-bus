@@ -21,21 +21,21 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"72 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+"75 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _set_sid set_sid `(v  1 e 1 0 ]
-"80
+"83
 [v _SPI_send SPI_send `(uc  1 e 1 0 ]
-"90
+"93
 [v _can_start can_start `(uc  1 e 1 0 ]
-"103
+"111
 [v _can_txf_clear can_txf_clear `(uc  1 e 1 0 ]
-"121
+"129
 [v _can_receive can_receive `(v  1 e 1 0 ]
-"143
+"156
 [v _can_send can_send `(uc  1 e 1 0 ]
-"183
+"204
 [v _can_status_check can_status_check `(v  1 e 1 0 ]
-"203
+"227
 [v _main main `(v  1 e 1 0 ]
 "53 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -49,7 +49,7 @@
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "80
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"94
+"90
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "52 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -59,7 +59,7 @@
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
 "91
 [v _SPI_Exchange8bitBuffer SPI_Exchange8bitBuffer `(uc  1 e 1 0 ]
-[s S52 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S51 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -69,13 +69,13 @@
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "544 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[u S61 . 1 `S52 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES61  1 e 1 @17 ]
+[u S60 . 1 `S51 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES60  1 e 1 @17 ]
 "1106
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1156
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
-[s S129 . 1 `uc 1 PS0 1 0 :1:0 
+[s S128 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -85,13 +85,13 @@
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1382
-[s S138 . 1 `uc 1 PS 1 0 :3:0 
+[s S137 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S143 . 1 `S129 1 . 1 0 `S138 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES143  1 e 1 @149 ]
+[u S142 . 1 `S128 1 . 1 0 `S137 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES142  1 e 1 @149 ]
 "1493
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1552
@@ -100,7 +100,7 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "1943
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S261 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S260 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -108,20 +108,10 @@
 `uc 1 LATA5 1 0 :1:5 
 ]
 "1958
-[u S268 . 1 `S261 1 . 1 0 ]
-[v _LATAbits LATAbits `VES268  1 e 1 @268 ]
+[u S267 . 1 `S260 1 . 1 0 ]
+[v _LATAbits LATAbits `VES267  1 e 1 @268 ]
 "1988
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S293 . 1 `uc 1 LATC0 1 0 :1:0 
-`uc 1 LATC1 1 0 :1:1 
-`uc 1 LATC2 1 0 :1:2 
-`uc 1 LATC3 1 0 :1:3 
-`uc 1 LATC4 1 0 :1:4 
-`uc 1 LATC5 1 0 :1:5 
-]
-"2003
-[u S300 . 1 `S293 1 . 1 0 ]
-[v _LATCbits LATCbits `VES300  1 e 1 @270 ]
 "2310
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2649
@@ -142,7 +132,7 @@
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
 "3107
 [v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
-[s S73 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S72 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -152,8 +142,8 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3124
-[u S82 . 1 `S73 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES82  1 e 1 @413 ]
+[u S81 . 1 `S72 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES81  1 e 1 @413 ]
 "3169
 [v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
 "3231
@@ -168,7 +158,7 @@
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
 "3505
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
-[s S203 . 1 `uc 1 BF 1 0 :1:0 
+[s S202 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -178,11 +168,11 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "3527
-[u S212 . 1 `S203 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES212  1 e 1 @532 ]
+[u S211 . 1 `S202 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES211  1 e 1 @532 ]
 "3627
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S176 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S175 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
@@ -192,96 +182,135 @@
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3656
-[s S185 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S184 . 1 `uc 1 SSPM 1 0 :4:0 
 ]
-[u S187 . 1 `S176 1 . 1 0 `S185 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES187  1 e 1 @533 ]
-"6754
-[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+[u S186 . 1 `S175 1 . 1 0 `S184 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES186  1 e 1 @533 ]
 "362 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _hexpowers hexpowers `DC[4]ui  1 s 8 hexpowers ]
 "7 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _max_char max_char `DCuc  1 e 1 0 ]
-"25
+"28
 [v _nm nm `DC[2]uc  1 e 2 0 ]
-"29
+"32
 [v _abc abc `DC[3]uc  1 e 3 0 ]
-[s S253 . 2 `uc 1 sidh 1 0 `uc 1 sidl 1 1 ]
-"48
-[v _sid sid `S253  1 e 2 0 ]
-"50
-[v _buf buf `[9]uc  1 e 9 0 ]
+[s S252 . 2 `uc 1 sidh 1 0 `uc 1 sidl 1 1 ]
 "51
+[v _sid sid `S252  1 e 2 0 ]
+"53
+[v _buf buf `[9]uc  1 e 9 0 ]
+"54
 [v _c c `uc  1 e 1 0 ]
-"52
+"55
 [v _cnt cnt `uc  1 e 1 0 ]
-"58
+"61
 [v _tx_buf tx_buf `[14]uc  1 e 14 0 ]
-"64
+"67
 [v _rx_buf rx_buf `[15]uc  1 e 15 0 ]
-"203
+"227
 [v _main main `(v  1 e 1 0 ]
 {
-"225
-[v main@sid sid `ui  1 a 2 37 ]
-"242
+"253
+[v main@rc rc `uc  1 a 1 40 ]
+"249
+[v main@sid sid `ui  1 a 2 38 ]
+"263
+[v main@rc_383 rc `uc  1 a 1 41 ]
+"274
 } 0
-"72
+"75
 [v _set_sid set_sid `(v  1 e 1 0 ]
 {
-"74
+"77
 [v set_sid@sidl sidl `uc  1 a 1 24 ]
-"73
+"76
 [v set_sid@sidh sidh `uc  1 a 1 23 ]
-"72
+"75
 [v set_sid@can_node can_node `ui  1 p 2 17 ]
-"78
+"81
 } 0
-"183
+"204
 [v _can_status_check can_status_check `(v  1 e 1 0 ]
 {
-"185
+"206
 [v can_status_check@can_status_buf can_status_buf `[2]uc  1 a 2 32 ]
-"187
+"208
 [v can_status_check@status status `uc  1 a 1 34 ]
-"186
+"207
 [v can_status_check@bytes_written bytes_written `uc  1 a 1 31 ]
-"183
-[v can_status_check@F2954 F2954 `[2]uc  1 s 2 F2954 ]
-"201
+"204
+[v can_status_check@F2957 F2957 `[2]uc  1 s 2 F2957 ]
+"225
 } 0
-"103
+"111
 [v _can_txf_clear can_txf_clear `(uc  1 e 1 0 ]
 {
 [v can_txf_clear@n n `uc  1 a 1 wreg ]
-"105
+"113
 [v can_txf_clear@can_int_flag can_int_flag `[4]uc  1 a 4 8 ]
-"110
+"118
 [v can_txf_clear@bytes_written bytes_written `uc  1 a 1 7 ]
-"104
+"112
 [v can_txf_clear@mask mask `uc  1 a 1 6 ]
-"103
+"111
 [v can_txf_clear@n n `uc  1 a 1 wreg ]
 [v can_txf_clear@n n `uc  1 a 1 5 ]
-"116
+"124
 } 0
-"121
+"129
 [v _can_receive can_receive `(v  1 e 1 0 ]
 {
 [v can_receive@n n `uc  1 a 1 wreg ]
-"129
+"142
 [v can_receive@can_int_flag can_int_flag `[4]uc  1 a 4 23 ]
-"128
+"141
 [v can_receive@mask mask `uc  1 a 1 22 ]
-"124
+"132
 [v can_receive@bytes_read bytes_read `uc  1 a 1 21 ]
-"134
+"147
 [v can_receive@bytes_written bytes_written `uc  1 a 1 20 ]
-"121
+"129
 [v can_receive@n n `uc  1 a 1 wreg ]
-"123
+"131
 [v can_receive@n n `uc  1 a 1 27 ]
-"138
+"151
+} 0
+"93
+[v _can_start can_start `(uc  1 e 1 0 ]
+{
+"95
+[v can_start@can_ctrl_buf can_ctrl_buf `[3]uc  1 a 3 21 ]
+"96
+[v can_start@bytes_written bytes_written `uc  1 a 1 20 ]
+"93
+[v can_start@F2930 F2930 `[3]uc  1 s 3 F2930 ]
+"106
+} 0
+"156
+[v _can_send can_send `(uc  1 e 1 0 ]
+{
+[v can_send@n n `uc  1 a 1 wreg ]
+"191
+[v can_send@txb_ctrl_buf txb_ctrl_buf `[1]uc  1 a 1 29 ]
+"182
+[v can_send@debug debug `[3]uc  1 a 3 24 ]
+"157
+[v can_send@i i `uc  1 a 1 28 ]
+"179
+[v can_send@bytes_written bytes_written `uc  1 a 1 27 ]
+"178
+[v can_send@len len `uc  1 a 1 23 ]
+"156
+[v can_send@n n `uc  1 a 1 wreg ]
+[v can_send@buf buf `*.4uc  1 p 1 17 ]
+[v can_send@cnt cnt `uc  1 p 1 18 ]
+"179
+[v can_send@F2951 F2951 `[3]uc  1 s 3 F2951 ]
+"184
+[v can_send@F2952 F2952 `[3]uc  1 s 3 F2952 ]
+"160
+[v can_send@n n `uc  1 a 1 22 ]
+"199
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -337,49 +366,18 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "31
 } 0
-"90 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-[v _can_start can_start `(uc  1 e 1 0 ]
-{
-"91
-[v can_start@can_ctrl_buf can_ctrl_buf `[3]uc  1 a 3 5 ]
-"92
-[v can_start@bytes_written bytes_written `uc  1 a 1 8 ]
-"90
-[v can_start@F2930 F2930 `[3]uc  1 s 3 F2930 ]
-"98
-} 0
-"143
-[v _can_send can_send `(uc  1 e 1 0 ]
-{
-[v can_send@n n `uc  1 a 1 wreg ]
-"170
-[v can_send@txb_ctrl_buf txb_ctrl_buf `[1]uc  1 a 1 11 ]
-"144
-[v can_send@i i `uc  1 a 1 10 ]
-"166
-[v can_send@bytes_written bytes_written `uc  1 a 1 9 ]
-"165
-[v can_send@len len `uc  1 a 1 8 ]
-"143
-[v can_send@n n `uc  1 a 1 wreg ]
-[v can_send@buf buf `*.4uc  1 p 1 2 ]
-[v can_send@cnt cnt `uc  1 p 1 3 ]
-"147
-[v can_send@n n `uc  1 a 1 7 ]
-"178
-} 0
-"80
+"83 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _SPI_send SPI_send `(uc  1 e 1 0 ]
 {
 [v SPI_send@sbuf sbuf `*.4uc  1 a 1 wreg ]
-"82
+"85
 [v SPI_send@bytes_written bytes_written `uc  1 a 1 0 ]
-"80
+"83
 [v SPI_send@sbuf sbuf `*.4uc  1 a 1 wreg ]
 [v SPI_send@len len `uc  1 p 1 8 ]
 [v SPI_send@rbuf rbuf `*.4uc  1 p 1 9 ]
 [v SPI_send@sbuf sbuf `*.4uc  1 a 1 1 ]
-"85
+"88
 } 0
 "91 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
 [v _SPI_Exchange8bitBuffer SPI_Exchange8bitBuffer `(uc  1 e 1 0 ]
@@ -407,12 +405,14 @@
 "5 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
 [v _atoi atoi `(i  1 e 2 0 ]
 {
+[v atoi@s s `*.4DCuc  1 a 1 wreg ]
 "7
 [v atoi@a a `i  1 a 2 11 ]
 "8
 [v atoi@sign sign `uc  1 a 1 10 ]
 "5
-[v atoi@s s `*.26DCuc  1 p 2 6 ]
+[v atoi@s s `*.4DCuc  1 a 1 wreg ]
+[v atoi@s s `*.4DCuc  1 a 1 13 ]
 "24
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
@@ -439,10 +439,10 @@
 {
 "78
 } 0
-"94
+"90
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 {
-"98
+"94
 } 0
 "63 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
@@ -457,7 +457,7 @@
 "80 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"92
+"88
 } 0
 "53 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]

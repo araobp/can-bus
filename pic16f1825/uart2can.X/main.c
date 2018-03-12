@@ -12,9 +12,12 @@ const uint8_t max_char = BUFSIZE - 1;  // append '\0' at the tail
 
 // P58 CANCTRL
 #define CANCTRL 0x0f
-#define NORMAL_MODE 0b000
-#define LOOPBACK_MODE 0b010
-#define CONFIGURATION_MODE 0b100
+#define NORMAL_MODE 0b00000000
+#define LOOPBACK_MODE 0b01000000
+#define CONFIGURATION_MODE 0b10000000
+
+// P59 CANSTAT
+#define CANSTAT 0x0e
 
 // P51 CANINTF
 #define CANINTF 0x2c
@@ -80,7 +83,7 @@ void set_sid (uint16_t can_node) {
 uint8_t SPI_send(uint8_t *sbuf, uint8_t len, uint8_t *rbuf) {
     LATAbits.LATA4 = 0;  // Lower CS pin on MCP2515
     uint8_t bytes_written = SPI_Exchange8bitBuffer(sbuf, len, rbuf);
-    LATAbits.LATA4 = 0;  // Raise CS pin on MCP2515
+    LATAbits.LATA4 = 1;  // Raise CS pin on MCP2515
     return bytes_written;
 }
 
@@ -88,9 +91,14 @@ uint8_t SPI_send(uint8_t *sbuf, uint8_t len, uint8_t *rbuf) {
  * P58 Set MCP2515 to normal mode
  */
 bool can_start(void) {
-    uint8_t can_ctrl_buf[3] = {WRITE, CANCTRL, NORMAL_MODE}; 
+    // uint8_t can_ctrl_buf[3] = {WRITE, CANCTRL, NORMAL_MODE}; 
+    uint8_t can_ctrl_buf[3] = {WRITE, CANCTRL, LOOPBACK_MODE}; 
     uint8_t bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
     if (bytes_written == 3) {
+        can_ctrl_buf[0] = READ;
+        can_ctrl_buf[1] = CANSTAT;
+        bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
+        printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
         return true;
     } else {
         return false;
@@ -120,9 +128,14 @@ bool can_txf_clear(uint8_t n) {
  */
 void can_receive(uint8_t n) {
     // P65
-    rx_buf[0] = READ_RX_BUFFER & (nm[n] << 1);
-    uint8_t bytes_read = SPI_send(rx_buf, 14, buf);
+    rx_buf[0] = READ_RX_BUFFER + (nm[n] << 1);
+    uint8_t bytes_read = SPI_send(rx_buf, 14, rx_buf);
     rx_buf[bytes_read] = '\0';
+    
+    /*** debug ***/
+    printf("RXB0SIDH: %02x\n", rx_buf[1]);
+    printf("RXB0SIDL: %02x\n", rx_buf[2]);    
+    printf("RXB0DLC: %02x\n", rx_buf[5]);    
     
     // P51
     uint8_t mask = 0b00000001 << n;  //RXnIF interrupt pending
@@ -134,7 +147,7 @@ void can_receive(uint8_t n) {
     uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
     
     // Output the received message from CAN bus
-    printf("Message received: %s\n", rx_buf);
+    printf("Message received: %s\n", rx_buf[6]);
 }
 
 /*
@@ -144,7 +157,7 @@ bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
     uint8_t i;
     
     // P66
-    tx_buf[0] = LOAD_TX_BUFFER & abc[n];
+    tx_buf[0] = LOAD_TX_BUFFER + abc[n];
     // P19 TXBnSIDH
     tx_buf[1] = sid.sidh;
     // P20 TXBnSIDL
@@ -165,10 +178,18 @@ bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
     uint8_t len = 6 + cnt;
     uint8_t bytes_written = SPI_send(tx_buf, len, tx_buf);
 
+    //*** Debug ***
+    uint8_t debug[3] = {READ, 0x31, 0x00};  //TXB0SIDH
+    SPI_send(debug, 3, debug);
+    printf("TXB0SIDH: %02x\n", debug[2]);
+    uint8_t debug[3] = {READ, 0x32, 0x00};  //TXB0SIDL
+    SPI_send(debug, 3, debug);
+    printf("TXB0SIDL: %02x\n", debug[2]);
+    
     if (bytes_written == len) {
         // P64, P66 RTS
         uint8_t txb_ctrl_buf[1];
-        txb_ctrl_buf[0] = RTS & (0b00000001 << n);
+        txb_ctrl_buf[0] = RTS + (0b00000001 << n);
         bytes_written = SPI_send(txb_ctrl_buf, 1, txb_ctrl_buf);
         if (bytes_written == 1) {
             return true;
@@ -184,20 +205,23 @@ void can_status_check(void) {
     // P67
     uint8_t can_status_buf[2] = {READ_STATUS, 0x00}; 
     uint8_t bytes_written = SPI_send(can_status_buf, 2, can_status_buf);
-    uint8_t status = can_status_buf[0];
-    if (status != 0x00) {
+    uint8_t status = can_status_buf[1];
+    if (status == 0x00) {
         return;
-    } else if (status & (RX0IF_MASK > 0)) {
+    } else if ((status & RX0IF_MASK) > 0) {
+        printf("RX0IF is on\n");
         can_receive(0);
-    } else if (status & (RX1IF_MASK > 0)) {
+    } else if ((status & RX1IF_MASK) > 0) {
+        printf("RX1IF is on\n");
         can_receive(1);
-    } else if (status & (TX0IF_MASK > 0)) {
+    } else if ((status & TX0IF_MASK) > 0) {
         can_txf_clear(0);
-    } else if (status & (TX1IF_MASK > 0)) {
+    } else if ((status & TX1IF_MASK) > 0) {
         can_txf_clear(1);        
-    } else if (status & (TX2IF_MASK > 0)) {
+    } else if ((status & TX2IF_MASK) > 0) {
         can_txf_clear(2);
     }
+    return;
 }
 
 void main(void)
@@ -217,23 +241,31 @@ void main(void)
         if (EUSART_DataReady) {
             c = EUSART_Read();
             printf("%c", c);
-            LED = !LED;
+            //LED = !LED;
             
             buf[cnt] = c;
             if (c == '\n') {
                 buf[cnt] = '\0';
                 if (buf[0] == '@') {  // SID
                     uint16_t sid = atoi(&buf[1]);
-                    set_sid(atoi(sid));
+                    set_sid(sid);
                 } else {
-                    can_send(0, buf, cnt);
-                    printf("CAN message sent: %s\n", buf);
+                    bool rc = can_send(0, buf, cnt);
+                    if (rc) {
+                        printf("CAN message sent: %s\n", buf);
+                    } else {
+                        printf("Unable to send message\n");
+                    }
                 }
                 cnt = 0;
             } else if (++cnt > max_char) {
                 buf[cnt] = '\0';
-                can_send(0, buf, cnt);
-                printf("\nCAN message sent: %s\n", buf);
+                bool rc = can_send(0, buf, cnt);
+                if (rc) {
+                    printf("\nCAN message sent: %s\n", buf);
+                } else {
+                        printf("\nUnable to send message\n");                    
+                }
                 cnt = 0;
             }
             

@@ -3824,14 +3824,14 @@ extern char * ftoa(float f, int * status);
 # 7 "main.c"
 const uint8_t max_char = 9 - 1;
 
-# 25
+# 28
 const uint8_t nm[2] = {0b00, 0b10};
 
 
 
 const uint8_t abc[3] = {0b000, 0b010, 0b100};
 
-# 43
+# 46
 typedef struct {
 uint8_t sidh;
 uint8_t sidl;
@@ -3843,13 +3843,13 @@ uint8_t buf[9];
 uint8_t c;
 uint8_t cnt = 0;
 
-# 58
+# 61
 uint8_t tx_buf[14];
 
-# 64
+# 67
 uint8_t rx_buf[15];
 
-# 72
+# 75
 void set_sid (uint16_t can_node) {
 uint8_t sidh = (can_node >> 3) & 0x00ff;
 uint8_t sidl = (can_node << 5) & 0x00e0;
@@ -3861,22 +3861,27 @@ printf("SID set: %02x %02x\n", sidh, sidl);
 uint8_t SPI_send(uint8_t *sbuf, uint8_t len, uint8_t *rbuf) {
 LATAbits.LATA4 = 0;
 uint8_t bytes_written = SPI_Exchange8bitBuffer(sbuf, len, rbuf);
-LATAbits.LATA4 = 0;
+LATAbits.LATA4 = 1;
 return bytes_written;
 }
 
-# 90
+# 93
 bool can_start(void) {
-uint8_t can_ctrl_buf[3] = {0b00000010, 0x0f, 0b000};
+
+uint8_t can_ctrl_buf[3] = {0b00000010, 0x0f, 0b01000000};
 uint8_t bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
 if (bytes_written == 3) {
+can_ctrl_buf[0] = 0b00000011;
+can_ctrl_buf[1] = 0x0e;
+bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
+printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
 return 1;
 } else {
 return 0;
 }
 }
 
-# 103
+# 111
 bool can_txf_clear(uint8_t n) {
 uint8_t mask = 0b00000001 << (n + 2);
 uint8_t can_int_flag[4];
@@ -3892,12 +3897,17 @@ return 0;
 }
 }
 
-# 121
+# 129
 void can_receive(uint8_t n) {
 
-rx_buf[0] = 0b10010000 & (nm[n] << 1);
-uint8_t bytes_read = SPI_send(rx_buf, 14, buf);
+rx_buf[0] = 0b10010000 + (nm[n] << 1);
+uint8_t bytes_read = SPI_send(rx_buf, 14, rx_buf);
 rx_buf[bytes_read] = '\0';
+
+
+printf("RXB0SIDH: %02x\n", rx_buf[1]);
+printf("RXB0SIDL: %02x\n", rx_buf[2]);
+printf("RXB0DLC: %02x\n", rx_buf[5]);
 
 
 uint8_t mask = 0b00000001 << n;
@@ -3909,15 +3919,15 @@ can_int_flag[3] = 0x00;
 uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
 
 
-printf("Message received: %s\n", rx_buf);
+printf("Message received: %s\n", rx_buf[6]);
 }
 
-# 143
+# 156
 bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
 uint8_t i;
 
 
-tx_buf[0] = 0b01000000 & abc[n];
+tx_buf[0] = 0b01000000 + abc[n];
 
 tx_buf[1] = sid.sidh;
 
@@ -3938,10 +3948,18 @@ tx_buf[6+i] = buf[i];
 uint8_t len = 6 + cnt;
 uint8_t bytes_written = SPI_send(tx_buf, len, tx_buf);
 
+
+uint8_t debug[3] = {0b00000011, 0x31, 0x00};
+SPI_send(debug, 3, debug);
+printf("TXB0SIDH: %02x\n", debug[2]);
+uint8_t debug[3] = {0b00000011, 0x32, 0x00};
+SPI_send(debug, 3, debug);
+printf("TXB0SIDL: %02x\n", debug[2]);
+
 if (bytes_written == len) {
 
 uint8_t txb_ctrl_buf[1];
-txb_ctrl_buf[0] = 0b10000000 & (0b00000001 << n);
+txb_ctrl_buf[0] = 0b10000000 + (0b00000001 << n);
 bytes_written = SPI_send(txb_ctrl_buf, 1, txb_ctrl_buf);
 if (bytes_written == 1) {
 return 1;
@@ -3950,25 +3968,28 @@ return 1;
 return 0;
 }
 
-# 183
+# 204
 void can_status_check(void) {
 
 uint8_t can_status_buf[2] = {0b10100000, 0x00};
 uint8_t bytes_written = SPI_send(can_status_buf, 2, can_status_buf);
-uint8_t status = can_status_buf[0];
-if (status != 0x00) {
+uint8_t status = can_status_buf[1];
+if (status == 0x00) {
 return;
-} else if (status & (0b00000001 > 0)) {
+} else if ((status & 0b00000001) > 0) {
+printf("RX0IF is on\n");
 can_receive(0);
-} else if (status & (0b00000010 > 0)) {
+} else if ((status & 0b00000010) > 0) {
+printf("RX1IF is on\n");
 can_receive(1);
-} else if (status & (0b00001000 > 0)) {
+} else if ((status & 0b00001000) > 0) {
 can_txf_clear(0);
-} else if (status & (0b00100000 > 0)) {
+} else if ((status & 0b00100000) > 0) {
 can_txf_clear(1);
-} else if (status & (0b10000000 > 0)) {
+} else if ((status & 0b10000000) > 0) {
 can_txf_clear(2);
 }
+return;
 }
 
 void main(void)
@@ -3988,23 +4009,31 @@ can_status_check();
 if ((PIR1bits.RCIF)) {
 c = EUSART_Read();
 printf("%c", c);
-LATCbits.LATC3 = !LATCbits.LATC3;
+
 
 buf[cnt] = c;
 if (c == '\n') {
 buf[cnt] = '\0';
 if (buf[0] == '@') {
 uint16_t sid = atoi(&buf[1]);
-set_sid(atoi(sid));
+set_sid(sid);
 } else {
-can_send(0, buf, cnt);
+bool rc = can_send(0, buf, cnt);
+if (rc) {
 printf("CAN message sent: %s\n", buf);
+} else {
+printf("Unable to send message\n");
+}
 }
 cnt = 0;
 } else if (++cnt > max_char) {
 buf[cnt] = '\0';
-can_send(0, buf, cnt);
+bool rc = can_send(0, buf, cnt);
+if (rc) {
 printf("\nCAN message sent: %s\n", buf);
+} else {
+printf("\nUnable to send message\n");
+}
 cnt = 0;
 }
 

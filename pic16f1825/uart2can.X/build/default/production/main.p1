@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"43 main.c
+"46 main.c
 [s S328 `uc 1 `uc 1 ]
 [n S328 . sidh sidl ]
 "195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
@@ -27,14 +27,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS32 ~T0 @X0 0 e@17 ]
 "114 mcc_generated_files/eusart.h
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"1994 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S103 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
-"1993
-[u S102 `S103 1 ]
-[n S102 . . ]
-"2003
-[v _LATCbits `VS102 ~T0 @X0 0 e@270 ]
 "55 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -2757,7 +2749,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> - -> 9 `i -> 1 `i `uc
 ]
 [; ;main.c: 7: const uint8_t max_char = 9 - 1;
-"25
+"28
 [v _nm `Cuc ~T0 @X0 -> 2 `i e ]
 [i _nm
 :U ..
@@ -2765,8 +2757,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 2 `i `uc
 ..
 ]
-[; ;main.c: 25: const uint8_t nm[2] = {0b00, 0b10};
-"29
+[; ;main.c: 28: const uint8_t nm[2] = {0b00, 0b10};
+"32
 [v _abc `Cuc ~T0 @X0 -> 3 `i e ]
 [i _abc
 :U ..
@@ -2775,550 +2767,658 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 4 `i `uc
 ..
 ]
-[; ;main.c: 29: const uint8_t abc[3] = {0b000, 0b010, 0b100};
-[; ;main.c: 43: typedef struct {
-[; ;main.c: 44: uint8_t sidh;
-[; ;main.c: 45: uint8_t sidl;
-[; ;main.c: 46: } SID;
-"48
-[v _sid `S328 ~T0 @X0 1 e ]
-[; ;main.c: 48: SID sid;
-"50
-[v _buf `uc ~T0 @X0 -> 9 `i e ]
-[; ;main.c: 50: uint8_t buf[9];
+[; ;main.c: 32: const uint8_t abc[3] = {0b000, 0b010, 0b100};
+[; ;main.c: 46: typedef struct {
+[; ;main.c: 47: uint8_t sidh;
+[; ;main.c: 48: uint8_t sidl;
+[; ;main.c: 49: } SID;
 "51
+[v _sid `S328 ~T0 @X0 1 e ]
+[; ;main.c: 51: SID sid;
+"53
+[v _buf `uc ~T0 @X0 -> 9 `i e ]
+[; ;main.c: 53: uint8_t buf[9];
+"54
 [v _c `uc ~T0 @X0 1 e ]
-[; ;main.c: 51: uint8_t c;
-"52
+[; ;main.c: 54: uint8_t c;
+"55
 [v _cnt `uc ~T0 @X0 1 e ]
 [i _cnt
 -> -> 0 `i `uc
 ]
-[; ;main.c: 52: uint8_t cnt = 0;
-"58
+[; ;main.c: 55: uint8_t cnt = 0;
+"61
 [v _tx_buf `uc ~T0 @X0 -> 14 `i e ]
-[; ;main.c: 58: uint8_t tx_buf[14];
-"64
+[; ;main.c: 61: uint8_t tx_buf[14];
+"67
 [v _rx_buf `uc ~T0 @X0 -> 15 `i e ]
-[; ;main.c: 64: uint8_t rx_buf[15];
-"72
+[; ;main.c: 67: uint8_t rx_buf[15];
+"75
 [v _set_sid `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 72: void set_sid (uint16_t can_node) {
+[; ;main.c: 75: void set_sid (uint16_t can_node) {
 [e :U _set_sid ]
 [v _can_node `ui ~T0 @X0 1 r1 ]
 [f ]
-"73
-[v _sidh `uc ~T0 @X0 1 a ]
-[; ;main.c: 73: uint8_t sidh = (can_node >> 3) & 0x00ff;
-[e = _sidh -> & >> _can_node -> 3 `i -> -> 255 `i `ui `uc ]
-"74
-[v _sidl `uc ~T0 @X0 1 a ]
-[; ;main.c: 74: uint8_t sidl = (can_node << 5) & 0x00e0;
-[e = _sidl -> & << _can_node -> 5 `i -> -> 224 `i `ui `uc ]
-[; ;main.c: 75: sid.sidh = sidh;
-"75
-[e = . _sid 0 _sidh ]
-[; ;main.c: 76: sid.sidl = sidl;
 "76
-[e = . _sid 1 _sidl ]
-[; ;main.c: 77: printf("SID set: %02x %02x\n", sidh, sidl);
+[v _sidh `uc ~T0 @X0 1 a ]
+[; ;main.c: 76: uint8_t sidh = (can_node >> 3) & 0x00ff;
+[e = _sidh -> & >> _can_node -> 3 `i -> -> 255 `i `ui `uc ]
 "77
-[e ( _printf , , (. :s 1C -> _sidh `i -> _sidl `i ]
-[; ;main.c: 78: }
+[v _sidl `uc ~T0 @X0 1 a ]
+[; ;main.c: 77: uint8_t sidl = (can_node << 5) & 0x00e0;
+[e = _sidl -> & << _can_node -> 5 `i -> -> 224 `i `ui `uc ]
+[; ;main.c: 78: sid.sidh = sidh;
 "78
+[e = . _sid 0 _sidh ]
+[; ;main.c: 79: sid.sidl = sidl;
+"79
+[e = . _sid 1 _sidl ]
+[; ;main.c: 80: printf("SID set: %02x %02x\n", sidh, sidl);
+"80
+[e ( _printf , , (. :s 1C -> _sidh `i -> _sidl `i ]
+[; ;main.c: 81: }
+"81
 [e :UE 329 ]
 }
-"80
+"83
 [v _SPI_send `(uc ~T0 @X0 1 ef3`*uc`uc`*uc ]
 {
-[; ;main.c: 80: uint8_t SPI_send(uint8_t *sbuf, uint8_t len, uint8_t *rbuf) {
+[; ;main.c: 83: uint8_t SPI_send(uint8_t *sbuf, uint8_t len, uint8_t *rbuf) {
 [e :U _SPI_send ]
 [v _sbuf `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [v _rbuf `*uc ~T0 @X0 1 r3 ]
 [f ]
-[; ;main.c: 81: LATAbits.LATA4 = 0;
-"81
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-"82
-[v _bytes_written `uc ~T0 @X0 1 a ]
-[; ;main.c: 82: uint8_t bytes_written = SPI_Exchange8bitBuffer(sbuf, len, rbuf);
-[e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , _sbuf _len _rbuf ]
-[; ;main.c: 83: LATAbits.LATA4 = 0;
-"83
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 84: return bytes_written;
+[; ;main.c: 84: LATAbits.LATA4 = 0;
 "84
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+"85
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;main.c: 85: uint8_t bytes_written = SPI_Exchange8bitBuffer(sbuf, len, rbuf);
+[e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , _sbuf _len _rbuf ]
+[; ;main.c: 86: LATAbits.LATA4 = 1;
+"86
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 87: return bytes_written;
+"87
 [e ) _bytes_written ]
 [e $UE 330  ]
-[; ;main.c: 85: }
-"85
+[; ;main.c: 88: }
+"88
 [e :UE 330 ]
 }
-"90
+"93
 [v _can_start `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 90: bool can_start(void) {
+[; ;main.c: 93: bool can_start(void) {
 [e :U _can_start ]
 [f ]
 [v F2930 `uc ~T0 @X0 -> 3 `i s ]
 [i F2930
 :U ..
-"91
+"95
 -> -> 2 `i `uc
 -> -> 15 `i `uc
--> -> 0 `i `uc
+-> -> 64 `i `uc
 ..
 ]
 [v _can_ctrl_buf `uc ~T0 @X0 -> 3 `i a ]
-[; ;main.c: 91: uint8_t can_ctrl_buf[3] = {0b00000010, 0x0f, 0b000};
+[; ;main.c: 95: uint8_t can_ctrl_buf[3] = {0b00000010, 0x0f, 0b01000000};
 [e = _can_ctrl_buf F2930 ]
-"92
+"96
 [v _bytes_written `uc ~T0 @X0 1 a ]
-[; ;main.c: 92: uint8_t bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
+[; ;main.c: 96: uint8_t bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
 [e = _bytes_written ( _SPI_send (3 , , &U _can_ctrl_buf -> -> 3 `i `uc &U _can_ctrl_buf ]
-[; ;main.c: 93: if (bytes_written == 3) {
-"93
+[; ;main.c: 97: if (bytes_written == 3) {
+"97
 [e $ ! == -> _bytes_written `i -> 3 `i 332  ]
 {
-[; ;main.c: 94: return 1;
-"94
+[; ;main.c: 98: can_ctrl_buf[0] = 0b00000011;
+"98
+[e = *U + &U _can_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux -> -> 3 `i `uc ]
+[; ;main.c: 99: can_ctrl_buf[1] = 0x0e;
+"99
+[e = *U + &U _can_ctrl_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux -> -> 14 `i `uc ]
+[; ;main.c: 100: bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
+"100
+[e = _bytes_written ( _SPI_send (3 , , &U _can_ctrl_buf -> -> 3 `i `uc &U _can_ctrl_buf ]
+[; ;main.c: 101: printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
+"101
+[e ( _printf , (. :s 2C -> *U + &U _can_ctrl_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux `i ]
+[; ;main.c: 102: return 1;
+"102
 [e ) -> -> 1 `i `uc ]
 [e $UE 331  ]
-"95
+"103
 }
-[; ;main.c: 95: } else {
+[; ;main.c: 103: } else {
 [e $U 333  ]
 [e :U 332 ]
 {
-[; ;main.c: 96: return 0;
-"96
+[; ;main.c: 104: return 0;
+"104
 [e ) -> -> 0 `i `uc ]
 [e $UE 331  ]
-"97
+"105
 }
 [e :U 333 ]
-[; ;main.c: 97: }
-[; ;main.c: 98: }
-"98
+[; ;main.c: 105: }
+[; ;main.c: 106: }
+"106
 [e :UE 331 ]
 }
-"103
+"111
 [v _can_txf_clear `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 103: bool can_txf_clear(uint8_t n) {
+[; ;main.c: 111: bool can_txf_clear(uint8_t n) {
 [e :U _can_txf_clear ]
 [v _n `uc ~T0 @X0 1 r1 ]
 [f ]
-"104
+"112
 [v _mask `uc ~T0 @X0 1 a ]
-[; ;main.c: 104: uint8_t mask = 0b00000001 << (n + 2);
+[; ;main.c: 112: uint8_t mask = 0b00000001 << (n + 2);
 [e = _mask -> << -> 1 `i + -> _n `i -> 2 `i `uc ]
-"105
+"113
 [v _can_int_flag `uc ~T0 @X0 -> 4 `i a ]
-[; ;main.c: 105: uint8_t can_int_flag[4];
-[; ;main.c: 106: can_int_flag[0] =0b00000101;
-"106
+[; ;main.c: 113: uint8_t can_int_flag[4];
+[; ;main.c: 114: can_int_flag[0] =0b00000101;
+"114
 [e = *U + &U _can_int_flag * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 5 `i `uc ]
-[; ;main.c: 107: can_int_flag[1] = 0x2c;
-"107
+[; ;main.c: 115: can_int_flag[1] = 0x2c;
+"115
 [e = *U + &U _can_int_flag * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 44 `i `uc ]
-[; ;main.c: 108: can_int_flag[2] = mask;
-"108
+[; ;main.c: 116: can_int_flag[2] = mask;
+"116
 [e = *U + &U _can_int_flag * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux _mask ]
-[; ;main.c: 109: can_int_flag[3] = 0x00;
-"109
+[; ;main.c: 117: can_int_flag[3] = 0x00;
+"117
 [e = *U + &U _can_int_flag * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 0 `i `uc ]
-"110
+"118
 [v _bytes_written `uc ~T0 @X0 1 a ]
-[; ;main.c: 110: uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
+[; ;main.c: 118: uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
 [e = _bytes_written ( _SPI_send (3 , , &U _can_int_flag -> -> 4 `i `uc &U _can_int_flag ]
-[; ;main.c: 111: if (bytes_written == 4) {
-"111
+[; ;main.c: 119: if (bytes_written == 4) {
+"119
 [e $ ! == -> _bytes_written `i -> 4 `i 335  ]
 {
-[; ;main.c: 112: return 1;
-"112
+[; ;main.c: 120: return 1;
+"120
 [e ) -> -> 1 `i `uc ]
 [e $UE 334  ]
-"113
+"121
 }
-[; ;main.c: 113: } else {
+[; ;main.c: 121: } else {
 [e $U 336  ]
 [e :U 335 ]
 {
-[; ;main.c: 114: return 0;
-"114
+[; ;main.c: 122: return 0;
+"122
 [e ) -> -> 0 `i `uc ]
 [e $UE 334  ]
-"115
+"123
 }
 [e :U 336 ]
-[; ;main.c: 115: }
-[; ;main.c: 116: }
-"116
+[; ;main.c: 123: }
+[; ;main.c: 124: }
+"124
 [e :UE 334 ]
 }
-"121
+"129
 [v _can_receive `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 121: void can_receive(uint8_t n) {
+[; ;main.c: 129: void can_receive(uint8_t n) {
 [e :U _can_receive ]
 [v _n `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 123: rx_buf[0] = 0b10010000 & (nm[n] << 1);
-"123
-[e = *U + &U _rx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux -> & -> 144 `i << -> *U + &U _nm * -> _n `ux -> -> # *U &U _nm `ui `ux `i -> 1 `i `uc ]
-"124
-[v _bytes_read `uc ~T0 @X0 1 a ]
-[; ;main.c: 124: uint8_t bytes_read = SPI_send(rx_buf, 14, buf);
-[e = _bytes_read ( _SPI_send (3 , , &U _rx_buf -> -> 14 `i `uc &U _buf ]
-[; ;main.c: 125: rx_buf[bytes_read] = '\0';
-"125
-[e = *U + &U _rx_buf * -> _bytes_read `ux -> -> # *U &U _rx_buf `ui `ux -> -> 0 `ui `uc ]
-"128
-[v _mask `uc ~T0 @X0 1 a ]
-[; ;main.c: 128: uint8_t mask = 0b00000001 << n;
-[e = _mask -> << -> 1 `i _n `uc ]
-"129
-[v _can_int_flag `uc ~T0 @X0 -> 4 `i a ]
-[; ;main.c: 129: uint8_t can_int_flag[4];
-[; ;main.c: 130: can_int_flag[0] = 0b00000101;
-"130
-[e = *U + &U _can_int_flag * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 5 `i `uc ]
-[; ;main.c: 131: can_int_flag[1] = 0x2c;
+[; ;main.c: 131: rx_buf[0] = 0b10010000 + (nm[n] << 1);
 "131
-[e = *U + &U _can_int_flag * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 44 `i `uc ]
-[; ;main.c: 132: can_int_flag[2] = mask;
+[e = *U + &U _rx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux -> + -> 144 `i << -> *U + &U _nm * -> _n `ux -> -> # *U &U _nm `ui `ux `i -> 1 `i `uc ]
 "132
-[e = *U + &U _can_int_flag * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux _mask ]
-[; ;main.c: 133: can_int_flag[3] = 0x00;
+[v _bytes_read `uc ~T0 @X0 1 a ]
+[; ;main.c: 132: uint8_t bytes_read = SPI_send(rx_buf, 14, rx_buf);
+[e = _bytes_read ( _SPI_send (3 , , &U _rx_buf -> -> 14 `i `uc &U _rx_buf ]
+[; ;main.c: 133: rx_buf[bytes_read] = '\0';
 "133
-[e = *U + &U _can_int_flag * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 0 `i `uc ]
-"134
-[v _bytes_written `uc ~T0 @X0 1 a ]
-[; ;main.c: 134: uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
-[e = _bytes_written ( _SPI_send (3 , , &U _can_int_flag -> -> 4 `i `uc &U _can_int_flag ]
-[; ;main.c: 137: printf("Message received: %s\n", rx_buf);
+[e = *U + &U _rx_buf * -> _bytes_read `ux -> -> # *U &U _rx_buf `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 136: printf("RXB0SIDH: %02x\n", rx_buf[1]);
+"136
+[e ( _printf , (. :s 3C -> *U + &U _rx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+[; ;main.c: 137: printf("RXB0SIDL: %02x\n", rx_buf[2]);
 "137
-[e ( _printf , (. :s 2C -> &U _rx_buf `*Cuc ]
-[; ;main.c: 138: }
+[e ( _printf , (. :s 4C -> *U + &U _rx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+[; ;main.c: 138: printf("RXB0DLC: %02x\n", rx_buf[5]);
 "138
+[e ( _printf , (. :s 5C -> *U + &U _rx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+"141
+[v _mask `uc ~T0 @X0 1 a ]
+[; ;main.c: 141: uint8_t mask = 0b00000001 << n;
+[e = _mask -> << -> 1 `i _n `uc ]
+"142
+[v _can_int_flag `uc ~T0 @X0 -> 4 `i a ]
+[; ;main.c: 142: uint8_t can_int_flag[4];
+[; ;main.c: 143: can_int_flag[0] = 0b00000101;
+"143
+[e = *U + &U _can_int_flag * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 5 `i `uc ]
+[; ;main.c: 144: can_int_flag[1] = 0x2c;
+"144
+[e = *U + &U _can_int_flag * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 44 `i `uc ]
+[; ;main.c: 145: can_int_flag[2] = mask;
+"145
+[e = *U + &U _can_int_flag * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux _mask ]
+[; ;main.c: 146: can_int_flag[3] = 0x00;
+"146
+[e = *U + &U _can_int_flag * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 0 `i `uc ]
+"147
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;main.c: 147: uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
+[e = _bytes_written ( _SPI_send (3 , , &U _can_int_flag -> -> 4 `i `uc &U _can_int_flag ]
+[; ;main.c: 150: printf("Message received: %s\n", rx_buf[6]);
+"150
+[e ( _printf , (. :s 6C -> *U + &U _rx_buf * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+[; ;main.c: 151: }
+"151
 [e :UE 337 ]
 }
-"143
+"156
 [v _can_send `(uc ~T0 @X0 1 ef3`uc`*uc`uc ]
 {
-[; ;main.c: 143: bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
+[; ;main.c: 156: bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
 [e :U _can_send ]
 [v _n `uc ~T0 @X0 1 r1 ]
 [v _buf `*uc ~T0 @X0 1 r2 ]
 [v _cnt `uc ~T0 @X0 1 r3 ]
 [f ]
-"144
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 144: uint8_t i;
-[; ;main.c: 147: tx_buf[0] = 0b01000000 & abc[n];
-"147
-[e = *U + &U _tx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> & -> 64 `i -> *U + &U _abc * -> _n `ux -> -> # *U &U _abc `ui `ux `i `uc ]
-[; ;main.c: 149: tx_buf[1] = sid.sidh;
-"149
-[e = *U + &U _tx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 0 ]
-[; ;main.c: 151: tx_buf[2] = sid.sidl;
-"151
-[e = *U + &U _tx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 1 ]
-[; ;main.c: 153: tx_buf[3] = 0;
-"153
-[e = *U + &U _tx_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 155: tx_buf[4] = 0;
-"155
-[e = *U + &U _tx_buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 157: tx_buf[5] = cnt;
 "157
-[e = *U + &U _tx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux _cnt ]
-[; ;main.c: 160: for(i=0; i++; i<cnt) {
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 157: uint8_t i;
+[; ;main.c: 160: tx_buf[0] = 0b01000000 + abc[n];
 "160
+[e = *U + &U _tx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> + -> 64 `i -> *U + &U _abc * -> _n `ux -> -> # *U &U _abc `ui `ux `i `uc ]
+[; ;main.c: 162: tx_buf[1] = sid.sidh;
+"162
+[e = *U + &U _tx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 0 ]
+[; ;main.c: 164: tx_buf[2] = sid.sidl;
+"164
+[e = *U + &U _tx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 1 ]
+[; ;main.c: 166: tx_buf[3] = 0;
+"166
+[e = *U + &U _tx_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 168: tx_buf[4] = 0;
+"168
+[e = *U + &U _tx_buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 170: tx_buf[5] = cnt;
+"170
+[e = *U + &U _tx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux _cnt ]
+[; ;main.c: 173: for(i=0; i++; i<cnt) {
+"173
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 342  ]
 [e :U 339 ]
 {
-[; ;main.c: 161: tx_buf[6+i] = buf[i];
-"161
+[; ;main.c: 174: tx_buf[6+i] = buf[i];
+"174
 [e = *U + &U _tx_buf * -> -> + -> 6 `i -> _i `i `ui `ux -> -> # *U &U _tx_buf `ui `ux *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux ]
-"162
+"175
 }
-"160
+"173
 [e < -> _i `i -> _cnt `i ]
 [e :U 342 ]
 [e $ != -> ++ _i -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 339  ]
 [e :U 340 ]
-"162
-}
-"165
-[v _len `uc ~T0 @X0 1 a ]
-[; ;main.c: 162: }
-[; ;main.c: 165: uint8_t len = 6 + cnt;
-[e = _len -> + -> 6 `i -> _cnt `i `uc ]
-"166
-[v _bytes_written `uc ~T0 @X0 1 a ]
-[; ;main.c: 166: uint8_t bytes_written = SPI_send(tx_buf, len, tx_buf);
-[e = _bytes_written ( _SPI_send (3 , , &U _tx_buf _len &U _tx_buf ]
-[; ;main.c: 168: if (bytes_written == len) {
-"168
-[e $ ! == -> _bytes_written `i -> _len `i 343  ]
-{
-"170
-[v _txb_ctrl_buf `uc ~T0 @X0 -> -> 1 `i `ux a ]
-[; ;main.c: 170: uint8_t txb_ctrl_buf[1];
-[; ;main.c: 171: txb_ctrl_buf[0] = 0b10000000 & (0b00000001 << n);
-"171
-[e = *U + &U _txb_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txb_ctrl_buf `ui `ux -> & -> 128 `i << -> 1 `i _n `uc ]
-[; ;main.c: 172: bytes_written = SPI_send(txb_ctrl_buf, 1, txb_ctrl_buf);
-"172
-[e = _bytes_written ( _SPI_send (3 , , &U _txb_ctrl_buf -> -> 1 `i `uc &U _txb_ctrl_buf ]
-[; ;main.c: 173: if (bytes_written == 1) {
-"173
-[e $ ! == -> _bytes_written `i -> 1 `i 344  ]
-{
-[; ;main.c: 174: return 1;
-"174
-[e ) -> -> 1 `i `uc ]
-[e $UE 338  ]
 "175
 }
-[e :U 344 ]
-"176
-}
-[e :U 343 ]
-[; ;main.c: 175: }
-[; ;main.c: 176: }
-[; ;main.c: 177: return 0;
-"177
-[e ) -> -> 0 `i `uc ]
-[e $UE 338  ]
-[; ;main.c: 178: }
 "178
-[e :UE 338 ]
-}
+[v _len `uc ~T0 @X0 1 a ]
+[; ;main.c: 175: }
+[; ;main.c: 178: uint8_t len = 6 + cnt;
+[e = _len -> + -> 6 `i -> _cnt `i `uc ]
+"179
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;main.c: 179: uint8_t bytes_written = SPI_send(tx_buf, len, tx_buf);
+[e = _bytes_written ( _SPI_send (3 , , &U _tx_buf _len &U _tx_buf ]
+[v F2951 `uc ~T0 @X0 -> 3 `i s ]
+[i F2951
+:U ..
+"182
+-> -> 3 `i `uc
+-> -> 49 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _debug `uc ~T0 @X0 -> 3 `i a ]
+[; ;main.c: 182: uint8_t debug[3] = {0b00000011, 0x31, 0x00};
+[e = _debug F2951 ]
+[; ;main.c: 183: SPI_send(debug, 3, debug);
 "183
-[v _can_status_check `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 183: void can_status_check(void) {
-[e :U _can_status_check ]
-[f ]
-[v F2954 `uc ~T0 @X0 -> 2 `i s ]
-[i F2954
+[e ( _SPI_send (3 , , &U _debug -> -> 3 `i `uc &U _debug ]
+[; ;main.c: 184: printf("TXB0SIDH: %02x\n", debug[2]);
+"184
+[e ( _printf , (. :s 7C -> *U + &U _debug * -> -> -> 2 `i `ui `ux -> -> # *U &U _debug `ui `ux `i ]
+[v F2952 `uc ~T0 @X0 -> 3 `i s ]
+[i F2952
 :U ..
 "185
+-> -> 3 `i `uc
+-> -> 50 `i `uc
+-> -> 0 `i `uc
+..
+]
+[; ;main.c: 185: uint8_t debug[3] = {0b00000011, 0x32, 0x00};
+[e = _debug F2952 ]
+[; ;main.c: 186: SPI_send(debug, 3, debug);
+"186
+[e ( _SPI_send (3 , , &U _debug -> -> 3 `i `uc &U _debug ]
+[; ;main.c: 187: printf("TXB0SIDL: %02x\n", debug[2]);
+"187
+[e ( _printf , (. :s 8C -> *U + &U _debug * -> -> -> 2 `i `ui `ux -> -> # *U &U _debug `ui `ux `i ]
+[; ;main.c: 189: if (bytes_written == len) {
+"189
+[e $ ! == -> _bytes_written `i -> _len `i 343  ]
+{
+"191
+[v _txb_ctrl_buf `uc ~T0 @X0 -> -> 1 `i `ux a ]
+[; ;main.c: 191: uint8_t txb_ctrl_buf[1];
+[; ;main.c: 192: txb_ctrl_buf[0] = 0b10000000 + (0b00000001 << n);
+"192
+[e = *U + &U _txb_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txb_ctrl_buf `ui `ux -> + -> 128 `i << -> 1 `i _n `uc ]
+[; ;main.c: 193: bytes_written = SPI_send(txb_ctrl_buf, 1, txb_ctrl_buf);
+"193
+[e = _bytes_written ( _SPI_send (3 , , &U _txb_ctrl_buf -> -> 1 `i `uc &U _txb_ctrl_buf ]
+[; ;main.c: 194: if (bytes_written == 1) {
+"194
+[e $ ! == -> _bytes_written `i -> 1 `i 344  ]
+{
+[; ;main.c: 195: return 1;
+"195
+[e ) -> -> 1 `i `uc ]
+[e $UE 338  ]
+"196
+}
+[e :U 344 ]
+"197
+}
+[e :U 343 ]
+[; ;main.c: 196: }
+[; ;main.c: 197: }
+[; ;main.c: 198: return 0;
+"198
+[e ) -> -> 0 `i `uc ]
+[e $UE 338  ]
+[; ;main.c: 199: }
+"199
+[e :UE 338 ]
+}
+"204
+[v _can_status_check `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 204: void can_status_check(void) {
+[e :U _can_status_check ]
+[f ]
+[v F2957 `uc ~T0 @X0 -> 2 `i s ]
+[i F2957
+:U ..
+"206
 -> -> 160 `i `uc
 -> -> 0 `i `uc
 ..
 ]
 [v _can_status_buf `uc ~T0 @X0 -> 2 `i a ]
-[; ;main.c: 185: uint8_t can_status_buf[2] = {0b10100000, 0x00};
-[e = _can_status_buf F2954 ]
-"186
+[; ;main.c: 206: uint8_t can_status_buf[2] = {0b10100000, 0x00};
+[e = _can_status_buf F2957 ]
+"207
 [v _bytes_written `uc ~T0 @X0 1 a ]
-[; ;main.c: 186: uint8_t bytes_written = SPI_send(can_status_buf, 2, can_status_buf);
+[; ;main.c: 207: uint8_t bytes_written = SPI_send(can_status_buf, 2, can_status_buf);
 [e = _bytes_written ( _SPI_send (3 , , &U _can_status_buf -> -> 2 `i `uc &U _can_status_buf ]
-"187
+"208
 [v _status `uc ~T0 @X0 1 a ]
-[; ;main.c: 187: uint8_t status = can_status_buf[0];
-[e = _status *U + &U _can_status_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_status_buf `ui `ux ]
-[; ;main.c: 188: if (status != 0x00) {
-"188
-[e $ ! != -> _status `i -> 0 `i 346  ]
+[; ;main.c: 208: uint8_t status = can_status_buf[1];
+[e = _status *U + &U _can_status_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_status_buf `ui `ux ]
+[; ;main.c: 209: if (status == 0x00) {
+"209
+[e $ ! == -> _status `i -> 0 `i 346  ]
 {
-[; ;main.c: 189: return;
-"189
+[; ;main.c: 210: return;
+"210
 [e $UE 345  ]
-"190
+"211
 }
-[; ;main.c: 190: } else if (status & (0b00000001 > 0)) {
+[; ;main.c: 211: } else if ((status & 0b00000001) > 0) {
 [e $U 347  ]
 [e :U 346 ]
-[e $ ! != & -> _status `i -> > -> 1 `i -> 0 `i `i -> 0 `i 348  ]
+[e $ ! > & -> _status `i -> 1 `i -> 0 `i 348  ]
 {
-[; ;main.c: 191: can_receive(0);
-"191
+[; ;main.c: 212: printf("RX0IF is on\n");
+"212
+[e ( _printf :s 9C ]
+[; ;main.c: 213: can_receive(0);
+"213
 [e ( _can_receive (1 -> -> 0 `i `uc ]
-"192
+"214
 }
-[; ;main.c: 192: } else if (status & (0b00000010 > 0)) {
+[; ;main.c: 214: } else if ((status & 0b00000010) > 0) {
 [e $U 349  ]
 [e :U 348 ]
-[e $ ! != & -> _status `i -> > -> 2 `i -> 0 `i `i -> 0 `i 350  ]
+[e $ ! > & -> _status `i -> 2 `i -> 0 `i 350  ]
 {
-[; ;main.c: 193: can_receive(1);
-"193
+[; ;main.c: 215: printf("RX1IF is on\n");
+"215
+[e ( _printf :s 10C ]
+[; ;main.c: 216: can_receive(1);
+"216
 [e ( _can_receive (1 -> -> 1 `i `uc ]
-"194
+"217
 }
-[; ;main.c: 194: } else if (status & (0b00001000 > 0)) {
+[; ;main.c: 217: } else if ((status & 0b00001000) > 0) {
 [e $U 351  ]
 [e :U 350 ]
-[e $ ! != & -> _status `i -> > -> 8 `i -> 0 `i `i -> 0 `i 352  ]
+[e $ ! > & -> _status `i -> 8 `i -> 0 `i 352  ]
 {
-[; ;main.c: 195: can_txf_clear(0);
-"195
+[; ;main.c: 218: can_txf_clear(0);
+"218
 [e ( _can_txf_clear (1 -> -> 0 `i `uc ]
-"196
+"219
 }
-[; ;main.c: 196: } else if (status & (0b00100000 > 0)) {
+[; ;main.c: 219: } else if ((status & 0b00100000) > 0) {
 [e $U 353  ]
 [e :U 352 ]
-[e $ ! != & -> _status `i -> > -> 32 `i -> 0 `i `i -> 0 `i 354  ]
+[e $ ! > & -> _status `i -> 32 `i -> 0 `i 354  ]
 {
-[; ;main.c: 197: can_txf_clear(1);
-"197
+[; ;main.c: 220: can_txf_clear(1);
+"220
 [e ( _can_txf_clear (1 -> -> 1 `i `uc ]
-"198
+"221
 }
-[; ;main.c: 198: } else if (status & (0b10000000 > 0)) {
+[; ;main.c: 221: } else if ((status & 0b10000000) > 0) {
 [e $U 355  ]
 [e :U 354 ]
-[e $ ! != & -> _status `i -> > -> 128 `i -> 0 `i `i -> 0 `i 356  ]
+[e $ ! > & -> _status `i -> 128 `i -> 0 `i 356  ]
 {
-[; ;main.c: 199: can_txf_clear(2);
-"199
+[; ;main.c: 222: can_txf_clear(2);
+"222
 [e ( _can_txf_clear (1 -> -> 2 `i `uc ]
-"200
+"223
 }
 [e :U 356 ]
-"201
+"224
 [e :U 355 ]
 [e :U 353 ]
 [e :U 351 ]
 [e :U 349 ]
 [e :U 347 ]
-[; ;main.c: 200: }
-[; ;main.c: 201: }
+[; ;main.c: 223: }
+[; ;main.c: 224: return;
+[e $UE 345  ]
+[; ;main.c: 225: }
+"225
 [e :UE 345 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"203
+"227
 [v _main `(v ~T0 @X0 1 ef ]
-"204
+"228
 {
-[; ;main.c: 203: void main(void)
-[; ;main.c: 204: {
+[; ;main.c: 227: void main(void)
+[; ;main.c: 228: {
 [e :U _main ]
 [f ]
-[; ;main.c: 205: SYSTEM_Initialize();
-"205
+[; ;main.c: 229: SYSTEM_Initialize();
+"229
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 210: set_sid(0);
-"210
+[; ;main.c: 234: set_sid(0);
+"234
 [e ( _set_sid (1 -> -> 0 `i `ui ]
-[; ;main.c: 211: can_start();
-"211
+[; ;main.c: 235: can_start();
+"235
 [e ( _can_start ..  ]
-[; ;main.c: 213: while (1)
-"213
+[; ;main.c: 237: while (1)
+"237
 [e :U 359 ]
-[; ;main.c: 214: {
-"214
+[; ;main.c: 238: {
+"238
 {
-[; ;main.c: 215: can_status_check();
-"215
+[; ;main.c: 239: can_status_check();
+"239
 [e ( _can_status_check ..  ]
-[; ;main.c: 217: if ((PIR1bits.RCIF)) {
-"217
+[; ;main.c: 241: if ((PIR1bits.RCIF)) {
+"241
 [e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 361  ]
 {
-[; ;main.c: 218: c = EUSART_Read();
-"218
+[; ;main.c: 242: c = EUSART_Read();
+"242
 [e = _c ( _EUSART_Read ..  ]
-[; ;main.c: 219: printf("%c", c);
-"219
-[e ( _printf , (. :s 3C -> _c `i ]
-[; ;main.c: 220: LATCbits.LATC3 = !LATCbits.LATC3;
-"220
-[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;main.c: 222: buf[cnt] = c;
-"222
+[; ;main.c: 243: printf("%c", c);
+"243
+[e ( _printf , (. :s 11C -> _c `i ]
+[; ;main.c: 246: buf[cnt] = c;
+"246
 [e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux _c ]
-[; ;main.c: 223: if (c == '\n') {
-"223
+[; ;main.c: 247: if (c == '\n') {
+"247
 [e $ ! == -> _c `ui -> 10 `ui 362  ]
 {
-[; ;main.c: 224: buf[cnt] = '\0';
-"224
+[; ;main.c: 248: buf[cnt] = '\0';
+"248
 [e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 225: if (buf[0] == '@') {
-"225
+[; ;main.c: 249: if (buf[0] == '@') {
+"249
 [e $ ! == -> *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 64 `ui 363  ]
 {
 [v _sid `ui ~T0 @X0 1 a ]
-[; ;main.c: 226: uint16_t sid = atoi(&buf[1]);
-"226
+[; ;main.c: 250: uint16_t sid = atoi(&buf[1]);
+"250
 [e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
-[; ;main.c: 227: set_sid(atoi(sid));
-"227
-[e ( _set_sid (1 -> ( _atoi (1 -> _sid `*Cuc `ui ]
-"228
+[; ;main.c: 251: set_sid(sid);
+"251
+[e ( _set_sid (1 _sid ]
+"252
 }
-[; ;main.c: 228: } else {
+[; ;main.c: 252: } else {
 [e $U 364  ]
 [e :U 363 ]
 {
-[; ;main.c: 229: can_send(0, buf, cnt);
-"229
-[e ( _can_send (3 , , -> -> 0 `i `uc &U _buf _cnt ]
-[; ;main.c: 230: printf("CAN message sent: %s\n", buf);
-"230
-[e ( _printf , (. :s 4C -> &U _buf `*Cuc ]
-"231
-}
-[e :U 364 ]
-[; ;main.c: 231: }
-[; ;main.c: 232: cnt = 0;
-"232
-[e = _cnt -> -> 0 `i `uc ]
-"233
-}
-[; ;main.c: 233: } else if (++cnt > max_char) {
-[e $U 365  ]
-[e :U 362 ]
-[e $ ! > -> =+ _cnt -> -> 1 `i `uc `i -> _max_char `i 366  ]
+"253
+[v _rc `uc ~T0 @X0 1 a ]
+[; ;main.c: 253: bool rc = can_send(0, buf, cnt);
+[e = _rc ( _can_send (3 , , -> -> 0 `i `uc &U _buf _cnt ]
+[; ;main.c: 254: if (rc) {
+"254
+[e $ ! != -> _rc `i -> -> -> 0 `i `uc `i 365  ]
 {
-[; ;main.c: 234: buf[cnt] = '\0';
-"234
-[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 235: can_send(0, buf, cnt);
-"235
-[e ( _can_send (3 , , -> -> 0 `i `uc &U _buf _cnt ]
-[; ;main.c: 236: printf("\nCAN message sent: %s\n", buf);
-"236
-[e ( _printf , (. :s 5C -> &U _buf `*Cuc ]
-[; ;main.c: 237: cnt = 0;
-"237
-[e = _cnt -> -> 0 `i `uc ]
-"238
+[; ;main.c: 255: printf("CAN message sent: %s\n", buf);
+"255
+[e ( _printf , (. :s 12C -> &U _buf `*Cuc ]
+"256
+}
+[; ;main.c: 256: } else {
+[e $U 366  ]
+[e :U 365 ]
+{
+[; ;main.c: 257: printf("Unable to send message\n");
+"257
+[e ( _printf :s 13C ]
+"258
 }
 [e :U 366 ]
-"240
-[e :U 365 ]
+"259
+}
+[e :U 364 ]
+[; ;main.c: 258: }
+[; ;main.c: 259: }
+[; ;main.c: 260: cnt = 0;
+"260
+[e = _cnt -> -> 0 `i `uc ]
+"261
+}
+[; ;main.c: 261: } else if (++cnt > max_char) {
+[e $U 367  ]
+[e :U 362 ]
+[e $ ! > -> =+ _cnt -> -> 1 `i `uc `i -> _max_char `i 368  ]
+{
+[; ;main.c: 262: buf[cnt] = '\0';
+"262
+[e = *U + &U _buf * -> _cnt `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
+"263
+[v _rc `uc ~T0 @X0 1 a ]
+[; ;main.c: 263: bool rc = can_send(0, buf, cnt);
+[e = _rc ( _can_send (3 , , -> -> 0 `i `uc &U _buf _cnt ]
+[; ;main.c: 264: if (rc) {
+"264
+[e $ ! != -> _rc `i -> -> -> 0 `i `uc `i 369  ]
+{
+[; ;main.c: 265: printf("\nCAN message sent: %s\n", buf);
+"265
+[e ( _printf , (. :s 14C -> &U _buf `*Cuc ]
+"266
+}
+[; ;main.c: 266: } else {
+[e $U 370  ]
+[e :U 369 ]
+{
+[; ;main.c: 267: printf("\nUnable to send message\n");
+"267
+[e ( _printf :s 15C ]
+"268
+}
+[e :U 370 ]
+[; ;main.c: 268: }
+[; ;main.c: 269: cnt = 0;
+"269
+[e = _cnt -> -> 0 `i `uc ]
+"270
+}
+[e :U 368 ]
+"272
+[e :U 367 ]
 }
 [e :U 361 ]
-"241
+"273
 }
 [e :U 358 ]
-"213
+"237
 [e $U 359  ]
 [e :U 360 ]
-[; ;main.c: 238: }
-[; ;main.c: 240: }
-[; ;main.c: 241: }
-[; ;main.c: 242: }
-"242
+[; ;main.c: 270: }
+[; ;main.c: 272: }
+[; ;main.c: 273: }
+[; ;main.c: 274: }
+"274
 [e :UE 357 ]
 }
 [p f _printf 13402116 ]
-[a 3C 37 99 0 ]
+[a 11C 37 99 0 ]
 [a 1C 83 73 68 32 115 101 116 58 32 37 48 50 120 32 37 48 50 120 10 0 ]
-[a 5C 10 67 65 78 32 109 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
-[a 4C 67 65 78 32 109 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
-[a 2C 77 101 115 115 97 103 101 32 114 101 99 101 105 118 101 100 58 32 37 115 10 0 ]
+[a 2C 67 65 78 83 84 65 84 58 32 37 48 50 120 10 0 ]
+[a 8C 84 88 66 48 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 4C 82 88 66 48 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 7C 84 88 66 48 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 3C 82 88 66 48 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 5C 82 88 66 48 68 76 67 58 32 37 48 50 120 10 0 ]
+[a 14C 10 67 65 78 32 109 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
+[a 12C 67 65 78 32 109 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
+[a 6C 77 101 115 115 97 103 101 32 114 101 99 101 105 118 101 100 58 32 37 115 10 0 ]
+[a 10C 82 88 49 73 70 32 105 115 32 111 110 10 0 ]
+[a 9C 82 88 48 73 70 32 105 115 32 111 110 10 0 ]
+[a 15C 10 85 110 97 98 108 101 32 116 111 32 115 101 110 100 32 109 101 115 115 97 103 101 10 0 ]
+[a 13C 85 110 97 98 108 101 32 116 111 32 115 101 110 100 32 109 101 115 115 97 103 101 10 0 ]

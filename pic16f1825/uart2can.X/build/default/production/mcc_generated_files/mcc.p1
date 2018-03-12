@@ -15,8 +15,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
 "2310
 [v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"6754
-[v _PLLR `Vb ~T0 @X0 0 e@1238 ]
 "1493
 [v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
 "49 mcc_generated_files/mcc.c
@@ -42,7 +40,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "61
 [p x WRT=OFF ]
 "62
-[p x PLLEN=ON ]
+[p x PLLEN=OFF ]
 "63
 [p x STVREN=ON ]
 "64
@@ -2748,45 +2746,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 81: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 83: OSCCON = 0x70;
+[; ;mcc.c: 83: OSCCON = 0x60;
 "83
-[e = _OSCCON -> -> 112 `i `uc ]
+[e = _OSCCON -> -> 96 `i `uc ]
 [; ;mcc.c: 85: OSCTUNE = 0x00;
 "85
 [e = _OSCTUNE -> -> 0 `i `uc ]
 [; ;mcc.c: 87: BORCON = 0x00;
 "87
 [e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 89: while(PLLR == 0)
-"89
-[e $U 326  ]
-[e :U 327 ]
-[; ;mcc.c: 90: {
-"90
-{
-"91
-}
-[e :U 326 ]
-"89
-[e $ == -> _PLLR `i -> 0 `i 327  ]
-[e :U 328 ]
-[; ;mcc.c: 91: }
-[; ;mcc.c: 92: }
-"92
+[; ;mcc.c: 88: }
+"88
 [e :UE 325 ]
 }
-"94
+"90
 [v _WDT_Initialize `(v ~T0 @X0 1 ef ]
-"95
+"91
 {
-[; ;mcc.c: 94: void WDT_Initialize(void)
-[; ;mcc.c: 95: {
+[; ;mcc.c: 90: void WDT_Initialize(void)
+[; ;mcc.c: 91: {
 [e :U _WDT_Initialize ]
 [f ]
-[; ;mcc.c: 97: WDTCON = 0x16;
-"97
+[; ;mcc.c: 93: WDTCON = 0x16;
+"93
 [e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 98: }
-"98
-[e :UE 329 ]
+[; ;mcc.c: 94: }
+"94
+[e :UE 326 ]
 }

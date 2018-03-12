@@ -2661,9 +2661,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.c: 64: {
 [e :U _SPI_Initialize ]
 [f ]
-[; ;spi.c: 68: SSP1STAT = 0x00;
+[; ;spi.c: 68: SSP1STAT = 0x40;
 "68
-[e = _SSP1STAT -> -> 0 `i `uc ]
+[e = _SSP1STAT -> -> 64 `i `uc ]
 [; ;spi.c: 71: SSP1CON1 = 0x20;
 "71
 [e = _SSP1CON1 -> -> 32 `i `uc ]
