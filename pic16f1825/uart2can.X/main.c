@@ -130,14 +130,17 @@ void can_receive(uint8_t n) {
     // P65
     rx_buf[0] = READ_RX_BUFFER + (nm[n] << 1);
     uint8_t bytes_read = SPI_send(rx_buf, 14, rx_buf);
-    rx_buf[bytes_read] = '\0';
+    uint8_t dlc = rx_buf[5];
+    rx_buf[6+dlc] = '\0';
     
     /*** debug ***/
     printf("RXB0SIDH: %02x\n", rx_buf[1]);
     printf("RXB0SIDL: %02x\n", rx_buf[2]);    
     printf("RXB0DLC: %02x\n", rx_buf[5]);    
+    printf("RXB0D0: %02x\n", rx_buf[6]);
     
     // P51
+    // This is unnecessary? See P63
     uint8_t mask = 0b00000001 << n;  //RXnIF interrupt pending
     uint8_t can_int_flag[4];
     can_int_flag[0] = BIT_MODIFY;
@@ -147,7 +150,7 @@ void can_receive(uint8_t n) {
     uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
     
     // Output the received message from CAN bus
-    printf("Message received: %s\n", rx_buf[6]);
+    printf("Message received: %s\n", &rx_buf[6]);
 }
 
 /*
@@ -170,8 +173,9 @@ bool can_send(uint8_t n, uint8_t *buf, uint8_t cnt) {
     tx_buf[5] = cnt;
 
     // Copy buffer
-    for(i=0; i++; i<cnt) {
+    for(i=0; i<cnt; i++) {
         tx_buf[6+i] = buf[i];
+        printf("Copying buffer: %c\n", tx_buf[6+i]);
     }
 
     // P66 Load TX buffer
@@ -252,7 +256,7 @@ void main(void)
                 } else {
                     bool rc = can_send(0, buf, cnt);
                     if (rc) {
-                        printf("CAN message sent: %s\n", buf);
+                        printf("Message sent: %s\n", buf);
                     } else {
                         printf("Unable to send message\n");
                     }
@@ -262,9 +266,9 @@ void main(void)
                 buf[cnt] = '\0';
                 bool rc = can_send(0, buf, cnt);
                 if (rc) {
-                    printf("\nCAN message sent: %s\n", buf);
+                    printf("\nMessage sent: %s\n", buf);
                 } else {
-                        printf("\nUnable to send message\n");                    
+                    printf("\nUnable to send message\n");                    
                 }
                 cnt = 0;
             }

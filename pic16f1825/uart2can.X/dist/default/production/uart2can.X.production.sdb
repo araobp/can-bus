@@ -31,11 +31,11 @@
 [v _can_txf_clear can_txf_clear `(uc  1 e 1 0 ]
 "129
 [v _can_receive can_receive `(v  1 e 1 0 ]
-"156
+"159
 [v _can_send can_send `(uc  1 e 1 0 ]
-"204
+"208
 [v _can_status_check can_status_check `(v  1 e 1 0 ]
-"227
+"231
 [v _main main `(v  1 e 1 0 ]
 "53 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -207,16 +207,16 @@
 [v _tx_buf tx_buf `[14]uc  1 e 14 0 ]
 "67
 [v _rx_buf rx_buf `[15]uc  1 e 15 0 ]
-"227
+"231
 [v _main main `(v  1 e 1 0 ]
 {
+"257
+[v main@rc rc `uc  1 a 1 41 ]
 "253
-[v main@rc rc `uc  1 a 1 40 ]
-"249
-[v main@sid sid `ui  1 a 2 38 ]
-"263
-[v main@rc_383 rc `uc  1 a 1 41 ]
-"274
+[v main@sid sid `ui  1 a 2 39 ]
+"267
+[v main@rc_386 rc `uc  1 a 1 42 ]
+"278
 } 0
 "75
 [v _set_sid set_sid `(v  1 e 1 0 ]
@@ -229,18 +229,18 @@
 [v set_sid@can_node can_node `ui  1 p 2 17 ]
 "81
 } 0
-"204
+"208
 [v _can_status_check can_status_check `(v  1 e 1 0 ]
 {
-"206
-[v can_status_check@can_status_buf can_status_buf `[2]uc  1 a 2 32 ]
+"210
+[v can_status_check@can_status_buf can_status_buf `[2]uc  1 a 2 33 ]
+"212
+[v can_status_check@status status `uc  1 a 1 35 ]
+"211
+[v can_status_check@bytes_written bytes_written `uc  1 a 1 32 ]
 "208
-[v can_status_check@status status `uc  1 a 1 34 ]
-"207
-[v can_status_check@bytes_written bytes_written `uc  1 a 1 31 ]
-"204
-[v can_status_check@F2957 F2957 `[2]uc  1 s 2 F2957 ]
-"225
+[v can_status_check@F2958 F2958 `[2]uc  1 s 2 F2958 ]
+"229
 } 0
 "111
 [v _can_txf_clear can_txf_clear `(uc  1 e 1 0 ]
@@ -261,19 +261,21 @@
 [v _can_receive can_receive `(v  1 e 1 0 ]
 {
 [v can_receive@n n `uc  1 a 1 wreg ]
-"142
-[v can_receive@can_int_flag can_int_flag `[4]uc  1 a 4 23 ]
-"141
-[v can_receive@mask mask `uc  1 a 1 22 ]
+"145
+[v can_receive@can_int_flag can_int_flag `[4]uc  1 a 4 24 ]
+"144
+[v can_receive@mask mask `uc  1 a 1 23 ]
+"133
+[v can_receive@dlc dlc `uc  1 a 1 22 ]
+"150
+[v can_receive@bytes_written bytes_written `uc  1 a 1 21 ]
 "132
-[v can_receive@bytes_read bytes_read `uc  1 a 1 21 ]
-"147
-[v can_receive@bytes_written bytes_written `uc  1 a 1 20 ]
+[v can_receive@bytes_read bytes_read `uc  1 a 1 20 ]
 "129
 [v can_receive@n n `uc  1 a 1 wreg ]
 "131
-[v can_receive@n n `uc  1 a 1 27 ]
-"151
+[v can_receive@n n `uc  1 a 1 28 ]
+"154
 } 0
 "93
 [v _can_start can_start `(uc  1 e 1 0 ]
@@ -286,31 +288,31 @@
 [v can_start@F2930 F2930 `[3]uc  1 s 3 F2930 ]
 "106
 } 0
-"156
+"159
 [v _can_send can_send `(uc  1 e 1 0 ]
 {
 [v can_send@n n `uc  1 a 1 wreg ]
-"191
-[v can_send@txb_ctrl_buf txb_ctrl_buf `[1]uc  1 a 1 29 ]
-"182
+"195
+[v can_send@txb_ctrl_buf txb_ctrl_buf `[1]uc  1 a 1 28 ]
+"186
 [v can_send@debug debug `[3]uc  1 a 3 24 ]
-"157
-[v can_send@i i `uc  1 a 1 28 ]
-"179
+"160
+[v can_send@i i `uc  1 a 1 29 ]
+"183
 [v can_send@bytes_written bytes_written `uc  1 a 1 27 ]
-"178
+"182
 [v can_send@len len `uc  1 a 1 23 ]
-"156
+"159
 [v can_send@n n `uc  1 a 1 wreg ]
 [v can_send@buf buf `*.4uc  1 p 1 17 ]
 [v can_send@cnt cnt `uc  1 p 1 18 ]
-"179
-[v can_send@F2951 F2951 `[3]uc  1 s 3 F2951 ]
-"184
+"183
 [v can_send@F2952 F2952 `[3]uc  1 s 3 F2952 ]
-"160
+"188
+[v can_send@F2953 F2953 `[3]uc  1 s 3 F2953 ]
+"163
 [v can_send@n n `uc  1 a 1 22 ]
-"199
+"203
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
