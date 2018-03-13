@@ -65,7 +65,7 @@ For example, to receive messages with SID 5, 10 and 15:
 ![test](./doc/test.jpg)
 
 My oscilloscope does not seem to be able to catch up with the speed:
-![waveform2)(./doc/waveform2.BMP)
+![waveform2](./doc/waveform2.BMP)
 
 ## Datasheet (Microchip/NXP)
 
