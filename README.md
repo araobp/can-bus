@@ -33,7 +33,7 @@ I want to try out the combination of PIC16F1825 and CAN controller(MCP2515)/tran
 
 ## Development enviroment
 
-Microchip MPLABX
+Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
 
 ## Command (UART/USB)
 
