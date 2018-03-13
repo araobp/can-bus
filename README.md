@@ -60,6 +60,14 @@ For example, to receive messages with SID 5, 10 and 15:
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB19
 ```
 
+## Test
+
+![test](./doc/test.jpg)
+
+My oscilloscope does not seem to be able to catch up with the speed:
+
+![waveform2](./doc/waveform2.BMP)
+
 ## Datasheet (Microchip/NXP)
 
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
