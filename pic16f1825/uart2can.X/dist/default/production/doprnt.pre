@@ -262,7 +262,13 @@ extern double round(double);
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c"
 #pragma warning disable 350
 
-# 362
+# 354
+const static unsigned int dpowers[] = {1, 10, 100, 1000, 10000,
+
+# 359
+};
+
+
 const static unsigned int hexpowers[] = {1, 0x10, 0x100, 0x1000,
 
 # 366
@@ -346,10 +352,17 @@ switch(c = *f++) {
 case 0:
 goto alldone;
 
+# 697
+case 'd':
+case 'i':
+break;
+
 # 718
 case 'x':
 
-# 723
+
+flag |= 0x80;
+
 break;
 
 
@@ -406,17 +419,64 @@ goto dostring;
 # 822
 }
 
-# 1273
+# 1251
+if((flag & 0x80) == 0x00)
+
+{
+
+# 1259
+val = (int)(*(int *)__va_arg((*(int **)ap), (int)0));
+
+if((int)val < 0) {
+flag |= 0x03;
+val = -val;
+}
+
+}
+
+else
+
+
+
+
 {
 
 # 1286
 val = (*(unsigned *)__va_arg((*(unsigned **)ap), (unsigned)0));
 }
 
-# 1316
+# 1294
+switch((unsigned char)(flag & 0x80)) {
+
+
+
+
+case 0x00:
+
+# 1305
+for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
+if(val < dpowers[c])
+break;
+
+break;
+
+
+
+
+case 0x80:
+
 for(c = 1 ; c != sizeof hexpowers/sizeof hexpowers[0] ; c++)
 if(val < hexpowers[c])
 break;
+
+break;
+
+# 1336
+}
+
+# 1345
+if(width && flag & 0x03)
+width--;
 
 # 1381
 if(width > c)
@@ -426,6 +486,12 @@ width = 0;
 
 
 if(flag & 0x04) {
+
+
+
+
+if(flag & 0x03)
+(putch('-') );
 
 # 1415
 if(width)
@@ -445,6 +511,10 @@ do
 (putch(' ') );
 while(--width);
 
+# 1438
+if(flag & 0x03)
+(putch('-') );
+
 # 1469
 }
 
@@ -453,10 +523,23 @@ prec = c;
 
 while(prec--) {
 
-# 1478
+switch((unsigned char)(flag & 0x80))
+
 {
 
-# 1499
+
+
+
+case 0x00:
+
+# 1489
+c = (val / dpowers[prec]) % 10 + '0';
+
+break;
+
+# 1497
+case 0x80:
+
 {
 unsigned char idx = (val / hexpowers[prec]) & 0xF;
 
@@ -464,6 +547,8 @@ unsigned char idx = (val / hexpowers[prec]) & 0xF;
 c = "0123456789abcdef"[idx];
 
 }
+
+break;
 
 # 1523
 }

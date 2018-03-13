@@ -12,6 +12,7 @@
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/spi.h</itemPath>
       </logicalFolder>
+      <itemPath>mcp2515.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
