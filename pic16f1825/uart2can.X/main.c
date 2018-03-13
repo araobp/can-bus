@@ -19,22 +19,14 @@ uint8_t buf[BUFSIZE];  // UART read buffer
 uint8_t c;
 uint8_t idx;
 
-bool debug = false;
-bool verbose = false;
+typedef struct {
+    bool debug;
+    bool verbose;
+    uint8_t ope_mode;
+    bool with_sid;
+} MODE;
 
-uint8_t ope_mode;
-
-/*
- *  n: 0 ~ 2
- * TXBnSDIH, TXBnSDIL, TXBnEID8, TXBnEID0, TXBnDLC, TXBnDm (m: 0 ~ 7)
- */
-uint8_t tx_buf[14];
-
-/*
- * n: 0 ~ 1
- * RXBnSDIH, RXBnSDIL, RXBnEID8, RXBnEID0, RXBnDLC, RXBnDm (m: 0 ~ 7)
- */
-uint8_t rx_buf[15];  // Append '\0' at the tail
+MODE mode;
 
 /*
  * Set CAN message ID (11bit length)
@@ -47,12 +39,12 @@ void set_sid (uint16_t can_node) {
     uint8_t sidl = (can_node << 5) & 0x00e0;   // SID0 ~ SID2
     sid.sidh = sidh;
     sid.sidl = sidl;
-    if (debug) printf("SID set: %02x %02x\n", sidh, sidl);
+    if (mode.debug) printf("SID set: %02x %02x\n", sidh, sidl);
 }
 
-uint8_t SPI_send(uint8_t *sbuf, uint8_t len, uint8_t *rbuf) {
+uint8_t SPI_exchange(uint8_t *buf, uint8_t len) {
     LATAbits.LATA4 = 0;  // Lower CS pin on MCP2515
-    uint8_t bytes_written = SPI_Exchange8bitBuffer(sbuf, len, rbuf);
+    uint8_t bytes_written = SPI_Exchange8bitBuffer(buf, len, buf);
     LATAbits.LATA4 = 1;  // Raise CS pin on MCP2515
     return bytes_written;
 }
@@ -65,12 +57,12 @@ bool can_ope_mode(uint8_t ope_mode) {
     can_ctrl_buf[0] = WRITE;
     can_ctrl_buf[1] = CANCTRL;
     can_ctrl_buf[2] = ope_mode;
-    uint8_t bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
+    uint8_t bytes_written = SPI_exchange(can_ctrl_buf, 3);
     if (bytes_written == 3) {
         can_ctrl_buf[0] = READ;
         can_ctrl_buf[1] = CANSTAT;
-        bytes_written = SPI_send(can_ctrl_buf, 3, can_ctrl_buf);
-        if (debug) printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
+        bytes_written = SPI_exchange(can_ctrl_buf, 3);
+        if (mode.debug) printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
         return true;
     } else {
         return false;
@@ -87,7 +79,7 @@ bool can_txf_clear(uint8_t n) {
     can_int_flag[1] = CANINTF;
     can_int_flag[2] = mask;
     can_int_flag[3] = 0x00;
-    uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
+    uint8_t bytes_written = SPI_exchange(can_int_flag, 4);
     if (bytes_written == 4) {
         return true;
     } else {
@@ -99,13 +91,20 @@ bool can_txf_clear(uint8_t n) {
  * Receive CAN message
  */
 void can_receive(uint8_t n) {
+    
+    // n: 0 ~ 1
+    // RXBnSDIH, RXBnSDIL, RXBnEID8, RXBnEID0, RXBnDLC, RXBnDm (m: 0 ~ 7)
+    uint8_t rx_buf[15];  // Append '\0' at the tail
+
     // P65
     rx_buf[0] = READ_RX_BUFFER + (nm[n] << 1);
-    uint8_t bytes_read = SPI_send(rx_buf, 14, rx_buf);
+    uint8_t bytes_read = SPI_exchange(rx_buf, 14);
     uint8_t dlc = rx_buf[5];
+    uint16_t sid = ((uint16_t)rx_buf[1] << 3) + ((uint16_t)rx_buf[2] >> 5);
+    sid = sid & 0b0000011111111111;
     rx_buf[6+dlc] = '\0';
     
-    if (debug) {
+    if (mode.debug) {
         printf("RXB%dSIDH: %02x\n", n, rx_buf[1]);
         printf("RXB%dSIDL: %02x\n", n, rx_buf[2]);    
         printf("RXB%dDLC: %02x\n", n, rx_buf[5]);    
@@ -121,16 +120,25 @@ void can_receive(uint8_t n) {
     can_int_flag[1] = CANINTF;
     can_int_flag[2] = mask;
     can_int_flag[3] = 0x00;
-    uint8_t bytes_written = SPI_send(can_int_flag, 4, can_int_flag);
+    uint8_t bytes_written = SPI_exchange(can_int_flag, 4, can_int_flag);
     */
     
     // Output the received message from CAN bus
     uint8_t *rx_buf_ptr = &rx_buf[6];
-    if (verbose) {
-        printf("Message received: %s\n", rx_buf_ptr);
+    if (mode.verbose) {
+        if (mode.with_sid) {
+            printf("Message received: %d,%s\n", sid, rx_buf_ptr);        
+        } else {
+            printf("Message received: %s\n", rx_buf_ptr);
+        }
     } else {
-        printf("%s\n", rx_buf_ptr);
+        if (mode.with_sid) {
+            printf("%d,%s\n", sid, rx_buf_ptr);            
+        } else {
+            printf("%s\n", rx_buf_ptr);
+        }
     }
+    LED = !LED;
 }
 
 /*
@@ -141,18 +149,22 @@ bool can_send(uint8_t *buf, uint8_t dlc) {
     uint8_t n = 0;
     
     uint8_t can_status_buf[2] = {READ_STATUS, 0x00}; 
-    uint8_t bytes_written = SPI_send(can_status_buf, 2, can_status_buf);
+    uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
     uint8_t status = can_status_buf[1];
     if ((status & TXB0_TXREQ) == 0) {
-        if (debug) printf("TXB0 is idle\n");
+        if (mode.debug) printf("TXB0 is idle\n");
         n = 0;
     } else if ((status & TXB1_TXREQ) == 0) {
-        if (debug) printf("TXB1 is idle\n");
+        if (mode.debug) printf("TXB1 is idle\n");
         n = 1;
     } else if ((status & TXB2_TXREQ) > 0) {
-        if (debug) printf("TXB2 is idle\n");
+        if (mode.debug) printf("TXB2 is idle\n");
         n = 2;
     }
+    
+    // n: 0 ~ 2
+    // TXBnSDIH, TXBnSDIL, TXBnEID8, TXBnEID0, TXBnDLC, TXBnDm (m: 0 ~ 7)
+    uint8_t tx_buf[14];
 
     // P66
     tx_buf[0] = LOAD_TX_BUFFER + abc[n];
@@ -170,33 +182,34 @@ bool can_send(uint8_t *buf, uint8_t dlc) {
     // Copy buffer
     for(i=0; i<dlc; i++) {
         tx_buf[6+i] = buf[i];
-        if (debug) printf("Copying buffer: %c\n", tx_buf[6+i]);
+        if (mode.debug) printf("Copying buffer: %c\n", tx_buf[6+i]);
     }
 
     // P66 Load TX buffer
     uint8_t len = 6 + dlc;
-    uint8_t bytes_written = SPI_send(tx_buf, len, tx_buf);
+    uint8_t bytes_written = SPI_exchange(tx_buf, len);
 
     uint8_t debug_buf[3];
     debug_buf[0] = READ;
     debug_buf[1] = txbnsidh[n];
     debug_buf[2] = 0x00;
-    SPI_send(debug_buf, 3, debug_buf);
+    SPI_exchange(debug_buf, 3);
     
-    if (debug) printf("TXB%dSIDH: %02x\n", n, debug_buf[2]);
+    if (mode.debug) printf("TXB%dSIDH: %02x\n", n, debug_buf[2]);
     debug_buf[0] = READ;
     debug_buf[1] = txbnsidh[n] + 1;  //TXBnSIDL
     debug_buf[2] = 0x00;
-    SPI_send(debug_buf, 3, debug_buf);
+    SPI_exchange(debug_buf, 3);
    
-    if (debug) printf("TXB%dSIDL: %02x\n", n, debug_buf[2]);
+    if (mode.debug) printf("TXB%dSIDL: %02x\n", n, debug_buf[2]);
     
     if (bytes_written == len) {
         // P64, P66 RTS
         uint8_t txb_ctrl_buf[1];
         txb_ctrl_buf[0] = RTS + (0b00000001 << n);
-        bytes_written = SPI_send(txb_ctrl_buf, 1, txb_ctrl_buf);
+        bytes_written = SPI_exchange(txb_ctrl_buf, 1);
         if (bytes_written == 1) {
+            LED = !LED;
             return true;
         }
     }
@@ -210,15 +223,15 @@ bool can_send(uint8_t *buf, uint8_t dlc) {
 void can_status_check(void) {
     // P67
     uint8_t can_status_buf[2] = {READ_STATUS, 0x00}; 
-    uint8_t bytes_written = SPI_send(can_status_buf, 2, can_status_buf);
+    uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
     uint8_t status = can_status_buf[1];
     if (status == 0x00) {
         return;
     } else if ((status & RX0IF_MASK) > 0) {
-        if (debug) printf("RX0IF is on\n");
+        if (mode.debug) printf("RX0IF is on\n");
         can_receive(0);
     } else if ((status & RX1IF_MASK) > 0) {
-        if (debug) printf("RX1IF is on\n");
+        if (mode.debug) printf("RX1IF is on\n");
         can_receive(1);
     } else if ((status & TX0IF_MASK) > 0) {
         can_txf_clear(0);
@@ -238,8 +251,12 @@ void main(void)
     //INTERRUPT_PeripheralInterruptEnable();
     
     set_sid(0);
-    ope_mode = NORMAL_MODE;
+    
+    mode.debug = false;
+    mode.verbose = false;
+    mode.ope_mode = NORMAL_MODE;
     can_ope_mode(NORMAL_MODE);
+    mode.with_sid = false;
     
     idx = 0;
     
@@ -249,13 +266,13 @@ void main(void)
         
         if (EUSART_DataReady) {
             c = EUSART_Read();
-            if (verbose) printf("%c", c);  // echo back
+            if (mode.verbose) printf("%c", c);  // echo back
             //LED = !LED;
             
             buf[idx] = c;
             if (c == '\n') {
                 buf[idx] = '\0';
-                if (buf[0] == '@') {  // SID
+                if (buf[0] == '@') {  // command entered
                     uint8_t cmd = buf[1];
                     uint8_t sid;
                     uint8_t n;
@@ -270,23 +287,30 @@ void main(void)
                             break;
                         case 'v':  // Set verbosity
                             if (buf[2] == 'd') {  //  debug mode 
-                                debug = true;
-                                verbose = true;
+                                mode.debug = true;
+                                mode.verbose = true;
                             } else if (buf[2] == 'v') {  //  verbose mode
-                                debug = false;
-                                verbose = true;
+                                mode.debug = false;
+                                mode.verbose = true;
                             } else if (buf[2] == 'n') {  // normal mode
-                                debug = false;
-                                verbose = false;
+                                mode.debug = false;
+                                mode.verbose = false;
                             }
                             break;
                         case 'o':  // Set operation mode
                             if (buf[2] == 'l') {
-                                ope_mode = LOOPBACK_MODE;
+                                mode.ope_mode = LOOPBACK_MODE;
                                 can_ope_mode(LOOPBACK_MODE);
                             } else if (buf[2] == 'n') {
-                                ope_mode = NORMAL_MODE;
+                                mode.ope_mode = NORMAL_MODE;
                                 can_ope_mode(NORMAL_MODE);
+                            }
+                            if (buf[3] != '\0') {
+                                if (buf[3] == 'n') {
+                                    mode.with_sid = false;
+                                } else if (buf[3] == 's') {
+                                    mode.with_sid = true;
+                                }
                             }
                             break;
                         case 'm':  // Set mask
@@ -296,7 +320,7 @@ void main(void)
                             mask = atoi(&buf[3]);
                             mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
                             mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
-                            if (debug) {
+                            if (mode.debug) {
                                 if (cmd == 'm') {
                                     printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
                                 } else {
@@ -307,14 +331,14 @@ void main(void)
                             mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
                             mask_buf[2] = mask_sidh;
                             mask_buf[3] = mask_sidl;
-                            SPI_send(mask_buf, 4, mask_buf);
+                            SPI_exchange(mask_buf, 4);
                             
-                            if (debug) {
+                            if (mode.debug) {
                                 mask_buf[0] = READ;
                                 mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
                                 mask_buf[2] = 0x00;
                                 mask_buf[3] = 0x00;
-                                SPI_send(mask_buf, 4, mask_buf);
+                                SPI_exchange(mask_buf, 4);
                                 if (cmd == 'm') {
                                     printf("RXM%dSIDH: %02x\n", n, mask_buf[2]);
                                     printf("RXM%dSIDL: %02x\n", n, mask_buf[3]);
@@ -324,10 +348,10 @@ void main(void)
                                 }
                             }
                             
-                            can_ope_mode(ope_mode);
+                            can_ope_mode(mode.ope_mode);
                             break;
-                        case 'h':  // Show help]
-                            printf("--- HELP ---\n");
+                        case 'h':  // Show help
+                            printf("--- UART2CAN HELP ---\n");
                             printf("[Set standard identifier] @i<Standard Identifier>\n");
                             printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
                             printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
@@ -341,9 +365,9 @@ void main(void)
                 } else {
                     bool rc = can_send(buf, idx);
                     if (rc) {
-                        if (verbose) printf("Message sent: %s\n", buf);
+                        if (mode.verbose) printf("Message sent: %s\n", buf);
                     } else {
-                        if (verbose) printf("Unable to send message\n");
+                        if (mode.verbose) printf("Unable to send message\n");
                     }
                 }
                 idx = 0;
@@ -351,9 +375,9 @@ void main(void)
                 buf[idx] = '\0';
                 bool rc = can_send(buf, idx);
                 if (rc) {
-                    if (verbose) printf("\nMessage sent: %s\n", buf);
+                    if (mode.verbose) printf("\nMessage sent: %s\n", buf);
                 } else {
-                    if (verbose) printf("\nUnable to send message\n");                    
+                    if (mode.verbose) printf("\nUnable to send message\n");                    
                 }
                 idx = 0;
             }
