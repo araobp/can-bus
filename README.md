@@ -101,6 +101,7 @@ PHSEG2: 101
 ```
 
 So the values of CNF1, CNF2 and CNF3 will be like this:
+
 |Register | Value  |
 |---------|--------|
 |CNF1(2Ah)|01000001|
