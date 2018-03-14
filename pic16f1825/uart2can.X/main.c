@@ -251,7 +251,8 @@ void main(void)
     //INTERRUPT_PeripheralInterruptEnable();
     
     set_sid(0);
-    
+
+    can_ope_mode(CONFIGURATION_MODE);    
     uint8_t cnf_buf[5] = {WRITE, CNF3, CNF3_VALUE, CNF2_VALUE, CNF1_VALUE};
     SPI_exchange(cnf_buf, 5);
     

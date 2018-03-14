@@ -4056,6 +4056,7 @@ SYSTEM_Initialize();
 
 set_sid(0);
 
+can_ope_mode(0b10000000);
 uint8_t cnf_buf[5] = {0b00000010, 0x28, 0b00000101, 0b11110001, 0b01000001};
 SPI_exchange(cnf_buf, 5);
 
