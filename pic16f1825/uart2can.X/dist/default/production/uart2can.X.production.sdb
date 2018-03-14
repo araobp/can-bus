@@ -220,34 +220,38 @@
 [v _rxfnsidh rxfnsidh `DC[6]uc  1 e 6 0 ]
 "18
 [v _rxmnsidh rxmnsidh `DC[2]uc  1 e 2 0 ]
-"35
+"44
 [v _nm nm `DC[2]uc  1 e 2 0 ]
-"39
+"48
 [v _abc abc `DC[3]uc  1 e 3 0 ]
-"52
+"61
 [v _txbnsidh txbnsidh `DC[3]uc  1 e 3 0 ]
 "246 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"366
-[v main@rc rc `uc  1 a 1 68 ]
+"369
+[v main@rc rc `uc  1 a 1 10 ]
+"285
+[v main@mask_buf mask_buf `[4]uc  1 a 4 16 ]
 "282
-[v main@mask_buf mask_buf `[4]uc  1 a 4 74 ]
-"279
-[v main@mask mask `ui  1 a 2 70 ]
-"278
-[v main@n n `uc  1 a 1 79 ]
-"276
-[v main@cmd cmd `uc  1 a 1 78 ]
+[v main@mask mask `ui  1 a 2 12 ]
 "281
-[v main@mask_sidl mask_sidl `uc  1 a 1 73 ]
-"280
-[v main@mask_sidh mask_sidh `uc  1 a 1 72 ]
-"276
-[v main@sid sid `uc  1 a 1 67 ]
-"376
-[v main@rc_450 rc `uc  1 a 1 69 ]
-"386
+[v main@n n `uc  1 a 1 21 ]
+"279
+[v main@cmd cmd `uc  1 a 1 20 ]
+"284
+[v main@mask_sidl mask_sidl `uc  1 a 1 15 ]
+"283
+[v main@mask_sidh mask_sidh `uc  1 a 1 14 ]
+"279
+[v main@sid sid `uc  1 a 1 9 ]
+"379
+[v main@rc_452 rc `uc  1 a 1 11 ]
+"255
+[v main@cnf_buf cnf_buf `[5]uc  1 a 5 0 ]
+"253
+[v main@F2974 F2974 `[5]uc  1 s 5 F2974 ]
+"389
 } 0
 "37
 [v _set_sid set_sid `(v  1 e 1 0 ]

@@ -16,7 +16,16 @@ extern "C" {
 // P34 mask and filters    
 const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
 const uint8_t rxmnsidh[2] = {0x20, 0x24};
-    
+
+// P42 CNF1, CNF2 and CNF3
+#define CNF1 0x2a
+#define CNF2 0x29
+#define CNF3 0x28
+// FOSQ 8MHz, baudrate 125kbps
+#define CNF1_VALUE 0b01000001
+#define CNF2_VALUE 0b11110001
+#define CNF3_VALUE 0b00000101
+
 // P58 CANCTRL
 #define CANCTRL 0x0f
 #define NORMAL_MODE 0b00000000

@@ -3825,17 +3825,17 @@ extern char * ftoa(float f, int * status);
 const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
 const uint8_t rxmnsidh[2] = {0x20, 0x24};
 
-# 35
+# 44
 const uint8_t nm[2] = {0b00, 0b10};
 
 
 
 const uint8_t abc[3] = {0b000, 0b010, 0b100};
 
-# 52
+# 61
 const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
 
-# 57
+# 66
 typedef struct {
 uint8_t sidh;
 uint8_t sidl;
@@ -4055,6 +4055,9 @@ SYSTEM_Initialize();
 
 
 set_sid(0);
+
+uint8_t cnf_buf[5] = {0b00000010, 0x28, 0b00000101, 0b11110001, 0b01000001};
+SPI_exchange(cnf_buf, 5);
 
 mode.debug = 0;
 mode.verbose = 0;

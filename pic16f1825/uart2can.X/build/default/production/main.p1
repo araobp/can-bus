@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"57 mcp2515.h
+"66 mcp2515.h
 [s S328 `uc 1 `uc 1 ]
 [n S328 . sidh sidl ]
 "22 main.c
@@ -2776,7 +2776,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;mcp2515.h: 18: const uint8_t rxmnsidh[2] = {0x20, 0x24};
-"35
+"44
 [v _nm `Cuc ~T0 @X0 -> 2 `i e ]
 [i _nm
 :U ..
@@ -2784,8 +2784,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 2 `i `uc
 ..
 ]
-[; ;mcp2515.h: 35: const uint8_t nm[2] = {0b00, 0b10};
-"39
+[; ;mcp2515.h: 44: const uint8_t nm[2] = {0b00, 0b10};
+"48
 [v _abc `Cuc ~T0 @X0 -> 3 `i e ]
 [i _abc
 :U ..
@@ -2794,8 +2794,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 4 `i `uc
 ..
 ]
-[; ;mcp2515.h: 39: const uint8_t abc[3] = {0b000, 0b010, 0b100};
-"52
+[; ;mcp2515.h: 48: const uint8_t abc[3] = {0b000, 0b010, 0b100};
+"61
 [v _txbnsidh `Cuc ~T0 @X0 -> 3 `i e ]
 [i _txbnsidh
 :U ..
@@ -2804,11 +2804,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 81 `i `uc
 ..
 ]
-[; ;mcp2515.h: 52: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
-[; ;mcp2515.h: 57: typedef struct {
-[; ;mcp2515.h: 58: uint8_t sidh;
-[; ;mcp2515.h: 59: uint8_t sidl;
-[; ;mcp2515.h: 60: } SID;
+[; ;mcp2515.h: 61: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+[; ;mcp2515.h: 66: typedef struct {
+[; ;mcp2515.h: 67: uint8_t sidh;
+[; ;mcp2515.h: 68: uint8_t sidl;
+[; ;mcp2515.h: 69: } SID;
 "14 main.c
 [v _max_idx `Cuc ~T0 @X0 1 e ]
 [i _max_idx
@@ -3462,365 +3462,382 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 253: set_sid(0);
 "253
 [e ( _set_sid (1 -> -> 0 `i `ui ]
-[; ;main.c: 255: mode.debug = 0;
+[v F2974 `uc ~T0 @X0 -> 5 `i s ]
+[i F2974
+:U ..
 "255
-[e = . _mode 0 -> -> 0 `i `uc ]
-[; ;main.c: 256: mode.verbose = 0;
+-> -> 2 `i `uc
+-> -> 40 `i `uc
+-> -> 5 `i `uc
+-> -> 241 `i `uc
+-> -> 65 `i `uc
+..
+]
+[v _cnf_buf `uc ~T0 @X0 -> 5 `i a ]
+[; ;main.c: 255: uint8_t cnf_buf[5] = {0b00000010, 0x28, 0b00000101, 0b11110001, 0b01000001};
+[e = _cnf_buf F2974 ]
+[; ;main.c: 256: SPI_exchange(cnf_buf, 5);
 "256
-[e = . _mode 1 -> -> 0 `i `uc ]
-[; ;main.c: 257: mode.ope_mode = 0b00000000;
-"257
-[e = . _mode 2 -> -> 0 `i `uc ]
-[; ;main.c: 258: can_ope_mode(0b00000000);
+[e ( _SPI_exchange (2 , &U _cnf_buf -> -> 5 `i `uc ]
+[; ;main.c: 258: mode.debug = 0;
 "258
-[e ( _can_ope_mode (1 -> -> 0 `i `uc ]
-[; ;main.c: 259: mode.with_sid = 0;
+[e = . _mode 0 -> -> 0 `i `uc ]
+[; ;main.c: 259: mode.verbose = 0;
 "259
-[e = . _mode 3 -> -> 0 `i `uc ]
-[; ;main.c: 261: idx = 0;
+[e = . _mode 1 -> -> 0 `i `uc ]
+[; ;main.c: 260: mode.ope_mode = 0b00000000;
+"260
+[e = . _mode 2 -> -> 0 `i `uc ]
+[; ;main.c: 261: can_ope_mode(0b00000000);
 "261
-[e = _idx -> -> 0 `i `uc ]
-[; ;main.c: 263: while (1)
-"263
-[e :U 382 ]
-[; ;main.c: 264: {
+[e ( _can_ope_mode (1 -> -> 0 `i `uc ]
+[; ;main.c: 262: mode.with_sid = 0;
+"262
+[e = . _mode 3 -> -> 0 `i `uc ]
+[; ;main.c: 264: idx = 0;
 "264
-{
-[; ;main.c: 265: can_status_check();
-"265
-[e ( _can_status_check ..  ]
-[; ;main.c: 267: if ((PIR1bits.RCIF)) {
+[e = _idx -> -> 0 `i `uc ]
+[; ;main.c: 266: while (1)
+"266
+[e :U 382 ]
+[; ;main.c: 267: {
 "267
+{
+[; ;main.c: 268: can_status_check();
+"268
+[e ( _can_status_check ..  ]
+[; ;main.c: 270: if ((PIR1bits.RCIF)) {
+"270
 [e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 384  ]
 {
-[; ;main.c: 268: c = EUSART_Read();
-"268
+[; ;main.c: 271: c = EUSART_Read();
+"271
 [e = _c ( _EUSART_Read ..  ]
-[; ;main.c: 269: if (mode.verbose) printf("%c", c);
-"269
+[; ;main.c: 272: if (mode.verbose) printf("%c", c);
+"272
 [e $ ! != -> . _mode 1 `i -> -> -> 0 `i `uc `i 385  ]
 [e ( _printf , (. :s 19C -> _c `i ]
 [e :U 385 ]
-[; ;main.c: 272: buf[idx] = c;
-"272
+[; ;main.c: 275: buf[idx] = c;
+"275
 [e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux _c ]
-[; ;main.c: 273: if (c == '\n') {
-"273
+[; ;main.c: 276: if (c == '\n') {
+"276
 [e $ ! == -> _c `ui -> 10 `ui 386  ]
 {
-[; ;main.c: 274: buf[idx] = '\0';
-"274
+[; ;main.c: 277: buf[idx] = '\0';
+"277
 [e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 275: if (buf[0] == '@') {
-"275
+[; ;main.c: 278: if (buf[0] == '@') {
+"278
 [e $ ! == -> *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 64 `ui 387  ]
 {
-"276
+"279
 [v _cmd `uc ~T0 @X0 1 a ]
-[; ;main.c: 276: uint8_t cmd = buf[1];
+[; ;main.c: 279: uint8_t cmd = buf[1];
 [e = _cmd *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux ]
 [v _sid `uc ~T0 @X0 1 a ]
-"278
-[v _n `uc ~T0 @X0 1 a ]
-"279
-[v _mask `ui ~T0 @X0 1 a ]
-"280
-[v _mask_sidh `uc ~T0 @X0 1 a ]
 "281
-[v _mask_sidl `uc ~T0 @X0 1 a ]
+[v _n `uc ~T0 @X0 1 a ]
 "282
-[v _mask_buf `uc ~T0 @X0 -> 4 `i a ]
-[; ;main.c: 277: uint8_t sid;
-[; ;main.c: 278: uint8_t n;
-[; ;main.c: 279: uint16_t mask;
-[; ;main.c: 280: uint8_t mask_sidh;
-[; ;main.c: 281: uint8_t mask_sidl;
-[; ;main.c: 282: uint8_t mask_buf[4];
-[; ;main.c: 283: switch(cmd) {
+[v _mask `ui ~T0 @X0 1 a ]
 "283
+[v _mask_sidh `uc ~T0 @X0 1 a ]
+"284
+[v _mask_sidl `uc ~T0 @X0 1 a ]
+"285
+[v _mask_buf `uc ~T0 @X0 -> 4 `i a ]
+[; ;main.c: 280: uint8_t sid;
+[; ;main.c: 281: uint8_t n;
+[; ;main.c: 282: uint16_t mask;
+[; ;main.c: 283: uint8_t mask_sidh;
+[; ;main.c: 284: uint8_t mask_sidl;
+[; ;main.c: 285: uint8_t mask_buf[4];
+[; ;main.c: 286: switch(cmd) {
+"286
 [e $U 389  ]
 {
-[; ;main.c: 284: case 'i':
-"284
-[e :U 390 ]
-[; ;main.c: 285: sid = atoi(&buf[2]);
-"285
-[e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
-[; ;main.c: 286: set_sid(sid);
-"286
-[e ( _set_sid (1 -> _sid `ui ]
-[; ;main.c: 287: break;
+[; ;main.c: 287: case 'i':
 "287
-[e $U 388  ]
-[; ;main.c: 288: case 'v':
+[e :U 390 ]
+[; ;main.c: 288: sid = atoi(&buf[2]);
 "288
-[e :U 391 ]
-[; ;main.c: 289: if (buf[2] == 'd') {
+[e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
+[; ;main.c: 289: set_sid(sid);
 "289
+[e ( _set_sid (1 -> _sid `ui ]
+[; ;main.c: 290: break;
+"290
+[e $U 388  ]
+[; ;main.c: 291: case 'v':
+"291
+[e :U 391 ]
+[; ;main.c: 292: if (buf[2] == 'd') {
+"292
 [e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 100 `ui 392  ]
 {
-[; ;main.c: 290: mode.debug = 1;
-"290
-[e = . _mode 0 -> -> 1 `i `uc ]
-[; ;main.c: 291: mode.verbose = 1;
-"291
-[e = . _mode 1 -> -> 1 `i `uc ]
-"292
-}
-[; ;main.c: 292: } else if (buf[2] == 'v') {
-[e $U 393  ]
-[e :U 392 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 118 `ui 394  ]
-{
-[; ;main.c: 293: mode.debug = 0;
+[; ;main.c: 293: mode.debug = 1;
 "293
-[e = . _mode 0 -> -> 0 `i `uc ]
+[e = . _mode 0 -> -> 1 `i `uc ]
 [; ;main.c: 294: mode.verbose = 1;
 "294
 [e = . _mode 1 -> -> 1 `i `uc ]
 "295
 }
-[; ;main.c: 295: } else if (buf[2] == 'n') {
-[e $U 395  ]
-[e :U 394 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 396  ]
+[; ;main.c: 295: } else if (buf[2] == 'v') {
+[e $U 393  ]
+[e :U 392 ]
+[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 118 `ui 394  ]
 {
 [; ;main.c: 296: mode.debug = 0;
 "296
 [e = . _mode 0 -> -> 0 `i `uc ]
-[; ;main.c: 297: mode.verbose = 0;
+[; ;main.c: 297: mode.verbose = 1;
 "297
-[e = . _mode 1 -> -> 0 `i `uc ]
+[e = . _mode 1 -> -> 1 `i `uc ]
 "298
 }
-[e :U 396 ]
+[; ;main.c: 298: } else if (buf[2] == 'n') {
+[e $U 395  ]
+[e :U 394 ]
+[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 396  ]
+{
+[; ;main.c: 299: mode.debug = 0;
 "299
+[e = . _mode 0 -> -> 0 `i `uc ]
+[; ;main.c: 300: mode.verbose = 0;
+"300
+[e = . _mode 1 -> -> 0 `i `uc ]
+"301
+}
+[e :U 396 ]
+"302
 [e :U 395 ]
 [e :U 393 ]
-[; ;main.c: 298: }
-[; ;main.c: 299: break;
+[; ;main.c: 301: }
+[; ;main.c: 302: break;
 [e $U 388  ]
-[; ;main.c: 300: case 'o':
-"300
+[; ;main.c: 303: case 'o':
+"303
 [e :U 397 ]
-[; ;main.c: 301: if (buf[2] == 'l') {
-"301
+[; ;main.c: 304: if (buf[2] == 'l') {
+"304
 [e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 108 `ui 398  ]
 {
-[; ;main.c: 302: mode.ope_mode = 0b01000000;
-"302
+[; ;main.c: 305: mode.ope_mode = 0b01000000;
+"305
 [e = . _mode 2 -> -> 64 `i `uc ]
-[; ;main.c: 303: can_ope_mode(0b01000000);
-"303
+[; ;main.c: 306: can_ope_mode(0b01000000);
+"306
 [e ( _can_ope_mode (1 -> -> 64 `i `uc ]
-"304
+"307
 }
-[; ;main.c: 304: } else if (buf[2] == 'n') {
+[; ;main.c: 307: } else if (buf[2] == 'n') {
 [e $U 399  ]
 [e :U 398 ]
 [e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 400  ]
 {
-[; ;main.c: 305: mode.ope_mode = 0b00000000;
-"305
+[; ;main.c: 308: mode.ope_mode = 0b00000000;
+"308
 [e = . _mode 2 -> -> 0 `i `uc ]
-[; ;main.c: 306: can_ope_mode(0b00000000);
-"306
+[; ;main.c: 309: can_ope_mode(0b00000000);
+"309
 [e ( _can_ope_mode (1 -> -> 0 `i `uc ]
-"307
+"310
 }
 [e :U 400 ]
-"308
+"311
 [e :U 399 ]
-[; ;main.c: 307: }
-[; ;main.c: 308: if (buf[3] != '\0') {
+[; ;main.c: 310: }
+[; ;main.c: 311: if (buf[3] != '\0') {
 [e $ ! != -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 401  ]
 {
-[; ;main.c: 309: if (buf[3] == 'n') {
-"309
+[; ;main.c: 312: if (buf[3] == 'n') {
+"312
 [e $ ! == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 402  ]
 {
-[; ;main.c: 310: mode.with_sid = 0;
-"310
+[; ;main.c: 313: mode.with_sid = 0;
+"313
 [e = . _mode 3 -> -> 0 `i `uc ]
-"311
+"314
 }
-[; ;main.c: 311: } else if (buf[3] == 's') {
+[; ;main.c: 314: } else if (buf[3] == 's') {
 [e $U 403  ]
 [e :U 402 ]
 [e $ ! == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 115 `ui 404  ]
 {
-[; ;main.c: 312: mode.with_sid = 1;
-"312
+[; ;main.c: 315: mode.with_sid = 1;
+"315
 [e = . _mode 3 -> -> 1 `i `uc ]
-"313
+"316
 }
 [e :U 404 ]
-"314
+"317
 [e :U 403 ]
 }
 [e :U 401 ]
-[; ;main.c: 313: }
-[; ;main.c: 314: }
-[; ;main.c: 315: break;
-"315
-[e $U 388  ]
-[; ;main.c: 316: case 'm':
-"316
-[e :U 405 ]
-"317
-[e :U 406 ]
-[; ;main.c: 317: case 'f':
-[; ;main.c: 318: can_ope_mode(0b10000000);
+[; ;main.c: 316: }
+[; ;main.c: 317: }
+[; ;main.c: 318: break;
 "318
-[e ( _can_ope_mode (1 -> -> 128 `i `uc ]
-[; ;main.c: 319: n = buf[2] - 0x30;
+[e $U 388  ]
+[; ;main.c: 319: case 'm':
 "319
-[e = _n -> - -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 320: mask = atoi(&buf[3]);
+[e :U 405 ]
 "320
-[e = _mask -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
-[; ;main.c: 321: mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
+[e :U 406 ]
+[; ;main.c: 320: case 'f':
+[; ;main.c: 321: can_ope_mode(0b10000000);
 "321
-[e = _mask_sidh -> & >> _mask -> 3 `i -> -> 255 `i `ui `uc ]
-[; ;main.c: 322: mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
+[e ( _can_ope_mode (1 -> -> 128 `i `uc ]
+[; ;main.c: 322: n = buf[2] - 0x30;
 "322
-[e = _mask_sidl -> & << & _mask -> -> 7 `i `ui -> 5 `i -> -> 255 `i `ui `uc ]
-[; ;main.c: 323: if (mode.debug) {
+[e = _n -> - -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 323: mask = atoi(&buf[3]);
 "323
+[e = _mask -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
+[; ;main.c: 324: mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
+"324
+[e = _mask_sidh -> & >> _mask -> 3 `i -> -> 255 `i `ui `uc ]
+[; ;main.c: 325: mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
+"325
+[e = _mask_sidl -> & << & _mask -> -> 7 `i `ui -> 5 `i -> -> 255 `i `ui `uc ]
+[; ;main.c: 326: if (mode.debug) {
+"326
 [e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 407  ]
 {
-[; ;main.c: 324: if (cmd == 'm') {
-"324
+[; ;main.c: 327: if (cmd == 'm') {
+"327
 [e $ ! == -> _cmd `ui -> 109 `ui 408  ]
 {
-[; ;main.c: 325: printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
-"325
+[; ;main.c: 328: printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
+"328
 [e ( _printf , , , (. :s 20C -> _n `i -> _mask_sidh `i -> _mask_sidl `i ]
-"326
+"329
 }
-[; ;main.c: 326: } else {
+[; ;main.c: 329: } else {
 [e $U 409  ]
 [e :U 408 ]
 {
-[; ;main.c: 327: printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
-"327
+[; ;main.c: 330: printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
+"330
 [e ( _printf , , , (. :s 21C -> _n `i -> _mask_sidh `i -> _mask_sidl `i ]
-"328
+"331
 }
 [e :U 409 ]
-"329
+"332
 }
 [e :U 407 ]
-[; ;main.c: 328: }
-[; ;main.c: 329: }
-[; ;main.c: 330: mask_buf[0] = 0b00000010;
-"330
-[e = *U + &U _mask_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 2 `i `uc ]
-[; ;main.c: 331: mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
-"331
-[e = *U + &U _mask_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> ? == -> _cmd `ui -> 109 `ui : -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i `uc ]
-[; ;main.c: 332: mask_buf[2] = mask_sidh;
-"332
-[e = *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux _mask_sidh ]
-[; ;main.c: 333: mask_buf[3] = mask_sidl;
+[; ;main.c: 331: }
+[; ;main.c: 332: }
+[; ;main.c: 333: mask_buf[0] = 0b00000010;
 "333
-[e = *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux _mask_sidl ]
-[; ;main.c: 334: SPI_exchange(mask_buf, 4);
+[e = *U + &U _mask_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 2 `i `uc ]
+[; ;main.c: 334: mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
 "334
-[e ( _SPI_exchange (2 , &U _mask_buf -> -> 4 `i `uc ]
-[; ;main.c: 336: if (mode.debug) {
+[e = *U + &U _mask_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> ? == -> _cmd `ui -> 109 `ui : -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i `uc ]
+[; ;main.c: 335: mask_buf[2] = mask_sidh;
+"335
+[e = *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux _mask_sidh ]
+[; ;main.c: 336: mask_buf[3] = mask_sidl;
 "336
+[e = *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux _mask_sidl ]
+[; ;main.c: 337: SPI_exchange(mask_buf, 4);
+"337
+[e ( _SPI_exchange (2 , &U _mask_buf -> -> 4 `i `uc ]
+[; ;main.c: 339: if (mode.debug) {
+"339
 [e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 410  ]
 {
-[; ;main.c: 337: mask_buf[0] = 0b00000011;
-"337
-[e = *U + &U _mask_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 3 `i `uc ]
-[; ;main.c: 338: mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
-"338
-[e = *U + &U _mask_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> ? == -> _cmd `ui -> 109 `ui : -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i `uc ]
-[; ;main.c: 339: mask_buf[2] = 0x00;
-"339
-[e = *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 340: mask_buf[3] = 0x00;
+[; ;main.c: 340: mask_buf[0] = 0b00000011;
 "340
-[e = *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 341: SPI_exchange(mask_buf, 4);
+[e = *U + &U _mask_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 3 `i `uc ]
+[; ;main.c: 341: mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
 "341
-[e ( _SPI_exchange (2 , &U _mask_buf -> -> 4 `i `uc ]
-[; ;main.c: 342: if (cmd == 'm') {
+[e = *U + &U _mask_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> ? == -> _cmd `ui -> 109 `ui : -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i `uc ]
+[; ;main.c: 342: mask_buf[2] = 0x00;
 "342
+[e = *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 343: mask_buf[3] = 0x00;
+"343
+[e = *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 344: SPI_exchange(mask_buf, 4);
+"344
+[e ( _SPI_exchange (2 , &U _mask_buf -> -> 4 `i `uc ]
+[; ;main.c: 345: if (cmd == 'm') {
+"345
 [e $ ! == -> _cmd `ui -> 109 `ui 411  ]
 {
-[; ;main.c: 343: printf("RXM%dSIDH: %02x\n", n, mask_buf[2]);
-"343
+[; ;main.c: 346: printf("RXM%dSIDH: %02x\n", n, mask_buf[2]);
+"346
 [e ( _printf , , (. :s 22C -> _n `i -> *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
-[; ;main.c: 344: printf("RXM%dSIDL: %02x\n", n, mask_buf[3]);
-"344
+[; ;main.c: 347: printf("RXM%dSIDL: %02x\n", n, mask_buf[3]);
+"347
 [e ( _printf , , (. :s 23C -> _n `i -> *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
-"345
+"348
 }
-[; ;main.c: 345: } else {
+[; ;main.c: 348: } else {
 [e $U 412  ]
 [e :U 411 ]
 {
-[; ;main.c: 346: printf("RXF%dSIDH: %02x\n", n, mask_buf[2]);
-"346
+[; ;main.c: 349: printf("RXF%dSIDH: %02x\n", n, mask_buf[2]);
+"349
 [e ( _printf , , (. :s 24C -> _n `i -> *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
-[; ;main.c: 347: printf("RXF%dSIDL: %02x\n", n, mask_buf[3]);
-"347
+[; ;main.c: 350: printf("RXF%dSIDL: %02x\n", n, mask_buf[3]);
+"350
 [e ( _printf , , (. :s 25C -> _n `i -> *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
-"348
+"351
 }
 [e :U 412 ]
-"349
+"352
 }
 [e :U 410 ]
-[; ;main.c: 348: }
-[; ;main.c: 349: }
-[; ;main.c: 351: can_ope_mode(mode.ope_mode);
-"351
-[e ( _can_ope_mode (1 . _mode 2 ]
-[; ;main.c: 352: break;
-"352
-[e $U 388  ]
-[; ;main.c: 353: case 'h':
-"353
-[e :U 413 ]
-[; ;main.c: 354: printf("--- UART2CAN HELP ---\n");
+[; ;main.c: 351: }
+[; ;main.c: 352: }
+[; ;main.c: 354: can_ope_mode(mode.ope_mode);
 "354
-[e ( _printf :s 26C ]
-[; ;main.c: 355: printf("[Set standard identifier] @i<Standard Identifier>\n");
+[e ( _can_ope_mode (1 . _mode 2 ]
+[; ;main.c: 355: break;
 "355
-[e ( _printf :s 27C ]
-[; ;main.c: 356: printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
+[e $U 388  ]
+[; ;main.c: 356: case 'h':
 "356
-[e ( _printf :s 28C ]
-[; ;main.c: 357: printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
+[e :U 413 ]
+[; ;main.c: 357: printf("--- UART2CAN HELP ---\n");
 "357
-[e ( _printf :s 29C ]
-[; ;main.c: 358: printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
+[e ( _printf :s 26C ]
+[; ;main.c: 358: printf("[Set standard identifier] @i<Standard Identifier>\n");
 "358
-[e ( _printf :s 30C ]
-[; ;main.c: 359: printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
+[e ( _printf :s 27C ]
+[; ;main.c: 359: printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
 "359
-[e ( _printf :s 31C ]
-[; ;main.c: 360: printf("[Send message] <message>\n");
+[e ( _printf :s 28C ]
+[; ;main.c: 360: printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
 "360
-[e ( _printf :s 32C ]
-[; ;main.c: 361: printf("[Receive message] <message> will be output\n");
+[e ( _printf :s 29C ]
+[; ;main.c: 361: printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
 "361
-[e ( _printf :s 33C ]
-[; ;main.c: 362: printf("[Show this help]: @h\n");
+[e ( _printf :s 30C ]
+[; ;main.c: 362: printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
 "362
-[e ( _printf :s 34C ]
-[; ;main.c: 363: break;
+[e ( _printf :s 31C ]
+[; ;main.c: 363: printf("[Send message] <message>\n");
 "363
-[e $U 388  ]
+[e ( _printf :s 32C ]
+[; ;main.c: 364: printf("[Receive message] <message> will be output\n");
 "364
-}
-[; ;main.c: 364: }
+[e ( _printf :s 33C ]
+[; ;main.c: 365: printf("[Show this help]: @h\n");
+"365
+[e ( _printf :s 34C ]
+[; ;main.c: 366: break;
+"366
 [e $U 388  ]
-"283
+"367
+}
+[; ;main.c: 367: }
+[e $U 388  ]
+"286
 [e :U 389 ]
 [e [\ _cmd , $ -> -> 105 `ui `uc 390
  , $ -> -> 118 `ui `uc 391
@@ -3829,108 +3846,108 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 102 `ui `uc 406
  , $ -> -> 104 `ui `uc 413
  388 ]
-"364
+"367
 [e :U 388 ]
-"365
+"368
 }
-[; ;main.c: 365: } else {
+[; ;main.c: 368: } else {
 [e $U 414  ]
 [e :U 387 ]
 {
-"366
+"369
 [v _rc `uc ~T0 @X0 1 a ]
-[; ;main.c: 366: bool rc = can_send(buf, idx);
+[; ;main.c: 369: bool rc = can_send(buf, idx);
 [e = _rc ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 367: if (rc) {
-"367
+[; ;main.c: 370: if (rc) {
+"370
 [e $ ! != -> _rc `i -> -> -> 0 `i `uc `i 415  ]
 {
-[; ;main.c: 368: if (mode.verbose) printf("Message sent: %s\n", buf);
-"368
+[; ;main.c: 371: if (mode.verbose) printf("Message sent: %s\n", buf);
+"371
 [e $ ! != -> . _mode 1 `i -> -> -> 0 `i `uc `i 416  ]
 [e ( _printf , (. :s 35C -> &U _buf `*Cuc ]
 [e :U 416 ]
-"369
+"372
 }
-[; ;main.c: 369: } else {
+[; ;main.c: 372: } else {
 [e $U 417  ]
 [e :U 415 ]
 {
-[; ;main.c: 370: if (mode.verbose) printf("Unable to send message\n");
-"370
+[; ;main.c: 373: if (mode.verbose) printf("Unable to send message\n");
+"373
 [e $ ! != -> . _mode 1 `i -> -> -> 0 `i `uc `i 418  ]
 [e ( _printf :s 36C ]
 [e :U 418 ]
-"371
-}
-[e :U 417 ]
-"372
-}
-[e :U 414 ]
-[; ;main.c: 371: }
-[; ;main.c: 372: }
-[; ;main.c: 373: idx = 0;
-"373
-[e = _idx -> -> 0 `i `uc ]
 "374
 }
-[; ;main.c: 374: } else if (++idx > max_idx) {
+[e :U 417 ]
+"375
+}
+[e :U 414 ]
+[; ;main.c: 374: }
+[; ;main.c: 375: }
+[; ;main.c: 376: idx = 0;
+"376
+[e = _idx -> -> 0 `i `uc ]
+"377
+}
+[; ;main.c: 377: } else if (++idx > max_idx) {
 [e $U 419  ]
 [e :U 386 ]
 [e $ ! > -> =+ _idx -> -> 1 `i `uc `i -> _max_idx `i 420  ]
 {
-[; ;main.c: 375: buf[idx] = '\0';
-"375
+[; ;main.c: 378: buf[idx] = '\0';
+"378
 [e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-"376
+"379
 [v _rc `uc ~T0 @X0 1 a ]
-[; ;main.c: 376: bool rc = can_send(buf, idx);
+[; ;main.c: 379: bool rc = can_send(buf, idx);
 [e = _rc ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 377: if (rc) {
-"377
+[; ;main.c: 380: if (rc) {
+"380
 [e $ ! != -> _rc `i -> -> -> 0 `i `uc `i 421  ]
 {
-[; ;main.c: 378: if (mode.verbose) printf("\nMessage sent: %s\n", buf);
-"378
+[; ;main.c: 381: if (mode.verbose) printf("\nMessage sent: %s\n", buf);
+"381
 [e $ ! != -> . _mode 1 `i -> -> -> 0 `i `uc `i 422  ]
 [e ( _printf , (. :s 37C -> &U _buf `*Cuc ]
 [e :U 422 ]
-"379
+"382
 }
-[; ;main.c: 379: } else {
+[; ;main.c: 382: } else {
 [e $U 423  ]
 [e :U 421 ]
 {
-[; ;main.c: 380: if (mode.verbose) printf("\nUnable to send message\n");
-"380
+[; ;main.c: 383: if (mode.verbose) printf("\nUnable to send message\n");
+"383
 [e $ ! != -> . _mode 1 `i -> -> -> 0 `i `uc `i 424  ]
 [e ( _printf :s 38C ]
 [e :U 424 ]
-"381
+"384
 }
 [e :U 423 ]
-[; ;main.c: 381: }
-[; ;main.c: 382: idx = 0;
-"382
+[; ;main.c: 384: }
+[; ;main.c: 385: idx = 0;
+"385
 [e = _idx -> -> 0 `i `uc ]
-"383
+"386
 }
 [e :U 420 ]
-"384
+"387
 [e :U 419 ]
 }
 [e :U 384 ]
-"385
+"388
 }
 [e :U 381 ]
-"263
+"266
 [e $U 382  ]
 [e :U 383 ]
-[; ;main.c: 383: }
-[; ;main.c: 384: }
-[; ;main.c: 385: }
 [; ;main.c: 386: }
-"386
+[; ;main.c: 387: }
+[; ;main.c: 388: }
+[; ;main.c: 389: }
+"389
 [e :UE 380 ]
 }
 [p f _printf 13402244 ]

@@ -252,6 +252,9 @@ void main(void)
     
     set_sid(0);
     
+    uint8_t cnf_buf[5] = {WRITE, CNF3, CNF3_VALUE, CNF2_VALUE, CNF1_VALUE};
+    SPI_exchange(cnf_buf, 5);
+    
     mode.debug = false;
     mode.verbose = false;
     mode.ope_mode = NORMAL_MODE;
