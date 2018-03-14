@@ -68,6 +68,45 @@ My oscilloscope does not seem to be able to catch up with the speed:
 
 ![waveform2](./doc/waveform2.BMP)
 
+I forgot to set CNF1, CNF2 and CNF3 to appropriate values to generate 125kbps baudrate.
+
+Assuming that the oscillator runs at 8MHz and BRP(Buad Rate Prescaller) = 2,
+
+```
+TQ = 2*2/8MHz = 500ns  ... Equation 5-2 in P38
+16TQ corresponds to 125kHz
+
+According to 5.3 in P 41,
+SyncSeg = 1 TQ,
+PropSeg = 2 TQ,
+PS1 = 7TQ,
+PS2 = 6TQ.
+
+Total 16TQ.
+
+CNF1 in P42
+SJW: 01
+BRP: 000001
+
+CNF2
+BTLMODE: 1
+SAM: 1
+PHSEG1: 110
+PRSEG: 001
+
+CNF3
+SOF: 0
+WAKFIL: 0
+PHSEG2: 101
+```
+
+So the values of CNF1, CNF2 and CNF3 will be like this:
+|Register | Value  |
+|---------|--------|
+|CNF1(2Ah)|01000001|
+|CNF2(29h)|11110001|
+|CNF3(28h)|00000101|
+
 ## Datasheet (Microchip/NXP)
 
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
