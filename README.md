@@ -60,15 +60,15 @@ For example, to receive messages with SID 5, 10 and 15:
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB19
 ```
 
-## Test
+## 1st test on March 14th, 2018
 
 ![test](./doc/test.jpg)
 
-My oscilloscope does not seem to be able to catch up with the speed:
+My oscilloscope did not seem to be able to catch up with the speed:
 
 ![waveform2](./doc/waveform2.BMP)
 
-I forgot to set CNF1, CNF2 and CNF3 to appropriate values to generate 125kbps baudrate.
+It seemed like I forgot to set CNF1, CNF2 and CNF3 to appropriate values to generate 125kbps baudrate.
 
 Assuming that the oscillator runs at 8MHz and BRP(Buad Rate Prescaller) = 2,
 
@@ -100,7 +100,7 @@ WAKFIL: 0
 PHSEG2: 101
 ```
 
-So the values of CNF1, CNF2 and CNF3 will be like this:
+So the values of CNF1, CNF2 and CNF3 would be like this:
 
 |Register | Value  |
 |---------|--------|
