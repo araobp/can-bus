@@ -111,7 +111,11 @@ void main(void)
                         case 'f':  // Set filter
                             n = buf[2] - 0x30;
                             mask = atoi(&buf[3]);
-                            can_set_mask(cmd, n, mask);
+                            if (cmd == 'm') {
+                                can_set_mask(SET_MASK, n, mask);
+                            } else if (cmd == 'f') {
+                                can_set_mask(SET_FILTER, n, mask);                                
+                            }
                             break;
                         case 'd':  // Dump register
                             can_dump_registers();

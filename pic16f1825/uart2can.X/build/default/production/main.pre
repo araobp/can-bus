@@ -3821,19 +3821,22 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 23 "mcp2515.h"
+# 31 "mcp2515.h"
 const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
 const uint8_t rxmnsidh[2] = {0x20, 0x24};
 
-# 50
+# 58
 const uint8_t nm[2] = {0b00, 0b10};
 
 
 
 const uint8_t abc[3] = {0b000, 0b010, 0b100};
 
-# 67
+# 75
 const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+
+
+
 
 void can_logging_mode(bool debug, bool verbose);
 void can_set_sid (uint16_t can_node);
@@ -3944,7 +3947,11 @@ case 'm':
 case 'f':
 n = buf[2] - 0x30;
 mask = atoi(&buf[3]);
-can_set_mask(cmd, n, mask);
+if (cmd == 'm') {
+can_set_mask(0, n, mask);
+} else if (cmd == 'f') {
+can_set_mask(1, n, mask);
+}
 break;
 case 'd':
 can_dump_registers();

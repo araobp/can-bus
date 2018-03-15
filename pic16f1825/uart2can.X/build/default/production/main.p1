@@ -7,9 +7,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "69 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"71 mcp2515.h
+"82 mcp2515.h
 [v _can_init `(v ~T0 @X0 0 ef1`*v ]
-"75
+"86
 [v _can_status_check `(v ~T0 @X0 0 ef ]
 "533 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
 [s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -23,19 +23,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
 "55 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"70 mcp2515.h
+"81 mcp2515.h
 [v _can_set_sid `(v ~T0 @X0 0 ef1`ui ]
-"69
+"80
 [v _can_logging_mode `(v ~T0 @X0 0 ef2`uc`uc ]
-"72
+"83
 [v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
-"76
+"87
 [v _can_baudrate `(uc ~T0 @X0 0 ef1`uc ]
-"73
+"84
 [v _can_set_mask `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"77
+"88
 [v _can_dump_registers `(v ~T0 @X0 0 ef ]
-"74
+"85
 [v _can_send `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "1994 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
 [s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2759,7 +2759,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"23 mcp2515.h
+"31 mcp2515.h
 [v _rxfnsidh `Cuc ~T0 @X0 -> 6 `i e ]
 [i _rxfnsidh
 :U ..
@@ -2771,8 +2771,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 24 `i `uc
 ..
 ]
-[; ;mcp2515.h: 23: const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
-"24
+[; ;mcp2515.h: 31: const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
+"32
 [v _rxmnsidh `Cuc ~T0 @X0 -> 2 `i e ]
 [i _rxmnsidh
 :U ..
@@ -2780,8 +2780,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 36 `i `uc
 ..
 ]
-[; ;mcp2515.h: 24: const uint8_t rxmnsidh[2] = {0x20, 0x24};
-"50
+[; ;mcp2515.h: 32: const uint8_t rxmnsidh[2] = {0x20, 0x24};
+"58
 [v _nm `Cuc ~T0 @X0 -> 2 `i e ]
 [i _nm
 :U ..
@@ -2789,8 +2789,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 2 `i `uc
 ..
 ]
-[; ;mcp2515.h: 50: const uint8_t nm[2] = {0b00, 0b10};
-"54
+[; ;mcp2515.h: 58: const uint8_t nm[2] = {0b00, 0b10};
+"62
 [v _abc `Cuc ~T0 @X0 -> 3 `i e ]
 [i _abc
 :U ..
@@ -2799,8 +2799,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 4 `i `uc
 ..
 ]
-[; ;mcp2515.h: 54: const uint8_t abc[3] = {0b000, 0b010, 0b100};
-"67
+[; ;mcp2515.h: 62: const uint8_t abc[3] = {0b000, 0b010, 0b100};
+"75
 [v _txbnsidh `Cuc ~T0 @X0 -> 3 `i e ]
 [i _txbnsidh
 :U ..
@@ -2809,16 +2809,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 81 `i `uc
 ..
 ]
-[; ;mcp2515.h: 67: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
-[; ;mcp2515.h: 69: void can_logging_mode(bool debug, bool verbose);
-[; ;mcp2515.h: 70: void can_set_sid (uint16_t can_node);
-[; ;mcp2515.h: 71: void can_init(void *receive_handler);
-[; ;mcp2515.h: 72: bool can_ope_mode(uint8_t ope_mode);
-[; ;mcp2515.h: 73: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-[; ;mcp2515.h: 74: bool can_send(uint8_t *buf, uint8_t dlc);
-[; ;mcp2515.h: 75: void can_status_check(void);
-[; ;mcp2515.h: 76: bool can_baudrate(uint8_t bpr);
-[; ;mcp2515.h: 77: void can_dump_registers(void);
+[; ;mcp2515.h: 75: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+[; ;mcp2515.h: 80: void can_logging_mode(bool debug, bool verbose);
+[; ;mcp2515.h: 81: void can_set_sid (uint16_t can_node);
+[; ;mcp2515.h: 82: void can_init(void *receive_handler);
+[; ;mcp2515.h: 83: bool can_ope_mode(uint8_t ope_mode);
+[; ;mcp2515.h: 84: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+[; ;mcp2515.h: 85: bool can_send(uint8_t *buf, uint8_t dlc);
+[; ;mcp2515.h: 86: void can_status_check(void);
+[; ;mcp2515.h: 87: bool can_baudrate(uint8_t bpr);
+[; ;mcp2515.h: 88: void can_dump_registers(void);
 "14 main.c
 [v _max_idx `Cuc ~T0 @X0 1 e ]
 [i _max_idx
@@ -3141,66 +3141,85 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 113: mask = atoi(&buf[3]);
 "113
 [e = _mask -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
-[; ;main.c: 114: can_set_mask(cmd, n, mask);
+[; ;main.c: 114: if (cmd == 'm') {
 "114
-[e ( _can_set_mask (3 , , _cmd _n -> _mask `uc ]
-[; ;main.c: 115: break;
+[e $ ! == -> _cmd `ui -> 109 `ui 367  ]
+{
+[; ;main.c: 115: can_set_mask(0, n, mask);
 "115
-[e $U 346  ]
-[; ;main.c: 116: case 'd':
+[e ( _can_set_mask (3 , , -> -> 0 `i `uc _n -> _mask `uc ]
 "116
+}
+[; ;main.c: 116: } else if (cmd == 'f') {
+[e $U 368  ]
 [e :U 367 ]
-[; ;main.c: 117: can_dump_registers();
+[e $ ! == -> _cmd `ui -> 102 `ui 369  ]
+{
+[; ;main.c: 117: can_set_mask(1, n, mask);
 "117
-[e ( _can_dump_registers ..  ]
-[; ;main.c: 118: break;
+[e ( _can_set_mask (3 , , -> -> 1 `i `uc _n -> _mask `uc ]
 "118
-[e $U 346  ]
-[; ;main.c: 119: case 'h':
+}
+[e :U 369 ]
 "119
 [e :U 368 ]
-[; ;main.c: 120: printf("--- UART2CAN HELP ---\n");
-"120
-[e ( _printf :s 7C ]
-[; ;main.c: 121: printf("[Set standard identifier] @i<standard identifier>\n");
-"121
-[e ( _printf :s 8C ]
-[; ;main.c: 122: printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
-"122
-[e ( _printf :s 9C ]
-[; ;main.c: 123: printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
-"123
-[e ( _printf :s 10C ]
-[; ;main.c: 124: printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
-"124
-[e ( _printf :s 11C ]
-[; ;main.c: 125: printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
-"125
-[e ( _printf :s 12C ]
-[; ;main.c: 126: printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
-"126
-[e ( _printf :s 13C ]
-[; ;main.c: 127: printf("[Set baud rate] @b<bpr>\n");
-"127
-[e ( _printf :s 14C ]
-[; ;main.c: 128: printf("[Dump registers] @d\n");
-"128
-[e ( _printf :s 15C ]
-[; ;main.c: 129: printf("[Send message] <message>\n");
-"129
-[e ( _printf :s 16C ]
-[; ;main.c: 130: printf("[Receive message] <message> will be output\n");
-"130
-[e ( _printf :s 17C ]
-[; ;main.c: 131: printf("[Show this help]: @h\n");
-"131
-[e ( _printf :s 18C ]
-[; ;main.c: 132: break;
-"132
+[; ;main.c: 118: }
+[; ;main.c: 119: break;
 [e $U 346  ]
+[; ;main.c: 120: case 'd':
+"120
+[e :U 370 ]
+[; ;main.c: 121: can_dump_registers();
+"121
+[e ( _can_dump_registers ..  ]
+[; ;main.c: 122: break;
+"122
+[e $U 346  ]
+[; ;main.c: 123: case 'h':
+"123
+[e :U 371 ]
+[; ;main.c: 124: printf("--- UART2CAN HELP ---\n");
+"124
+[e ( _printf :s 7C ]
+[; ;main.c: 125: printf("[Set standard identifier] @i<standard identifier>\n");
+"125
+[e ( _printf :s 8C ]
+[; ;main.c: 126: printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
+"126
+[e ( _printf :s 9C ]
+[; ;main.c: 127: printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
+"127
+[e ( _printf :s 10C ]
+[; ;main.c: 128: printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
+"128
+[e ( _printf :s 11C ]
+[; ;main.c: 129: printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
+"129
+[e ( _printf :s 12C ]
+[; ;main.c: 130: printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
+"130
+[e ( _printf :s 13C ]
+[; ;main.c: 131: printf("[Set baud rate] @b<bpr>\n");
+"131
+[e ( _printf :s 14C ]
+[; ;main.c: 132: printf("[Dump registers] @d\n");
+"132
+[e ( _printf :s 15C ]
+[; ;main.c: 133: printf("[Send message] <message>\n");
 "133
+[e ( _printf :s 16C ]
+[; ;main.c: 134: printf("[Receive message] <message> will be output\n");
+"134
+[e ( _printf :s 17C ]
+[; ;main.c: 135: printf("[Show this help]: @h\n");
+"135
+[e ( _printf :s 18C ]
+[; ;main.c: 136: break;
+"136
+[e $U 346  ]
+"137
 }
-[; ;main.c: 133: }
+[; ;main.c: 137: }
 [e $U 346  ]
 "72
 [e :U 347 ]
@@ -3210,73 +3229,73 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 98 `ui `uc 364
  , $ -> -> 109 `ui `uc 365
  , $ -> -> 102 `ui `uc 366
- , $ -> -> 100 `ui `uc 367
- , $ -> -> 104 `ui `uc 368
+ , $ -> -> 100 `ui `uc 370
+ , $ -> -> 104 `ui `uc 371
  346 ]
-"133
-[e :U 346 ]
-"134
-}
-[; ;main.c: 134: } else {
-[e $U 369  ]
-[e :U 345 ]
-{
-"135
-[v _success `uc ~T0 @X0 1 a ]
-[; ;main.c: 135: bool success = can_send(buf, idx);
-[e = _success ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 136: if(success) {
-"136
-[e $ ! != -> _success `i -> -> -> 0 `i `uc `i 370  ]
-{
-[; ;main.c: 137: LATCbits.LATC3 = !LATCbits.LATC3;
 "137
-[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[e :U 346 ]
 "138
 }
-[e :U 370 ]
-"139
-}
-[e :U 369 ]
-[; ;main.c: 138: }
-[; ;main.c: 139: }
-[; ;main.c: 140: idx = 0;
-"140
-[e = _idx -> -> 0 `i `uc ]
-"141
-}
-[; ;main.c: 141: } else if (++idx > max_idx) {
-[e $U 371  ]
-[e :U 344 ]
-[e $ ! > -> =+ _idx -> -> 1 `i `uc `i -> _max_idx `i 372  ]
+[; ;main.c: 138: } else {
+[e $U 372  ]
+[e :U 345 ]
 {
-[; ;main.c: 142: buf[idx] = '\0';
+"139
+[v _success `uc ~T0 @X0 1 a ]
+[; ;main.c: 139: bool success = can_send(buf, idx);
+[e = _success ( _can_send (2 , &U _buf _idx ]
+[; ;main.c: 140: if(success) {
+"140
+[e $ ! != -> _success `i -> -> -> 0 `i `uc `i 373  ]
+{
+[; ;main.c: 141: LATCbits.LATC3 = !LATCbits.LATC3;
+"141
+[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
 "142
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 143: can_send(buf, idx);
+}
+[e :U 373 ]
 "143
-[e ( _can_send (2 , &U _buf _idx ]
+}
+[e :U 372 ]
+[; ;main.c: 142: }
+[; ;main.c: 143: }
 [; ;main.c: 144: idx = 0;
 "144
 [e = _idx -> -> 0 `i `uc ]
 "145
 }
-[e :U 372 ]
+[; ;main.c: 145: } else if (++idx > max_idx) {
+[e $U 374  ]
+[e :U 344 ]
+[e $ ! > -> =+ _idx -> -> 1 `i `uc `i -> _max_idx `i 375  ]
+{
+[; ;main.c: 146: buf[idx] = '\0';
 "146
-[e :U 371 ]
+[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 147: can_send(buf, idx);
+"147
+[e ( _can_send (2 , &U _buf _idx ]
+[; ;main.c: 148: idx = 0;
+"148
+[e = _idx -> -> 0 `i `uc ]
+"149
+}
+[e :U 375 ]
+"150
+[e :U 374 ]
 }
 [e :U 342 ]
-"147
+"151
 }
 [e :U 339 ]
 "59
 [e $U 340  ]
 [e :U 341 ]
-[; ;main.c: 145: }
-[; ;main.c: 146: }
-[; ;main.c: 147: }
-[; ;main.c: 148: }
-"148
+[; ;main.c: 149: }
+[; ;main.c: 150: }
+[; ;main.c: 151: }
+[; ;main.c: 152: }
+"152
 [e :UE 338 ]
 }
 [p f _printf 13402244 ]

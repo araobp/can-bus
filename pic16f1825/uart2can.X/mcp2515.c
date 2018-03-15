@@ -52,9 +52,20 @@ void can_init(void *receive_handler) {
     can_ope_mode(CONFIGURATION_MODE);    
     uint8_t cnf_buf[5] = {WRITE, CNF3, CNF3_VALUE, CNF2_VALUE, CNF1_VALUE};
     SPI_exchange(cnf_buf, 5);
+          
+    cnf_buf[0] = WRITE;
+    cnf_buf[1] = RXB0CTRL;
+    cnf_buf[2] = RXB0CTRL_VALUE;
+    SPI_exchange(cnf_buf, 3);
+
+    cnf_buf[0] = WRITE;
+    cnf_buf[1] = RXB1CTRL;
+    cnf_buf[2] = RXB1CTRL_VALUE;
+    SPI_exchange(cnf_buf, 3);
     
     mode.debug = false;
     mode.verbose = false;
+
     can_ope_mode(NORMAL_MODE);
 }
 
@@ -91,35 +102,20 @@ void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
     uint8_t mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
     uint8_t mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
     if (mode.debug) {
-        if (cmd == 'm') {
+        if (cmd == SET_MASK) {
             printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
         } else {
             printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);                                    
         }
     }
     mask_buf[0] = WRITE;
-    mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
+    mask_buf[1] = (cmd == SET_MASK)? rxmnsidh[n]: rxfnsidh[n];
     mask_buf[2] = mask_sidh;
     mask_buf[3] = mask_sidl;
+
     SPI_exchange(mask_buf, 4);
 
-    if (mode.debug) {
-        mask_buf[0] = READ;
-        mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
-        mask_buf[2] = 0x00;
-        mask_buf[3] = 0x00;
-        SPI_exchange(mask_buf, 4);
-        if (cmd == 'm') {
-            printf("RXM%dSIDH: %02x\n", n, mask_buf[2]);
-            printf("RXM%dSIDL: %02x\n", n, mask_buf[3]);
-        } else {
-            printf("RXF%dSIDH: %02x\n", n, mask_buf[2]);
-            printf("RXF%dSIDL: %02x\n", n, mask_buf[3]);
-        }
-    }
-
     can_ope_mode(operation_mode);   
-
 }
 
 /*
@@ -255,12 +251,12 @@ void can_status_check(void) {
     uint8_t status = can_status_buf[1];
     if (status == 0x00) {
         return;
-    } else if ((status & RX0IF_MASK) > 0) {
-        if (mode.debug) printf("RX0IF is on\n");
-        receive(0);
     } else if ((status & RX1IF_MASK) > 0) {
         if (mode.debug) printf("RX1IF is on\n");
         receive(1);
+    } else if ((status & RX0IF_MASK) > 0) {
+        if (mode.debug) printf("RX0IF is on\n");
+        receive(0);
     } else if ((status & TX0IF_MASK) > 0) {
         txf_clear(0);
     } else if ((status & TX1IF_MASK) > 0) {
@@ -310,6 +306,10 @@ void can_dump_registers(void) {
     printf("CNF1: %02x\n", read_register(CNF1));
     printf("CNF2: %02x\n", read_register(CNF2));
     printf("CNF3: %02x\n", read_register(CNF3));    
+    printf("\n");
+
+    printf("RXB0CTRL: %02x\n", read_register(RXB0CTRL));
+    printf("RXB1CTRL: %02x\n", read_register(RXB1CTRL));
     printf("\n");
     
     uint8_t n;

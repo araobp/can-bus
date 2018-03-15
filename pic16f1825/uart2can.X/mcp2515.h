@@ -19,6 +19,14 @@ extern "C" {
 #define TXB2CTRL 0x50
 #define TRANSMIT 0b00001011  // TXBnCTRL transmit request with highest priority
 
+// P27 RXB0CTRL
+#define RXB0CTRL 0x60
+// P28 RXB1CTRL    
+#define RXB1CTRL 0x70
+// Enable rollover to RXB1
+#define RXB0CTRL_VALUE 0b00100100
+#define RXB1CTRL_VALUE 0b00100000
+    
 // P34 mask and filters    
 const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
 const uint8_t rxmnsidh[2] = {0x20, 0x24};
@@ -65,6 +73,9 @@ const uint8_t abc[3] = {0b000, 0b010, 0b100};  // TXB0SIDH, TXB1SIDH, TXB2SIDH
 #define TXB2_TXREQ 0b01000000
 #define TX2IF_MASK 0b10000000
 const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+
+#define SET_MASK 0
+#define SET_FILTER 1
 
 void can_logging_mode(bool debug, bool verbose);
 void can_set_sid (uint16_t can_node);
