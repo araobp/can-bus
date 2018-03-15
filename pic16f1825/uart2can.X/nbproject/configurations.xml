@@ -13,6 +13,7 @@
         <itemPath>mcc_generated_files/spi.h</itemPath>
       </logicalFolder>
       <itemPath>mcp2515.h</itemPath>
+      <itemPath>spi.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -30,6 +31,8 @@
         <itemPath>mcc_generated_files/spi.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
+      <itemPath>spi.c</itemPath>
+      <itemPath>mcp2515.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

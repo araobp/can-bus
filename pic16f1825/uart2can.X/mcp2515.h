@@ -1,5 +1,7 @@
 /* 
  * Created on March 13, 2018.
+ * 
+ * MCP2515 data sheet: http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf
  */
 
 #ifndef MCP2515_H
@@ -9,8 +11,12 @@
 extern "C" {
 #endif
 
+#include <stdint.h>
+    
 // P18 TXB0CTRL
 #define TXB0CTRL 0x30
+#define TXB1CTRL 0x40
+#define TXB2CTRL 0x50
 #define TRANSMIT 0b00001011  // TXBnCTRL transmit request with highest priority
 
 // P34 mask and filters    
@@ -60,13 +66,15 @@ const uint8_t abc[3] = {0b000, 0b010, 0b100};  // TXB0SIDH, TXB1SIDH, TXB2SIDH
 #define TX2IF_MASK 0b10000000
 const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
 
-/*
- *  TXBnSIDH and TXBnSIDL on MCP2515
- */
-typedef struct {
-    uint8_t sidh;
-    uint8_t sidl;
-} SID;
+void can_logging_mode(bool debug, bool verbose);
+void can_set_sid (uint16_t can_node);
+void can_init(void *receive_handler);
+bool can_ope_mode(uint8_t ope_mode);
+void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+bool can_send(uint8_t *buf, uint8_t dlc);
+void can_status_check(void);
+bool can_baudrate(uint8_t bpr);
+void can_dump_registers(void);
 
 #ifdef	__cplusplus
 }

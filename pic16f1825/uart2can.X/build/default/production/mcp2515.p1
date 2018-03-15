@@ -1,50 +1,136 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"16 main.c
-[s S328 `uc 1 `uc 1 ]
-[n S328 . with_sid hex_output ]
+"13 mcp2515.c
+[s S324 `uc 1 `uc 1 ]
+[n S324 . sidh sidl ]
+"18
+[s S325 `uc 1 `uc 1 ]
+[n S325 . debug verbose ]
+[v F2795 `(v ~T0 @X0 0 tf3`uc`*uc`uc ]
+"72 mcp2515.h
+[v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
+"17 spi.h
+[v _SPI_exchange `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-[p mainexit ]
-"69 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"71 mcp2515.h
-[v _can_init `(v ~T0 @X0 0 ef1`*v ]
-"75
-[v _can_status_check `(v ~T0 @X0 0 ef ]
-"533 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"532
-[u S32 `S33 1 ]
-[n S32 . . ]
-"544
-[v _PIR1bits `VS32 ~T0 @X0 0 e@17 ]
-"114 mcc_generated_files/eusart.h
-[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"55 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"70 mcp2515.h
-[v _can_set_sid `(v ~T0 @X0 0 ef1`ui ]
-"69
-[v _can_logging_mode `(v ~T0 @X0 0 ef2`uc`uc ]
-"72
-[v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
-"76
-[v _can_baudrate `(uc ~T0 @X0 0 ef1`uc ]
-"73
-[v _can_set_mask `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"77
-[v _can_dump_registers `(v ~T0 @X0 0 ef ]
-"74
-[v _can_send `(uc ~T0 @X0 0 ef2`*uc`uc ]
-"1994 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S103 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
-"1993
-[u S102 `S103 1 ]
-[n S102 . . ]
-"2003
-[v _LATCbits `VS102 ~T0 @X0 0 e@270 ]
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+"23 mcp2515.h
+[v _rxfnsidh `Cuc ~T0 @X0 -> 6 `i e ]
+[i _rxfnsidh
+:U ..
+-> -> 0 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+-> -> 20 `i `uc
+-> -> 24 `i `uc
+..
+]
+[; ;mcp2515.h: 23: const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
+"24
+[v _rxmnsidh `Cuc ~T0 @X0 -> 2 `i e ]
+[i _rxmnsidh
+:U ..
+-> -> 32 `i `uc
+-> -> 36 `i `uc
+..
+]
+[; ;mcp2515.h: 24: const uint8_t rxmnsidh[2] = {0x20, 0x24};
+"50
+[v _nm `Cuc ~T0 @X0 -> 2 `i e ]
+[i _nm
+:U ..
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+..
+]
+[; ;mcp2515.h: 50: const uint8_t nm[2] = {0b00, 0b10};
+"54
+[v _abc `Cuc ~T0 @X0 -> 3 `i e ]
+[i _abc
+:U ..
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+..
+]
+[; ;mcp2515.h: 54: const uint8_t abc[3] = {0b000, 0b010, 0b100};
+"67
+[v _txbnsidh `Cuc ~T0 @X0 -> 3 `i e ]
+[i _txbnsidh
+:U ..
+-> -> 49 `i `uc
+-> -> 65 `i `uc
+-> -> 81 `i `uc
+..
+]
+[; ;mcp2515.h: 67: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+[; ;mcp2515.h: 69: void can_logging_mode(bool debug, bool verbose);
+[; ;mcp2515.h: 70: void can_set_sid (uint16_t can_node);
+[; ;mcp2515.h: 71: void can_init(void *receive_handler);
+[; ;mcp2515.h: 72: bool can_ope_mode(uint8_t ope_mode);
+[; ;mcp2515.h: 73: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+[; ;mcp2515.h: 74: bool can_send(uint8_t *buf, uint8_t dlc);
+[; ;mcp2515.h: 75: void can_status_check(void);
+[; ;mcp2515.h: 76: bool can_baudrate(uint8_t bpr);
+[; ;mcp2515.h: 77: void can_dump_registers(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2635,666 +2721,981 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 177: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 189: void PIN_MANAGER_IOC(void);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi.h: 115: void SPI_Initialize(void);
-[; ;spi.h: 150: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 190: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 213: bool SPI_IsBufferFull(void);
-[; ;spi.h: 238: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 262: void SPI_ClearWriteCollisionStatus(void);
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;eusart.h: 94: void EUSART_Initialize(void);
-[; ;eusart.h: 114: uint8_t EUSART_Read(void);
-[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;mcc.h: 69: void SYSTEM_Initialize(void);
-[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 95: void WDT_Initialize(void);
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"23 mcp2515.h
-[v _rxfnsidh `Cuc ~T0 @X0 -> 6 `i e ]
-[i _rxfnsidh
-:U ..
--> -> 0 `i `uc
--> -> 4 `i `uc
--> -> 8 `i `uc
--> -> 16 `i `uc
--> -> 20 `i `uc
--> -> 24 `i `uc
-..
-]
-[; ;mcp2515.h: 23: const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
+[; ;spi.h: 17: uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
+"16 mcp2515.c
+[v _sid `S324 ~T0 @X0 1 e ]
+[; ;mcp2515.c: 13: struct {
+[; ;mcp2515.c: 14: uint8_t sidh;
+[; ;mcp2515.c: 15: uint8_t sidl;
+[; ;mcp2515.c: 16: } sid;
+"21
+[v _mode `S325 ~T0 @X0 1 e ]
+[; ;mcp2515.c: 18: struct {
+[; ;mcp2515.c: 19: bool debug;
+[; ;mcp2515.c: 20: bool verbose;
+[; ;mcp2515.c: 21: } mode;
+"23
+[v _operation_mode `uc ~T0 @X0 1 e ]
+[; ;mcp2515.c: 23: uint8_t operation_mode;
 "24
-[v _rxmnsidh `Cuc ~T0 @X0 -> 2 `i e ]
-[i _rxmnsidh
-:U ..
--> -> 32 `i `uc
--> -> 36 `i `uc
-..
+[v _handler `*F2795 ~T0 @X0 1 e ]
+[i _handler
+-> -> 0 `i `*F2795
 ]
-[; ;mcp2515.h: 24: const uint8_t rxmnsidh[2] = {0x20, 0x24};
-"50
-[v _nm `Cuc ~T0 @X0 -> 2 `i e ]
-[i _nm
-:U ..
--> -> 0 `i `uc
--> -> 2 `i `uc
-..
-]
-[; ;mcp2515.h: 50: const uint8_t nm[2] = {0b00, 0b10};
-"54
-[v _abc `Cuc ~T0 @X0 -> 3 `i e ]
-[i _abc
-:U ..
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 4 `i `uc
-..
-]
-[; ;mcp2515.h: 54: const uint8_t abc[3] = {0b000, 0b010, 0b100};
-"67
-[v _txbnsidh `Cuc ~T0 @X0 -> 3 `i e ]
-[i _txbnsidh
-:U ..
--> -> 49 `i `uc
--> -> 65 `i `uc
--> -> 81 `i `uc
-..
-]
-[; ;mcp2515.h: 67: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
-[; ;mcp2515.h: 69: void can_logging_mode(bool debug, bool verbose);
-[; ;mcp2515.h: 70: void can_set_sid (uint16_t can_node);
-[; ;mcp2515.h: 71: void can_init(void *receive_handler);
-[; ;mcp2515.h: 72: bool can_ope_mode(uint8_t ope_mode);
-[; ;mcp2515.h: 73: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-[; ;mcp2515.h: 74: bool can_send(uint8_t *buf, uint8_t dlc);
-[; ;mcp2515.h: 75: void can_status_check(void);
-[; ;mcp2515.h: 76: bool can_baudrate(uint8_t bpr);
-[; ;mcp2515.h: 77: void can_dump_registers(void);
-"14 main.c
-[v _max_idx `Cuc ~T0 @X0 1 e ]
-[i _max_idx
--> - -> 9 `i -> 2 `i `uc
-]
-[; ;main.c: 14: const uint8_t max_idx = 9 - 2;
-"19
-[v _output_format `S328 ~T0 @X0 1 e ]
-[; ;main.c: 16: struct {
-[; ;main.c: 17: bool with_sid;
-[; ;main.c: 18: bool hex_output;
-[; ;main.c: 19: } output_format;
-"24
-[v _receive_handler `(v ~T0 @X0 1 ef3`uc`*uc`uc ]
-{
-[; ;main.c: 24: void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
-[e :U _receive_handler ]
-[v _sid `uc ~T0 @X0 1 r1 ]
-[v _pbuf `*uc ~T0 @X0 1 r2 ]
-[v _dlc `uc ~T0 @X0 1 r3 ]
-[f ]
-"25
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 25: uint8_t i;
-[; ;main.c: 26: if (output_format.with_sid) {
+[; ;mcp2515.c: 24: void (*handler)(uint8_t sid, uint8_t *pbuf, uint8_t dlc) = (0);
 "26
-[e $ ! != -> . _output_format 0 `i -> -> -> 0 `i `uc `i 330  ]
+[v _can_logging_mode `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;main.c: 27: printf("%d,%s\n", sid, pbuf);
-"27
-[e ( _printf , , (. :s 1C -> _sid `i -> _pbuf `*Cuc ]
-"28
-}
-[; ;main.c: 28: } else if (output_format.hex_output) {
-[e $U 331  ]
-[e :U 330 ]
-[e $ ! != -> . _output_format 1 `i -> -> -> 0 `i `uc `i 332  ]
-{
-[; ;main.c: 29: printf("%02x:", sid);
-"29
-[e ( _printf , (. :s 2C -> _sid `i ]
-[; ;main.c: 30: for(i=0; i<dlc; i++) {
-"30
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 336  ]
-[e :U 333 ]
-{
-[; ;main.c: 31: printf(" %02x", pbuf[i]);
-"31
-[e ( _printf , (. :s 3C -> *U + _pbuf * -> _i `ux -> -> # *U _pbuf `ui `ux `i ]
-"32
-}
-"30
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 336 ]
-[e $ < -> _i `i -> _dlc `i 333  ]
-[e :U 334 ]
-"32
-}
-[; ;main.c: 32: }
-[; ;main.c: 33: printf("\n");
-"33
-[e ( _printf :s 4C ]
-"34
-}
-[; ;main.c: 34: } else {
-[e $U 337  ]
-[e :U 332 ]
-{
-[; ;main.c: 35: printf("%s\n", pbuf);
-"35
-[e ( _printf , (. :s 5C -> _pbuf `*Cuc ]
-"36
-}
-[e :U 337 ]
-[e :U 331 ]
-[; ;main.c: 36: }
-[; ;main.c: 37: }
-"37
-[e :UE 329 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"39
-[v _main `(v ~T0 @X0 1 ef ]
-"40
-{
-[; ;main.c: 39: void main(void)
-[; ;main.c: 40: {
-[e :U _main ]
+[; ;mcp2515.c: 26: void can_logging_mode(bool debug, bool verbose) {
+[e :U _can_logging_mode ]
+[v _debug `uc ~T0 @X0 1 r1 ]
+[v _verbose `uc ~T0 @X0 1 r2 ]
 [f ]
+[; ;mcp2515.c: 27: mode.debug = debug;
+"27
+[e = . _mode 0 _debug ]
+[; ;mcp2515.c: 28: mode.verbose = verbose;
+"28
+[e = . _mode 1 _verbose ]
+[; ;mcp2515.c: 29: }
+"29
+[e :UE 326 ]
+}
+"37
+[v _can_set_sid `(v ~T0 @X0 1 ef1`ui ]
+{
+[; ;mcp2515.c: 37: void can_set_sid (uint16_t can_node) {
+[e :U _can_set_sid ]
+[v _can_node `ui ~T0 @X0 1 r1 ]
+[f ]
+"38
+[v _sidh `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 38: uint8_t sidh = (can_node >> 3) & 0x00ff;
+[e = _sidh -> & >> _can_node -> 3 `i -> -> 255 `i `ui `uc ]
+"39
+[v _sidl `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 39: uint8_t sidl = (can_node << 5) & 0x00e0;
+[e = _sidl -> & << _can_node -> 5 `i -> -> 224 `i `ui `uc ]
+[; ;mcp2515.c: 40: sid.sidh = sidh;
+"40
+[e = . _sid 0 _sidh ]
+[; ;mcp2515.c: 41: sid.sidl = sidl;
 "41
-[v _buf `uc ~T0 @X0 -> 9 `i a ]
+[e = . _sid 1 _sidl ]
+[; ;mcp2515.c: 42: }
 "42
-[v _echo_back `uc ~T0 @X0 1 a ]
-[; ;main.c: 41: uint8_t buf[9];
-[; ;main.c: 42: bool echo_back = 0;
-[e = _echo_back -> -> 0 `i `uc ]
-"43
-[v _c `uc ~T0 @X0 1 a ]
-[v _idx `uc ~T0 @X0 1 a ]
-"45
-[v _cmd `uc ~T0 @X0 1 a ]
-[v _sid `uc ~T0 @X0 1 a ]
-[v _n `uc ~T0 @X0 1 a ]
-[v _bpr `uc ~T0 @X0 1 a ]
-"46
-[v _mask `ui ~T0 @X0 1 a ]
-[; ;main.c: 43: uint8_t c, idx;
-[; ;main.c: 45: uint8_t cmd, sid, n, bpr;
-[; ;main.c: 46: uint16_t mask;
-[; ;main.c: 48: SYSTEM_Initialize();
+[e :UE 327 ]
+}
+"47
+[v _can_init `(v ~T0 @X0 1 ef1`*v ]
+{
+[; ;mcp2515.c: 47: void can_init(void *receive_handler) {
+[e :U _can_init ]
+[v _receive_handler `*v ~T0 @X0 1 r1 ]
+[f ]
+[; ;mcp2515.c: 48: can_set_sid(0);
 "48
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 53: output_format.with_sid = 0;
+[e ( _can_set_sid (1 -> -> 0 `i `ui ]
+[; ;mcp2515.c: 50: handler = receive_handler;
+"50
+[e = _handler -> _receive_handler `*F2795 ]
+[; ;mcp2515.c: 52: can_ope_mode(0b10000000);
+"52
+[e ( _can_ope_mode (1 -> -> 128 `i `uc ]
+[v F2806 `uc ~T0 @X0 -> 5 `i s ]
+[i F2806
+:U ..
 "53
-[e = . _output_format 0 -> -> 0 `i `uc ]
-[; ;main.c: 54: output_format.hex_output = 0;
+-> -> 2 `i `uc
+-> -> 40 `i `uc
+-> -> 5 `i `uc
+-> -> 241 `i `uc
+-> -> 65 `i `uc
+..
+]
+[v _cnf_buf `uc ~T0 @X0 -> 5 `i a ]
+[; ;mcp2515.c: 53: uint8_t cnf_buf[5] = {0b00000010, 0x28, 0b00000101, 0b11110001, 0b01000001};
+[e = _cnf_buf F2806 ]
+[; ;mcp2515.c: 54: SPI_exchange(cnf_buf, 5);
 "54
-[e = . _output_format 1 -> -> 0 `i `uc ]
-[; ;main.c: 55: can_init(receive_handler);
-"55
-[e ( _can_init (1 -> &U _receive_handler `*v ]
-[; ;main.c: 57: idx = 0;
+[e ( _SPI_exchange (2 , &U _cnf_buf -> -> 5 `i `uc ]
+[; ;mcp2515.c: 56: mode.debug = 0;
+"56
+[e = . _mode 0 -> -> 0 `i `uc ]
+[; ;mcp2515.c: 57: mode.verbose = 0;
 "57
-[e = _idx -> -> 0 `i `uc ]
-[; ;main.c: 59: while (1)
+[e = . _mode 1 -> -> 0 `i `uc ]
+[; ;mcp2515.c: 58: can_ope_mode(0b00000000);
+"58
+[e ( _can_ope_mode (1 -> -> 0 `i `uc ]
+[; ;mcp2515.c: 59: }
 "59
-[e :U 340 ]
-[; ;main.c: 60: {
-"60
-{
-[; ;main.c: 61: can_status_check();
-"61
-[e ( _can_status_check ..  ]
-[; ;main.c: 63: if ((PIR1bits.RCIF)) {
-"63
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 342  ]
-{
-[; ;main.c: 64: c = EUSART_Read();
+[e :UE 328 ]
+}
 "64
-[e = _c ( _EUSART_Read ..  ]
-[; ;main.c: 65: if (echo_back) printf("%c", c);
+[v _can_ope_mode `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;mcp2515.c: 64: bool can_ope_mode(uint8_t ope_mode) {
+[e :U _can_ope_mode ]
+[v _ope_mode `uc ~T0 @X0 1 r1 ]
+[f ]
 "65
-[e $ ! != -> _echo_back `i -> -> -> 0 `i `uc `i 343  ]
-[e ( _printf , (. :s 6C -> _c `i ]
-[e :U 343 ]
-[; ;main.c: 67: buf[idx] = c;
+[v _can_ctrl_buf `uc ~T0 @X0 -> 3 `i a ]
+[; ;mcp2515.c: 65: uint8_t can_ctrl_buf[3];
+[; ;mcp2515.c: 66: can_ctrl_buf[0] = 0b00000010;
+"66
+[e = *U + &U _can_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux -> -> 2 `i `uc ]
+[; ;mcp2515.c: 67: can_ctrl_buf[1] = 0x0f;
 "67
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux _c ]
-[; ;main.c: 68: if (c == '\n') {
+[e = *U + &U _can_ctrl_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux -> -> 15 `i `uc ]
+[; ;mcp2515.c: 68: can_ctrl_buf[2] = ope_mode;
 "68
-[e $ ! == -> _c `ui -> 10 `ui 344  ]
-{
-[; ;main.c: 69: buf[idx] = '\0';
+[e = *U + &U _can_ctrl_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux _ope_mode ]
 "69
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 70: if (buf[0] == '@') {
-"70
-[e $ ! == -> *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 64 `ui 345  ]
-{
-[; ;main.c: 71: cmd = buf[1];
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 69: uint8_t bytes_written = SPI_exchange(can_ctrl_buf, 3);
+[e = _bytes_written ( _SPI_exchange (2 , &U _can_ctrl_buf -> -> 3 `i `uc ]
+[; ;mcp2515.c: 71: if (ope_mode != 0b10000000) operation_mode = ope_mode;
 "71
-[e = _cmd *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux ]
-[; ;main.c: 72: switch(cmd) {
-"72
-[e $U 347  ]
-{
-[; ;main.c: 73: case 'i':
+[e $ ! != -> _ope_mode `i -> 128 `i 330  ]
+[e = _operation_mode _ope_mode ]
+[e :U 330 ]
+[; ;mcp2515.c: 73: if (bytes_written == 3) {
 "73
-[e :U 348 ]
-[; ;main.c: 74: sid = atoi(&buf[2]);
-"74
-[e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
-[; ;main.c: 75: can_set_sid(sid);
-"75
-[e ( _can_set_sid (1 -> _sid `ui ]
-[; ;main.c: 76: break;
-"76
-[e $U 346  ]
-[; ;main.c: 77: case 'v':
-"77
-[e :U 349 ]
-[; ;main.c: 78: if (buf[2] == 'd') {
-"78
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 100 `ui 350  ]
+[e $ ! == -> _bytes_written `i -> 3 `i 331  ]
 {
-[; ;main.c: 79: can_logging_mode(1, 1);
+[; ;mcp2515.c: 74: can_ctrl_buf[0] = 0b00000011;
+"74
+[e = *U + &U _can_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux -> -> 3 `i `uc ]
+[; ;mcp2515.c: 75: can_ctrl_buf[1] = 0x0e;
+"75
+[e = *U + &U _can_ctrl_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux -> -> 14 `i `uc ]
+[; ;mcp2515.c: 76: bytes_written = SPI_exchange(can_ctrl_buf, 3);
+"76
+[e = _bytes_written ( _SPI_exchange (2 , &U _can_ctrl_buf -> -> 3 `i `uc ]
+[; ;mcp2515.c: 77: if (mode.debug) printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
+"77
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 332  ]
+[e ( _printf , (. :s 1C -> *U + &U _can_ctrl_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_ctrl_buf `ui `ux `i ]
+[e :U 332 ]
+[; ;mcp2515.c: 78: return 1;
+"78
+[e ) -> -> 1 `i `uc ]
+[e $UE 329  ]
 "79
-[e ( _can_logging_mode (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 80: echo_back = 1;
+}
+[; ;mcp2515.c: 79: } else {
+[e $U 333  ]
+[e :U 331 ]
+{
+[; ;mcp2515.c: 80: return 0;
 "80
-[e = _echo_back -> -> 1 `i `uc ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 329  ]
 "81
 }
-[; ;main.c: 81: } else if (buf[2] == 'v') {
-[e $U 351  ]
-[e :U 350 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 118 `ui 352  ]
-{
-[; ;main.c: 82: can_logging_mode(0, 1);
+[e :U 333 ]
+[; ;mcp2515.c: 81: }
+[; ;mcp2515.c: 82: }
 "82
-[e ( _can_logging_mode (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 83: echo_back = 1;
-"83
-[e = _echo_back -> -> 1 `i `uc ]
-"84
+[e :UE 329 ]
 }
-[; ;main.c: 84: } else if (buf[2] == 'n') {
-[e $U 353  ]
-[e :U 352 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 354  ]
-{
-[; ;main.c: 85: can_logging_mode(0, 0);
-"85
-[e ( _can_logging_mode (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 86: echo_back = 0;
-"86
-[e = _echo_back -> -> 0 `i `uc ]
 "87
-}
-[e :U 354 ]
+[v _can_set_mask `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+{
+[; ;mcp2515.c: 87: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
+[e :U _can_set_mask ]
+[v _cmd `uc ~T0 @X0 1 r1 ]
+[v _n `uc ~T0 @X0 1 r2 ]
+[v _mask `uc ~T0 @X0 1 r3 ]
+[f ]
 "88
-[e :U 353 ]
-[e :U 351 ]
-[; ;main.c: 87: }
-[; ;main.c: 88: break;
-[e $U 346  ]
-[; ;main.c: 89: case 'o':
-"89
-[e :U 355 ]
-[; ;main.c: 90: if (buf[2] == 'l') {
+[v _mask_buf `uc ~T0 @X0 -> 4 `i a ]
+[; ;mcp2515.c: 88: uint8_t mask_buf[4];
+[; ;mcp2515.c: 90: can_ope_mode(0b10000000);
 "90
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 108 `ui 356  ]
-{
-[; ;main.c: 91: can_ope_mode(0b01000000);
+[e ( _can_ope_mode (1 -> -> 128 `i `uc ]
 "91
-[e ( _can_ope_mode (1 -> -> 64 `i `uc ]
+[v _mask_sidh `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 91: uint8_t mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
+[e = _mask_sidh -> & >> -> _mask `i -> 3 `i -> 255 `i `uc ]
 "92
-}
-[; ;main.c: 92: } else if (buf[2] == 'n') {
-[e $U 357  ]
-[e :U 356 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 358  ]
-{
-[; ;main.c: 93: can_ope_mode(0b00000000);
+[v _mask_sidl `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 92: uint8_t mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
+[e = _mask_sidl -> & << & -> _mask `i -> 7 `i -> 5 `i -> 255 `i `uc ]
+[; ;mcp2515.c: 93: if (mode.debug) {
 "93
-[e ( _can_ope_mode (1 -> -> 0 `i `uc ]
-"94
-}
-[e :U 358 ]
-"95
-[e :U 357 ]
-[; ;main.c: 94: }
-[; ;main.c: 95: if (buf[3] == '\0') {
-[e $ ! == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 359  ]
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 335  ]
 {
-[; ;main.c: 96: output_format.with_sid = 0;
+[; ;mcp2515.c: 94: if (cmd == 'm') {
+"94
+[e $ ! == -> _cmd `ui -> 109 `ui 336  ]
+{
+[; ;mcp2515.c: 95: printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
+"95
+[e ( _printf , , , (. :s 2C -> _n `i -> _mask_sidh `i -> _mask_sidl `i ]
 "96
-[e = . _output_format 0 -> -> 0 `i `uc ]
-[; ;main.c: 97: output_format.hex_output = 0;
+}
+[; ;mcp2515.c: 96: } else {
+[e $U 337  ]
+[e :U 336 ]
+{
+[; ;mcp2515.c: 97: printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
 "97
-[e = . _output_format 1 -> -> 0 `i `uc ]
+[e ( _printf , , , (. :s 3C -> _n `i -> _mask_sidh `i -> _mask_sidl `i ]
 "98
 }
-[; ;main.c: 98: } else if (buf[3] == 's' && buf[4] == '\0') {
-[e $U 360  ]
-[e :U 359 ]
-[e $ ! && == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 115 `ui == -> *U + &U _buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 361  ]
-{
-[; ;main.c: 99: output_format.with_sid = 1;
+[e :U 337 ]
 "99
-[e = . _output_format 0 -> -> 1 `i `uc ]
-[; ;main.c: 100: output_format.hex_output = 0;
+}
+[e :U 335 ]
+[; ;mcp2515.c: 98: }
+[; ;mcp2515.c: 99: }
+[; ;mcp2515.c: 100: mask_buf[0] = 0b00000010;
 "100
-[e = . _output_format 1 -> -> 0 `i `uc ]
+[e = *U + &U _mask_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 2 `i `uc ]
+[; ;mcp2515.c: 101: mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
 "101
-}
-[; ;main.c: 101: } else if (buf[3] == 'h' && buf[4] == '\0') {
-[e $U 362  ]
-[e :U 361 ]
-[e $ ! && == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 104 `ui == -> *U + &U _buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 363  ]
-{
-[; ;main.c: 102: output_format.with_sid = 0;
+[e = *U + &U _mask_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> ? == -> _cmd `ui -> 109 `ui : -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i `uc ]
+[; ;mcp2515.c: 102: mask_buf[2] = mask_sidh;
 "102
-[e = . _output_format 0 -> -> 0 `i `uc ]
-[; ;main.c: 103: output_format.hex_output = 1;
+[e = *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux _mask_sidh ]
+[; ;mcp2515.c: 103: mask_buf[3] = mask_sidl;
 "103
-[e = . _output_format 1 -> -> 1 `i `uc ]
+[e = *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux _mask_sidl ]
+[; ;mcp2515.c: 104: SPI_exchange(mask_buf, 4);
 "104
-}
-[e :U 363 ]
-"105
-[e :U 362 ]
-[e :U 360 ]
-[; ;main.c: 104: }
-[; ;main.c: 105: break;
-[e $U 346  ]
-[; ;main.c: 106: case 'b':
+[e ( _SPI_exchange (2 , &U _mask_buf -> -> 4 `i `uc ]
+[; ;mcp2515.c: 106: if (mode.debug) {
 "106
-[e :U 364 ]
-[; ;main.c: 107: bpr = atoi(&buf[2]);
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 338  ]
+{
+[; ;mcp2515.c: 107: mask_buf[0] = 0b00000011;
 "107
-[e = _bpr -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
-[; ;main.c: 108: can_baudrate(bpr);
+[e = *U + &U _mask_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 3 `i `uc ]
+[; ;mcp2515.c: 108: mask_buf[1] = (cmd == 'm')? rxmnsidh[n]: rxfnsidh[n];
 "108
-[e ( _can_baudrate (1 _bpr ]
-[; ;main.c: 109: break;
+[e = *U + &U _mask_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> ? == -> _cmd `ui -> 109 `ui : -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i `uc ]
+[; ;mcp2515.c: 109: mask_buf[2] = 0x00;
 "109
-[e $U 346  ]
-[; ;main.c: 110: case 'm':
+[e = *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 110: mask_buf[3] = 0x00;
 "110
-[e :U 365 ]
+[e = *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 111: SPI_exchange(mask_buf, 4);
 "111
-[e :U 366 ]
-[; ;main.c: 111: case 'f':
-[; ;main.c: 112: n = buf[2] - 0x30;
+[e ( _SPI_exchange (2 , &U _mask_buf -> -> 4 `i `uc ]
+[; ;mcp2515.c: 112: if (cmd == 'm') {
 "112
-[e = _n -> - -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 113: mask = atoi(&buf[3]);
+[e $ ! == -> _cmd `ui -> 109 `ui 339  ]
+{
+[; ;mcp2515.c: 113: printf("RXM%dSIDH: %02x\n", n, mask_buf[2]);
 "113
-[e = _mask -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
-[; ;main.c: 114: can_set_mask(cmd, n, mask);
+[e ( _printf , , (. :s 4C -> _n `i -> *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
+[; ;mcp2515.c: 114: printf("RXM%dSIDL: %02x\n", n, mask_buf[3]);
 "114
-[e ( _can_set_mask (3 , , _cmd _n -> _mask `uc ]
-[; ;main.c: 115: break;
+[e ( _printf , , (. :s 5C -> _n `i -> *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
 "115
-[e $U 346  ]
-[; ;main.c: 116: case 'd':
+}
+[; ;mcp2515.c: 115: } else {
+[e $U 340  ]
+[e :U 339 ]
+{
+[; ;mcp2515.c: 116: printf("RXF%dSIDH: %02x\n", n, mask_buf[2]);
 "116
-[e :U 367 ]
-[; ;main.c: 117: can_dump_registers();
+[e ( _printf , , (. :s 6C -> _n `i -> *U + &U _mask_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
+[; ;mcp2515.c: 117: printf("RXF%dSIDL: %02x\n", n, mask_buf[3]);
 "117
-[e ( _can_dump_registers ..  ]
-[; ;main.c: 118: break;
+[e ( _printf , , (. :s 7C -> _n `i -> *U + &U _mask_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _mask_buf `ui `ux `i ]
 "118
-[e $U 346  ]
-[; ;main.c: 119: case 'h':
+}
+[e :U 340 ]
 "119
-[e :U 368 ]
-[; ;main.c: 120: printf("--- UART2CAN HELP ---\n");
-"120
-[e ( _printf :s 7C ]
-[; ;main.c: 121: printf("[Set standard identifier] @i<standard identifier>\n");
+}
+[e :U 338 ]
+[; ;mcp2515.c: 118: }
+[; ;mcp2515.c: 119: }
+[; ;mcp2515.c: 121: can_ope_mode(operation_mode);
 "121
-[e ( _printf :s 8C ]
-[; ;main.c: 122: printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
-"122
-[e ( _printf :s 9C ]
-[; ;main.c: 123: printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
+[e ( _can_ope_mode (1 _operation_mode ]
+[; ;mcp2515.c: 123: }
 "123
-[e ( _printf :s 10C ]
-[; ;main.c: 124: printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
-"124
-[e ( _printf :s 11C ]
-[; ;main.c: 125: printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
-"125
-[e ( _printf :s 12C ]
-[; ;main.c: 126: printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
-"126
-[e ( _printf :s 13C ]
-[; ;main.c: 127: printf("[Set baud rate] @b<bpr>\n");
-"127
-[e ( _printf :s 14C ]
-[; ;main.c: 128: printf("[Dump registers] @d\n");
+[e :UE 334 ]
+}
 "128
-[e ( _printf :s 15C ]
-[; ;main.c: 129: printf("[Send message] <message>\n");
+[v _txf_clear `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;mcp2515.c: 128: bool txf_clear(uint8_t n) {
+[e :U _txf_clear ]
+[v _n `uc ~T0 @X0 1 r1 ]
+[f ]
 "129
-[e ( _printf :s 16C ]
-[; ;main.c: 130: printf("[Receive message] <message> will be output\n");
+[v _mask `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 129: uint8_t mask = 0b00000001 << (n + 2);
+[e = _mask -> << -> 1 `i + -> _n `i -> 2 `i `uc ]
 "130
-[e ( _printf :s 17C ]
-[; ;main.c: 131: printf("[Show this help]: @h\n");
+[v _can_int_flag `uc ~T0 @X0 -> 4 `i a ]
+[; ;mcp2515.c: 130: uint8_t can_int_flag[4];
+[; ;mcp2515.c: 131: can_int_flag[0] =0b00000101;
 "131
-[e ( _printf :s 18C ]
-[; ;main.c: 132: break;
+[e = *U + &U _can_int_flag * -> -> -> 0 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 5 `i `uc ]
+[; ;mcp2515.c: 132: can_int_flag[1] = 0x2c;
 "132
-[e $U 346  ]
+[e = *U + &U _can_int_flag * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 44 `i `uc ]
+[; ;mcp2515.c: 133: can_int_flag[2] = mask;
 "133
-}
-[; ;main.c: 133: }
-[e $U 346  ]
-"72
-[e :U 347 ]
-[e [\ _cmd , $ -> -> 105 `ui `uc 348
- , $ -> -> 118 `ui `uc 349
- , $ -> -> 111 `ui `uc 355
- , $ -> -> 98 `ui `uc 364
- , $ -> -> 109 `ui `uc 365
- , $ -> -> 102 `ui `uc 366
- , $ -> -> 100 `ui `uc 367
- , $ -> -> 104 `ui `uc 368
- 346 ]
-"133
-[e :U 346 ]
+[e = *U + &U _can_int_flag * -> -> -> 2 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux _mask ]
+[; ;mcp2515.c: 134: can_int_flag[3] = 0x00;
 "134
-}
-[; ;main.c: 134: } else {
-[e $U 369  ]
-[e :U 345 ]
-{
+[e = *U + &U _can_int_flag * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_int_flag `ui `ux -> -> 0 `i `uc ]
 "135
-[v _success `uc ~T0 @X0 1 a ]
-[; ;main.c: 135: bool success = can_send(buf, idx);
-[e = _success ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 136: if(success) {
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 135: uint8_t bytes_written = SPI_exchange(can_int_flag, 4);
+[e = _bytes_written ( _SPI_exchange (2 , &U _can_int_flag -> -> 4 `i `uc ]
+[; ;mcp2515.c: 136: if (bytes_written == 4) {
 "136
-[e $ ! != -> _success `i -> -> -> 0 `i `uc `i 370  ]
+[e $ ! == -> _bytes_written `i -> 4 `i 342  ]
 {
-[; ;main.c: 137: LATCbits.LATC3 = !LATCbits.LATC3;
+[; ;mcp2515.c: 137: return 1;
 "137
-[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 341  ]
 "138
 }
-[e :U 370 ]
-"139
-}
-[e :U 369 ]
-[; ;main.c: 138: }
-[; ;main.c: 139: }
-[; ;main.c: 140: idx = 0;
-"140
-[e = _idx -> -> 0 `i `uc ]
-"141
-}
-[; ;main.c: 141: } else if (++idx > max_idx) {
-[e $U 371  ]
-[e :U 344 ]
-[e $ ! > -> =+ _idx -> -> 1 `i `uc `i -> _max_idx `i 372  ]
-{
-[; ;main.c: 142: buf[idx] = '\0';
-"142
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 143: can_send(buf, idx);
-"143
-[e ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 144: idx = 0;
-"144
-[e = _idx -> -> 0 `i `uc ]
-"145
-}
-[e :U 372 ]
-"146
-[e :U 371 ]
-}
+[; ;mcp2515.c: 138: } else {
+[e $U 343  ]
 [e :U 342 ]
-"147
+{
+[; ;mcp2515.c: 139: return 0;
+"139
+[e ) -> -> 0 `i `uc ]
+[e $UE 341  ]
+"140
 }
-[e :U 339 ]
-"59
-[e $U 340  ]
-[e :U 341 ]
-[; ;main.c: 145: }
-[; ;main.c: 146: }
-[; ;main.c: 147: }
-[; ;main.c: 148: }
-"148
-[e :UE 338 ]
+[e :U 343 ]
+[; ;mcp2515.c: 140: }
+[; ;mcp2515.c: 141: }
+"141
+[e :UE 341 ]
+}
+"146
+[v _receive `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;mcp2515.c: 146: void receive(uint8_t n) {
+[e :U _receive ]
+[v _n `uc ~T0 @X0 1 r1 ]
+[f ]
+"150
+[v _rx_buf `uc ~T0 @X0 -> 15 `i a ]
+[; ;mcp2515.c: 150: uint8_t rx_buf[15];
+[; ;mcp2515.c: 153: rx_buf[0] = 0b10010000 + (nm[n] << 1);
+"153
+[e = *U + &U _rx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux -> + -> 144 `i << -> *U + &U _nm * -> _n `ux -> -> # *U &U _nm `ui `ux `i -> 1 `i `uc ]
+"154
+[v _bytes_read `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 154: uint8_t bytes_read = SPI_exchange(rx_buf, 14);
+[e = _bytes_read ( _SPI_exchange (2 , &U _rx_buf -> -> 14 `i `uc ]
+"155
+[v _dlc `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 155: uint8_t dlc = rx_buf[5];
+[e = _dlc *U + &U _rx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux ]
+[v _sid `ui ~T0 @X0 1 a ]
+[; ;mcp2515.c: 156: uint16_t sid = ((uint16_t)rx_buf[1] << 3) + ((uint16_t)rx_buf[2] >> 5);
+"156
+[e = _sid + << -> *U + &U _rx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `ui -> 3 `i >> -> *U + &U _rx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `ui -> 5 `i ]
+[; ;mcp2515.c: 157: sid = sid & 0b0000011111111111;
+"157
+[e = _sid & _sid -> -> 2047 `i `ui ]
+[; ;mcp2515.c: 158: rx_buf[6+dlc] = '\0';
+"158
+[e = *U + &U _rx_buf * -> -> + -> 6 `i -> _dlc `i `ui `ux -> -> # *U &U _rx_buf `ui `ux -> -> 0 `ui `uc ]
+[; ;mcp2515.c: 160: if (mode.debug) {
+"160
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 345  ]
+{
+[; ;mcp2515.c: 161: printf("RXB%dSIDH: %02x\n", n, rx_buf[1]);
+"161
+[e ( _printf , , (. :s 8C -> _n `i -> *U + &U _rx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+[; ;mcp2515.c: 162: printf("RXB%dSIDL: %02x\n", n, rx_buf[2]);
+"162
+[e ( _printf , , (. :s 9C -> _n `i -> *U + &U _rx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+[; ;mcp2515.c: 163: printf("RXB%dDLC: %02x\n", n, rx_buf[5]);
+"163
+[e ( _printf , , (. :s 10C -> _n `i -> *U + &U _rx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+[; ;mcp2515.c: 164: printf("RXB%dD0: %02x\n", n, rx_buf[6]);
+"164
+[e ( _printf , , (. :s 11C -> _n `i -> *U + &U _rx_buf * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux `i ]
+"165
+}
+[e :U 345 ]
+"168
+[v _pbuf `*uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 165: }
+[; ;mcp2515.c: 168: uint8_t *pbuf = &rx_buf[6];
+[e = _pbuf &U *U + &U _rx_buf * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buf `ui `ux ]
+[; ;mcp2515.c: 169: handler(sid, pbuf, dlc);
+"169
+[e ( *U _handler (3 , , -> _sid `uc _pbuf _dlc ]
+[; ;mcp2515.c: 170: }
+"170
+[e :UE 344 ]
+}
+"175
+[v _can_send `(uc ~T0 @X0 1 ef2`*uc`uc ]
+{
+[; ;mcp2515.c: 175: bool can_send(uint8_t *buf, uint8_t dlc) {
+[e :U _can_send ]
+[v _buf `*uc ~T0 @X0 1 r1 ]
+[v _dlc `uc ~T0 @X0 1 r2 ]
+[f ]
+"176
+[v _i `uc ~T0 @X0 1 a ]
+"177
+[v _n `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 176: uint8_t i;
+[; ;mcp2515.c: 177: uint8_t n = 0;
+[e = _n -> -> 0 `i `uc ]
+[v F2837 `uc ~T0 @X0 -> 2 `i s ]
+[i F2837
+:U ..
+"179
+-> -> 160 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _can_status_buf `uc ~T0 @X0 -> 2 `i a ]
+[; ;mcp2515.c: 179: uint8_t can_status_buf[2] = {0b10100000, 0x00};
+[e = _can_status_buf F2837 ]
+"180
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 180: uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
+[e = _bytes_written ( _SPI_exchange (2 , &U _can_status_buf -> -> 2 `i `uc ]
+"181
+[v _status `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 181: uint8_t status = can_status_buf[1];
+[e = _status *U + &U _can_status_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_status_buf `ui `ux ]
+[; ;mcp2515.c: 182: if ((status & 0b00000100) == 0) {
+"182
+[e $ ! == & -> _status `i -> 4 `i -> 0 `i 347  ]
+{
+[; ;mcp2515.c: 183: if (mode.debug) printf("TXB0 is idle\n");
+"183
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 348  ]
+[e ( _printf :s 12C ]
+[e :U 348 ]
+[; ;mcp2515.c: 184: n = 0;
+"184
+[e = _n -> -> 0 `i `uc ]
+"185
+}
+[; ;mcp2515.c: 185: } else if ((status & 0b00010000) == 0) {
+[e $U 349  ]
+[e :U 347 ]
+[e $ ! == & -> _status `i -> 16 `i -> 0 `i 350  ]
+{
+[; ;mcp2515.c: 186: if (mode.debug) printf("TXB1 is idle\n");
+"186
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 351  ]
+[e ( _printf :s 13C ]
+[e :U 351 ]
+[; ;mcp2515.c: 187: n = 1;
+"187
+[e = _n -> -> 1 `i `uc ]
+"188
+}
+[; ;mcp2515.c: 188: } else if ((status & 0b01000000) > 0) {
+[e $U 352  ]
+[e :U 350 ]
+[e $ ! > & -> _status `i -> 64 `i -> 0 `i 353  ]
+{
+[; ;mcp2515.c: 189: if (mode.debug) printf("TXB2 is idle\n");
+"189
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 354  ]
+[e ( _printf :s 14C ]
+[e :U 354 ]
+[; ;mcp2515.c: 190: n = 2;
+"190
+[e = _n -> -> 2 `i `uc ]
+"191
+}
+[e :U 353 ]
+"195
+[e :U 352 ]
+[e :U 349 ]
+[v _tx_buf `uc ~T0 @X0 -> 14 `i a ]
+[; ;mcp2515.c: 191: }
+[; ;mcp2515.c: 195: uint8_t tx_buf[14];
+[; ;mcp2515.c: 198: tx_buf[0] = 0b01000000 + abc[n];
+"198
+[e = *U + &U _tx_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> + -> 64 `i -> *U + &U _abc * -> _n `ux -> -> # *U &U _abc `ui `ux `i `uc ]
+[; ;mcp2515.c: 200: tx_buf[1] = sid.sidh;
+"200
+[e = *U + &U _tx_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 0 ]
+[; ;mcp2515.c: 202: tx_buf[2] = sid.sidl;
+"202
+[e = *U + &U _tx_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux . _sid 1 ]
+[; ;mcp2515.c: 204: tx_buf[3] = 0;
+"204
+[e = *U + &U _tx_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 206: tx_buf[4] = 0;
+"206
+[e = *U + &U _tx_buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 208: tx_buf[5] = dlc;
+"208
+[e = *U + &U _tx_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _tx_buf `ui `ux _dlc ]
+[; ;mcp2515.c: 211: for(i=0; i<dlc; i++) {
+"211
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 358  ]
+[e :U 355 ]
+{
+[; ;mcp2515.c: 212: tx_buf[6+i] = buf[i];
+"212
+[e = *U + &U _tx_buf * -> -> + -> 6 `i -> _i `i `ui `ux -> -> # *U &U _tx_buf `ui `ux *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux ]
+[; ;mcp2515.c: 213: if (mode.debug) printf("Copying buffer: %c\n", tx_buf[6+i]);
+"213
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 359  ]
+[e ( _printf , (. :s 15C -> *U + &U _tx_buf * -> -> + -> 6 `i -> _i `i `ui `ux -> -> # *U &U _tx_buf `ui `ux `i ]
+[e :U 359 ]
+"214
+}
+"211
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 358 ]
+[e $ < -> _i `i -> _dlc `i 355  ]
+[e :U 356 ]
+"214
+}
+"217
+[v _len `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 214: }
+[; ;mcp2515.c: 217: uint8_t len = 6 + dlc;
+[e = _len -> + -> 6 `i -> _dlc `i `uc ]
+[; ;mcp2515.c: 218: uint8_t bytes_written = SPI_exchange(tx_buf, len);
+"218
+[e = _bytes_written ( _SPI_exchange (2 , &U _tx_buf _len ]
+"220
+[v _debug_buf `uc ~T0 @X0 -> 3 `i a ]
+[; ;mcp2515.c: 220: uint8_t debug_buf[3];
+[; ;mcp2515.c: 221: debug_buf[0] = 0b00000011;
+"221
+[e = *U + &U _debug_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux -> -> 3 `i `uc ]
+[; ;mcp2515.c: 222: debug_buf[1] = txbnsidh[n];
+"222
+[e = *U + &U _debug_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux *U + &U _txbnsidh * -> _n `ux -> -> # *U &U _txbnsidh `ui `ux ]
+[; ;mcp2515.c: 223: debug_buf[2] = 0x00;
+"223
+[e = *U + &U _debug_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 224: SPI_exchange(debug_buf, 3);
+"224
+[e ( _SPI_exchange (2 , &U _debug_buf -> -> 3 `i `uc ]
+[; ;mcp2515.c: 226: if (mode.debug) printf("TXB%dSIDH: %02x\n", n, debug_buf[2]);
+"226
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 360  ]
+[e ( _printf , , (. :s 16C -> _n `i -> *U + &U _debug_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux `i ]
+[e :U 360 ]
+[; ;mcp2515.c: 227: debug_buf[0] = 0b00000011;
+"227
+[e = *U + &U _debug_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux -> -> 3 `i `uc ]
+[; ;mcp2515.c: 228: debug_buf[1] = txbnsidh[n] + 1;
+"228
+[e = *U + &U _debug_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux -> + -> *U + &U _txbnsidh * -> _n `ux -> -> # *U &U _txbnsidh `ui `ux `i -> 1 `i `uc ]
+[; ;mcp2515.c: 229: debug_buf[2] = 0x00;
+"229
+[e = *U + &U _debug_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 230: SPI_exchange(debug_buf, 3);
+"230
+[e ( _SPI_exchange (2 , &U _debug_buf -> -> 3 `i `uc ]
+[; ;mcp2515.c: 232: if (mode.debug) printf("TXB%dSIDL: %02x\n", n, debug_buf[2]);
+"232
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 361  ]
+[e ( _printf , , (. :s 17C -> _n `i -> *U + &U _debug_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _debug_buf `ui `ux `i ]
+[e :U 361 ]
+[; ;mcp2515.c: 234: if (bytes_written == len) {
+"234
+[e $ ! == -> _bytes_written `i -> _len `i 362  ]
+{
+"236
+[v _txb_ctrl_buf `uc ~T0 @X0 -> -> 1 `i `ux a ]
+[; ;mcp2515.c: 236: uint8_t txb_ctrl_buf[1];
+[; ;mcp2515.c: 237: txb_ctrl_buf[0] = 0b10000000 + (0b00000001 << n);
+"237
+[e = *U + &U _txb_ctrl_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txb_ctrl_buf `ui `ux -> + -> 128 `i << -> 1 `i _n `uc ]
+[; ;mcp2515.c: 238: bytes_written = SPI_exchange(txb_ctrl_buf, 1);
+"238
+[e = _bytes_written ( _SPI_exchange (2 , &U _txb_ctrl_buf -> -> 1 `i `uc ]
+[; ;mcp2515.c: 239: if (bytes_written == 1) {
+"239
+[e $ ! == -> _bytes_written `i -> 1 `i 363  ]
+{
+[; ;mcp2515.c: 240: if (mode.debug) printf("Message sent: %s\n", buf);
+"240
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 364  ]
+[e ( _printf , (. :s 18C -> _buf `*Cuc ]
+[e :U 364 ]
+[; ;mcp2515.c: 241: return 1;
+"241
+[e ) -> -> 1 `i `uc ]
+[e $UE 346  ]
+"242
+}
+[e :U 363 ]
+"243
+}
+[e :U 362 ]
+[; ;mcp2515.c: 242: }
+[; ;mcp2515.c: 243: }
+[; ;mcp2515.c: 245: return 0;
+"245
+[e ) -> -> 0 `i `uc ]
+[e $UE 346  ]
+[; ;mcp2515.c: 246: }
+"246
+[e :UE 346 ]
+}
+"251
+[v _can_status_check `(v ~T0 @X0 1 ef ]
+{
+[; ;mcp2515.c: 251: void can_status_check(void) {
+[e :U _can_status_check ]
+[f ]
+[v F2846 `uc ~T0 @X0 -> 2 `i s ]
+[i F2846
+:U ..
+"253
+-> -> 160 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _can_status_buf `uc ~T0 @X0 -> 2 `i a ]
+[; ;mcp2515.c: 253: uint8_t can_status_buf[2] = {0b10100000, 0x00};
+[e = _can_status_buf F2846 ]
+"254
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 254: uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
+[e = _bytes_written ( _SPI_exchange (2 , &U _can_status_buf -> -> 2 `i `uc ]
+"255
+[v _status `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 255: uint8_t status = can_status_buf[1];
+[e = _status *U + &U _can_status_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_status_buf `ui `ux ]
+[; ;mcp2515.c: 256: if (status == 0x00) {
+"256
+[e $ ! == -> _status `i -> 0 `i 366  ]
+{
+[; ;mcp2515.c: 257: return;
+"257
+[e $UE 365  ]
+"258
+}
+[; ;mcp2515.c: 258: } else if ((status & 0b00000001) > 0) {
+[e $U 367  ]
+[e :U 366 ]
+[e $ ! > & -> _status `i -> 1 `i -> 0 `i 368  ]
+{
+[; ;mcp2515.c: 259: if (mode.debug) printf("RX0IF is on\n");
+"259
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 369  ]
+[e ( _printf :s 19C ]
+[e :U 369 ]
+[; ;mcp2515.c: 260: receive(0);
+"260
+[e ( _receive (1 -> -> 0 `i `uc ]
+"261
+}
+[; ;mcp2515.c: 261: } else if ((status & 0b00000010) > 0) {
+[e $U 370  ]
+[e :U 368 ]
+[e $ ! > & -> _status `i -> 2 `i -> 0 `i 371  ]
+{
+[; ;mcp2515.c: 262: if (mode.debug) printf("RX1IF is on\n");
+"262
+[e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 372  ]
+[e ( _printf :s 20C ]
+[e :U 372 ]
+[; ;mcp2515.c: 263: receive(1);
+"263
+[e ( _receive (1 -> -> 1 `i `uc ]
+"264
+}
+[; ;mcp2515.c: 264: } else if ((status & 0b00001000) > 0) {
+[e $U 373  ]
+[e :U 371 ]
+[e $ ! > & -> _status `i -> 8 `i -> 0 `i 374  ]
+{
+[; ;mcp2515.c: 265: txf_clear(0);
+"265
+[e ( _txf_clear (1 -> -> 0 `i `uc ]
+"266
+}
+[; ;mcp2515.c: 266: } else if ((status & 0b00100000) > 0) {
+[e $U 375  ]
+[e :U 374 ]
+[e $ ! > & -> _status `i -> 32 `i -> 0 `i 376  ]
+{
+[; ;mcp2515.c: 267: txf_clear(1);
+"267
+[e ( _txf_clear (1 -> -> 1 `i `uc ]
+"268
+}
+[; ;mcp2515.c: 268: } else if ((status & 0b10000000) > 0) {
+[e $U 377  ]
+[e :U 376 ]
+[e $ ! > & -> _status `i -> 128 `i -> 0 `i 378  ]
+{
+[; ;mcp2515.c: 269: txf_clear(2);
+"269
+[e ( _txf_clear (1 -> -> 2 `i `uc ]
+"270
+}
+[e :U 378 ]
+"271
+[e :U 377 ]
+[e :U 375 ]
+[e :U 373 ]
+[e :U 370 ]
+[e :U 367 ]
+[; ;mcp2515.c: 270: }
+[; ;mcp2515.c: 271: return;
+[e $UE 365  ]
+[; ;mcp2515.c: 272: }
+"272
+[e :UE 365 ]
+}
+"274
+[v _can_baudrate `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;mcp2515.c: 274: bool can_baudrate(uint8_t bpr) {
+[e :U _can_baudrate ]
+[v _bpr `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;mcp2515.c: 275: can_ope_mode(0b10000000);
+"275
+[e ( _can_ope_mode (1 -> -> 128 `i `uc ]
+"277
+[v _mask `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 277: uint8_t mask = 0b00111111;
+[e = _mask -> -> 63 `i `uc ]
+"278
+[v _cnf1_buf `uc ~T0 @X0 -> 4 `i a ]
+[; ;mcp2515.c: 278: uint8_t cnf1_buf[4];
+[; ;mcp2515.c: 279: cnf1_buf[0] = 0b00000101;
+"279
+[e = *U + &U _cnf1_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _cnf1_buf `ui `ux -> -> 5 `i `uc ]
+[; ;mcp2515.c: 280: cnf1_buf[1] = 0x2a;
+"280
+[e = *U + &U _cnf1_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _cnf1_buf `ui `ux -> -> 42 `i `uc ]
+[; ;mcp2515.c: 281: cnf1_buf[2] = mask;
+"281
+[e = *U + &U _cnf1_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _cnf1_buf `ui `ux _mask ]
+[; ;mcp2515.c: 282: cnf1_buf[3] = bpr;
+"282
+[e = *U + &U _cnf1_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _cnf1_buf `ui `ux _bpr ]
+"283
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 283: uint8_t bytes_written = SPI_exchange(cnf1_buf, 4);
+[e = _bytes_written ( _SPI_exchange (2 , &U _cnf1_buf -> -> 4 `i `uc ]
+[; ;mcp2515.c: 284: can_ope_mode(operation_mode);
+"284
+[e ( _can_ope_mode (1 _operation_mode ]
+[; ;mcp2515.c: 285: if (bytes_written == 4) {
+"285
+[e $ ! == -> _bytes_written `i -> 4 `i 380  ]
+{
+[; ;mcp2515.c: 286: return 1;
+"286
+[e ) -> -> 1 `i `uc ]
+[e $UE 379  ]
+"287
+}
+[; ;mcp2515.c: 287: } else {
+[e $U 381  ]
+[e :U 380 ]
+{
+[; ;mcp2515.c: 288: return 0;
+"288
+[e ) -> -> 0 `i `uc ]
+[e $UE 379  ]
+"289
+}
+[e :U 381 ]
+[; ;mcp2515.c: 289: }
+[; ;mcp2515.c: 290: }
+"290
+[e :UE 379 ]
+}
+"292
+[v _read_register `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;mcp2515.c: 292: uint8_t read_register(uint8_t addr) {
+[e :U _read_register ]
+[v _addr `uc ~T0 @X0 1 r1 ]
+[f ]
+"293
+[v _read_buf `uc ~T0 @X0 -> 3 `i a ]
+[; ;mcp2515.c: 293: uint8_t read_buf[3];
+[; ;mcp2515.c: 294: read_buf[0] = 0b00000011;
+"294
+[e = *U + &U _read_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _read_buf `ui `ux -> -> 3 `i `uc ]
+[; ;mcp2515.c: 295: read_buf[1] = addr;
+"295
+[e = *U + &U _read_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _read_buf `ui `ux _addr ]
+[; ;mcp2515.c: 296: read_buf[2] = 0x00;
+"296
+[e = *U + &U _read_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _read_buf `ui `ux -> -> 0 `i `uc ]
+[; ;mcp2515.c: 297: SPI_exchange(read_buf, 3);
+"297
+[e ( _SPI_exchange (2 , &U _read_buf -> -> 3 `i `uc ]
+[; ;mcp2515.c: 298: return read_buf[2];
+"298
+[e ) *U + &U _read_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _read_buf `ui `ux ]
+[e $UE 382  ]
+[; ;mcp2515.c: 299: }
+"299
+[e :UE 382 ]
+}
+"304
+[v _can_dump_registers `(v ~T0 @X0 1 ef ]
+{
+[; ;mcp2515.c: 304: void can_dump_registers(void) {
+[e :U _can_dump_registers ]
+[f ]
+[; ;mcp2515.c: 305: printf("---\n");
+"305
+[e ( _printf :s 21C ]
+[; ;mcp2515.c: 306: printf("SIDH: %02x\n", sid.sidh);
+"306
+[e ( _printf , (. :s 22C -> . _sid 0 `i ]
+[; ;mcp2515.c: 307: printf("SIDL: %02x\n", sid.sidl);
+"307
+[e ( _printf , (. :s 23C -> . _sid 1 `i ]
+[; ;mcp2515.c: 308: printf("\n");
+"308
+[e ( _printf :s 24C ]
+[; ;mcp2515.c: 310: printf("CNF1: %02x\n", read_register(0x2a));
+"310
+[e ( _printf , (. :s 25C -> ( _read_register (1 -> -> 42 `i `uc `i ]
+[; ;mcp2515.c: 311: printf("CNF2: %02x\n", read_register(0x29));
+"311
+[e ( _printf , (. :s 26C -> ( _read_register (1 -> -> 41 `i `uc `i ]
+[; ;mcp2515.c: 312: printf("CNF3: %02x\n", read_register(0x28));
+"312
+[e ( _printf , (. :s 27C -> ( _read_register (1 -> -> 40 `i `uc `i ]
+[; ;mcp2515.c: 313: printf("\n");
+"313
+[e ( _printf :s 28C ]
+"315
+[v _n `uc ~T0 @X0 1 a ]
+"316
+[v _i `uc ~T0 @X0 1 a ]
+"317
+[v _mask_sidh `uc ~T0 @X0 1 a ]
+"318
+[v _mask_sidl `uc ~T0 @X0 1 a ]
+[; ;mcp2515.c: 315: uint8_t n;
+[; ;mcp2515.c: 316: uint8_t i;
+[; ;mcp2515.c: 317: uint8_t mask_sidh;
+[; ;mcp2515.c: 318: uint8_t mask_sidl;
+[; ;mcp2515.c: 319: for (n=0; n<2; n++) {
+"319
+{
+[e = _n -> -> 0 `i `uc ]
+[e $ < -> _n `i -> 2 `i 384  ]
+[e $U 385  ]
+[e :U 384 ]
+{
+[; ;mcp2515.c: 320: mask_sidh = read_register(rxmnsidh[n]);
+"320
+[e = _mask_sidh ( _read_register (1 *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux ]
+[; ;mcp2515.c: 321: mask_sidl = read_register(rxmnsidh[n]+1);
+"321
+[e = _mask_sidl ( _read_register (1 -> + -> *U + &U _rxmnsidh * -> _n `ux -> -> # *U &U _rxmnsidh `ui `ux `i -> 1 `i `uc ]
+[; ;mcp2515.c: 322: printf("RXM%dSIDH RXM%dSIDL: %02x %02x\n", n, n, mask_sidh, mask_sidl);
+"322
+[e ( _printf , , , , (. :s 29C -> _n `i -> _n `i -> _mask_sidh `i -> _mask_sidl `i ]
+"323
+}
+"319
+[e ++ _n -> -> 1 `i `uc ]
+[e $ < -> _n `i -> 2 `i 384  ]
+[e :U 385 ]
+"323
+}
+[; ;mcp2515.c: 323: }
+[; ;mcp2515.c: 324: for (n=0; n<6; n++) {
+"324
+{
+[e = _n -> -> 0 `i `uc ]
+[e $ < -> _n `i -> 6 `i 387  ]
+[e $U 388  ]
+[e :U 387 ]
+{
+[; ;mcp2515.c: 325: mask_sidh = read_register(rxfnsidh[n]);
+"325
+[e = _mask_sidh ( _read_register (1 *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux ]
+[; ;mcp2515.c: 326: mask_sidl = read_register(rxfnsidh[n]+1);
+"326
+[e = _mask_sidl ( _read_register (1 -> + -> *U + &U _rxfnsidh * -> _n `ux -> -> # *U &U _rxfnsidh `ui `ux `i -> 1 `i `uc ]
+[; ;mcp2515.c: 327: printf("RXF%dSIDH RXF%dSIDL: %02x %02x\n", n, n, mask_sidh, mask_sidl);
+"327
+[e ( _printf , , , , (. :s 30C -> _n `i -> _n `i -> _mask_sidh `i -> _mask_sidl `i ]
+"328
+}
+"324
+[e ++ _n -> -> 1 `i `uc ]
+[e $ < -> _n `i -> 6 `i 387  ]
+[e :U 388 ]
+"328
+}
+[; ;mcp2515.c: 328: }
+[; ;mcp2515.c: 329: printf("\n");
+"329
+[e ( _printf :s 31C ]
+[; ;mcp2515.c: 331: printf("CANCTRL: %02x\n", read_register(0x0f));
+"331
+[e ( _printf , (. :s 32C -> ( _read_register (1 -> -> 15 `i `uc `i ]
+[; ;mcp2515.c: 332: printf("CANSTAT: %02x\n", read_register(0x0e));
+"332
+[e ( _printf , (. :s 33C -> ( _read_register (1 -> -> 14 `i `uc `i ]
+[; ;mcp2515.c: 333: printf("---\n");
+"333
+[e ( _printf :s 34C ]
+[; ;mcp2515.c: 334: }
+"334
+[e :UE 383 ]
 }
 [p f _printf 13402244 ]
-[a 3C 32 37 48 50 120 0 ]
-[a 6C 37 99 0 ]
-[a 2C 37 48 50 120 58 0 ]
-[a 9C 91 83 101 116 32 111 117 116 112 117 116 32 109 111 100 101 93 32 123 100 101 98 117 103 58 32 64 118 100 44 32 118 101 114 98 111 115 101 58 32 64 118 118 44 32 110 111 114 109 97 108 58 32 64 118 110 125 10 0 ]
-[a 10C 91 69 110 97 98 108 101 32 111 112 101 114 97 116 105 111 110 32 109 111 100 101 93 32 123 108 111 111 112 98 97 99 107 58 32 64 111 108 44 32 110 111 114 109 97 108 58 32 64 111 110 125 10 0 ]
-[a 17C 91 82 101 99 101 105 118 101 32 109 101 115 115 97 103 101 93 32 60 109 101 115 115 97 103 101 62 32 119 105 108 108 32 98 101 32 111 117 116 112 117 116 10 0 ]
-[a 1C 37 100 44 37 115 10 0 ]
-[a 5C 37 115 10 0 ]
-[a 11C 32 32 32 32 32 119 105 116 104 32 83 73 68 58 32 64 111 108 115 32 111 114 32 64 111 110 115 44 32 105 110 32 104 101 120 32 102 111 114 109 97 116 58 32 64 111 108 104 32 111 114 32 64 111 110 104 10 0 ]
-[a 18C 91 83 104 111 119 32 116 104 105 115 32 104 101 108 112 93 58 32 64 104 10 0 ]
-[a 15C 91 68 117 109 112 32 114 101 103 105 115 116 101 114 115 93 32 64 100 10 0 ]
-[a 14C 91 83 101 116 32 98 97 117 100 32 114 97 116 101 93 32 64 98 60 98 112 114 62 10 0 ]
-[a 8C 91 83 101 116 32 115 116 97 110 100 97 114 100 32 105 100 101 110 116 105 102 105 101 114 93 32 64 105 60 115 116 97 110 100 97 114 100 32 105 100 101 110 116 105 102 105 101 114 62 10 0 ]
-[a 16C 91 83 101 110 100 32 109 101 115 115 97 103 101 93 32 60 109 101 115 115 97 103 101 62 10 0 ]
-[a 13C 91 83 101 116 32 102 105 108 116 101 114 93 32 64 102 60 110 62 60 102 105 108 116 101 114 40 83 73 68 49 48 32 126 32 83 73 68 48 41 62 10 0 ]
-[a 12C 91 83 101 116 32 109 97 115 107 93 32 64 109 60 110 62 60 109 97 115 107 40 83 73 68 49 48 32 126 32 83 73 68 48 41 62 10 0 ]
-[a 7C 45 45 45 32 85 65 82 84 50 67 65 78 32 72 69 76 80 32 45 45 45 10 0 ]
-[a 4C 10 0 ]
+[a 29C 82 88 77 37 100 83 73 68 72 32 82 88 77 37 100 83 73 68 76 58 32 37 48 50 120 32 37 48 50 120 10 0 ]
+[a 30C 82 88 70 37 100 83 73 68 72 32 82 88 70 37 100 83 73 68 76 58 32 37 48 50 120 32 37 48 50 120 10 0 ]
+[a 3C 102 105 108 116 101 114 40 37 100 41 58 32 37 48 50 120 32 37 48 50 120 10 0 ]
+[a 2C 109 97 115 107 40 37 100 41 58 32 37 48 50 120 32 37 48 50 120 10 0 ]
+[a 1C 67 65 78 83 84 65 84 58 32 37 48 50 120 10 0 ]
+[a 33C 67 65 78 83 84 65 84 58 32 37 48 50 120 10 0 ]
+[a 32C 67 65 78 67 84 82 76 58 32 37 48 50 120 10 0 ]
+[a 5C 82 88 77 37 100 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 7C 82 88 70 37 100 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 17C 84 88 66 37 100 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 9C 82 88 66 37 100 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 23C 83 73 68 76 58 32 37 48 50 120 10 0 ]
+[a 4C 82 88 77 37 100 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 6C 82 88 70 37 100 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 16C 84 88 66 37 100 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 8C 82 88 66 37 100 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 22C 83 73 68 72 58 32 37 48 50 120 10 0 ]
+[a 10C 82 88 66 37 100 68 76 67 58 32 37 48 50 120 10 0 ]
+[a 27C 67 78 70 51 58 32 37 48 50 120 10 0 ]
+[a 26C 67 78 70 50 58 32 37 48 50 120 10 0 ]
+[a 25C 67 78 70 49 58 32 37 48 50 120 10 0 ]
+[a 11C 82 88 66 37 100 68 48 58 32 37 48 50 120 10 0 ]
+[a 18C 77 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
+[a 20C 82 88 49 73 70 32 105 115 32 111 110 10 0 ]
+[a 19C 82 88 48 73 70 32 105 115 32 111 110 10 0 ]
+[a 14C 84 88 66 50 32 105 115 32 105 100 108 101 10 0 ]
+[a 13C 84 88 66 49 32 105 115 32 105 100 108 101 10 0 ]
+[a 12C 84 88 66 48 32 105 115 32 105 100 108 101 10 0 ]
+[a 15C 67 111 112 121 105 110 103 32 98 117 102 102 101 114 58 32 37 99 10 0 ]
+[a 21C 45 45 45 10 0 ]
+[a 34C 45 45 45 10 0 ]
+[a 24C 10 0 ]
+[a 28C 10 0 ]
+[a 31C 10 0 ]

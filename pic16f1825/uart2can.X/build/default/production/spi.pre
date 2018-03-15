@@ -1,5 +1,95 @@
 
-# 1 "main.c"
+# 1 "spi.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3551,101 +3641,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 177 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 189
-void PIN_MANAGER_IOC(void);
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
+# 17 "spi.h"
+uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
@@ -3674,308 +3671,10 @@ bool SPI_HasWriteCollisionOccured(void);
 # 262
 void SPI_ClearWriteCollisionStatus(void);
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 94 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-
-# 114
-uint8_t EUSART_Read(void);
-
-# 134
-void EUSART_Write(uint8_t txData);
-
-# 69 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 82
-void OSCILLATOR_Initialize(void);
-
-# 95
-void WDT_Initialize(void);
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
-typedef unsigned short wchar_t;
-
-# 15
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 53
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-
-# 86
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 23 "mcp2515.h"
-const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
-const uint8_t rxmnsidh[2] = {0x20, 0x24};
-
-# 50
-const uint8_t nm[2] = {0b00, 0b10};
-
-
-
-const uint8_t abc[3] = {0b000, 0b010, 0b100};
-
-# 67
-const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
-
-void can_logging_mode(bool debug, bool verbose);
-void can_set_sid (uint16_t can_node);
-void can_init(void *receive_handler);
-bool can_ope_mode(uint8_t ope_mode);
-void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-bool can_send(uint8_t *buf, uint8_t dlc);
-void can_status_check(void);
-bool can_baudrate(uint8_t bpr);
-void can_dump_registers(void);
-
-# 14 "main.c"
-const uint8_t max_idx = 9 - 2;
-
-struct {
-bool with_sid;
-bool hex_output;
-} output_format;
-
-# 24
-void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
-uint8_t i;
-if (output_format.with_sid) {
-printf("%d,%s\n", sid, pbuf);
-} else if (output_format.hex_output) {
-printf("%02x:", sid);
-for(i=0; i<dlc; i++) {
-printf(" %02x", pbuf[i]);
-}
-printf("\n");
-} else {
-printf("%s\n", pbuf);
-}
-}
-
-void main(void)
-{
-uint8_t buf[9];
-bool echo_back = 0;
-uint8_t c, idx;
-
-uint8_t cmd, sid, n, bpr;
-uint16_t mask;
-
-SYSTEM_Initialize();
-
-
-
-
-output_format.with_sid = 0;
-output_format.hex_output = 0;
-can_init(receive_handler);
-
-idx = 0;
-
-while (1)
-{
-can_status_check();
-
-if ((PIR1bits.RCIF)) {
-c = EUSART_Read();
-if (echo_back) printf("%c", c);
-
-buf[idx] = c;
-if (c == '\n') {
-buf[idx] = '\0';
-if (buf[0] == '@') {
-cmd = buf[1];
-switch(cmd) {
-case 'i':
-sid = atoi(&buf[2]);
-can_set_sid(sid);
-break;
-case 'v':
-if (buf[2] == 'd') {
-can_logging_mode(1, 1);
-echo_back = 1;
-} else if (buf[2] == 'v') {
-can_logging_mode(0, 1);
-echo_back = 1;
-} else if (buf[2] == 'n') {
-can_logging_mode(0, 0);
-echo_back = 0;
-}
-break;
-case 'o':
-if (buf[2] == 'l') {
-can_ope_mode(0b01000000);
-} else if (buf[2] == 'n') {
-can_ope_mode(0b00000000);
-}
-if (buf[3] == '\0') {
-output_format.with_sid = 0;
-output_format.hex_output = 0;
-} else if (buf[3] == 's' && buf[4] == '\0') {
-output_format.with_sid = 1;
-output_format.hex_output = 0;
-} else if (buf[3] == 'h' && buf[4] == '\0') {
-output_format.with_sid = 0;
-output_format.hex_output = 1;
-}
-break;
-case 'b':
-bpr = atoi(&buf[2]);
-can_baudrate(bpr);
-break;
-case 'm':
-case 'f':
-n = buf[2] - 0x30;
-mask = atoi(&buf[3]);
-can_set_mask(cmd, n, mask);
-break;
-case 'd':
-can_dump_registers();
-break;
-case 'h':
-printf("--- UART2CAN HELP ---\n");
-printf("[Set standard identifier] @i<standard identifier>\n");
-printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
-printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
-printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
-printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
-printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
-printf("[Set baud rate] @b<bpr>\n");
-printf("[Dump registers] @d\n");
-printf("[Send message] <message>\n");
-printf("[Receive message] <message> will be output\n");
-printf("[Show this help]: @h\n");
-break;
-}
-} else {
-bool success = can_send(buf, idx);
-if(success) {
-LATCbits.LATC3 = !LATCbits.LATC3;
-}
-}
-idx = 0;
-} else if (++idx > max_idx) {
-buf[idx] = '\0';
-can_send(buf, idx);
-idx = 0;
-}
-}
-}
+# 4 "spi.c"
+uint8_t SPI_exchange(uint8_t *buf, uint8_t len) {
+LATAbits.LATA4 = 0;
+uint8_t bytes_written = SPI_Exchange8bitBuffer(buf, len, buf);
+LATAbits.LATA4 = 1;
+return bytes_written;
 }

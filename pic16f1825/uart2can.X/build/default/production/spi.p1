@@ -1,50 +1,42 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"16 main.c
-[s S328 `uc 1 `uc 1 ]
-[n S328 . with_sid hex_output ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-[p mainexit ]
-"69 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"71 mcp2515.h
-[v _can_init `(v ~T0 @X0 0 ef1`*v ]
-"75
-[v _can_status_check `(v ~T0 @X0 0 ef ]
-"533 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"532
-[u S32 `S33 1 ]
-[n S32 . . ]
-"544
-[v _PIR1bits `VS32 ~T0 @X0 0 e@17 ]
-"114 mcc_generated_files/eusart.h
-[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"55 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"70 mcp2515.h
-[v _can_set_sid `(v ~T0 @X0 0 ef1`ui ]
-"69
-[v _can_logging_mode `(v ~T0 @X0 0 ef2`uc`uc ]
-"72
-[v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
-"76
-[v _can_baudrate `(uc ~T0 @X0 0 ef1`uc ]
-"73
-[v _can_set_mask `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"77
-[v _can_dump_registers `(v ~T0 @X0 0 ef ]
-"74
-[v _can_send `(uc ~T0 @X0 0 ef2`*uc`uc ]
-"1994 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S103 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
-"1993
-[u S102 `S103 1 ]
-[n S102 . . ]
-"2003
-[v _LATCbits `VS102 ~T0 @X0 0 e@270 ]
+"1949 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
+[s S101 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S101 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"1948
+[u S100 `S101 1 ]
+[n S100 . . ]
+"1958
+[v _LATAbits `VS100 ~T0 @X0 0 e@268 ]
+"190 mcc_generated_files/spi.h
+[v _SPI_Exchange8bitBuffer `(uc ~T0 @X0 0 ef3`*uc`uc`*uc ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2635,36 +2627,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 177: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 189: void PIN_MANAGER_IOC(void);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;spi.h: 17: uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
@@ -2674,627 +2637,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 213: bool SPI_IsBufferFull(void);
 [; ;spi.h: 238: bool SPI_HasWriteCollisionOccured(void);
 [; ;spi.h: 262: void SPI_ClearWriteCollisionStatus(void);
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;eusart.h: 94: void EUSART_Initialize(void);
-[; ;eusart.h: 114: uint8_t EUSART_Read(void);
-[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;mcc.h: 69: void SYSTEM_Initialize(void);
-[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 95: void WDT_Initialize(void);
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"23 mcp2515.h
-[v _rxfnsidh `Cuc ~T0 @X0 -> 6 `i e ]
-[i _rxfnsidh
-:U ..
--> -> 0 `i `uc
--> -> 4 `i `uc
--> -> 8 `i `uc
--> -> 16 `i `uc
--> -> 20 `i `uc
--> -> 24 `i `uc
-..
-]
-[; ;mcp2515.h: 23: const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
-"24
-[v _rxmnsidh `Cuc ~T0 @X0 -> 2 `i e ]
-[i _rxmnsidh
-:U ..
--> -> 32 `i `uc
--> -> 36 `i `uc
-..
-]
-[; ;mcp2515.h: 24: const uint8_t rxmnsidh[2] = {0x20, 0x24};
-"50
-[v _nm `Cuc ~T0 @X0 -> 2 `i e ]
-[i _nm
-:U ..
--> -> 0 `i `uc
--> -> 2 `i `uc
-..
-]
-[; ;mcp2515.h: 50: const uint8_t nm[2] = {0b00, 0b10};
-"54
-[v _abc `Cuc ~T0 @X0 -> 3 `i e ]
-[i _abc
-:U ..
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 4 `i `uc
-..
-]
-[; ;mcp2515.h: 54: const uint8_t abc[3] = {0b000, 0b010, 0b100};
-"67
-[v _txbnsidh `Cuc ~T0 @X0 -> 3 `i e ]
-[i _txbnsidh
-:U ..
--> -> 49 `i `uc
--> -> 65 `i `uc
--> -> 81 `i `uc
-..
-]
-[; ;mcp2515.h: 67: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
-[; ;mcp2515.h: 69: void can_logging_mode(bool debug, bool verbose);
-[; ;mcp2515.h: 70: void can_set_sid (uint16_t can_node);
-[; ;mcp2515.h: 71: void can_init(void *receive_handler);
-[; ;mcp2515.h: 72: bool can_ope_mode(uint8_t ope_mode);
-[; ;mcp2515.h: 73: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-[; ;mcp2515.h: 74: bool can_send(uint8_t *buf, uint8_t dlc);
-[; ;mcp2515.h: 75: void can_status_check(void);
-[; ;mcp2515.h: 76: bool can_baudrate(uint8_t bpr);
-[; ;mcp2515.h: 77: void can_dump_registers(void);
-"14 main.c
-[v _max_idx `Cuc ~T0 @X0 1 e ]
-[i _max_idx
--> - -> 9 `i -> 2 `i `uc
-]
-[; ;main.c: 14: const uint8_t max_idx = 9 - 2;
-"19
-[v _output_format `S328 ~T0 @X0 1 e ]
-[; ;main.c: 16: struct {
-[; ;main.c: 17: bool with_sid;
-[; ;main.c: 18: bool hex_output;
-[; ;main.c: 19: } output_format;
-"24
-[v _receive_handler `(v ~T0 @X0 1 ef3`uc`*uc`uc ]
+"4 spi.c
+[v _SPI_exchange `(uc ~T0 @X0 1 ef2`*uc`uc ]
 {
-[; ;main.c: 24: void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
-[e :U _receive_handler ]
-[v _sid `uc ~T0 @X0 1 r1 ]
-[v _pbuf `*uc ~T0 @X0 1 r2 ]
-[v _dlc `uc ~T0 @X0 1 r3 ]
+[; ;spi.c: 4: uint8_t SPI_exchange(uint8_t *buf, uint8_t len) {
+[e :U _SPI_exchange ]
+[v _buf `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-"25
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 25: uint8_t i;
-[; ;main.c: 26: if (output_format.with_sid) {
-"26
-[e $ ! != -> . _output_format 0 `i -> -> -> 0 `i `uc `i 330  ]
-{
-[; ;main.c: 27: printf("%d,%s\n", sid, pbuf);
-"27
-[e ( _printf , , (. :s 1C -> _sid `i -> _pbuf `*Cuc ]
-"28
+[; ;spi.c: 5: LATAbits.LATA4 = 0;
+"5
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+"6
+[v _bytes_written `uc ~T0 @X0 1 a ]
+[; ;spi.c: 6: uint8_t bytes_written = SPI_Exchange8bitBuffer(buf, len, buf);
+[e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , _buf _len _buf ]
+[; ;spi.c: 7: LATAbits.LATA4 = 1;
+"7
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+[; ;spi.c: 8: return bytes_written;
+"8
+[e ) _bytes_written ]
+[e $UE 323  ]
+[; ;spi.c: 9: }
+"9
+[e :UE 323 ]
 }
-[; ;main.c: 28: } else if (output_format.hex_output) {
-[e $U 331  ]
-[e :U 330 ]
-[e $ ! != -> . _output_format 1 `i -> -> -> 0 `i `uc `i 332  ]
-{
-[; ;main.c: 29: printf("%02x:", sid);
-"29
-[e ( _printf , (. :s 2C -> _sid `i ]
-[; ;main.c: 30: for(i=0; i<dlc; i++) {
-"30
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 336  ]
-[e :U 333 ]
-{
-[; ;main.c: 31: printf(" %02x", pbuf[i]);
-"31
-[e ( _printf , (. :s 3C -> *U + _pbuf * -> _i `ux -> -> # *U _pbuf `ui `ux `i ]
-"32
-}
-"30
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 336 ]
-[e $ < -> _i `i -> _dlc `i 333  ]
-[e :U 334 ]
-"32
-}
-[; ;main.c: 32: }
-[; ;main.c: 33: printf("\n");
-"33
-[e ( _printf :s 4C ]
-"34
-}
-[; ;main.c: 34: } else {
-[e $U 337  ]
-[e :U 332 ]
-{
-[; ;main.c: 35: printf("%s\n", pbuf);
-"35
-[e ( _printf , (. :s 5C -> _pbuf `*Cuc ]
-"36
-}
-[e :U 337 ]
-[e :U 331 ]
-[; ;main.c: 36: }
-[; ;main.c: 37: }
-"37
-[e :UE 329 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"39
-[v _main `(v ~T0 @X0 1 ef ]
-"40
-{
-[; ;main.c: 39: void main(void)
-[; ;main.c: 40: {
-[e :U _main ]
-[f ]
-"41
-[v _buf `uc ~T0 @X0 -> 9 `i a ]
-"42
-[v _echo_back `uc ~T0 @X0 1 a ]
-[; ;main.c: 41: uint8_t buf[9];
-[; ;main.c: 42: bool echo_back = 0;
-[e = _echo_back -> -> 0 `i `uc ]
-"43
-[v _c `uc ~T0 @X0 1 a ]
-[v _idx `uc ~T0 @X0 1 a ]
-"45
-[v _cmd `uc ~T0 @X0 1 a ]
-[v _sid `uc ~T0 @X0 1 a ]
-[v _n `uc ~T0 @X0 1 a ]
-[v _bpr `uc ~T0 @X0 1 a ]
-"46
-[v _mask `ui ~T0 @X0 1 a ]
-[; ;main.c: 43: uint8_t c, idx;
-[; ;main.c: 45: uint8_t cmd, sid, n, bpr;
-[; ;main.c: 46: uint16_t mask;
-[; ;main.c: 48: SYSTEM_Initialize();
-"48
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 53: output_format.with_sid = 0;
-"53
-[e = . _output_format 0 -> -> 0 `i `uc ]
-[; ;main.c: 54: output_format.hex_output = 0;
-"54
-[e = . _output_format 1 -> -> 0 `i `uc ]
-[; ;main.c: 55: can_init(receive_handler);
-"55
-[e ( _can_init (1 -> &U _receive_handler `*v ]
-[; ;main.c: 57: idx = 0;
-"57
-[e = _idx -> -> 0 `i `uc ]
-[; ;main.c: 59: while (1)
-"59
-[e :U 340 ]
-[; ;main.c: 60: {
-"60
-{
-[; ;main.c: 61: can_status_check();
-"61
-[e ( _can_status_check ..  ]
-[; ;main.c: 63: if ((PIR1bits.RCIF)) {
-"63
-[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 342  ]
-{
-[; ;main.c: 64: c = EUSART_Read();
-"64
-[e = _c ( _EUSART_Read ..  ]
-[; ;main.c: 65: if (echo_back) printf("%c", c);
-"65
-[e $ ! != -> _echo_back `i -> -> -> 0 `i `uc `i 343  ]
-[e ( _printf , (. :s 6C -> _c `i ]
-[e :U 343 ]
-[; ;main.c: 67: buf[idx] = c;
-"67
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux _c ]
-[; ;main.c: 68: if (c == '\n') {
-"68
-[e $ ! == -> _c `ui -> 10 `ui 344  ]
-{
-[; ;main.c: 69: buf[idx] = '\0';
-"69
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 70: if (buf[0] == '@') {
-"70
-[e $ ! == -> *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 64 `ui 345  ]
-{
-[; ;main.c: 71: cmd = buf[1];
-"71
-[e = _cmd *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux ]
-[; ;main.c: 72: switch(cmd) {
-"72
-[e $U 347  ]
-{
-[; ;main.c: 73: case 'i':
-"73
-[e :U 348 ]
-[; ;main.c: 74: sid = atoi(&buf[2]);
-"74
-[e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
-[; ;main.c: 75: can_set_sid(sid);
-"75
-[e ( _can_set_sid (1 -> _sid `ui ]
-[; ;main.c: 76: break;
-"76
-[e $U 346  ]
-[; ;main.c: 77: case 'v':
-"77
-[e :U 349 ]
-[; ;main.c: 78: if (buf[2] == 'd') {
-"78
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 100 `ui 350  ]
-{
-[; ;main.c: 79: can_logging_mode(1, 1);
-"79
-[e ( _can_logging_mode (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 80: echo_back = 1;
-"80
-[e = _echo_back -> -> 1 `i `uc ]
-"81
-}
-[; ;main.c: 81: } else if (buf[2] == 'v') {
-[e $U 351  ]
-[e :U 350 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 118 `ui 352  ]
-{
-[; ;main.c: 82: can_logging_mode(0, 1);
-"82
-[e ( _can_logging_mode (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 83: echo_back = 1;
-"83
-[e = _echo_back -> -> 1 `i `uc ]
-"84
-}
-[; ;main.c: 84: } else if (buf[2] == 'n') {
-[e $U 353  ]
-[e :U 352 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 354  ]
-{
-[; ;main.c: 85: can_logging_mode(0, 0);
-"85
-[e ( _can_logging_mode (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 86: echo_back = 0;
-"86
-[e = _echo_back -> -> 0 `i `uc ]
-"87
-}
-[e :U 354 ]
-"88
-[e :U 353 ]
-[e :U 351 ]
-[; ;main.c: 87: }
-[; ;main.c: 88: break;
-[e $U 346  ]
-[; ;main.c: 89: case 'o':
-"89
-[e :U 355 ]
-[; ;main.c: 90: if (buf[2] == 'l') {
-"90
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 108 `ui 356  ]
-{
-[; ;main.c: 91: can_ope_mode(0b01000000);
-"91
-[e ( _can_ope_mode (1 -> -> 64 `i `uc ]
-"92
-}
-[; ;main.c: 92: } else if (buf[2] == 'n') {
-[e $U 357  ]
-[e :U 356 ]
-[e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 358  ]
-{
-[; ;main.c: 93: can_ope_mode(0b00000000);
-"93
-[e ( _can_ope_mode (1 -> -> 0 `i `uc ]
-"94
-}
-[e :U 358 ]
-"95
-[e :U 357 ]
-[; ;main.c: 94: }
-[; ;main.c: 95: if (buf[3] == '\0') {
-[e $ ! == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 359  ]
-{
-[; ;main.c: 96: output_format.with_sid = 0;
-"96
-[e = . _output_format 0 -> -> 0 `i `uc ]
-[; ;main.c: 97: output_format.hex_output = 0;
-"97
-[e = . _output_format 1 -> -> 0 `i `uc ]
-"98
-}
-[; ;main.c: 98: } else if (buf[3] == 's' && buf[4] == '\0') {
-[e $U 360  ]
-[e :U 359 ]
-[e $ ! && == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 115 `ui == -> *U + &U _buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 361  ]
-{
-[; ;main.c: 99: output_format.with_sid = 1;
-"99
-[e = . _output_format 0 -> -> 1 `i `uc ]
-[; ;main.c: 100: output_format.hex_output = 0;
-"100
-[e = . _output_format 1 -> -> 0 `i `uc ]
-"101
-}
-[; ;main.c: 101: } else if (buf[3] == 'h' && buf[4] == '\0') {
-[e $U 362  ]
-[e :U 361 ]
-[e $ ! && == -> *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 104 `ui == -> *U + &U _buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 0 `ui 363  ]
-{
-[; ;main.c: 102: output_format.with_sid = 0;
-"102
-[e = . _output_format 0 -> -> 0 `i `uc ]
-[; ;main.c: 103: output_format.hex_output = 1;
-"103
-[e = . _output_format 1 -> -> 1 `i `uc ]
-"104
-}
-[e :U 363 ]
-"105
-[e :U 362 ]
-[e :U 360 ]
-[; ;main.c: 104: }
-[; ;main.c: 105: break;
-[e $U 346  ]
-[; ;main.c: 106: case 'b':
-"106
-[e :U 364 ]
-[; ;main.c: 107: bpr = atoi(&buf[2]);
-"107
-[e = _bpr -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
-[; ;main.c: 108: can_baudrate(bpr);
-"108
-[e ( _can_baudrate (1 _bpr ]
-[; ;main.c: 109: break;
-"109
-[e $U 346  ]
-[; ;main.c: 110: case 'm':
-"110
-[e :U 365 ]
-"111
-[e :U 366 ]
-[; ;main.c: 111: case 'f':
-[; ;main.c: 112: n = buf[2] - 0x30;
-"112
-[e = _n -> - -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 113: mask = atoi(&buf[3]);
-"113
-[e = _mask -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
-[; ;main.c: 114: can_set_mask(cmd, n, mask);
-"114
-[e ( _can_set_mask (3 , , _cmd _n -> _mask `uc ]
-[; ;main.c: 115: break;
-"115
-[e $U 346  ]
-[; ;main.c: 116: case 'd':
-"116
-[e :U 367 ]
-[; ;main.c: 117: can_dump_registers();
-"117
-[e ( _can_dump_registers ..  ]
-[; ;main.c: 118: break;
-"118
-[e $U 346  ]
-[; ;main.c: 119: case 'h':
-"119
-[e :U 368 ]
-[; ;main.c: 120: printf("--- UART2CAN HELP ---\n");
-"120
-[e ( _printf :s 7C ]
-[; ;main.c: 121: printf("[Set standard identifier] @i<standard identifier>\n");
-"121
-[e ( _printf :s 8C ]
-[; ;main.c: 122: printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
-"122
-[e ( _printf :s 9C ]
-[; ;main.c: 123: printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
-"123
-[e ( _printf :s 10C ]
-[; ;main.c: 124: printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
-"124
-[e ( _printf :s 11C ]
-[; ;main.c: 125: printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
-"125
-[e ( _printf :s 12C ]
-[; ;main.c: 126: printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
-"126
-[e ( _printf :s 13C ]
-[; ;main.c: 127: printf("[Set baud rate] @b<bpr>\n");
-"127
-[e ( _printf :s 14C ]
-[; ;main.c: 128: printf("[Dump registers] @d\n");
-"128
-[e ( _printf :s 15C ]
-[; ;main.c: 129: printf("[Send message] <message>\n");
-"129
-[e ( _printf :s 16C ]
-[; ;main.c: 130: printf("[Receive message] <message> will be output\n");
-"130
-[e ( _printf :s 17C ]
-[; ;main.c: 131: printf("[Show this help]: @h\n");
-"131
-[e ( _printf :s 18C ]
-[; ;main.c: 132: break;
-"132
-[e $U 346  ]
-"133
-}
-[; ;main.c: 133: }
-[e $U 346  ]
-"72
-[e :U 347 ]
-[e [\ _cmd , $ -> -> 105 `ui `uc 348
- , $ -> -> 118 `ui `uc 349
- , $ -> -> 111 `ui `uc 355
- , $ -> -> 98 `ui `uc 364
- , $ -> -> 109 `ui `uc 365
- , $ -> -> 102 `ui `uc 366
- , $ -> -> 100 `ui `uc 367
- , $ -> -> 104 `ui `uc 368
- 346 ]
-"133
-[e :U 346 ]
-"134
-}
-[; ;main.c: 134: } else {
-[e $U 369  ]
-[e :U 345 ]
-{
-"135
-[v _success `uc ~T0 @X0 1 a ]
-[; ;main.c: 135: bool success = can_send(buf, idx);
-[e = _success ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 136: if(success) {
-"136
-[e $ ! != -> _success `i -> -> -> 0 `i `uc `i 370  ]
-{
-[; ;main.c: 137: LATCbits.LATC3 = !LATCbits.LATC3;
-"137
-[e = . . _LATCbits 0 3 -> -> ! != -> . . _LATCbits 0 3 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-"138
-}
-[e :U 370 ]
-"139
-}
-[e :U 369 ]
-[; ;main.c: 138: }
-[; ;main.c: 139: }
-[; ;main.c: 140: idx = 0;
-"140
-[e = _idx -> -> 0 `i `uc ]
-"141
-}
-[; ;main.c: 141: } else if (++idx > max_idx) {
-[e $U 371  ]
-[e :U 344 ]
-[e $ ! > -> =+ _idx -> -> 1 `i `uc `i -> _max_idx `i 372  ]
-{
-[; ;main.c: 142: buf[idx] = '\0';
-"142
-[e = *U + &U _buf * -> _idx `ux -> -> # *U &U _buf `ui `ux -> -> 0 `ui `uc ]
-[; ;main.c: 143: can_send(buf, idx);
-"143
-[e ( _can_send (2 , &U _buf _idx ]
-[; ;main.c: 144: idx = 0;
-"144
-[e = _idx -> -> 0 `i `uc ]
-"145
-}
-[e :U 372 ]
-"146
-[e :U 371 ]
-}
-[e :U 342 ]
-"147
-}
-[e :U 339 ]
-"59
-[e $U 340  ]
-[e :U 341 ]
-[; ;main.c: 145: }
-[; ;main.c: 146: }
-[; ;main.c: 147: }
-[; ;main.c: 148: }
-"148
-[e :UE 338 ]
-}
-[p f _printf 13402244 ]
-[a 3C 32 37 48 50 120 0 ]
-[a 6C 37 99 0 ]
-[a 2C 37 48 50 120 58 0 ]
-[a 9C 91 83 101 116 32 111 117 116 112 117 116 32 109 111 100 101 93 32 123 100 101 98 117 103 58 32 64 118 100 44 32 118 101 114 98 111 115 101 58 32 64 118 118 44 32 110 111 114 109 97 108 58 32 64 118 110 125 10 0 ]
-[a 10C 91 69 110 97 98 108 101 32 111 112 101 114 97 116 105 111 110 32 109 111 100 101 93 32 123 108 111 111 112 98 97 99 107 58 32 64 111 108 44 32 110 111 114 109 97 108 58 32 64 111 110 125 10 0 ]
-[a 17C 91 82 101 99 101 105 118 101 32 109 101 115 115 97 103 101 93 32 60 109 101 115 115 97 103 101 62 32 119 105 108 108 32 98 101 32 111 117 116 112 117 116 10 0 ]
-[a 1C 37 100 44 37 115 10 0 ]
-[a 5C 37 115 10 0 ]
-[a 11C 32 32 32 32 32 119 105 116 104 32 83 73 68 58 32 64 111 108 115 32 111 114 32 64 111 110 115 44 32 105 110 32 104 101 120 32 102 111 114 109 97 116 58 32 64 111 108 104 32 111 114 32 64 111 110 104 10 0 ]
-[a 18C 91 83 104 111 119 32 116 104 105 115 32 104 101 108 112 93 58 32 64 104 10 0 ]
-[a 15C 91 68 117 109 112 32 114 101 103 105 115 116 101 114 115 93 32 64 100 10 0 ]
-[a 14C 91 83 101 116 32 98 97 117 100 32 114 97 116 101 93 32 64 98 60 98 112 114 62 10 0 ]
-[a 8C 91 83 101 116 32 115 116 97 110 100 97 114 100 32 105 100 101 110 116 105 102 105 101 114 93 32 64 105 60 115 116 97 110 100 97 114 100 32 105 100 101 110 116 105 102 105 101 114 62 10 0 ]
-[a 16C 91 83 101 110 100 32 109 101 115 115 97 103 101 93 32 60 109 101 115 115 97 103 101 62 10 0 ]
-[a 13C 91 83 101 116 32 102 105 108 116 101 114 93 32 64 102 60 110 62 60 102 105 108 116 101 114 40 83 73 68 49 48 32 126 32 83 73 68 48 41 62 10 0 ]
-[a 12C 91 83 101 116 32 109 97 115 107 93 32 64 109 60 110 62 60 109 97 115 107 40 83 73 68 49 48 32 126 32 83 73 68 48 41 62 10 0 ]
-[a 7C 45 45 45 32 85 65 82 84 50 67 65 78 32 72 69 76 80 32 45 45 45 10 0 ]
-[a 4C 10 0 ]
