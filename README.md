@@ -1,4 +1,4 @@
-# CAN bus evaluation
+# CAN adaptor to UART (PIC16F1825)
 
 ![waveform](./doc/waveform.jpg)
 
