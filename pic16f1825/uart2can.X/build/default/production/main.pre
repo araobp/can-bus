@@ -3849,7 +3849,7 @@ bool can_baudrate(uint8_t bpr);
 bool can_abort(void);
 void can_dump_registers(void);
 
-# 14 "main.c"
+# 20 "main.c"
 const uint8_t max_idx = 9 - 2;
 
 struct {
@@ -3857,7 +3857,7 @@ bool with_sid;
 bool hex_output;
 } output_format;
 
-# 24
+# 30
 void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
 uint8_t i;
 if (output_format.with_sid) {
@@ -3875,6 +3875,8 @@ printf("%s\n", pbuf);
 
 void main(void)
 {
+LATCbits.LATC3 = 1;
+
 uint8_t buf[9];
 bool echo_back = 0;
 uint8_t c, idx;
@@ -3897,9 +3899,9 @@ while (1)
 {
 bool status = can_status_check();
 if (status) {
-LATCbits.LATC3 = 1;
-} else {
 LATCbits.LATC3 = 0;
+} else {
+LATCbits.LATC3 = 1;
 }
 if ((PIR1bits.RCIF)) {
 c = EUSART_Read();
@@ -3945,6 +3947,7 @@ output_format.hex_output = 1;
 }
 break;
 case 'b':
+can_abort();
 bpr = atoi(&buf[2]);
 can_baudrate(bpr);
 break;
@@ -3968,7 +3971,7 @@ case '@':
 can_send(&buf[1], idx - 1);
 break;
 case 'h':
-printf("--- UART2CAN HELP ---\n");
+printf("/// UART2CAN HELP (version %s) ///\n", "0.1 March 18, 2018");
 printf("[Set standard identifier] @i<standard identifier>\n");
 printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
 printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");

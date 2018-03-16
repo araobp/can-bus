@@ -23,9 +23,9 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"24 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+"30 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _receive_handler receive_handler `(v  1 e 1 0 ]
-"39
+"45
 [v _main main `(v  1 e 1 0 ]
 "53 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -118,7 +118,7 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "1943
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S403 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S404 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -126,11 +126,11 @@
 `uc 1 LATA5 1 0 :1:5 
 ]
 "1958
-[u S410 . 1 `S403 1 . 1 0 ]
-[v _LATAbits LATAbits `VES410  1 e 1 @268 ]
+[u S411 . 1 `S404 1 . 1 0 ]
+[v _LATAbits LATAbits `VES411  1 e 1 @268 ]
 "1988
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S270 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S260 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -138,8 +138,8 @@
 `uc 1 LATC5 1 0 :1:5 
 ]
 "2003
-[u S277 . 1 `S270 1 . 1 0 ]
-[v _LATCbits LATCbits `VES277  1 e 1 @270 ]
+[u S267 . 1 `S260 1 . 1 0 ]
+[v _LATCbits LATCbits `VES267  1 e 1 @270 ]
 "2310
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2649
@@ -218,17 +218,17 @@
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
 "362
 [v _hexpowers hexpowers `DC[4]ui  1 s 8 hexpowers ]
-"14 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+"20 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _max_idx max_idx `DCuc  1 e 1 0 ]
 [s S252 . 2 `uc 1 with_sid 1 0 `uc 1 hex_output 1 1 ]
-"19
+"25
 [v _output_format output_format `S252  1 e 2 0 ]
-[s S432 . 2 `uc 1 sidh 1 0 `uc 1 sidl 1 1 ]
+[s S433 . 2 `uc 1 sidh 1 0 `uc 1 sidl 1 1 ]
 "16 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-[v _sid sid `S432  1 e 2 0 ]
-[s S435 . 2 `uc 1 debug 1 0 `uc 1 verbose 1 1 ]
+[v _sid sid `S433  1 e 2 0 ]
+[s S436 . 2 `uc 1 debug 1 0 `uc 1 verbose 1 1 ]
 "21
-[v _mode mode `S435  1 e 2 0 ]
+[v _mode mode `S436  1 e 2 0 ]
 "23
 [v _operation_mode operation_mode `uc  1 e 1 0 ]
 "24
@@ -245,29 +245,29 @@
 [v _abc abc `DC[3]uc  1 e 3 0 ]
 "78
 [v _txbnsidh txbnsidh `DC[3]uc  1 e 3 0 ]
-"39 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+"45 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"61
+"69
 [v main@status status `uc  1 a 1 2 ]
-"41
+"49
 [v main@buf buf `[9]uc  1 a 9 7 ]
-"46
+"54
 [v main@mask mask `ui  1 a 2 3 ]
-"43
+"51
 [v main@idx idx `uc  1 a 1 18 ]
-"45
+"53
 [v main@cmd cmd `uc  1 a 1 17 ]
-"43
+"51
 [v main@c c `uc  1 a 1 16 ]
-"45
+"53
 [v main@n n `uc  1 a 1 6 ]
-"42
+"50
 [v main@echo_back echo_back `uc  1 a 1 5 ]
-"45
+"53
 [v main@bpr bpr `uc  1 a 1 1 ]
 [v main@sid sid `uc  1 a 1 0 ]
-"162
+"171
 } 0
 "249 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
 [v _can_status_check can_status_check `(uc  1 e 1 0 ]
@@ -310,16 +310,16 @@
 [v receive@n n `uc  1 a 1 59 ]
 "170
 } 0
-"24 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+"30 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 [v _receive_handler receive_handler `(v  1 e 1 0 ]
 {
-"25
+"31
 [v receive_handler@i i `uc  1 a 1 33 ]
-"24
+"30
 [v receive_handler@sid sid `uc  1 p 1 27 ]
 [v receive_handler@pbuf pbuf `*.4uc  1 p 1 28 ]
 [v receive_handler@dlc dlc `uc  1 p 1 29 ]
-"37
+"43
 } 0
 "105 C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
 [v _can_set_mask can_set_mask `(v  1 e 1 0 ]

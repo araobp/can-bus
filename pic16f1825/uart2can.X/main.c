@@ -2,13 +2,19 @@
  * UART-CAN bridge with Microchip MCP2515
  * 
  * MCP2515 data sheet: http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf
+ * 
+ * Version 0.1, March 18, 2018
  */
 
 #include "mcc_generated_files/mcc.h"
 #include "stdlib.h"
 #include "mcp2515.h"
 
+#define VERSION "0.1 March 18, 2018"
+
 #define LED LATCbits.LATC3
+#define ON 1  // Note: this should be 0 and the circuit is not right. 
+#define OFF 0
 
 #define BUFSIZE 9
 const uint8_t max_idx = BUFSIZE - 2;  // append '\0' at the tail
@@ -38,6 +44,8 @@ void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
 
 void main(void)
 {
+    LED = ON;
+    
     uint8_t buf[BUFSIZE];  // UART read buffer
     bool echo_back = false;  // UART echo back
     uint8_t c, idx;
@@ -60,9 +68,9 @@ void main(void)
     {
         bool status = can_status_check();
         if (status) {
-            LED = 1;  // Alarm off
+            LED = OFF;  // Alarm off
         } else {
-            LED = 0;  // Alaram on
+            LED = ON;  // Alaram on
         }
         if (EUSART_DataReady) {
             c = EUSART_Read();
@@ -108,6 +116,7 @@ void main(void)
                             }
                             break;
                         case 'b':  // Set Baud Rate Prescaller (BPR + 1)
+                            can_abort();  // Abort before changing baud rate
                             bpr = atoi(&buf[2]);
                             can_baudrate(bpr);
                             break;
@@ -131,7 +140,7 @@ void main(void)
                             can_send(&buf[1], idx - 1);
                             break;
                         case 'h':  // Show help
-                            printf("--- UART2CAN HELP ---\n");
+                            printf("/// UART2CAN HELP (version %s) ///\n", VERSION);
                             printf("[Set standard identifier] @i<standard identifier>\n");
                             printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
                             printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
