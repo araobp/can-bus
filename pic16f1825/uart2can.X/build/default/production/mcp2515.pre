@@ -157,18 +157,18 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 31 "mcp2515.h"
+# 32 "mcp2515.h"
 const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
 const uint8_t rxmnsidh[2] = {0x20, 0x24};
 
-# 58
+# 61
 const uint8_t nm[2] = {0b00, 0b10};
 
 
 
 const uint8_t abc[3] = {0b000, 0b010, 0b100};
 
-# 75
+# 78
 const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
 
 
@@ -179,9 +179,10 @@ void can_set_sid (uint16_t can_node);
 void can_init(void *receive_handler);
 bool can_ope_mode(uint8_t ope_mode);
 void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-bool can_send(uint8_t *buf, uint8_t dlc);
-void can_status_check(void);
+bool can_send(uint8_t *data_buf, uint8_t dlc);
+bool can_status_check(void);
 bool can_baudrate(uint8_t bpr);
+bool can_abort(void);
 void can_dump_registers(void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
@@ -3756,7 +3757,9 @@ mode.debug = debug;
 mode.verbose = verbose;
 }
 
-# 37
+uint8_t buf[16];
+
+# 39
 void can_set_sid (uint16_t can_node) {
 uint8_t sidh = (can_node >> 3) & 0x00ff;
 uint8_t sidl = (can_node << 5) & 0x00e0;
@@ -3764,25 +3767,31 @@ sid.sidh = sidh;
 sid.sidl = sidl;
 }
 
-# 47
+# 49
 void can_init(void *receive_handler) {
 can_set_sid(0);
-
 handler = receive_handler;
 
 can_ope_mode(0b10000000);
-uint8_t cnf_buf[5] = {0b00000010, 0x28, 0b00000101, 0b11110001, 0b01000001};
-SPI_exchange(cnf_buf, 5);
+buf[0] = 0b11000000;
+SPI_exchange(buf, 1);
 
-cnf_buf[0] = 0b00000010;
-cnf_buf[1] = 0x60;
-cnf_buf[2] = 0b00100100;
-SPI_exchange(cnf_buf, 3);
+buf[0] = 0b00000010;
+buf[1] = 0x28;
+buf[2] = 0b00000101;
+buf[4] = 0b11110001;
+buf[5] = 0b01000001;
+SPI_exchange(buf, 5);
 
-cnf_buf[0] = 0b00000010;
-cnf_buf[1] = 0x70;
-cnf_buf[2] = 0b00100000;
-SPI_exchange(cnf_buf, 3);
+buf[0] = 0b00000010;
+buf[1] = 0x60;
+buf[2] = 0b00100100;
+SPI_exchange(buf, 3);
+
+buf[0] = 0b00000010;
+buf[1] = 0x70;
+buf[2] = 0b00100000;
+SPI_exchange(buf, 3);
 
 mode.debug = 0;
 mode.verbose = 0;
@@ -3790,31 +3799,28 @@ mode.verbose = 0;
 can_ope_mode(0b00000000);
 }
 
-# 75
+# 83
 bool can_ope_mode(uint8_t ope_mode) {
-uint8_t can_ctrl_buf[3];
-can_ctrl_buf[0] = 0b00000010;
-can_ctrl_buf[1] = 0x0f;
-can_ctrl_buf[2] = ope_mode;
-uint8_t bytes_written = SPI_exchange(can_ctrl_buf, 3);
+buf[0] = 0b00000010;
+buf[1] = 0x0f;
+buf[2] = ope_mode;
+uint8_t bytes_written = SPI_exchange(buf, 3);
 
 if (ope_mode != 0b10000000) operation_mode = ope_mode;
 
 if (bytes_written == 3) {
-can_ctrl_buf[0] = 0b00000011;
-can_ctrl_buf[1] = 0x0e;
-bytes_written = SPI_exchange(can_ctrl_buf, 3);
-if (mode.debug) printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
+buf[0] = 0b00000011;
+buf[1] = 0x0e;
+bytes_written = SPI_exchange(buf, 3);
+if (mode.debug) printf("CANSTAT: %02x\n", buf[2]);
 return 1;
 } else {
 return 0;
 }
 }
 
-# 98
+# 105
 void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
-uint8_t mask_buf[4];
-
 can_ope_mode(0b10000000);
 uint8_t mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
 uint8_t mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
@@ -3825,25 +3831,24 @@ printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
 printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
 }
 }
-mask_buf[0] = 0b00000010;
-mask_buf[1] = (cmd == 0)? rxmnsidh[n]: rxfnsidh[n];
-mask_buf[2] = mask_sidh;
-mask_buf[3] = mask_sidl;
+buf[0] = 0b00000010;
+buf[1] = (cmd == 0)? rxmnsidh[n]: rxfnsidh[n];
+buf[2] = mask_sidh;
+buf[3] = mask_sidl;
 
-SPI_exchange(mask_buf, 4);
+SPI_exchange(buf, 4);
 
 can_ope_mode(operation_mode);
 }
 
-# 124
+# 129
 bool txf_clear(uint8_t n) {
 uint8_t mask = 0b00000001 << (n + 2);
-uint8_t can_int_flag[4];
-can_int_flag[0] =0b00000101;
-can_int_flag[1] = 0x2c;
-can_int_flag[2] = mask;
-can_int_flag[3] = 0x00;
-uint8_t bytes_written = SPI_exchange(can_int_flag, 4);
+buf[0] =0b00000101;
+buf[1] = 0x2c;
+buf[2] = mask;
+buf[3] = 0x00;
+uint8_t bytes_written = SPI_exchange(buf, 4);
 if (bytes_written == 4) {
 return 1;
 } else {
@@ -3851,7 +3856,7 @@ return 0;
 }
 }
 
-# 142
+# 146
 void receive(uint8_t n) {
 
 
@@ -3878,14 +3883,15 @@ uint8_t *pbuf = &rx_buf[6];
 handler(sid, pbuf, dlc);
 }
 
-# 171
-bool can_send(uint8_t *buf, uint8_t dlc) {
+# 175
+bool can_send(uint8_t *data_buf, uint8_t dlc) {
 uint8_t i;
 uint8_t n = 0;
 
-uint8_t can_status_buf[2] = {0b10100000, 0x00};
-uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
-uint8_t status = can_status_buf[1];
+buf[0] = 0b10100000;
+buf[1] = 0x00;
+uint8_t bytes_written = SPI_exchange(buf, 2);
+uint8_t status = buf[1];
 if ((status & 0b01000000) == 0) {
 if (mode.debug) printf("TXB2 is idle\n");
 n = 2;
@@ -3897,54 +3903,48 @@ if (mode.debug) printf("TXB0 is idle\n");
 n = 0;
 }
 
+# 198
+buf[0] = 0b01000000 + abc[n];
 
+buf[1] = sid.sidh;
 
-uint8_t tx_buf[14];
+buf[2] = sid.sidl;
 
+buf[3] = 0;
 
-tx_buf[0] = 0b01000000 + abc[n];
+buf[4] = 0;
 
-tx_buf[1] = sid.sidh;
-
-tx_buf[2] = sid.sidl;
-
-tx_buf[3] = 0;
-
-tx_buf[4] = 0;
-
-tx_buf[5] = dlc;
+buf[5] = dlc;
 
 
 for(i=0; i<dlc; i++) {
-tx_buf[6+i] = buf[i];
-if (mode.debug) printf("Copying buffer: %c\n", tx_buf[6+i]);
+buf[6+i] = data_buf[i];
+if (mode.debug) printf("Copying buffer: %c\n", data_buf[i]);
 }
 
 
 uint8_t len = 6 + dlc;
-uint8_t bytes_written = SPI_exchange(tx_buf, len);
+uint8_t bytes_written = SPI_exchange(buf, len);
 
-uint8_t debug_buf[3];
-debug_buf[0] = 0b00000011;
-debug_buf[1] = txbnsidh[n];
-debug_buf[2] = 0x00;
-SPI_exchange(debug_buf, 3);
+buf[0] = 0b00000011;
+buf[1] = txbnsidh[n];
+buf[2] = 0x00;
+SPI_exchange(buf, 3);
 
-if (mode.debug) printf("TXB%dSIDH: %02x\n", n, debug_buf[2]);
-debug_buf[0] = 0b00000011;
-debug_buf[1] = txbnsidh[n] + 1;
-debug_buf[2] = 0x00;
-SPI_exchange(debug_buf, 3);
+if (mode.debug) printf("TXB%dSIDH: %02x\n", n, buf[2]);
+buf[0] = 0b00000011;
+buf[1] = txbnsidh[n] + 1;
+buf[2] = 0x00;
+SPI_exchange(buf, 3);
 
-if (mode.debug) printf("TXB%dSIDL: %02x\n", n, debug_buf[2]);
+if (mode.debug) printf("TXB%dSIDL: %02x\n", n, buf[2]);
 
 if (bytes_written == len) {
 
-uint8_t txb_ctrl_buf[1];
-txb_ctrl_buf[0] = 0b10000000 + (0b00000001 << n);
-bytes_written = SPI_exchange(txb_ctrl_buf, 1);
+buf[0] = 0b10000000 + (0b00000001 << n);
+bytes_written = SPI_exchange(buf, 1);
 if (bytes_written == 1) {
-if (mode.debug) printf("Message sent: %s\n", buf);
+if (mode.debug) printf("Message sent: %s\n", data_buf);
 return 1;
 }
 }
@@ -3952,14 +3952,15 @@ return 1;
 return 0;
 }
 
-# 247
-void can_status_check(void) {
+# 249
+bool can_status_check(void) {
 
-uint8_t can_status_buf[2] = {0b10100000, 0x00};
-uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
-uint8_t status = can_status_buf[1];
+buf[0] = 0b10100000;
+buf[1] = 0x00;
+uint8_t bytes_written = SPI_exchange(buf, 2);
+uint8_t status = buf[1];
 if (status == 0x00) {
-return;
+return 1;
 } else if ((status & 0b00000010) > 0) {
 if (mode.debug) printf("RX1IF is on\n");
 receive(1);
@@ -3973,19 +3974,38 @@ txf_clear(1);
 } else if ((status & 0b10000000) > 0) {
 txf_clear(2);
 }
-return;
+if ((status & 0b00010000) > 0) {
+return 0;
+} else {
+return 1;
+}
 }
 
 bool can_baudrate(uint8_t bpr) {
 can_ope_mode(0b10000000);
 
 uint8_t mask = 0b00111111;
-uint8_t cnf1_buf[4];
-cnf1_buf[0] = 0b00000101;
-cnf1_buf[1] = 0x2a;
-cnf1_buf[2] = mask;
-cnf1_buf[3] = bpr;
-uint8_t bytes_written = SPI_exchange(cnf1_buf, 4);
+buf[0] = 0b00000101;
+buf[1] = 0x2a;
+buf[2] = mask;
+buf[3] = bpr;
+uint8_t bytes_written = SPI_exchange(buf, 4);
+can_ope_mode(operation_mode);
+if (bytes_written == 4) {
+return 1;
+} else {
+return 0;
+}
+}
+
+bool can_abort(void) {
+can_ope_mode(0b10000000);
+
+buf[0] = 0b00000101;
+buf[1] = 0x0f;
+buf[2] = 0b00010000;
+buf[3] = 0b00010000;
+uint8_t bytes_written = SPI_exchange(buf, 4);
 can_ope_mode(operation_mode);
 if (bytes_written == 4) {
 return 1;
@@ -3995,15 +4015,14 @@ return 0;
 }
 
 uint8_t read_register(uint8_t addr) {
-uint8_t read_buf[3];
-read_buf[0] = 0b00000011;
-read_buf[1] = addr;
-read_buf[2] = 0x00;
-SPI_exchange(read_buf, 3);
-return read_buf[2];
+buf[0] = 0b00000011;
+buf[1] = addr;
+buf[2] = 0x00;
+SPI_exchange(buf, 3);
+return buf[2];
 }
 
-# 300
+# 321
 void can_dump_registers(void) {
 printf("---\n");
 printf("SIDH: %02x\n", sid.sidh);
@@ -4015,24 +4034,13 @@ printf("CNF2: %02x\n", read_register(0x29));
 printf("CNF3: %02x\n", read_register(0x28));
 printf("\n");
 
-printf("RXB0CTRL: %02x\n", read_register(0x60));
-printf("RXB1CTRL: %02x\n", read_register(0x70));
+printf("TXB0CTRL: %02x\n", read_register(0x30));
+printf("TXB1CTRL: %02x\n", read_register(0x40));
+printf("TXB2CTRL: %02x\n", read_register(0x50));
 printf("\n");
 
-uint8_t n;
-uint8_t i;
-uint8_t mask_sidh;
-uint8_t mask_sidl;
-for (n=0; n<2; n++) {
-mask_sidh = read_register(rxmnsidh[n]);
-mask_sidl = read_register(rxmnsidh[n]+1);
-printf("RXM%dSIDH RXM%dSIDL: %02x %02x\n", n, n, mask_sidh, mask_sidl);
-}
-for (n=0; n<6; n++) {
-mask_sidh = read_register(rxfnsidh[n]);
-mask_sidl = read_register(rxfnsidh[n]+1);
-printf("RXF%dSIDH RXF%dSIDL: %02x %02x\n", n, n, mask_sidh, mask_sidl);
-}
+printf("RXB0CTRL: %02x\n", read_register(0x60));
+printf("RXB1CTRL: %02x\n", read_register(0x70));
 printf("\n");
 
 printf("CANCTRL: %02x\n", read_register(0x0f));

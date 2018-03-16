@@ -18,7 +18,8 @@ extern "C" {
 #define TXB1CTRL 0x40
 #define TXB2CTRL 0x50
 #define TRANSMIT 0b00001011  // TXBnCTRL transmit request with highest priority
-
+#define TXERR 0b00010000
+    
 // P27 RXB0CTRL
 #define RXB0CTRL 0x60
 // P28 RXB1CTRL    
@@ -45,6 +46,7 @@ const uint8_t rxmnsidh[2] = {0x20, 0x24};
 #define NORMAL_MODE 0b00000000
 #define LOOPBACK_MODE 0b01000000
 #define CONFIGURATION_MODE 0b10000000
+#define ABAT 0b00010000
 
 // P59 CANSTAT
 #define CANSTAT 0x0e
@@ -52,7 +54,8 @@ const uint8_t rxmnsidh[2] = {0x20, 0x24};
 // P51 CANINTF
 #define CANINTF 0x2c
 
-// P65 SPI instructions
+// P64 SPI instructions
+#define RESET_ 0b11000000
 #define READ 0b00000011
 #define READ_RX_BUFFER 0b10010000
 const uint8_t nm[2] = {0b00, 0b10};  // RXB0SIDH, RXB1SIDH
@@ -82,9 +85,10 @@ void can_set_sid (uint16_t can_node);
 void can_init(void *receive_handler);
 bool can_ope_mode(uint8_t ope_mode);
 void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-bool can_send(uint8_t *buf, uint8_t dlc);
-void can_status_check(void);
+bool can_send(uint8_t *data_buf, uint8_t dlc);
+bool can_status_check(void);
 bool can_baudrate(uint8_t bpr);
+bool can_abort(void);
 void can_dump_registers(void);
 
 #ifdef	__cplusplus

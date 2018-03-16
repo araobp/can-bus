@@ -3821,18 +3821,18 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 31 "mcp2515.h"
+# 32 "mcp2515.h"
 const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
 const uint8_t rxmnsidh[2] = {0x20, 0x24};
 
-# 58
+# 61
 const uint8_t nm[2] = {0b00, 0b10};
 
 
 
 const uint8_t abc[3] = {0b000, 0b010, 0b100};
 
-# 75
+# 78
 const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
 
 
@@ -3843,9 +3843,10 @@ void can_set_sid (uint16_t can_node);
 void can_init(void *receive_handler);
 bool can_ope_mode(uint8_t ope_mode);
 void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-bool can_send(uint8_t *buf, uint8_t dlc);
-void can_status_check(void);
+bool can_send(uint8_t *data_buf, uint8_t dlc);
+bool can_status_check(void);
 bool can_baudrate(uint8_t bpr);
+bool can_abort(void);
 void can_dump_registers(void);
 
 # 14 "main.c"
@@ -3894,8 +3895,12 @@ idx = 0;
 
 while (1)
 {
-can_status_check();
-
+bool status = can_status_check();
+if (status) {
+LATCbits.LATC3 = 1;
+} else {
+LATCbits.LATC3 = 0;
+}
 if ((PIR1bits.RCIF)) {
 c = EUSART_Read();
 if (echo_back) printf("%c", c);
@@ -3953,8 +3958,14 @@ can_set_mask(0, n, mask);
 can_set_mask(1, n, mask);
 }
 break;
+case 'a':
+can_abort();
+break;
 case 'd':
 can_dump_registers();
+break;
+case '@':
+can_send(&buf[1], idx - 1);
 break;
 case 'h':
 printf("--- UART2CAN HELP ---\n");
@@ -3965,19 +3976,19 @@ printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
 printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
 printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
 printf("[Set baud rate] @b<bpr>\n");
+printf("[Abort all pending transmissions] @a\n");
 printf("[Dump registers] @d\n");
 printf("[Send message] <message>\n");
+printf("[Send message beginning with \'@\' character] @<@message>\n");
 printf("[Receive message] <message> will be output\n");
 printf("[Show this help]: @h\n");
 break;
 }
 } else {
-bool success = can_send(buf, idx);
-if(success) {
-LATCbits.LATC3 = !LATCbits.LATC3;
-}
+can_send(buf, idx);
 }
 idx = 0;
+
 } else if (++idx > max_idx) {
 buf[idx] = '\0';
 can_send(buf, idx);

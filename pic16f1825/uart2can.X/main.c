@@ -58,8 +58,12 @@ void main(void)
     
     while (1)
     {
-        can_status_check();
-        
+        bool status = can_status_check();
+        if (status) {
+            LED = 1;  // Alarm off
+        } else {
+            LED = 0;  // Alaram on
+        }
         if (EUSART_DataReady) {
             c = EUSART_Read();
             if (echo_back) printf("%c", c);  // echo back
@@ -117,8 +121,14 @@ void main(void)
                                 can_set_mask(SET_FILTER, n, mask);                                
                             }
                             break;
+                        case 'a':  // Abort all pending transmissions
+                            can_abort();
+                            break;
                         case 'd':  // Dump register
                             can_dump_registers();
+                            break;
+                        case '@':  // Data begining with '@' character
+                            can_send(&buf[1], idx - 1);
                             break;
                         case 'h':  // Show help
                             printf("--- UART2CAN HELP ---\n");
@@ -129,19 +139,19 @@ void main(void)
                             printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n"); 
                             printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
                             printf("[Set baud rate] @b<bpr>\n");
+                            printf("[Abort all pending transmissions] @a\n");
                             printf("[Dump registers] @d\n");
                             printf("[Send message] <message>\n");
+                            printf("[Send message beginning with \'@\' character] @<@message>\n");
                             printf("[Receive message] <message> will be output\n");
                             printf("[Show this help]: @h\n");
                             break;
                     }
                 } else {
-                    bool success = can_send(buf, idx);
-                    if(success) {
-                        LED = !LED;
-                    }
+                    can_send(buf, idx);
                 }
                 idx = 0;
+                
             } else if (++idx > max_idx) {
                 buf[idx] = '\0';
                 can_send(buf, idx);

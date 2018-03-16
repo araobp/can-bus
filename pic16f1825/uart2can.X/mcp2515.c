@@ -28,6 +28,8 @@ void can_logging_mode(bool debug, bool verbose) {
     mode.verbose = verbose;
 }
 
+uint8_t buf[16];
+
 /*
  * Set CAN message ID (11bit length)
  * 
@@ -45,23 +47,29 @@ void can_set_sid (uint16_t can_node) {
  * Initialize this program and MCP2515 with default config 
  */
 void can_init(void *receive_handler) {
-    can_set_sid(0);
-    
+    can_set_sid(0);   
     handler = receive_handler;
-
+    
     can_ope_mode(CONFIGURATION_MODE);    
-    uint8_t cnf_buf[5] = {WRITE, CNF3, CNF3_VALUE, CNF2_VALUE, CNF1_VALUE};
-    SPI_exchange(cnf_buf, 5);
-          
-    cnf_buf[0] = WRITE;
-    cnf_buf[1] = RXB0CTRL;
-    cnf_buf[2] = RXB0CTRL_VALUE;
-    SPI_exchange(cnf_buf, 3);
+    buf[0] = RESET_;
+    SPI_exchange(buf, 1);
 
-    cnf_buf[0] = WRITE;
-    cnf_buf[1] = RXB1CTRL;
-    cnf_buf[2] = RXB1CTRL_VALUE;
-    SPI_exchange(cnf_buf, 3);
+    buf[0] = WRITE;
+    buf[1] = CNF3;
+    buf[2] = CNF3_VALUE;
+    buf[4] = CNF2_VALUE;
+    buf[5] = CNF1_VALUE;
+    SPI_exchange(buf, 5);
+          
+    buf[0] = WRITE;
+    buf[1] = RXB0CTRL;
+    buf[2] = RXB0CTRL_VALUE;
+    SPI_exchange(buf, 3);
+
+    buf[0] = WRITE;
+    buf[1] = RXB1CTRL;
+    buf[2] = RXB1CTRL_VALUE;
+    SPI_exchange(buf, 3);
     
     mode.debug = false;
     mode.verbose = false;
@@ -73,19 +81,18 @@ void can_init(void *receive_handler) {
  * P58 Set MCP2515 to normal mode
  */
 bool can_ope_mode(uint8_t ope_mode) {
-    uint8_t can_ctrl_buf[3];
-    can_ctrl_buf[0] = WRITE;
-    can_ctrl_buf[1] = CANCTRL;
-    can_ctrl_buf[2] = ope_mode;
-    uint8_t bytes_written = SPI_exchange(can_ctrl_buf, 3);
+    buf[0] = WRITE;
+    buf[1] = CANCTRL;
+    buf[2] = ope_mode;
+    uint8_t bytes_written = SPI_exchange(buf, 3);
 
     if (ope_mode != CONFIGURATION_MODE) operation_mode = ope_mode;
     
     if (bytes_written == 3) {
-        can_ctrl_buf[0] = READ;
-        can_ctrl_buf[1] = CANSTAT;
-        bytes_written = SPI_exchange(can_ctrl_buf, 3);
-        if (mode.debug) printf("CANSTAT: %02x\n", can_ctrl_buf[2]);
+        buf[0] = READ;
+        buf[1] = CANSTAT;
+        bytes_written = SPI_exchange(buf, 3);
+        if (mode.debug) printf("CANSTAT: %02x\n", buf[2]);
         return true;
     } else {
         return false;
@@ -96,8 +103,6 @@ bool can_ope_mode(uint8_t ope_mode) {
  * Set mask and filter
  */
 void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
-    uint8_t mask_buf[4];
-
     can_ope_mode(CONFIGURATION_MODE);  // P33
     uint8_t mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
     uint8_t mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
@@ -108,12 +113,12 @@ void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
             printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);                                    
         }
     }
-    mask_buf[0] = WRITE;
-    mask_buf[1] = (cmd == SET_MASK)? rxmnsidh[n]: rxfnsidh[n];
-    mask_buf[2] = mask_sidh;
-    mask_buf[3] = mask_sidl;
+    buf[0] = WRITE;
+    buf[1] = (cmd == SET_MASK)? rxmnsidh[n]: rxfnsidh[n];
+    buf[2] = mask_sidh;
+    buf[3] = mask_sidl;
 
-    SPI_exchange(mask_buf, 4);
+    SPI_exchange(buf, 4);
 
     can_ope_mode(operation_mode);   
 }
@@ -123,12 +128,11 @@ void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
  */
 bool txf_clear(uint8_t n) {
     uint8_t mask = 0b00000001 << (n + 2);
-    uint8_t can_int_flag[4];
-    can_int_flag[0] =BIT_MODIFY;
-    can_int_flag[1] = CANINTF;
-    can_int_flag[2] = mask;
-    can_int_flag[3] = 0x00;
-    uint8_t bytes_written = SPI_exchange(can_int_flag, 4);
+    buf[0] =BIT_MODIFY;
+    buf[1] = CANINTF;
+    buf[2] = mask;
+    buf[3] = 0x00;
+    uint8_t bytes_written = SPI_exchange(buf, 4);
     if (bytes_written == 4) {
         return true;
     } else {
@@ -168,13 +172,14 @@ void receive(uint8_t n) {
 /*
  * Send CAN message
  */
-bool can_send(uint8_t *buf, uint8_t dlc) {
+bool can_send(uint8_t *data_buf, uint8_t dlc) {
     uint8_t i;
     uint8_t n = 0;
     
-    uint8_t can_status_buf[2] = {READ_STATUS, 0x00}; 
-    uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
-    uint8_t status = can_status_buf[1];
+    buf[0] = READ_STATUS;
+    buf[1] = 0x00;
+    uint8_t bytes_written = SPI_exchange(buf, 2);
+    uint8_t status = buf[1];
     if ((status & TXB2_TXREQ) == 0) {
         if (mode.debug) printf("TXB2 is idle\n");
         n = 2;
@@ -188,52 +193,49 @@ bool can_send(uint8_t *buf, uint8_t dlc) {
     
     // n: 0 ~ 2
     // TXBnSDIH, TXBnSDIL, TXBnEID8, TXBnEID0, TXBnDLC, TXBnDm (m: 0 ~ 7)
-    uint8_t tx_buf[14];
 
     // P66
-    tx_buf[0] = LOAD_TX_BUFFER + abc[n];
+    buf[0] = LOAD_TX_BUFFER + abc[n];
     // P19 TXBnSIDH
-    tx_buf[1] = sid.sidh;
+    buf[1] = sid.sidh;
     // P20 TXBnSIDL
-    tx_buf[2] = sid.sidl;
+    buf[2] = sid.sidl;
     // P20 TXBnEID8
-    tx_buf[3] = 0;
+    buf[3] = 0;
     // P20 TXBnEID0
-    tx_buf[4] = 0;
+    buf[4] = 0;
     // P21 TXBnDLC
-    tx_buf[5] = dlc;
+    buf[5] = dlc;
 
     // Copy buffer
     for(i=0; i<dlc; i++) {
-        tx_buf[6+i] = buf[i];
-        if (mode.debug) printf("Copying buffer: %c\n", tx_buf[6+i]);
+        buf[6+i] = data_buf[i];
+        if (mode.debug) printf("Copying buffer: %c\n", data_buf[i]);
     }
 
     // P66 Load TX buffer
     uint8_t len = 6 + dlc;
-    uint8_t bytes_written = SPI_exchange(tx_buf, len);
+    uint8_t bytes_written = SPI_exchange(buf, len);
 
-    uint8_t debug_buf[3];
-    debug_buf[0] = READ;
-    debug_buf[1] = txbnsidh[n];
-    debug_buf[2] = 0x00;
-    SPI_exchange(debug_buf, 3);
+    buf[0] = READ;
+    buf[1] = txbnsidh[n];
+    buf[2] = 0x00;
+    SPI_exchange(buf, 3);
     
-    if (mode.debug) printf("TXB%dSIDH: %02x\n", n, debug_buf[2]);
-    debug_buf[0] = READ;
-    debug_buf[1] = txbnsidh[n] + 1;  //TXBnSIDL
-    debug_buf[2] = 0x00;
-    SPI_exchange(debug_buf, 3);
+    if (mode.debug) printf("TXB%dSIDH: %02x\n", n, buf[2]);
+    buf[0] = READ;
+    buf[1] = txbnsidh[n] + 1;  //TXBnSIDL
+    buf[2] = 0x00;
+    SPI_exchange(buf, 3);
    
-    if (mode.debug) printf("TXB%dSIDL: %02x\n", n, debug_buf[2]);
+    if (mode.debug) printf("TXB%dSIDL: %02x\n", n, buf[2]);
     
     if (bytes_written == len) {
         // P64, P66 RTS
-        uint8_t txb_ctrl_buf[1];
-        txb_ctrl_buf[0] = RTS + (0b00000001 << n);
-        bytes_written = SPI_exchange(txb_ctrl_buf, 1);
+        buf[0] = RTS + (0b00000001 << n);
+        bytes_written = SPI_exchange(buf, 1);
         if (bytes_written == 1) {
-            if (mode.debug) printf("Message sent: %s\n", buf);
+            if (mode.debug) printf("Message sent: %s\n", data_buf);
             return true;
         }
     }
@@ -244,13 +246,14 @@ bool can_send(uint8_t *buf, uint8_t dlc) {
 /*
  * Check CAN status
  */
-void can_status_check(void) {
+bool can_status_check(void) {
     // P67
-    uint8_t can_status_buf[2] = {READ_STATUS, 0x00}; 
-    uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
-    uint8_t status = can_status_buf[1];
+    buf[0] = READ_STATUS;
+    buf[1] = 0x00;
+    uint8_t bytes_written = SPI_exchange(buf, 2);
+    uint8_t status = buf[1];
     if (status == 0x00) {
-        return;
+        return true;
     } else if ((status & RX1IF_MASK) > 0) {
         if (mode.debug) printf("RX1IF is on\n");
         receive(1);
@@ -264,19 +267,22 @@ void can_status_check(void) {
     } else if ((status & TX2IF_MASK) > 0) {
         txf_clear(2);
     }
-    return;
+    if ((status & TXERR) > 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 bool can_baudrate(uint8_t bpr) {
     can_ope_mode(CONFIGURATION_MODE);
     // P42
     uint8_t mask = 0b00111111;
-    uint8_t cnf1_buf[4];
-    cnf1_buf[0] = BIT_MODIFY;
-    cnf1_buf[1] = CNF1;
-    cnf1_buf[2] = mask;
-    cnf1_buf[3] = bpr;
-    uint8_t bytes_written = SPI_exchange(cnf1_buf, 4);
+    buf[0] = BIT_MODIFY;
+    buf[1] = CNF1;
+    buf[2] = mask;
+    buf[3] = bpr;
+    uint8_t bytes_written = SPI_exchange(buf, 4);
     can_ope_mode(operation_mode);
     if (bytes_written == 4) {
         return true;
@@ -285,13 +291,28 @@ bool can_baudrate(uint8_t bpr) {
     }
 }
 
+bool can_abort(void) {
+    can_ope_mode(CONFIGURATION_MODE);
+    // P16
+    buf[0] = BIT_MODIFY;
+    buf[1] = CANCTRL;
+    buf[2] = ABAT;
+    buf[3] = ABAT;
+    uint8_t bytes_written = SPI_exchange(buf, 4);
+    can_ope_mode(operation_mode);
+    if (bytes_written == 4) {
+        return true;
+    } else {
+        return false;
+    }    
+}
+
 uint8_t read_register(uint8_t addr) {
-    uint8_t read_buf[3];
-    read_buf[0] = READ;
-    read_buf[1] = addr;
-    read_buf[2] = 0x00;
-    SPI_exchange(read_buf, 3);
-    return read_buf[2];
+    buf[0] = READ;
+    buf[1] = addr;
+    buf[2] = 0x00;
+    SPI_exchange(buf, 3);
+    return buf[2];
 }
 
 /*
@@ -306,6 +327,11 @@ void can_dump_registers(void) {
     printf("CNF1: %02x\n", read_register(CNF1));
     printf("CNF2: %02x\n", read_register(CNF2));
     printf("CNF3: %02x\n", read_register(CNF3));    
+    printf("\n");
+
+    printf("TXB0CTRL: %02x\n", read_register(TXB0CTRL));
+    printf("TXB1CTRL: %02x\n", read_register(TXB1CTRL));
+    printf("TXB2CTRL: %02x\n", read_register(TXB2CTRL));
     printf("\n");
 
     printf("RXB0CTRL: %02x\n", read_register(RXB0CTRL));
