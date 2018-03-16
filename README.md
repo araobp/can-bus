@@ -71,9 +71,9 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## 1st test on March 14th, 2018
 
-![test](./doc/test.jpg)
+(The problem below has already been fixed in ver 0.1 release)
 
-My oscilloscope did not seem to be able to catch up with the speed:
+![test](./doc/test.jpg)
 
 ![waveform2](./doc/waveform2.BMP)
 
