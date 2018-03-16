@@ -3,14 +3,14 @@
  * 
  * MCP2515 data sheet: http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf
  * 
- * Version 0.1, March 18, 2018
+ * Version 0.1  March 17, 2018
  */
 
 #include "mcc_generated_files/mcc.h"
 #include "stdlib.h"
 #include "mcp2515.h"
 
-#define VERSION "0.1 March 18, 2018"
+#define VERSION "0.1  March 17, 2018"
 
 #define LED LATCbits.LATC3
 #define ON 1  // Note: this should be 0 and the circuit is not right. 

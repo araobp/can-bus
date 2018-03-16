@@ -3971,7 +3971,7 @@ case '@':
 can_send(&buf[1], idx - 1);
 break;
 case 'h':
-printf("/// UART2CAN HELP (version %s) ///\n", "0.1 March 18, 2018");
+printf("/// UART2CAN HELP (version %s) ///\n", "0.1  March 17, 2018");
 printf("[Set standard identifier] @i<standard identifier>\n");
 printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
 printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");

@@ -50,14 +50,14 @@ maintext CODE 0 3C3 3C3 1F0 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 20 20 42 1
 cstackBANK1 BANK1 1 A0 A0 13 1
-stringtext1 STRCODE 0 13EA 13EA A 2
-stringtext2 STRCODE 0 13F4 13F4 8 2
-stringtext3 STRCODE 0 140A 140A 6 2
-stringtext4 STRCODE 0 1421 1421 3 2
-stringtext5 STRCODE 0 1424 1424 3 2
-stringtext6 STRCODE 0 142A 142A 2 2
-stringtext7 STRCODE 0 142C 142C 2 2
-stringtext8 STRCODE 0 142E 142E 1 2
+stringtext1 STRCODE 0 13EB 13EB A 2
+stringtext2 STRCODE 0 13F5 13F5 8 2
+stringtext3 STRCODE 0 140B 140B 6 2
+stringtext4 STRCODE 0 1422 1422 3 2
+stringtext5 STRCODE 0 1425 1425 3 2
+stringtext6 STRCODE 0 142B 142B 2 2
+stringtext7 STRCODE 0 142D 142D 2 2
+stringtext8 STRCODE 0 142F 142F 1 2
 stringtext9 STRCODE 0 1000 1000 3B 2
 bssBANK0 BANK0 1 62 62 7 1
 bssBANK1 BANK1 1 B3 B3 10 1
@@ -78,37 +78,37 @@ stringtext22 STRCODE 0 1227 1227 16 2
 stringtext23 STRCODE 0 123D 123D 15 2
 stringtext24 STRCODE 0 1252 1252 15 2
 stringtext25 STRCODE 0 1267 1267 14 2
-stringtext26 STRCODE 0 127B 127B 13 2
-stringtext27 STRCODE 0 128E 128E 12 2
-stringtext28 STRCODE 0 12A0 12A0 11 2
-stringtext29 STRCODE 0 12B1 12B1 11 2
-stringtext30 STRCODE 0 12C2 12C2 11 2
-stringtext31 STRCODE 0 12D3 12D3 11 2
-stringtext32 STRCODE 0 12E4 12E4 11 2
-stringtext33 STRCODE 0 12F5 12F5 10 2
-stringtext34 STRCODE 0 1305 1305 10 2
-stringtext35 STRCODE 0 1315 1315 10 2
-stringtext36 STRCODE 0 1325 1325 10 2
-stringtext37 STRCODE 0 1335 1335 10 2
-stringtext38 STRCODE 0 1345 1345 10 2
-stringtext39 STRCODE 0 1355 1355 F 2
-stringtext40 STRCODE 0 1364 1364 F 2
-stringtext41 STRCODE 0 1373 1373 F 2
-stringtext42 STRCODE 0 1382 1382 E 2
-stringtext43 STRCODE 0 1390 1390 E 2
-stringtext44 STRCODE 0 139E 139E E 2
-stringtext45 STRCODE 0 13AC 13AC D 2
-stringtext46 STRCODE 0 13B9 13B9 D 2
-stringtext47 STRCODE 0 13C6 13C6 C 2
-stringtext48 STRCODE 0 13D2 13D2 C 2
-stringtext49 STRCODE 0 13DE 13DE C 2
-stringtext50 STRCODE 0 13FC 13FC 7 2
-stringtext51 STRCODE 0 1403 1403 7 2
-stringtext52 STRCODE 0 1410 1410 6 2
-stringtext53 STRCODE 0 1416 1416 6 2
-stringtext54 STRCODE 0 141C 141C 5 2
-stringtext55 STRCODE 0 1427 1427 3 2
-$C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+stringtext26 STRCODE 0 127B 127B 14 2
+stringtext27 STRCODE 0 128F 128F 12 2
+stringtext28 STRCODE 0 12A1 12A1 11 2
+stringtext29 STRCODE 0 12B2 12B2 11 2
+stringtext30 STRCODE 0 12C3 12C3 11 2
+stringtext31 STRCODE 0 12D4 12D4 11 2
+stringtext32 STRCODE 0 12E5 12E5 11 2
+stringtext33 STRCODE 0 12F6 12F6 10 2
+stringtext34 STRCODE 0 1306 1306 10 2
+stringtext35 STRCODE 0 1316 1316 10 2
+stringtext36 STRCODE 0 1326 1326 10 2
+stringtext37 STRCODE 0 1336 1336 10 2
+stringtext38 STRCODE 0 1346 1346 10 2
+stringtext39 STRCODE 0 1356 1356 F 2
+stringtext40 STRCODE 0 1365 1365 F 2
+stringtext41 STRCODE 0 1374 1374 F 2
+stringtext42 STRCODE 0 1383 1383 E 2
+stringtext43 STRCODE 0 1391 1391 E 2
+stringtext44 STRCODE 0 139F 139F E 2
+stringtext45 STRCODE 0 13AD 13AD D 2
+stringtext46 STRCODE 0 13BA 13BA D 2
+stringtext47 STRCODE 0 13C7 13C7 C 2
+stringtext48 STRCODE 0 13D3 13D3 C 2
+stringtext49 STRCODE 0 13DF 13DF C 2
+stringtext50 STRCODE 0 13FD 13FD 7 2
+stringtext51 STRCODE 0 1404 1404 7 2
+stringtext52 STRCODE 0 1411 1411 6 2
+stringtext53 STRCODE 0 1417 1417 6 2
+stringtext54 STRCODE 0 141D 141D 5 2
+stringtext55 STRCODE 0 1428 1428 3 2
+$C:\Users\shiny\AppData\Local\Temp\shsc.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 2 2
@@ -142,9 +142,9 @@ BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
 CONST 800-C18 2
-CONST 142F-1FFF 2
+CONST 1430-1FFF 2
 ENTRY 800-C18 2
-ENTRY 142F-1FFF 2
+ENTRY 1430-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -170,7 +170,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2073-23EF 1
 CODE 800-C18 2
-CODE 142F-1FFF 2
+CODE 1430-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -187,9 +187,9 @@ BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 EEDATA F000-F0FF 2
 STRCODE 800-C18 2
-STRCODE 142F-1FFF 2
+STRCODE 1430-1FFF 2
 STRING 800-C18 2
-STRING 142F-1FFF 2
+STRING 1430-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -204,23 +204,23 @@ STRING 142F-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\uart2can.X.production.obj
-7EE cinit CODE >3650:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7EE cinit CODE >3653:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7EE cinit CODE >3692:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7EF cinit CODE >3693:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F0 cinit CODE >3694:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F1 cinit CODE >3695:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F2 cinit CODE >3696:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F3 cinit CODE >3697:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F6 cinit CODE >3701:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F7 cinit CODE >3702:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F8 cinit CODE >3703:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7F9 cinit CODE >3704:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7FA cinit CODE >3705:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7FB cinit CODE >3706:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7FD cinit CODE >3712:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7FD cinit CODE >3714:C:\Users\shiny\AppData\Local\Temp\sdc0.
-7FE cinit CODE >3715:C:\Users\shiny\AppData\Local\Temp\sdc0.
+7EE cinit CODE >3651:C:\Users\shiny\AppData\Local\Temp\shsc.
+7EE cinit CODE >3654:C:\Users\shiny\AppData\Local\Temp\shsc.
+7EE cinit CODE >3693:C:\Users\shiny\AppData\Local\Temp\shsc.
+7EF cinit CODE >3694:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F0 cinit CODE >3695:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F1 cinit CODE >3696:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F2 cinit CODE >3697:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F3 cinit CODE >3698:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F6 cinit CODE >3702:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F7 cinit CODE >3703:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F8 cinit CODE >3704:C:\Users\shiny\AppData\Local\Temp\shsc.
+7F9 cinit CODE >3705:C:\Users\shiny\AppData\Local\Temp\shsc.
+7FA cinit CODE >3706:C:\Users\shiny\AppData\Local\Temp\shsc.
+7FB cinit CODE >3707:C:\Users\shiny\AppData\Local\Temp\shsc.
+7FD cinit CODE >3713:C:\Users\shiny\AppData\Local\Temp\shsc.
+7FD cinit CODE >3715:C:\Users\shiny\AppData\Local\Temp\shsc.
+7FE cinit CODE >3716:C:\Users\shiny\AppData\Local\Temp\shsc.
 C43 text32 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 C43 text32 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 C43 text32 CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
@@ -734,14 +734,14 @@ E66 text1 CODE >273:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.
 590 maintext CODE >164:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 5A3 maintext CODE >165:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 5A9 maintext CODE >166:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-C1E clrtext CODE >3681:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C1E clrtext CODE >3682:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C1F clrtext CODE >3683:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C1F clrtext CODE >3684:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C20 clrtext CODE >3685:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C21 clrtext CODE >3686:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C22 clrtext CODE >3687:C:\Users\shiny\AppData\Local\Temp\sdc0.
-C23 clrtext CODE >3688:C:\Users\shiny\AppData\Local\Temp\sdc0.
+C1E clrtext CODE >3682:C:\Users\shiny\AppData\Local\Temp\shsc.
+C1E clrtext CODE >3683:C:\Users\shiny\AppData\Local\Temp\shsc.
+C1F clrtext CODE >3684:C:\Users\shiny\AppData\Local\Temp\shsc.
+C1F clrtext CODE >3685:C:\Users\shiny\AppData\Local\Temp\shsc.
+C20 clrtext CODE >3686:C:\Users\shiny\AppData\Local\Temp\shsc.
+C21 clrtext CODE >3687:C:\Users\shiny\AppData\Local\Temp\shsc.
+C22 clrtext CODE >3688:C:\Users\shiny\AppData\Local\Temp\shsc.
+C23 clrtext CODE >3689:C:\Users\shiny\AppData\Local\Temp\shsc.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -769,7 +769,7 @@ _SPI_exchange 1900 0 CODE 0 text20 dist/default/production\uart2can.X.production
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 txf_clear@bytes_written 23 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_nm 2854 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
+_nm 2856 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
 __end_of_can_set_mask 16C 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
 __end_of_WDT_Initialize 10 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
 main@c B0 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
@@ -779,12 +779,12 @@ _LATA 10C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _LATC 10E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+___sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\shsc.obj
 _atoi 1E34 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
 _main 786 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
 _mode 62 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-start 4 0 CODE 0 init C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+start 4 0 CODE 0 init C:\Users\shiny\AppData\Local\Temp\shsc.obj
 _EUSART_Write 1864 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
 can_send@i 44 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 can_send@n 45 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
@@ -852,12 +852,12 @@ can_abort@bytes_written 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2ca
 receive@bytes_read 47 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_SPI_exchange 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sdc0.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sdc0.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sdc0.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sdc0.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sdc0.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shsc.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shsc.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shsc.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shsc.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shsc.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shsc.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 __size_of_EUSART_Write 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
@@ -883,7 +883,7 @@ main@buf A7 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.
 main@cmd B1 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
 main@idx B2 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
 main@sid A0 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-_txbnsidh 2842 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
+_txbnsidh 2844 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
 txf_clear@mask 22 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 SPI_Exchange8bitBuffer@dataOut 72 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
@@ -894,9 +894,9 @@ ___lwmod@divisor 78 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.p
 __end_of___lwdiv 1B88 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
 __end_of___lwmod 1A60 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
 __size_of_isdigit 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_txbnsidh 2848 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
+__end_of_txbnsidh 284A 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
 __end_of_can_set_sid 1A08 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
-_dpowers 27D4 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
+_dpowers 27D6 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
 __size_of_SPI_Exchange8bitBuffer 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _EUSART_Initialize 189A 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
 receive_handler@i 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
@@ -956,13 +956,13 @@ __Lstringtext54 0 0 ABS 0 stringtext54 -
 __Lstringtext55 0 0 ABS 0 stringtext55 -
 __Lstringtext56 0 0 ABS 0 stringtext56 -
 start_initialization FDC 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
-__end_of_hexpowers 27F8 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
+__end_of_hexpowers 27FA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 can_baudrate@bpr 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 _handler 69 0 BANK0 1 nvBANK0 dist/default/production\uart2can.X.production.obj
 SPI_exchange@buf 7D 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 SPI_exchange@len 78 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_nm 2858 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
+__end_of_nm 285A 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
 __end_of_SYSTEM_Initialize 1900 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
 clear_ram0 183C 0 CODE 0 clrtext dist/default/production\uart2can.X.production.obj
 _SPBRGH 19C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
@@ -972,12 +972,12 @@ __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.produ
 _can_ope_mode 1CD0 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
 main@echo_back A5 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
 _can_logging_mode 18B0 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
-_hexpowers 27E8 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
+_hexpowers 27EA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
 __end_of_printf FDC 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
 _receive 16C 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
 _isdigit$786 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _WDTCON 97 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+___int_sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\shsc.obj
 __end_of_EUSART_Read 189A 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -1040,7 +1040,7 @@ __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_rxfnsidh 2814 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
+_rxfnsidh 2816 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
 SPI_Exchange8bitBuffer@bytesWritten 77 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hcommon 0 0 ABS 0 common -
@@ -1086,7 +1086,7 @@ _SPI_Exchange8bit 1874 0 CODE 0 text22 dist/default/production\uart2can.X.produc
 __end_of_can_dump_registers 4EC 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
 _APFCON0 11D 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _APFCON1 11E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_rxfnsidh 2820 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
+__end_of_rxfnsidh 2822 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -1116,14 +1116,14 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 27D4 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
-__pstringtext2 27E8 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
-__pstringtext3 2814 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
-__pstringtext4 2842 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
-__pstringtext5 2848 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
-__pstringtext6 2854 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
-__pstringtext7 2858 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
-__pstringtext8 285C 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
+__pstringtext1 27D6 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
+__pstringtext2 27EA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
+__pstringtext3 2816 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
+__pstringtext4 2844 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
+__pstringtext5 284A 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
+__pstringtext6 2856 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
+__pstringtext7 285A 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
+__pstringtext8 285E 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
 __pstringtext9 2000 0 STRCODE 0 stringtext9 dist/default/production\uart2can.X.production.obj
 __pnvBANK0 69 0 BANK0 1 nvBANK0 dist/default/production\uart2can.X.production.obj
 can_set_mask@mask_sidh 4A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
@@ -1147,35 +1147,35 @@ __pstringtext23 247A 0 STRCODE 0 stringtext23 dist/default/production\uart2can.X
 __pstringtext24 24A4 0 STRCODE 0 stringtext24 dist/default/production\uart2can.X.production.obj
 __pstringtext25 24CE 0 STRCODE 0 stringtext25 dist/default/production\uart2can.X.production.obj
 __pstringtext26 24F6 0 STRCODE 0 stringtext26 dist/default/production\uart2can.X.production.obj
-__pstringtext27 251C 0 STRCODE 0 stringtext27 dist/default/production\uart2can.X.production.obj
-__pstringtext28 2540 0 STRCODE 0 stringtext28 dist/default/production\uart2can.X.production.obj
-__pstringtext29 2562 0 STRCODE 0 stringtext29 dist/default/production\uart2can.X.production.obj
-__pstringtext30 2584 0 STRCODE 0 stringtext30 dist/default/production\uart2can.X.production.obj
-__pstringtext31 25A6 0 STRCODE 0 stringtext31 dist/default/production\uart2can.X.production.obj
-__pstringtext32 25C8 0 STRCODE 0 stringtext32 dist/default/production\uart2can.X.production.obj
-__pstringtext33 25EA 0 STRCODE 0 stringtext33 dist/default/production\uart2can.X.production.obj
-__pstringtext34 260A 0 STRCODE 0 stringtext34 dist/default/production\uart2can.X.production.obj
-__pstringtext35 262A 0 STRCODE 0 stringtext35 dist/default/production\uart2can.X.production.obj
-__pstringtext36 264A 0 STRCODE 0 stringtext36 dist/default/production\uart2can.X.production.obj
-__pstringtext37 266A 0 STRCODE 0 stringtext37 dist/default/production\uart2can.X.production.obj
-__pstringtext38 268A 0 STRCODE 0 stringtext38 dist/default/production\uart2can.X.production.obj
-__pstringtext39 26AA 0 STRCODE 0 stringtext39 dist/default/production\uart2can.X.production.obj
-__pstringtext40 26C8 0 STRCODE 0 stringtext40 dist/default/production\uart2can.X.production.obj
-__pstringtext41 26E6 0 STRCODE 0 stringtext41 dist/default/production\uart2can.X.production.obj
-__pstringtext42 2704 0 STRCODE 0 stringtext42 dist/default/production\uart2can.X.production.obj
-__pstringtext43 2720 0 STRCODE 0 stringtext43 dist/default/production\uart2can.X.production.obj
-__pstringtext44 273C 0 STRCODE 0 stringtext44 dist/default/production\uart2can.X.production.obj
-__pstringtext45 2758 0 STRCODE 0 stringtext45 dist/default/production\uart2can.X.production.obj
-__pstringtext46 2772 0 STRCODE 0 stringtext46 dist/default/production\uart2can.X.production.obj
-__pstringtext47 278C 0 STRCODE 0 stringtext47 dist/default/production\uart2can.X.production.obj
-__pstringtext48 27A4 0 STRCODE 0 stringtext48 dist/default/production\uart2can.X.production.obj
-__pstringtext49 27BC 0 STRCODE 0 stringtext49 dist/default/production\uart2can.X.production.obj
-__pstringtext50 27F8 0 STRCODE 0 stringtext50 dist/default/production\uart2can.X.production.obj
-__pstringtext51 2806 0 STRCODE 0 stringtext51 dist/default/production\uart2can.X.production.obj
-__pstringtext52 2820 0 STRCODE 0 stringtext52 dist/default/production\uart2can.X.production.obj
-__pstringtext53 282C 0 STRCODE 0 stringtext53 dist/default/production\uart2can.X.production.obj
-__pstringtext54 2838 0 STRCODE 0 stringtext54 dist/default/production\uart2can.X.production.obj
-__pstringtext55 284E 0 STRCODE 0 stringtext55 dist/default/production\uart2can.X.production.obj
+__pstringtext27 251E 0 STRCODE 0 stringtext27 dist/default/production\uart2can.X.production.obj
+__pstringtext28 2542 0 STRCODE 0 stringtext28 dist/default/production\uart2can.X.production.obj
+__pstringtext29 2564 0 STRCODE 0 stringtext29 dist/default/production\uart2can.X.production.obj
+__pstringtext30 2586 0 STRCODE 0 stringtext30 dist/default/production\uart2can.X.production.obj
+__pstringtext31 25A8 0 STRCODE 0 stringtext31 dist/default/production\uart2can.X.production.obj
+__pstringtext32 25CA 0 STRCODE 0 stringtext32 dist/default/production\uart2can.X.production.obj
+__pstringtext33 25EC 0 STRCODE 0 stringtext33 dist/default/production\uart2can.X.production.obj
+__pstringtext34 260C 0 STRCODE 0 stringtext34 dist/default/production\uart2can.X.production.obj
+__pstringtext35 262C 0 STRCODE 0 stringtext35 dist/default/production\uart2can.X.production.obj
+__pstringtext36 264C 0 STRCODE 0 stringtext36 dist/default/production\uart2can.X.production.obj
+__pstringtext37 266C 0 STRCODE 0 stringtext37 dist/default/production\uart2can.X.production.obj
+__pstringtext38 268C 0 STRCODE 0 stringtext38 dist/default/production\uart2can.X.production.obj
+__pstringtext39 26AC 0 STRCODE 0 stringtext39 dist/default/production\uart2can.X.production.obj
+__pstringtext40 26CA 0 STRCODE 0 stringtext40 dist/default/production\uart2can.X.production.obj
+__pstringtext41 26E8 0 STRCODE 0 stringtext41 dist/default/production\uart2can.X.production.obj
+__pstringtext42 2706 0 STRCODE 0 stringtext42 dist/default/production\uart2can.X.production.obj
+__pstringtext43 2722 0 STRCODE 0 stringtext43 dist/default/production\uart2can.X.production.obj
+__pstringtext44 273E 0 STRCODE 0 stringtext44 dist/default/production\uart2can.X.production.obj
+__pstringtext45 275A 0 STRCODE 0 stringtext45 dist/default/production\uart2can.X.production.obj
+__pstringtext46 2774 0 STRCODE 0 stringtext46 dist/default/production\uart2can.X.production.obj
+__pstringtext47 278E 0 STRCODE 0 stringtext47 dist/default/production\uart2can.X.production.obj
+__pstringtext48 27A6 0 STRCODE 0 stringtext48 dist/default/production\uart2can.X.production.obj
+__pstringtext49 27BE 0 STRCODE 0 stringtext49 dist/default/production\uart2can.X.production.obj
+__pstringtext50 27FA 0 STRCODE 0 stringtext50 dist/default/production\uart2can.X.production.obj
+__pstringtext51 2808 0 STRCODE 0 stringtext51 dist/default/production\uart2can.X.production.obj
+__pstringtext52 2822 0 STRCODE 0 stringtext52 dist/default/production\uart2can.X.production.obj
+__pstringtext53 282E 0 STRCODE 0 stringtext53 dist/default/production\uart2can.X.production.obj
+__pstringtext54 283A 0 STRCODE 0 stringtext54 dist/default/production\uart2can.X.production.obj
+__pstringtext55 2850 0 STRCODE 0 stringtext55 dist/default/production\uart2can.X.production.obj
 __pstringtext56 0 0 STRCODE 0 stringtext56 dist/default/production\uart2can.X.production.obj
 ___wmul 198A 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
@@ -1186,14 +1186,14 @@ __S0 8009 0 ABS 0 - -
 __S1 C3 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_abc 2848 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
+_abc 284A 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
 _buf B3 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
 _sid 64 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_max_idx 285E 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
-_rxmnsidh 2858 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
+__end_of_max_idx 2860 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
+_rxmnsidh 285A 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
 atoi@sign 7A 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 read_register@addr 21 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_rxmnsidh 285C 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
+__end_of_rxmnsidh 285E 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
 can_logging_mode@debug 72 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __end_of_can_ope_mode 1D7E 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
 _can_dump_registers 2D4 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
@@ -1201,7 +1201,7 @@ _SYSTEM_Initialize 18E2 0 CODE 0 text26 dist/default/production\uart2can.X.produ
 can_send@data_buf 43 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 can_set_sid@sidh 75 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 can_set_sid@sidl 76 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_abc 284E 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
+__end_of_abc 2850 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
 __size_of_can_set_sid 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __end_of_can_logging_mode 18C6 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
@@ -1209,7 +1209,7 @@ __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 4 0 CODE 0 intentry -
 SPI_exchange@bytes_written 7C 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 can_set_sid@can_node 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\shiny\AppData\Local\Temp\shsc.obj
 __size_of_can_logging_mode 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _read_register 1958 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
@@ -1303,8 +1303,8 @@ ___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.p
 _SPI_Exchange8bitBuffer 1B88 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
 __size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 can_status_check@status 5F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-stackhi 23EF 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\sdc0.obj
-stacklo 2073 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\sdc0.obj
+stackhi 23EF 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\shsc.obj
+stacklo 2073 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\shsc.obj
 SPI_Exchange8bit@data 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 can_baudrate@mask 42 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
@@ -1381,7 +1381,7 @@ __end_of__initialization FFA 0 CODE 0 cinit dist/default/production\uart2can.X.p
 __Lfunctab 0 0 ENTRY 0 functab -
 can_send@bytes_written 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_can_status_check 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_max_idx 285C 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
+_max_idx 285E 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
 main@status A2 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
 __end_of_read_register 198A 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -1402,7 +1402,7 @@ isdigit@c 71 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.producti
 printf@idx 2E 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 printf@len 32 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 printf@val 35 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_dpowers 27E8 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
+__end_of_dpowers 27EA 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
 _RCREG 199 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _RCSTA 19D 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
@@ -1493,7 +1493,7 @@ maintext 0 3C3 786 1F0 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 4B 1
 cstackBANK1 1 A0 A0 23 1
-stringtext9 0 1000 2000 42F 2
+stringtext9 0 1000 2000 430 2
 reset_vec 0 0 0 8 2
 clrtext 0 C1E 183C 6 2
 config 0 8007 1000E 2 2
