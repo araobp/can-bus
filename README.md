@@ -2,6 +2,10 @@
 
 ![waveform](./doc/waveform.jpg)
 
+## Current status
+
+Version 0.1 has just been released on March 17, 2018.
+
 ## Motivation
 
 I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC1768 is expensive for IoT prototyping.
