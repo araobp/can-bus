@@ -175,15 +175,15 @@ bool can_send(uint8_t *buf, uint8_t dlc) {
     uint8_t can_status_buf[2] = {READ_STATUS, 0x00}; 
     uint8_t bytes_written = SPI_exchange(can_status_buf, 2);
     uint8_t status = can_status_buf[1];
-    if ((status & TXB0_TXREQ) == 0) {
-        if (mode.debug) printf("TXB0 is idle\n");
-        n = 0;
+    if ((status & TXB2_TXREQ) == 0) {
+        if (mode.debug) printf("TXB2 is idle\n");
+        n = 2;
     } else if ((status & TXB1_TXREQ) == 0) {
         if (mode.debug) printf("TXB1 is idle\n");
         n = 1;
-    } else if ((status & TXB2_TXREQ) > 0) {
-        if (mode.debug) printf("TXB2 is idle\n");
-        n = 2;
+    } else if ((status & TXB0_TXREQ) == 0) {
+        if (mode.debug) printf("TXB0 is idle\n");
+        n = 0;
     }
     
     // n: 0 ~ 2
@@ -310,22 +310,6 @@ void can_dump_registers(void) {
 
     printf("RXB0CTRL: %02x\n", read_register(RXB0CTRL));
     printf("RXB1CTRL: %02x\n", read_register(RXB1CTRL));
-    printf("\n");
-    
-    uint8_t n;
-    uint8_t i;
-    uint8_t mask_sidh;
-    uint8_t mask_sidl;
-    for (n=0; n<2; n++) {
-        mask_sidh = read_register(rxmnsidh[n]);
-        mask_sidl = read_register(rxmnsidh[n]+1);
-        printf("RXM%dSIDH RXM%dSIDL: %02x %02x\n", n, n, mask_sidh, mask_sidl);
-    }
-    for (n=0; n<6; n++) {
-        mask_sidh = read_register(rxfnsidh[n]);
-        mask_sidl = read_register(rxfnsidh[n]+1);
-        printf("RXF%dSIDH RXF%dSIDL: %02x %02x\n", n, n, mask_sidh, mask_sidl);
-    }
     printf("\n");
     
     printf("CANCTRL: %02x\n", read_register(CANCTRL));

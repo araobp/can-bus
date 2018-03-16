@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Fri Mar 16 08:11:17 2018
+                                                                                               Fri Mar 16 08:47:29 2018
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	16F1825
@@ -2201,7 +2201,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2187                           
   2188                           	psect	stringtext38
   2189  1313                     __pstringtext38:	
-  2190  1313                     STR_26:	
+  2190  1313                     STR_28:	
   2191  1313  3454               	retlw	84	;'T'
   2192  1314  3458               	retlw	88	;'X'
   2193  1315  3442               	retlw	66	;'B'
@@ -2237,7 +2237,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2223                           
   2224                           	psect	stringtext40
   2225  132F                     __pstringtext40:	
-  2226  132F                     STR_28:	
+  2226  132F                     STR_26:	
   2227  132F  3454               	retlw	84	;'T'
   2228  1330  3458               	retlw	88	;'X'
   2229  1331  3442               	retlw	66	;'B'
@@ -4678,70 +4678,70 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   4629  0157  0841               	movf	??_can_send,w
   4630  0158  00D9               	movwf	can_send@status
   4631                           
-  4632                           ;mcp2515.c: 178: if ((status & 0b00000100) == 0) {
-  4633  0159  1959               	btfsc	can_send@status,2
-  4634  015A  2968               	goto	l309
+  4632                           ;mcp2515.c: 178: if ((status & 0b01000000) == 0) {
+  4633  0159  1B59               	btfsc	can_send@status,6
+  4634  015A  296B               	goto	l309
   4635                           
-  4636                           ;mcp2515.c: 179: if (mode.debug) printf("TXB0 is idle\n");
+  4636                           ;mcp2515.c: 179: if (mode.debug) printf("TXB2 is idle\n");
   4637  015B  0869               	movf	_mode,w
   4638  015C  1903               	btfsc	3,2
   4639  015D  2965               	goto	l2381
-  4640  015E  3013               	movlw	low (STR_26| (0+32768))
+  4640  015E  302F               	movlw	low (STR_26| (0+32768))
   4641  015F  00A5               	movwf	printf@f
   4642  0160  3093               	movlw	high (STR_26| (0+32768))
   4643  0161  00A6               	movwf	printf@f+1
   4644  0162  3185  25B0  3181   	fcall	_printf
   4645  0165                     l2381:	
   4646                           
-  4647                           ;mcp2515.c: 180: n = 0;
-  4648  0165  0020               	movlb	0	; select bank0
-  4649  0166  01DE               	clrf	can_send@n
-  4650                           
-  4651                           ;mcp2515.c: 181: } else if ((status & 0b00010000) == 0) {
-  4652  0167  2989               	goto	l2395
-  4653  0168                     l309:	
-  4654  0168  1A59               	btfsc	can_send@status,4
-  4655  0169  2978               	goto	l312
-  4656                           
-  4657                           ;mcp2515.c: 182: if (mode.debug) printf("TXB1 is idle\n");
-  4658  016A  0869               	movf	_mode,w
-  4659  016B  1903               	btfsc	3,2
-  4660  016C  2974               	goto	l2387
-  4661  016D  3021               	movlw	low (STR_27| (0+32768))
-  4662  016E  00A5               	movwf	printf@f
-  4663  016F  3093               	movlw	high (STR_27| (0+32768))
-  4664  0170  00A6               	movwf	printf@f+1
-  4665  0171  3185  25B0  3181   	fcall	_printf
-  4666  0174                     l2387:	
-  4667                           
-  4668                           ;mcp2515.c: 183: n = 1;
-  4669  0174  0020               	movlb	0	; select bank0
-  4670  0175  01DE               	clrf	can_send@n
-  4671  0176  0ADE               	incf	can_send@n,f
-  4672                           
-  4673                           ;mcp2515.c: 184: } else if ((status & 0b01000000) > 0) {
-  4674  0177  2989               	goto	l2395
-  4675  0178                     l312:	
-  4676  0178  1F59               	btfss	can_send@status,6
-  4677  0179  2989               	goto	l2395
-  4678                           
-  4679                           ;mcp2515.c: 185: if (mode.debug) printf("TXB2 is idle\n");
-  4680  017A  0869               	movf	_mode,w
-  4681  017B  1903               	btfsc	3,2
-  4682  017C  2984               	goto	l2393
-  4683  017D  302F               	movlw	low (STR_28| (0+32768))
-  4684  017E  00A5               	movwf	printf@f
-  4685  017F  3093               	movlw	high (STR_28| (0+32768))
-  4686  0180  00A6               	movwf	printf@f+1
-  4687  0181  3185  25B0  3181   	fcall	_printf
-  4688  0184                     l2393:	
-  4689                           
-  4690                           ;mcp2515.c: 186: n = 2;
-  4691  0184  3002               	movlw	2
-  4692  0185  0020               	movlb	0	; select bank0
-  4693  0186  00C1               	movwf	??_can_send
-  4694  0187  0841               	movf	??_can_send,w
-  4695  0188  00DE               	movwf	can_send@n
+  4647                           ;mcp2515.c: 180: n = 2;
+  4648  0165  3002               	movlw	2
+  4649  0166  0020               	movlb	0	; select bank0
+  4650  0167  00C1               	movwf	??_can_send
+  4651  0168  0841               	movf	??_can_send,w
+  4652  0169  00DE               	movwf	can_send@n
+  4653                           
+  4654                           ;mcp2515.c: 181: } else if ((status & 0b00010000) == 0) {
+  4655  016A  2989               	goto	l2395
+  4656  016B                     l309:	
+  4657  016B  1A59               	btfsc	can_send@status,4
+  4658  016C  297B               	goto	l312
+  4659                           
+  4660                           ;mcp2515.c: 182: if (mode.debug) printf("TXB1 is idle\n");
+  4661  016D  0869               	movf	_mode,w
+  4662  016E  1903               	btfsc	3,2
+  4663  016F  2977               	goto	l2387
+  4664  0170  3021               	movlw	low (STR_27| (0+32768))
+  4665  0171  00A5               	movwf	printf@f
+  4666  0172  3093               	movlw	high (STR_27| (0+32768))
+  4667  0173  00A6               	movwf	printf@f+1
+  4668  0174  3185  25B0  3181   	fcall	_printf
+  4669  0177                     l2387:	
+  4670                           
+  4671                           ;mcp2515.c: 183: n = 1;
+  4672  0177  0020               	movlb	0	; select bank0
+  4673  0178  01DE               	clrf	can_send@n
+  4674  0179  0ADE               	incf	can_send@n,f
+  4675                           
+  4676                           ;mcp2515.c: 184: } else if ((status & 0b00000100) == 0) {
+  4677  017A  2989               	goto	l2395
+  4678  017B                     l312:	
+  4679  017B  1959               	btfsc	can_send@status,2
+  4680  017C  2989               	goto	l2395
+  4681                           
+  4682                           ;mcp2515.c: 185: if (mode.debug) printf("TXB0 is idle\n");
+  4683  017D  0869               	movf	_mode,w
+  4684  017E  1903               	btfsc	3,2
+  4685  017F  2987               	goto	l2393
+  4686  0180  3013               	movlw	low (STR_28| (0+32768))
+  4687  0181  00A5               	movwf	printf@f
+  4688  0182  3093               	movlw	high (STR_28| (0+32768))
+  4689  0183  00A6               	movwf	printf@f+1
+  4690  0184  3185  25B0  3181   	fcall	_printf
+  4691  0187                     l2393:	
+  4692                           
+  4693                           ;mcp2515.c: 186: n = 0;
+  4694  0187  0020               	movlb	0	; select bank0
+  4695  0188  01DE               	clrf	can_send@n
   4696  0189                     l2395:	
   4697                           
   4698                           ;mcp2515.c: 187: }
@@ -9105,16 +9105,16 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Fri Mar 16 08:11:17 2018
+Symbol Table                                                                                   Fri Mar 16 08:47:29 2018
 
                     _SPI_Initialize 0C78                         __CFG_CP$OFF 0000  
                   ?_receive_handler 0040                                  l51 0C99  
                                 l58 0C80             ?_SPI_Exchange8bitBuffer 0071  
                                 _nm 13B6                 ___wmul@multiplicand 0072  
              __size_of_SPI_exchange 0015                         __CFG_LVP$ON 0000  
-                               l113 0C8C                                 l312 0178  
+                               l113 0C8C                                 l312 017B  
                                l340 0E8A                                 l413 06D6  
-                               l309 0168                                 l422 072F  
+                               l309 016B                                 l422 072F  
                                l342 0E90                                 l334 0E74  
                                l335 0E70                                 l337 0E84  
                                l418 06F8                                 l338 0E80  
@@ -9151,11 +9151,11 @@ Symbol Table                                                                    
                               l2359 036A                                l2463 0275  
                               l2447 0248                                l2543 0454  
                               l2519 0427                                l1817 0DDE  
-                              l1841 0DB0                                l2393 0184  
+                              l1841 0DB0                                l2393 0187  
                               l2553 0463                                l2545 0456  
                               l2537 0449                                l2529 0439  
                               l1827 0DF9                                l1923 0637  
-                              l2459 0273                                l2387 0174  
+                              l2459 0273                                l2387 0177  
                               l2395 0189                                l2571 04B0  
                               l2483 0512                                l1861 0E9F  
                               l1845 0DBC                                l1941 067B  
@@ -9219,12 +9219,12 @@ Symbol Table                                                                    
                              STR_33 134A                               STR_25 12E6  
                              STR_17 10DE                       __CFG_WDTE$OFF 0000  
                              STR_42 11F9                               STR_50 1304  
-                             STR_34 133D                               STR_26 1313  
+                             STR_34 133D                               STR_26 132F  
                              STR_18 11FB                               STR_51 11F6  
                              STR_35 11F6                               STR_27 1321  
                              STR_19 1304                               STR_43 12C6  
                              STR_36 1277                               STR_52 138D  
-                             STR_28 132F                               STR_44 12D6  
+                             STR_28 1313                               STR_44 12D6  
                              STR_45 11F9                               STR_37 1299  
                              STR_53 1261                               STR_29 123B  
                              STR_38 11F9                               STR_46 117A  

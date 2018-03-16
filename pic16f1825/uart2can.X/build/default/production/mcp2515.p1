@@ -3149,18 +3149,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _status `uc ~T0 @X0 1 a ]
 [; ;mcp2515.c: 177: uint8_t status = can_status_buf[1];
 [e = _status *U + &U _can_status_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_status_buf `ui `ux ]
-[; ;mcp2515.c: 178: if ((status & 0b00000100) == 0) {
+[; ;mcp2515.c: 178: if ((status & 0b01000000) == 0) {
 "178
-[e $ ! == & -> _status `i -> 4 `i -> 0 `i 344  ]
+[e $ ! == & -> _status `i -> 64 `i -> 0 `i 344  ]
 {
-[; ;mcp2515.c: 179: if (mode.debug) printf("TXB0 is idle\n");
+[; ;mcp2515.c: 179: if (mode.debug) printf("TXB2 is idle\n");
 "179
 [e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 345  ]
 [e ( _printf :s 8C ]
 [e :U 345 ]
-[; ;mcp2515.c: 180: n = 0;
+[; ;mcp2515.c: 180: n = 2;
 "180
-[e = _n -> -> 0 `i `uc ]
+[e = _n -> -> 2 `i `uc ]
 "181
 }
 [; ;mcp2515.c: 181: } else if ((status & 0b00010000) == 0) {
@@ -3178,19 +3178,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _n -> -> 1 `i `uc ]
 "184
 }
-[; ;mcp2515.c: 184: } else if ((status & 0b01000000) > 0) {
+[; ;mcp2515.c: 184: } else if ((status & 0b00000100) == 0) {
 [e $U 349  ]
 [e :U 347 ]
-[e $ ! > & -> _status `i -> 64 `i -> 0 `i 350  ]
+[e $ ! == & -> _status `i -> 4 `i -> 0 `i 350  ]
 {
-[; ;mcp2515.c: 185: if (mode.debug) printf("TXB2 is idle\n");
+[; ;mcp2515.c: 185: if (mode.debug) printf("TXB0 is idle\n");
 "185
 [e $ ! != -> . _mode 0 `i -> -> -> 0 `i `uc `i 351  ]
 [e ( _printf :s 10C ]
 [e :U 351 ]
-[; ;mcp2515.c: 186: n = 2;
+[; ;mcp2515.c: 186: n = 0;
 "186
-[e = _n -> -> 2 `i `uc ]
+[e = _n -> -> 0 `i `uc ]
 "187
 }
 [e :U 350 ]
@@ -3672,9 +3672,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 14C 77 101 115 115 97 103 101 32 115 101 110 116 58 32 37 115 10 0 ]
 [a 15C 82 88 49 73 70 32 105 115 32 111 110 10 0 ]
 [a 16C 82 88 48 73 70 32 105 115 32 111 110 10 0 ]
-[a 10C 84 88 66 50 32 105 115 32 105 100 108 101 10 0 ]
+[a 8C 84 88 66 50 32 105 115 32 105 100 108 101 10 0 ]
 [a 9C 84 88 66 49 32 105 115 32 105 100 108 101 10 0 ]
-[a 8C 84 88 66 48 32 105 115 32 105 100 108 101 10 0 ]
+[a 10C 84 88 66 48 32 105 115 32 105 100 108 101 10 0 ]
 [a 11C 67 111 112 121 105 110 103 32 98 117 102 102 101 114 58 32 37 99 10 0 ]
 [a 17C 45 45 45 10 0 ]
 [a 33C 45 45 45 10 0 ]
