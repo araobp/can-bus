@@ -57,8 +57,8 @@ void can_init(void *receive_handler) {
     buf[0] = WRITE;
     buf[1] = CNF3;
     buf[2] = CNF3_VALUE;
-    buf[4] = CNF2_VALUE;
-    buf[5] = CNF1_VALUE;
+    buf[3] = CNF2_VALUE;
+    buf[4] = CNF1_VALUE;
     SPI_exchange(buf, 5);
           
     buf[0] = WRITE;

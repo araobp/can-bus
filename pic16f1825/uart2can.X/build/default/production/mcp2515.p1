@@ -2821,12 +2821,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcp2515.c: 59: buf[2] = 0b00000101;
 "59
 [e = *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 5 `i `uc ]
-[; ;mcp2515.c: 60: buf[4] = 0b11110001;
+[; ;mcp2515.c: 60: buf[3] = 0b11110001;
 "60
-[e = *U + &U _buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 241 `i `uc ]
-[; ;mcp2515.c: 61: buf[5] = 0b01000001;
+[e = *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 241 `i `uc ]
+[; ;mcp2515.c: 61: buf[4] = 0b01000001;
 "61
-[e = *U + &U _buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 65 `i `uc ]
+[e = *U + &U _buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 65 `i `uc ]
 [; ;mcp2515.c: 62: SPI_exchange(buf, 5);
 "62
 [e ( _SPI_exchange (2 , &U _buf -> -> 5 `i `uc ]

@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Sat Mar 17 06:25:01 2018
+                                                                                               Sat Mar 17 11:41:50 2018
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	16F1825
@@ -5383,21 +5383,21 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   5324  0FAC  0021               	movlb	1	; select bank1
   5325  0FAD  00B5               	movwf	(_buf^(0+128)+2)
   5326                           
-  5327                           ;mcp2515.c: 60: buf[4] = 0b11110001;
+  5327                           ;mcp2515.c: 60: buf[3] = 0b11110001;
   5328  0FAE  30F1               	movlw	241
   5329  0FAF  0020               	movlb	0	; select bank0
   5330  0FB0  00C1               	movwf	??_can_init
   5331  0FB1  0841               	movf	??_can_init,w
   5332  0FB2  0021               	movlb	1	; select bank1
-  5333  0FB3  00B7               	movwf	(_buf^(0+128)+4)
+  5333  0FB3  00B6               	movwf	(_buf^(0+128)+3)
   5334                           
-  5335                           ;mcp2515.c: 61: buf[5] = 0b01000001;
+  5335                           ;mcp2515.c: 61: buf[4] = 0b01000001;
   5336  0FB4  3041               	movlw	65
   5337  0FB5  0020               	movlb	0	; select bank0
   5338  0FB6  00C1               	movwf	??_can_init
   5339  0FB7  0841               	movf	??_can_init,w
   5340  0FB8  0021               	movlb	1	; select bank1
-  5341  0FB9  00B8               	movwf	(_buf^(0+128)+5)
+  5341  0FB9  00B7               	movwf	(_buf^(0+128)+4)
   5342                           
   5343                           ;mcp2515.c: 62: SPI_exchange(buf, 5);
   5344  0FBA  3005               	movlw	5
@@ -9343,7 +9343,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Sat Mar 17 06:25:01 2018
+Symbol Table                                                                                   Sat Mar 17 11:41:50 2018
 
                     _SPI_Initialize 0C2B                         __CFG_CP$OFF 0000  
                   ?_receive_handler 003B                                  l51 0C43  
