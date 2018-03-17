@@ -71,19 +71,19 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## Baud rate test on March 17th, 2018
 
-### BPR2 (16TQ = 8 micro sec)
+### BPR2 (16TQ = 8 micro sec, 125kHz)
 
 ![BRP2](./doc/test/BRP2.BMP)
 
-### BPR4 (16TQ = 16 micro sec)
+### BPR4 (16TQ = 16 micro sec, 62.5kHz)
 
 ![BRP4](./doc/test/BRP4.BMP)
 
-### BPR8 (16TQ = 32 micro sec)
+### BPR8 (16TQ = 32 micro sec, 31.3kHz)
 
 ![BRP8](./doc/test/BRP8.BMP)
 
-### BPR16 (16TQ = 64 micro sec)
+### BPR16 (16TQ = 64 micro sec, 15.6kHz)
 
 ![BRP16](./doc/test/BRP16.BMP)
 
