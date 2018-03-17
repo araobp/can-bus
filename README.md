@@ -63,8 +63,10 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## Baud rate test on March 17th, 2018
 
+```
 Voltage: CANH - CANL
-
+1bit: 16 Time Quantum (TQ)
+```
 ### BPR2 (16TQ = 8 micro sec, 125kHz)
 
 ![BRP2](./doc/test/BRP2.BMP)
