@@ -15,7 +15,7 @@ I am going to create another project on github to develop Android-based home con
 ## Configuration
 
 ```
-[PC]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
+[PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
                    
 ```
 
