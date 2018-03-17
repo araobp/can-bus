@@ -1,6 +1,10 @@
-# CAN bus evaluation
+# CAN adaptor to UART (PIC16F1825)
 
 ![waveform](./doc/waveform.jpg)
+
+## Current status
+
+Version 0.1: March 17, 2018
 
 ## Motivation
 
@@ -38,13 +42,18 @@ Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plu
 ## Command (UART/USB)
 
 ```
---- HELP ---
-[Set standard identifier] @i<Standard Identifier>
+/// UART2CAN HELP (version 0.1  March 17, 2018) ///
+[Set standard identifier] @i<standard identifier>
 [Set output mode] {debug: @vd, verbose: @vv, normal: @vn}
 [Enable operation mode] {loopback: @ol, normal: @on}
+     with SID: @ols or @ons, in hex format: @olh or @onh
 [Set mask] @m<n><mask(SID10 ~ SID0)>
 [Set filter] @f<n><filter(SID10 ~ SID0)>
+[Set baud rate] @b<bpr>
+[Abort all pending transmissions] @a
+[Dump registers] @d
 [Send message] <message>
+[Send message beginning with '@' character] @<@message>
 [Receive message] <message> will be output
 [Show this help]: @h
 ```
@@ -57,14 +66,14 @@ For example, to receive messages with SID 5, 10 and 15:
 @f05     --> RXF0 0b00000000101 (SID 5 message to RXB0)
 @f110    --> RXF1 0b00000001010 (SID 10 message to RXB0)
 @m12047  --> RXM1 0b11111111111
-@f215    --> RXF2 0b00000001111 (SID 15 message to RXB19
+@f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
 
 ## 1st test on March 14th, 2018
 
-![test](./doc/test.jpg)
+(The problem below has already been fixed in ver 0.1 release)
 
-My oscilloscope did not seem to be able to catch up with the speed:
+![test](./doc/test.jpg)
 
 ![waveform2](./doc/waveform2.BMP)
 
