@@ -137,10 +137,15 @@ I am going to put everything on this tiny universal board:
 
 ![universal board](./doc/universal_board.jpg)
 
-## Datasheet (Microchip/NXP)
+## Datasheet (Microchip/NXP/Murata)
 
+### Microchip
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
 - [MCP2515](http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf)
-- [MCP2551](http://ww1.microchip.com/downloads/en/DeviceDoc/21667E.pdf)
 - [MCP2561](http://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf)
+
+### NXP
 - [TJA1050](https://www.nxp.com/docs/en/data-sheet/TJA1050.pdf)
+
+### Murata
+- [Ceralock](https://www.murata.com/~/media/webrenewal/support/library/catalog/products/timingdevice/ceralock/p17e.ashx)
