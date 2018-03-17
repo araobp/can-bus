@@ -69,6 +69,10 @@ For example, to receive messages with SID 5, 10 and 15:
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
 
+## Baud rate test on March 17th, 2018
+
+![BPR2](/doc/test/BPR2.BMP)
+
 ## 1st test on March 14th, 2018
 
 (The problem below has already been fixed in ver 0.1 release)
