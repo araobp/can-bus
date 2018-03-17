@@ -71,7 +71,13 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## Baud rate test on March 17th, 2018
 
-![BPR2](/doc/test/BPR2.BMP)
+![BPR2](./doc/test/BPR2.BMP)
+
+![BPR4](./doc/test/BPR4.BMP)
+
+![BPR8](./doc/test/BPR8.BMP)
+
+![BPR16](./doc/test/BPR16.BMP)
 
 ## 1st test on March 14th, 2018
 
