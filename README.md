@@ -66,7 +66,7 @@ For example, to receive messages with SID 5, 10 and 15:
 @f05     --> RXF0 0b00000000101 (SID 5 message to RXB0)
 @f110    --> RXF1 0b00000001010 (SID 10 message to RXB0)
 @m12047  --> RXM1 0b11111111111
-@f215    --> RXF2 0b00000001111 (SID 15 message to RXB19
+@f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
 
 ## 1st test on March 14th, 2018
