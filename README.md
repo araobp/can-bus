@@ -133,9 +133,11 @@ So the values of CNF1, CNF2 and CNF3 would be like this:
 
 ## Universal board
 
-I am going to put everything on this tiny universal board:
+At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
 
 ![universal board](./doc/universal_board.jpg)
+
+After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
 
 ## Datasheet (Microchip/NXP/Murata)
 
