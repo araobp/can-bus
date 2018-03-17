@@ -131,6 +131,12 @@ So the values of CNF1, CNF2 and CNF3 would be like this:
 |CNF2(29h)|11110001|
 |CNF3(28h)|00000101|
 
+## Universal board
+
+I am going to put everything on this tiny universal board:
+
+![universal board](./doc/universal_board.jpg)
+
 ## Datasheet (Microchip/NXP)
 
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
