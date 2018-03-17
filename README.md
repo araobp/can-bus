@@ -131,7 +131,7 @@ So the values of CNF1, CNF2 and CNF3 would be like this:
 |CNF2(29h)|11110001|
 |CNF3(28h)|00000101|
 
-## Universal board
+## CAN adaptor board
 
 At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
 
