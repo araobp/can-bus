@@ -131,10 +131,23 @@ So the values of CNF1, CNF2 and CNF3 would be like this:
 |CNF2(29h)|11110001|
 |CNF3(28h)|00000101|
 
-## Datasheet (Microchip/NXP)
+## CAN adaptor board
 
+At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
+
+![universal board](./doc/universal_board.jpg)
+
+After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
+
+## Datasheet (Microchip/NXP/Murata)
+
+### Microchip
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
 - [MCP2515](http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf)
-- [MCP2551](http://ww1.microchip.com/downloads/en/DeviceDoc/21667E.pdf)
 - [MCP2561](http://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf)
+
+### NXP
 - [TJA1050](https://www.nxp.com/docs/en/data-sheet/TJA1050.pdf)
+
+### Murata
+- [Ceralock](https://www.murata.com/~/media/webrenewal/support/library/catalog/products/timingdevice/ceralock/p17e.ashx)
