@@ -19,8 +19,7 @@ I am going to create another project on github to develop Android-based home con
                    
 ```
 
-## My original PIC16F1
-825 evaluation board
+## My original PIC16F1825 evaluation board
 
 ![pico](https://docs.google.com/drawings/d/e/2PACX-1vTHoT0TZIyVhAgkDVHyuWkc1-_6oFHT2mF53g2q36bgH_qxplkvvRIkJ3PqJBNuTZauhhMmSiemMoZO/pub?w=480&h=360)
 
