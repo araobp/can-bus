@@ -4,7 +4,7 @@
 
 ## Current status
 
-Version 0.1 has just been released on March 17, 2018.
+Version 0.1: March 17, 2018
 
 ## Motivation
 
