@@ -71,19 +71,19 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## Baud rate test on March 17th, 2018
 
-### BPR2
+### BPR2 (16TQ = 8 micro sec)
 
 ![BRP2](./doc/test/BRP2.BMP)
 
-### BPR4
+### BPR4 (16TQ = 16 micro sec)
 
 ![BRP4](./doc/test/BRP4.BMP)
 
-### BPR8
+### BPR8 (16TQ = 32 micro sec)
 
 ![BRP8](./doc/test/BRP8.BMP)
 
-### BPR16
+### BPR16 (16TQ = 64 micro sec)
 
 ![BRP16](./doc/test/BRP16.BMP)
 
