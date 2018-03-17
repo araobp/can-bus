@@ -8,22 +8,15 @@ Version 0.1: March 17, 2018
 
 ## Motivation
 
-I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC1768 is expensive for IoT prototyping.
+Try to use CAN bus as cheap networking for home/office controller.
 
-I have ever used Microchip PIC1825 MCU for IoT prototyping a lot of times since 2016. Altough the MCU's functionality is very limited, it is very cheap and satisify most of requirements as MCU for IoT prototyping.
-
-I want to try out the combination of PIC16F1825 and CAN controller(MCP2515)/tranceiver(MCP2551 or MCP2561) this time.
-
-![board](./doc/board.jpg)
+I am going to create another project on github to develop Android-based home controller.
 
 ## Configuration
 
 ```
-                                          ---+------+-----+--- CAN bus
-                                             |      |     |
-[PC]-USB/UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]| | [TJA1050]-[MCP2515]-SPI-[PIC16F1825]-USB/UART-[PC]
-                                                    |
-                                                [TJA1050]-[MCP2515]-SPI-[PIC16F1825]-USB/UART-[PC]                                                    
+[PC]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
+                   
 ```
 
 ## My original PIC16F1
