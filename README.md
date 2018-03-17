@@ -8,26 +8,18 @@ Version 0.1: March 17, 2018
 
 ## Motivation
 
-I evaluated CAN on mbed LPC1768 boards with CAN tranceivers(MCP2561), but LPC1768 is expensive for IoT prototyping.
+Try to use CAN bus as cheap networking for home/office controller.
 
-I have ever used Microchip PIC1825 MCU for IoT prototyping a lot of times since 2016. Altough the MCU's functionality is very limited, it is very cheap and satisify most of requirements as MCU for IoT prototyping.
-
-I want to try out the combination of PIC16F1825 and CAN controller(MCP2515)/tranceiver(MCP2551 or MCP2561) this time.
-
-![board](./doc/board.jpg)
+I am going to create another project on github to develop Android-based home controller.
 
 ## Configuration
 
 ```
-                                          ---+------+-----+--- CAN bus
-                                             |      |     |
-[PC]-USB/UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]| | [TJA1050]-[MCP2515]-SPI-[PIC16F1825]-USB/UART-[PC]
-                                                    |
-                                                [TJA1050]-[MCP2515]-SPI-[PIC16F1825]-USB/UART-[PC]                                                    
+[PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
+                   
 ```
 
-## My original PIC16F1
-825 evaluation board
+## My original PIC16F1825 evaluation board
 
 ![pico](https://docs.google.com/drawings/d/e/2PACX-1vTHoT0TZIyVhAgkDVHyuWkc1-_6oFHT2mF53g2q36bgH_qxplkvvRIkJ3PqJBNuTZauhhMmSiemMoZO/pub?w=480&h=360)
 
@@ -68,6 +60,28 @@ For example, to receive messages with SID 5, 10 and 15:
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
+
+## Baud rate test on March 17th, 2018
+
+```
+Voltage: CANH - CANL
+1bit: 16 Time Quantum (TQ)
+```
+### BPR2 (16TQ = 8 micro sec, 125kHz)
+
+![BRP2](./doc/test/BRP2.BMP)
+
+### BPR4 (16TQ = 16 micro sec, 62.5kHz)
+
+![BRP4](./doc/test/BRP4.BMP)
+
+### BPR8 (16TQ = 32 micro sec, 31.3kHz)
+
+![BRP8](./doc/test/BRP8.BMP)
+
+### BPR16 (16TQ = 64 micro sec, 15.6kHz)
+
+![BRP16](./doc/test/BRP16.BMP)
 
 ## 1st test on March 14th, 2018
 
