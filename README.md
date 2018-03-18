@@ -85,7 +85,7 @@ Voltage: CANH - CANL
 
 ### Logic analyzer 
 
-I have also got this cheap oscilloscope [PCB scope](http://www.picaxestore.com/en_gb/osc001.html) in [my original 3D-printed case](https://github.com/araobp/3D-printing/blob/master/osc001/osc001.stl):
+I have also got this cheap oscilloscope ["PCB scope"](http://www.picaxestore.com/en_gb/osc001.html) in [my original 3D-printed case](https://github.com/araobp/3D-printing/blob/master/osc001/osc001.stl):
 
 ![osc001](./doc/osc001.jpg)
 
