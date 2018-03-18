@@ -3822,18 +3822,18 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 extern char * ftoa(float f, int * status);
 
 # 32 "mcp2515.h"
-const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
-const uint8_t rxmnsidh[2] = {0x20, 0x24};
+const uint8_t rxfnsidh[6] = {0x00u, 0x04u, 0x08u, 0x10u, 0x14u, 0x18u};
+const uint8_t rxmnsidh[2] = {0x20u, 0x24u};
 
-# 61
-const uint8_t nm[2] = {0b00, 0b10};
+# 65
+const uint8_t nm[2] = {0b00u, 0b10u};
 
 
 
-const uint8_t abc[3] = {0b000, 0b010, 0b100};
+const uint8_t abc[3] = {0b000u, 0b010u, 0b100u};
 
-# 78
-const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+# 82
+const uint8_t txbnsidh[3] = {0x31u, 0x41u, 0x51u};
 
 
 
@@ -3914,7 +3914,7 @@ if (buf[0] == '@') {
 cmd = buf[1];
 switch(cmd) {
 case 'i':
-sid = atoi(&buf[2]);
+sid = (uint8_t)atoi(&buf[2]);
 can_set_sid(sid);
 break;
 case 'v':
@@ -3931,9 +3931,9 @@ echo_back = 0;
 break;
 case 'o':
 if (buf[2] == 'l') {
-can_ope_mode(0b01000000);
+can_ope_mode(0b01000000u);
 } else if (buf[2] == 'n') {
-can_ope_mode(0b00000000);
+can_ope_mode(0b00000000u);
 }
 if (buf[3] == '\0') {
 output_format.with_sid = 0;
@@ -3948,17 +3948,17 @@ output_format.hex_output = 1;
 break;
 case 'b':
 can_abort();
-bpr = atoi(&buf[2]);
+bpr = (uint8_t)atoi(&buf[2]);
 can_baudrate(bpr);
 break;
 case 'm':
 case 'f':
-n = buf[2] - 0x30;
-mask = atoi(&buf[3]);
+n = buf[2] - 0x30u;
+mask = (uint8_t)atoi(&buf[3]);
 if (cmd == 'm') {
-can_set_mask(0, n, mask);
+can_set_mask(0u, n, mask);
 } else if (cmd == 'f') {
-can_set_mask(1, n, mask);
+can_set_mask(1u, n, mask);
 }
 break;
 case 'a':
@@ -3968,7 +3968,7 @@ case 'd':
 can_dump_registers();
 break;
 case '@':
-can_send(&buf[1], idx - 1);
+can_send(&buf[1], idx - 1u);
 break;
 case 'h':
 printf("/// UART2CAN HELP (version %s) ///\n", "0.1  March 17, 2018");

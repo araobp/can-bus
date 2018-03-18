@@ -4,6 +4,7 @@
 
 #include <stdbool.h>
 #include <stdio.h>
+#include "mcc_generated_files/mcc.h"
 #include "mcp2515.h"
 #include "spi.h"
 
@@ -21,7 +22,8 @@ struct {
 } mode;
 
 uint8_t operation_mode;
-void (*handler)(uint8_t sid, uint8_t *pbuf, uint8_t dlc) = NULL;
+//void (*handler)(uint8_t sid, uint8_t *pbuf, uint8_t dlc) = NULL;
+void (*handler)(uint8_t, uint8_t *, uint8_t) = NULL;
 
 void can_logging_mode(bool debug, bool verbose) {
     mode.debug = debug;
@@ -50,9 +52,11 @@ void can_init(void *receive_handler) {
     can_set_sid(0);   
     handler = receive_handler;
     
-    can_ope_mode(CONFIGURATION_MODE);    
+    //can_ope_mode(CONFIGURATION_MODE);    
     buf[0] = RESET_;
     SPI_exchange(buf, 1);
+    
+    __delay_us(T_RL + T_RL_PLUS);
 
     buf[0] = WRITE;
     buf[1] = CNF3;
@@ -127,7 +131,7 @@ void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
  * P51 Clear transmit buffer empty interrupt flag
  */
 bool txf_clear(uint8_t n) {
-    uint8_t mask = 0b00000001 << (n + 2);
+    uint8_t mask = 0b00000001u << (n + 2);
     buf[0] =BIT_MODIFY;
     buf[1] = CANINTF;
     buf[2] = mask;
@@ -153,9 +157,9 @@ void receive(uint8_t n) {
     rx_buf[0] = READ_RX_BUFFER + (nm[n] << 1);
     uint8_t bytes_read = SPI_exchange(rx_buf, 14);
     uint8_t dlc = rx_buf[5];
-    uint16_t sid = ((uint16_t)rx_buf[1] << 3) + ((uint16_t)rx_buf[2] >> 5);
-    sid = sid & 0b0000011111111111;
-    rx_buf[6+dlc] = '\0';
+    uint16_t id = ((uint16_t)rx_buf[1] << 3) + ((uint16_t)rx_buf[2] >> 5);
+    id = id & 0b0000011111111111u;
+    rx_buf[6u+dlc] = (uint8_t)'\0';
     
     if (mode.debug) {
         printf("RXB%dSIDH: %02x\n", n, rx_buf[1]);
@@ -166,7 +170,7 @@ void receive(uint8_t n) {
 
     // Output the received message from CAN bus
     uint8_t *pbuf = &rx_buf[6];
-    handler(sid, pbuf, dlc);
+    handler(id, pbuf, dlc);
 }
 
 /*
@@ -209,12 +213,12 @@ bool can_send(uint8_t *data_buf, uint8_t dlc) {
 
     // Copy buffer
     for(i=0; i<dlc; i++) {
-        buf[6+i] = data_buf[i];
+        buf[6u+i] = data_buf[i];
         if (mode.debug) printf("Copying buffer: %c\n", data_buf[i]);
     }
 
     // P66 Load TX buffer
-    uint8_t len = 6 + dlc;
+    uint8_t len = 6u + dlc;
     uint8_t bytes_written = SPI_exchange(buf, len);
 
     buf[0] = READ;
@@ -224,7 +228,7 @@ bool can_send(uint8_t *data_buf, uint8_t dlc) {
     
     if (mode.debug) printf("TXB%dSIDH: %02x\n", n, buf[2]);
     buf[0] = READ;
-    buf[1] = txbnsidh[n] + 1;  //TXBnSIDL
+    buf[1] = txbnsidh[n] + 1u;  //TXBnSIDL
     buf[2] = 0x00;
     SPI_exchange(buf, 3);
    
@@ -232,7 +236,7 @@ bool can_send(uint8_t *data_buf, uint8_t dlc) {
     
     if (bytes_written == len) {
         // P64, P66 RTS
-        buf[0] = RTS + (0b00000001 << n);
+        buf[0] = RTS + (0b00000001u << n);
         bytes_written = SPI_exchange(buf, 1);
         if (bytes_written == 1) {
             if (mode.debug) printf("Message sent: %s\n", data_buf);

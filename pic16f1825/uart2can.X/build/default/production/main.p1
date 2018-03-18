@@ -15,9 +15,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATCbits `VS102 ~T0 @X0 0 e@270 ]
 "69 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcp2515.h
+"89 mcp2515.h
 [v _can_init `(v ~T0 @X0 0 ef1`*v ]
-"89
+"93
 [v _can_status_check `(uc ~T0 @X0 0 ef ]
 "533 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
 [s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -31,21 +31,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
 "55 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"84 mcp2515.h
+"88 mcp2515.h
 [v _can_set_sid `(v ~T0 @X0 0 ef1`ui ]
-"83
-[v _can_logging_mode `(v ~T0 @X0 0 ef2`uc`uc ]
-"86
-[v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
-"91
-[v _can_abort `(uc ~T0 @X0 0 ef ]
-"90
-[v _can_baudrate `(uc ~T0 @X0 0 ef1`uc ]
 "87
+[v _can_logging_mode `(v ~T0 @X0 0 ef2`uc`uc ]
+"90
+[v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
+"95
+[v _can_abort `(uc ~T0 @X0 0 ef ]
+"94
+[v _can_baudrate `(uc ~T0 @X0 0 ef1`uc ]
+"91
 [v _can_set_mask `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"92
+"96
 [v _can_dump_registers `(v ~T0 @X0 0 ef ]
-"88
+"92
 [v _can_send `(uc ~T0 @X0 0 ef2`*uc`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -2765,63 +2765,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _rxfnsidh `Cuc ~T0 @X0 -> 6 `i e ]
 [i _rxfnsidh
 :U ..
--> -> 0 `i `uc
--> -> 4 `i `uc
--> -> 8 `i `uc
--> -> 16 `i `uc
--> -> 20 `i `uc
--> -> 24 `i `uc
+-> -> 0 `ui `uc
+-> -> 4 `ui `uc
+-> -> 8 `ui `uc
+-> -> 16 `ui `uc
+-> -> 20 `ui `uc
+-> -> 24 `ui `uc
 ..
 ]
-[; ;mcp2515.h: 32: const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
+[; ;mcp2515.h: 32: const uint8_t rxfnsidh[6] = {0x00u, 0x04u, 0x08u, 0x10u, 0x14u, 0x18u};
 "33
 [v _rxmnsidh `Cuc ~T0 @X0 -> 2 `i e ]
 [i _rxmnsidh
 :U ..
--> -> 32 `i `uc
--> -> 36 `i `uc
+-> -> 32 `ui `uc
+-> -> 36 `ui `uc
 ..
 ]
-[; ;mcp2515.h: 33: const uint8_t rxmnsidh[2] = {0x20, 0x24};
-"61
+[; ;mcp2515.h: 33: const uint8_t rxmnsidh[2] = {0x20u, 0x24u};
+"65
 [v _nm `Cuc ~T0 @X0 -> 2 `i e ]
 [i _nm
 :U ..
--> -> 0 `i `uc
--> -> 2 `i `uc
+-> -> 0 `ui `uc
+-> -> 2 `ui `uc
 ..
 ]
-[; ;mcp2515.h: 61: const uint8_t nm[2] = {0b00, 0b10};
-"65
+[; ;mcp2515.h: 65: const uint8_t nm[2] = {0b00u, 0b10u};
+"69
 [v _abc `Cuc ~T0 @X0 -> 3 `i e ]
 [i _abc
 :U ..
--> -> 0 `i `uc
--> -> 2 `i `uc
--> -> 4 `i `uc
+-> -> 0 `ui `uc
+-> -> 2 `ui `uc
+-> -> 4 `ui `uc
 ..
 ]
-[; ;mcp2515.h: 65: const uint8_t abc[3] = {0b000, 0b010, 0b100};
-"78
+[; ;mcp2515.h: 69: const uint8_t abc[3] = {0b000u, 0b010u, 0b100u};
+"82
 [v _txbnsidh `Cuc ~T0 @X0 -> 3 `i e ]
 [i _txbnsidh
 :U ..
--> -> 49 `i `uc
--> -> 65 `i `uc
--> -> 81 `i `uc
+-> -> 49 `ui `uc
+-> -> 65 `ui `uc
+-> -> 81 `ui `uc
 ..
 ]
-[; ;mcp2515.h: 78: const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
-[; ;mcp2515.h: 83: void can_logging_mode(bool debug, bool verbose);
-[; ;mcp2515.h: 84: void can_set_sid (uint16_t can_node);
-[; ;mcp2515.h: 85: void can_init(void *receive_handler);
-[; ;mcp2515.h: 86: bool can_ope_mode(uint8_t ope_mode);
-[; ;mcp2515.h: 87: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
-[; ;mcp2515.h: 88: bool can_send(uint8_t *data_buf, uint8_t dlc);
-[; ;mcp2515.h: 89: bool can_status_check(void);
-[; ;mcp2515.h: 90: bool can_baudrate(uint8_t bpr);
-[; ;mcp2515.h: 91: bool can_abort(void);
-[; ;mcp2515.h: 92: void can_dump_registers(void);
+[; ;mcp2515.h: 82: const uint8_t txbnsidh[3] = {0x31u, 0x41u, 0x51u};
+[; ;mcp2515.h: 87: void can_logging_mode(bool debug, bool verbose);
+[; ;mcp2515.h: 88: void can_set_sid (uint16_t can_node);
+[; ;mcp2515.h: 89: void can_init(void *receive_handler);
+[; ;mcp2515.h: 90: bool can_ope_mode(uint8_t ope_mode);
+[; ;mcp2515.h: 91: void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+[; ;mcp2515.h: 92: bool can_send(uint8_t *data_buf, uint8_t dlc);
+[; ;mcp2515.h: 93: bool can_status_check(void);
+[; ;mcp2515.h: 94: bool can_baudrate(uint8_t bpr);
+[; ;mcp2515.h: 95: bool can_abort(void);
+[; ;mcp2515.h: 96: void can_dump_registers(void);
 "20 main.c
 [v _max_idx `Cuc ~T0 @X0 1 e ]
 [i _max_idx
@@ -3017,7 +3017,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 85: case 'i':
 "85
 [e :U 350 ]
-[; ;main.c: 86: sid = atoi(&buf[2]);
+[; ;main.c: 86: sid = (uint8_t)atoi(&buf[2]);
 "86
 [e = _sid -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
 [; ;main.c: 87: can_set_sid(sid);
@@ -3081,9 +3081,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "102
 [e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 108 `ui 358  ]
 {
-[; ;main.c: 103: can_ope_mode(0b01000000);
+[; ;main.c: 103: can_ope_mode(0b01000000u);
 "103
-[e ( _can_ope_mode (1 -> -> 64 `i `uc ]
+[e ( _can_ope_mode (1 -> -> 64 `ui `uc ]
 "104
 }
 [; ;main.c: 104: } else if (buf[2] == 'n') {
@@ -3091,9 +3091,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 358 ]
 [e $ ! == -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 110 `ui 360  ]
 {
-[; ;main.c: 105: can_ope_mode(0b00000000);
+[; ;main.c: 105: can_ope_mode(0b00000000u);
 "105
-[e ( _can_ope_mode (1 -> -> 0 `i `uc ]
+[e ( _can_ope_mode (1 -> -> 0 `ui `uc ]
 "106
 }
 [e :U 360 ]
@@ -3150,7 +3150,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 119: can_abort();
 "119
 [e ( _can_abort ..  ]
-[; ;main.c: 120: bpr = atoi(&buf[2]);
+[; ;main.c: 120: bpr = (uint8_t)atoi(&buf[2]);
 "120
 [e = _bpr -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc ]
 [; ;main.c: 121: can_baudrate(bpr);
@@ -3165,19 +3165,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 "124
 [e :U 368 ]
 [; ;main.c: 124: case 'f':
-[; ;main.c: 125: n = buf[2] - 0x30;
+[; ;main.c: 125: n = buf[2] - 0x30u;
 "125
-[e = _n -> - -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 126: mask = atoi(&buf[3]);
+[e = _n -> - -> *U + &U _buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _buf `ui `ux `ui -> 48 `ui `uc ]
+[; ;main.c: 126: mask = (uint8_t)atoi(&buf[3]);
 "126
-[e = _mask -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `ui ]
+[e = _mask -> -> ( _atoi (1 -> &U *U + &U _buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _buf `ui `ux `*Cuc `uc `ui ]
 [; ;main.c: 127: if (cmd == 'm') {
 "127
 [e $ ! == -> _cmd `ui -> 109 `ui 369  ]
 {
-[; ;main.c: 128: can_set_mask(0, n, mask);
+[; ;main.c: 128: can_set_mask(0u, n, mask);
 "128
-[e ( _can_set_mask (3 , , -> -> 0 `i `uc _n -> _mask `uc ]
+[e ( _can_set_mask (3 , , -> -> 0 `ui `uc _n -> _mask `uc ]
 "129
 }
 [; ;main.c: 129: } else if (cmd == 'f') {
@@ -3185,9 +3185,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 369 ]
 [e $ ! == -> _cmd `ui -> 102 `ui 371  ]
 {
-[; ;main.c: 130: can_set_mask(1, n, mask);
+[; ;main.c: 130: can_set_mask(1u, n, mask);
 "130
-[e ( _can_set_mask (3 , , -> -> 1 `i `uc _n -> _mask `uc ]
+[e ( _can_set_mask (3 , , -> -> 1 `ui `uc _n -> _mask `uc ]
 "131
 }
 [e :U 371 ]
@@ -3217,9 +3217,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 139: case '@':
 "139
 [e :U 374 ]
-[; ;main.c: 140: can_send(&buf[1], idx - 1);
+[; ;main.c: 140: can_send(&buf[1], idx - 1u);
 "140
-[e ( _can_send (2 , &U *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux -> - -> _idx `i -> 1 `i `uc ]
+[e ( _can_send (2 , &U *U + &U _buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux -> - -> _idx `ui -> 1 `ui `uc ]
 [; ;main.c: 141: break;
 "141
 [e $U 348  ]

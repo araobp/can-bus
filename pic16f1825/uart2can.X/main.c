@@ -83,7 +83,7 @@ void main(void)
                     cmd = buf[1];
                     switch(cmd) {
                         case 'i':  // Set standard identifier
-                            sid = atoi(&buf[2]);
+                            sid = (uint8_t)atoi(&buf[2]);
                             can_set_sid(sid);
                             break;
                         case 'v':  // Set verbosity
@@ -117,13 +117,13 @@ void main(void)
                             break;
                         case 'b':  // Set Baud Rate Prescaller (BPR + 1)
                             can_abort();  // Abort before changing baud rate
-                            bpr = atoi(&buf[2]);
+                            bpr = (uint8_t)atoi(&buf[2]);
                             can_baudrate(bpr);
                             break;
                         case 'm':  // Set mask
                         case 'f':  // Set filter
-                            n = buf[2] - 0x30;
-                            mask = atoi(&buf[3]);
+                            n = buf[2] - 0x30u;
+                            mask = (uint8_t)atoi(&buf[3]);
                             if (cmd == 'm') {
                                 can_set_mask(SET_MASK, n, mask);
                             } else if (cmd == 'f') {
@@ -137,7 +137,7 @@ void main(void)
                             can_dump_registers();
                             break;
                         case '@':  // Data begining with '@' character
-                            can_send(&buf[1], idx - 1);
+                            can_send(&buf[1], idx - 1u);
                             break;
                         case 'h':  // Show help
                             printf("/// UART2CAN HELP (version %s) ///\n", VERSION);

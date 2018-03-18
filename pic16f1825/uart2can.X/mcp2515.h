@@ -14,39 +14,43 @@ extern "C" {
 #include <stdint.h>
     
 // P18 TXB0CTRL
-#define TXB0CTRL 0x30
-#define TXB1CTRL 0x40
-#define TXB2CTRL 0x50
-#define TRANSMIT 0b00001011  // TXBnCTRL transmit request with highest priority
-#define TXERR 0b00010000
+#define TXB0CTRL 0x30u
+#define TXB1CTRL 0x40u
+#define TXB2CTRL 0x50u
+#define TRANSMIT 0b00001011u  // TXBnCTRL transmit request with highest priority
+#define TXERR 0b00010000u
     
 // P27 RXB0CTRL
-#define RXB0CTRL 0x60
+#define RXB0CTRL 0x60u
 // P28 RXB1CTRL    
-#define RXB1CTRL 0x70
+#define RXB1CTRL 0x70u
 // Enable rollover to RXB1
-#define RXB0CTRL_VALUE 0b00100100
-#define RXB1CTRL_VALUE 0b00100000
+#define RXB0CTRL_VALUE 0b00100100u
+#define RXB1CTRL_VALUE 0b00100000u
     
 // P34 mask and filters    
-const uint8_t rxfnsidh[6] = {0x00, 0x04, 0x08, 0x10, 0x14, 0x18};
-const uint8_t rxmnsidh[2] = {0x20, 0x24};
+const uint8_t rxfnsidh[6] = {0x00u, 0x04u, 0x08u, 0x10u, 0x14u, 0x18u};
+const uint8_t rxmnsidh[2] = {0x20u, 0x24u};
 
 // P42 CNF1, CNF2 and CNF3
-#define CNF1 0x2a
-#define CNF2 0x29
-#define CNF3 0x28
+#define CNF1 0x2au
+#define CNF2 0x29u
+#define CNF3 0x28u
 // FOSQ 8MHz, baudrate 125kbps
-#define CNF1_VALUE 0b01000001
-#define CNF2_VALUE 0b11110001
-#define CNF3_VALUE 0b00000101
+#define CNF1_VALUE 0b01000001u
+#define CNF2_VALUE 0b11110001u
+#define CNF3_VALUE 0b00000101u
+
+// P57 Trl
+#define T_RL 2  // 2 micro sec
+#define T_RL_PLUS 48  // 48 micro sec
 
 // P58 CANCTRL
-#define CANCTRL 0x0f
-#define NORMAL_MODE 0b00000000
-#define LOOPBACK_MODE 0b01000000
-#define CONFIGURATION_MODE 0b10000000
-#define ABAT 0b00010000
+#define CANCTRL 0x0fu
+#define NORMAL_MODE 0b00000000u
+#define LOOPBACK_MODE 0b01000000u
+#define CONFIGURATION_MODE 0b10000000u
+#define ABAT 0b00010000u
 
 // P59 CANSTAT
 #define CANSTAT 0x0e
@@ -55,30 +59,30 @@ const uint8_t rxmnsidh[2] = {0x20, 0x24};
 #define CANINTF 0x2c
 
 // P64 SPI instructions
-#define RESET_ 0b11000000
-#define READ 0b00000011
-#define READ_RX_BUFFER 0b10010000
-const uint8_t nm[2] = {0b00, 0b10};  // RXB0SIDH, RXB1SIDH
-#define WRITE 0b00000010
+#define RESET_ 0b11000000u
+#define READ 0b00000011u
+#define READ_RX_BUFFER 0b10010000u
+const uint8_t nm[2] = {0b00u, 0b10u};  // RXB0SIDH, RXB1SIDH
+#define WRITE 0b00000010u
 // P66 SPI instructions
-#define LOAD_TX_BUFFER 0b01000000
-const uint8_t abc[3] = {0b000, 0b010, 0b100};  // TXB0SIDH, TXB1SIDH, TXB2SIDH
-#define RTS 0b10000000
-#define BIT_MODIFY 0b00000101
+#define LOAD_TX_BUFFER 0b01000000u
+const uint8_t abc[3] = {0b000u, 0b010u, 0b100u};  // TXB0SIDH, TXB1SIDH, TXB2SIDH
+#define RTS 0b10000000u
+#define BIT_MODIFY 0b00000101u
 // P67 SPI instructions
-#define READ_STATUS 0b10100000
-#define RX0IF_MASK 0b00000001
-#define RX1IF_MASK 0b00000010
-#define TXB0_TXREQ 0b00000100
-#define TX0IF_MASK 0b00001000
-#define TXB1_TXREQ 0b00010000
-#define TX1IF_MASK 0b00100000
-#define TXB2_TXREQ 0b01000000
-#define TX2IF_MASK 0b10000000
-const uint8_t txbnsidh[3] = {0x31, 0x41, 0x51};
+#define READ_STATUS 0b10100000u
+#define RX0IF_MASK 0b00000001u
+#define RX1IF_MASK 0b00000010u
+#define TXB0_TXREQ 0b00000100u
+#define TX0IF_MASK 0b00001000u
+#define TXB1_TXREQ 0b00010000u
+#define TX1IF_MASK 0b00100000u
+#define TXB2_TXREQ 0b01000000u
+#define TX2IF_MASK 0b10000000u
+const uint8_t txbnsidh[3] = {0x31u, 0x41u, 0x51u};
 
-#define SET_MASK 0
-#define SET_FILTER 1
+#define SET_MASK 0u
+#define SET_FILTER 1u
 
 void can_logging_mode(bool debug, bool verbose);
 void can_set_sid (uint16_t can_node);
