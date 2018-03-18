@@ -83,6 +83,14 @@ Voltage: CANH - CANL
 
 ![BRP16](./doc/test/BRP16.BMP)
 
+### Logic analyzer 
+
+I have also got this cheap oscilloscope [PCB scope](http://www.picaxestore.com/en_gb/osc001.html).
+
+The following is screen shots from the oscilloscope in logic analyzer mode:
+
+![8micro](./doc/logic_8micro.jpg)
+
 ## 1st test on March 14th, 2018
 
 (The problem below has already been fixed in ver 0.1 release)
