@@ -85,9 +85,11 @@ Voltage: CANH - CANL
 
 ### Logic analyzer 
 
-I have also got this cheap oscilloscope [PCB scope](http://www.picaxestore.com/en_gb/osc001.html).
+I have also got this cheap oscilloscope [PCB scope](http://www.picaxestore.com/en_gb/osc001.html):
 
-The following is screen shots from the oscilloscope in logic analyzer mode:
+![osc001](./doc/osc001.jpg)
+
+The following is a screen shot from the oscilloscope in logic analyzer mode:
 
 ![8micro](./doc/logic_8micro.jpg)
 
