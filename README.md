@@ -8,7 +8,11 @@ Version 0.1: March 17, 2018
 
 ## Motivation
 
-Let's use CAN bus as cheap networking for home/office controller.
+I am going to develop either mbed-based or ESP32-based home/office controller.
+
+I also want to connect PIC-MCU-based sensor/actuator blocks to the controller over CAN, since CAN is very cheap and supports daisy-chain network topology.
+
+Once I developed I2C-based sensor network, but I2C is not for such a purpose.
 
 ## Configuration
 
