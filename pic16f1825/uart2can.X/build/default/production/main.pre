@@ -3825,14 +3825,14 @@ extern char * ftoa(float f, int * status);
 const uint8_t rxfnsidh[6] = {0x00u, 0x04u, 0x08u, 0x10u, 0x14u, 0x18u};
 const uint8_t rxmnsidh[2] = {0x20u, 0x24u};
 
-# 65
+# 66
 const uint8_t nm[2] = {0b00u, 0b10u};
 
 
 
 const uint8_t abc[3] = {0b000u, 0b010u, 0b100u};
 
-# 82
+# 83
 const uint8_t txbnsidh[3] = {0x31u, 0x41u, 0x51u};
 
 
@@ -3842,14 +3842,15 @@ void can_logging_mode(bool debug, bool verbose);
 void can_set_sid (uint16_t can_node);
 void can_init(void *receive_handler);
 bool can_ope_mode(uint8_t ope_mode);
-void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+void can_set_mask(uint8_t cmd, uint8_t n, uint16_t mask);
 bool can_send(uint8_t *data_buf, uint8_t dlc);
 bool can_status_check(void);
 bool can_baudrate(uint8_t bpr);
 bool can_abort(void);
+void can_dump_masks_and_filters(void);
 void can_dump_registers(void);
 
-# 20 "main.c"
+# 21 "main.c"
 const uint8_t max_idx = 9 - 2;
 
 struct {
@@ -3857,7 +3858,7 @@ bool with_sid;
 bool hex_output;
 } output_format;
 
-# 30
+# 31
 void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
 uint8_t i;
 if (output_format.with_sid) {
@@ -3954,7 +3955,7 @@ break;
 case 'm':
 case 'f':
 n = buf[2] - 0x30u;
-mask = (uint8_t)atoi(&buf[3]);
+mask = (uint16_t)atoi(&buf[3]);
 if (cmd == 'm') {
 can_set_mask(0u, n, mask);
 } else if (cmd == 'f') {
@@ -3964,6 +3965,9 @@ break;
 case 'a':
 can_abort();
 break;
+case 'F':
+can_dump_masks_and_filters();
+break;
 case 'd':
 can_dump_registers();
 break;
@@ -3971,7 +3975,7 @@ case '@':
 can_send(&buf[1], idx - 1u);
 break;
 case 'h':
-printf("/// UART2CAN HELP (version %s) ///\n", "0.1  March 17, 2018");
+printf("/// UART2CAN HELP (version %s) ///\n", "0.11  March 19, 2018");
 printf("[Set standard identifier] @i<standard identifier>\n");
 printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
 printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
@@ -3980,6 +3984,7 @@ printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
 printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
 printf("[Set baud rate] @b<bpr>\n");
 printf("[Abort all pending transmissions] @a\n");
+printf("[Dump masks and filters] @F\n");
 printf("[Dump registers] @d\n");
 printf("[Send message] <message>\n");
 printf("[Send message beginning with \'@\' character] @<@message>\n");

@@ -357,7 +357,13 @@ case 'd':
 case 'i':
 break;
 
-# 718
+# 712
+case 'X':
+
+flag |= 0x20;
+
+
+
 case 'x':
 
 
@@ -543,9 +549,9 @@ case 0x80:
 {
 unsigned char idx = (val / hexpowers[prec]) & 0xF;
 
-# 1506
-c = "0123456789abcdef"[idx];
+c = (flag & 0x20 ? "0123456789ABCDEF" : "0123456789abcdef")[idx];
 
+# 1508
 }
 
 break;

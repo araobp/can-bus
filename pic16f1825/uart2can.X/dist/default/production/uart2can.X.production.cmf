@@ -12,103 +12,107 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\uart2can.X.production.obj
-cinit CODE 0 7EE 7EE 12 2
-text1 CODE 0 E13 E13 56 2
-text2 CODE 0 D30 D30 2E 2
-text3 CODE 0 B0 B0 B4 2
-text4 CODE 0 EC0 EC0 5B 2
-text5 CODE 0 30 30 80 2
-text6 CODE 0 270 270 14D 2
-text7 CODE 0 C57 C57 B 2
-text8 CODE 0 F82 F82 7E 2
-text9 CODE 0 CDF CDF 24 2
-text10 CODE 0 164 164 10C 2
-text11 CODE 0 CAB CAB 19 2
-text12 CODE 0 D5E D5E 33 2
-text13 CODE 0 D03 D03 2D 2
-text14 CODE 0 E69 E69 57 2
-text15 CODE 0 5B3 5B3 23B 2
-text16 CODE 0 C18 C18 5 2
-text17 CODE 0 C31 C31 8 2
-text18 CODE 0 4 4 2C 2
-text19 CODE 0 D91 D91 34 2
-text20 CODE 0 C7F C7F 15 2
-text21 CODE 0 DC5 DC5 4E 2
-text22 CODE 0 C39 C39 9 2
-text23 CODE 0 F1B F1B 67 2
-text24 CODE 0 C62 C62 E 2
-text25 CODE 0 CC4 CC4 1B 2
-text26 CODE 0 C70 C70 F 2
-text27 CODE 0 C14 C14 4 2
-text28 CODE 0 C2A C2A 7 2
-text29 CODE 0 C94 C94 17 2
-text30 CODE 0 C23 C23 7 2
-text31 CODE 0 C4C C4C B 2
-text32 CODE 0 C42 C42 A 2
-nvBANK0 BANK0 1 69 69 2 1
-maintext CODE 0 3BD 3BD 1F6 2
+cinit CODE 0 7F0 7F0 10 2
+text1 CODE 0 D13 D13 56 2
+text2 CODE 0 C30 C30 2E 2
+text3 CODE 0 F4B F4B B5 2
+text4 CODE 0 DC0 DC0 5B 2
+text5 CODE 0 EA6 EA6 A5 2
+text6 CODE 0 255 255 14D 2
+text7 CODE 0 B31 B31 B 2
+text8 CODE 0 E1B E1B 8B 2
+text9 CODE 0 BBA BBA 24 2
+text10 CODE 0 145 145 110 2
+text11 CODE 0 B86 B86 19 2
+text12 CODE 0 79 79 CC 2
+text13 CODE 0 C5E C5E 33 2
+text14 CODE 0 B4B B4B F 2
+text15 CODE 0 D69 D69 57 2
+text16 CODE 0 5A5 5A5 24B 2
+text17 CODE 0 AF2 AF2 5 2
+text18 CODE 0 B0B B0B 8 2
+text19 CODE 0 C04 C04 2C 2
+text20 CODE 0 C91 C91 34 2
+text21 CODE 0 BDE BDE 26 2
+text22 CODE 0 B5A B5A 15 2
+text23 CODE 0 CC5 CC5 4E 2
+text24 CODE 0 B13 B13 9 2
+text25 CODE 0 12 12 67 2
+text26 CODE 0 4 4 E 2
+text27 CODE 0 B9F B9F 1B 2
+text28 CODE 0 B3C B3C F 2
+text29 CODE 0 AEE AEE 4 2
+text30 CODE 0 B04 B04 7 2
+text31 CODE 0 B6F B6F 17 2
+text32 CODE 0 AFD AFD 7 2
+text33 CODE 0 B26 B26 B 2
+text34 CODE 0 B1C B1C A 2
+maintext CODE 0 3A2 3A2 203 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 42 1
-cstackBANK1 BANK1 1 A0 A0 13 1
-stringtext1 STRCODE 0 13EB 13EB A 2
-stringtext2 STRCODE 0 13F5 13F5 8 2
-stringtext3 STRCODE 0 140B 140B 6 2
-stringtext4 STRCODE 0 1422 1422 3 2
-stringtext5 STRCODE 0 1425 1425 3 2
-stringtext6 STRCODE 0 142B 142B 2 2
-stringtext7 STRCODE 0 142D 142D 2 2
-stringtext8 STRCODE 0 142F 142F 1 2
-stringtext9 STRCODE 0 1000 1000 3B 2
-bssBANK0 BANK0 1 62 62 7 1
-bssBANK1 BANK1 1 B3 B3 10 1
-clrtext CODE 0 C1D C1D 6 2
-stringtext10 STRCODE 0 103B 103B 3A 2
-stringtext11 STRCODE 0 1075 1075 39 2
-stringtext12 STRCODE 0 10AE 10AE 36 2
-stringtext13 STRCODE 0 10E4 10E4 33 2
-stringtext14 STRCODE 0 1117 1117 2C 2
-stringtext15 STRCODE 0 1143 1143 2A 2
-stringtext16 STRCODE 0 116D 116D 26 2
-stringtext17 STRCODE 0 1193 1193 26 2
-stringtext18 STRCODE 0 11B9 11B9 24 2
-stringtext19 STRCODE 0 11DD 11DD 1A 2
-stringtext20 STRCODE 0 11F7 11F7 19 2
-stringtext21 STRCODE 0 1210 1210 17 2
-stringtext22 STRCODE 0 1227 1227 16 2
-stringtext23 STRCODE 0 123D 123D 15 2
-stringtext24 STRCODE 0 1252 1252 15 2
-stringtext25 STRCODE 0 1267 1267 14 2
-stringtext26 STRCODE 0 127B 127B 14 2
-stringtext27 STRCODE 0 128F 128F 12 2
-stringtext28 STRCODE 0 12A1 12A1 11 2
-stringtext29 STRCODE 0 12B2 12B2 11 2
-stringtext30 STRCODE 0 12C3 12C3 11 2
-stringtext31 STRCODE 0 12D4 12D4 11 2
-stringtext32 STRCODE 0 12E5 12E5 11 2
-stringtext33 STRCODE 0 12F6 12F6 10 2
-stringtext34 STRCODE 0 1306 1306 10 2
-stringtext35 STRCODE 0 1316 1316 10 2
-stringtext36 STRCODE 0 1326 1326 10 2
-stringtext37 STRCODE 0 1336 1336 10 2
-stringtext38 STRCODE 0 1346 1346 10 2
-stringtext39 STRCODE 0 1356 1356 F 2
-stringtext40 STRCODE 0 1365 1365 F 2
-stringtext41 STRCODE 0 1374 1374 F 2
-stringtext42 STRCODE 0 1383 1383 E 2
-stringtext43 STRCODE 0 1391 1391 E 2
-stringtext44 STRCODE 0 139F 139F E 2
-stringtext45 STRCODE 0 13AD 13AD D 2
-stringtext46 STRCODE 0 13BA 13BA D 2
-stringtext47 STRCODE 0 13C7 13C7 C 2
-stringtext48 STRCODE 0 13D3 13D3 C 2
-stringtext49 STRCODE 0 13DF 13DF C 2
-stringtext50 STRCODE 0 13FD 13FD 7 2
-stringtext51 STRCODE 0 1404 1404 7 2
-stringtext52 STRCODE 0 1411 1411 6 2
-stringtext53 STRCODE 0 1417 1417 6 2
-stringtext54 STRCODE 0 141D 141D 5 2
-stringtext55 STRCODE 0 1428 1428 3 2
-$C:\Users\shiny\AppData\Local\Temp\se0o.obj
+cstackBANK0 BANK0 1 20 20 4A 1
+cstackBANK1 BANK1 1 C4 C4 13 1
+stringtext1 STRCODE 0 1473 1473 A 2
+stringtext2 STRCODE 0 147D 147D 8 2
+stringtext3 STRCODE 0 1493 1493 6 2
+stringtext4 STRCODE 0 14AA 14AA 3 2
+stringtext5 STRCODE 0 14AD 14AD 3 2
+stringtext6 STRCODE 0 14B3 14B3 2 2
+stringtext7 STRCODE 0 14B5 14B5 2 2
+stringtext8 STRCODE 0 1000 1000 3C 2
+stringtext9 STRCODE 0 103C 103C 3A 2
+bssBANK0 BANK0 1 6A 6A 5 1
+bssBANK1 BANK1 1 A0 A0 24 1
+clrtext CODE 0 AF7 AF7 6 2
+stringtext10 STRCODE 0 1076 1076 39 2
+stringtext11 STRCODE 0 10AF 10AF 36 2
+stringtext12 STRCODE 0 10E5 10E5 33 2
+stringtext13 STRCODE 0 1118 1118 2C 2
+stringtext14 STRCODE 0 1144 1144 2C 2
+stringtext15 STRCODE 0 1170 1170 2C 2
+stringtext16 STRCODE 0 119C 119C 2A 2
+stringtext17 STRCODE 0 11C6 11C6 26 2
+stringtext18 STRCODE 0 11EC 11EC 26 2
+stringtext19 STRCODE 0 1212 1212 24 2
+stringtext20 STRCODE 0 1236 1236 1D 2
+stringtext21 STRCODE 0 1253 1253 1A 2
+stringtext22 STRCODE 0 126D 126D 19 2
+stringtext23 STRCODE 0 1286 1286 17 2
+stringtext24 STRCODE 0 129D 129D 16 2
+stringtext25 STRCODE 0 12B3 12B3 15 2
+stringtext26 STRCODE 0 12C8 12C8 15 2
+stringtext27 STRCODE 0 12DD 12DD 15 2
+stringtext28 STRCODE 0 12F2 12F2 14 2
+stringtext29 STRCODE 0 1306 1306 12 2
+stringtext30 STRCODE 0 1318 1318 11 2
+stringtext31 STRCODE 0 1329 1329 11 2
+stringtext32 STRCODE 0 133A 133A 11 2
+stringtext33 STRCODE 0 134B 134B 11 2
+stringtext34 STRCODE 0 135C 135C 11 2
+stringtext35 STRCODE 0 136D 136D 11 2
+stringtext36 STRCODE 0 137E 137E 10 2
+stringtext37 STRCODE 0 138E 138E 10 2
+stringtext38 STRCODE 0 139E 139E 10 2
+stringtext39 STRCODE 0 13AE 13AE 10 2
+stringtext40 STRCODE 0 13BE 13BE 10 2
+stringtext41 STRCODE 0 13CE 13CE 10 2
+stringtext42 STRCODE 0 13DE 13DE F 2
+stringtext43 STRCODE 0 13ED 13ED F 2
+stringtext44 STRCODE 0 13FC 13FC F 2
+stringtext45 STRCODE 0 140B 140B E 2
+stringtext46 STRCODE 0 1419 1419 E 2
+stringtext47 STRCODE 0 1427 1427 E 2
+stringtext48 STRCODE 0 1435 1435 D 2
+stringtext49 STRCODE 0 1442 1442 D 2
+stringtext50 STRCODE 0 144F 144F C 2
+stringtext51 STRCODE 0 145B 145B C 2
+stringtext52 STRCODE 0 1467 1467 C 2
+stringtext53 STRCODE 0 1485 1485 7 2
+stringtext54 STRCODE 0 148C 148C 7 2
+stringtext55 STRCODE 0 1499 1499 6 2
+stringtext56 STRCODE 0 149F 149F 6 2
+stringtext57 STRCODE 0 14A5 14A5 5 2
+stringtext58 STRCODE 0 14B0 14B0 3 2
+$C:\Users\shiny\AppData\Local\Temp\s9vc.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 2 2
@@ -118,8 +122,8 @@ config CONFIG 0 8007 8007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 6B-6F 1
-RAM C3-EF 1
+RAM 6F-6F 1
+RAM D7-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
@@ -131,8 +135,8 @@ RAM 4A0-4EF 1
 RAM 520-56F 1
 RAM 5A0-5EF 1
 RAM 620-64F 1
-BANK0 6B-6F 1
-BANK1 C3-EF 1
+BANK0 6F-6F 1
+BANK1 D7-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
@@ -141,10 +145,10 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 800-C13 2
-CONST 1430-1FFF 2
-ENTRY 800-C13 2
-ENTRY 1430-1FFF 2
+CONST 800-AED 2
+CONST 14B7-1FFF 2
+ENTRY 800-AED 2
+ENTRY 14B7-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -168,9 +172,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2073-23EF 1
-CODE 800-C13 2
-CODE 1430-1FFF 2
+STACK 2087-23EF 1
+CODE 800-AED 2
+CODE 14B7-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -186,10 +190,10 @@ BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 EEDATA F000-F0FF 2
-STRCODE 800-C13 2
-STRCODE 1430-1FFF 2
-STRING 800-C13 2
-STRING 1430-1FFF 2
+STRCODE 800-AED 2
+STRCODE 14B7-1FFF 2
+STRING 800-AED 2
+STRING 14B7-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -204,544 +208,572 @@ STRING 1430-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\uart2can.X.production.obj
-7EE cinit CODE >3651:C:\Users\shiny\AppData\Local\Temp\se0o.
-7EE cinit CODE >3654:C:\Users\shiny\AppData\Local\Temp\se0o.
-7EE cinit CODE >3693:C:\Users\shiny\AppData\Local\Temp\se0o.
-7EF cinit CODE >3694:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F0 cinit CODE >3695:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F1 cinit CODE >3696:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F2 cinit CODE >3697:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F3 cinit CODE >3698:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F6 cinit CODE >3702:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F7 cinit CODE >3703:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F8 cinit CODE >3704:C:\Users\shiny\AppData\Local\Temp\se0o.
-7F9 cinit CODE >3705:C:\Users\shiny\AppData\Local\Temp\se0o.
-7FA cinit CODE >3706:C:\Users\shiny\AppData\Local\Temp\se0o.
-7FB cinit CODE >3707:C:\Users\shiny\AppData\Local\Temp\se0o.
-7FD cinit CODE >3713:C:\Users\shiny\AppData\Local\Temp\se0o.
-7FD cinit CODE >3715:C:\Users\shiny\AppData\Local\Temp\se0o.
-7FE cinit CODE >3716:C:\Users\shiny\AppData\Local\Temp\se0o.
-C42 text32 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C42 text32 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C42 text32 CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C45 text32 CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C48 text32 CODE >86:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C49 text32 CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C4A text32 CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C4C text31 CODE >53:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C4C text31 CODE >58:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C4F text31 CODE >61:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C51 text31 CODE >64:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C53 text31 CODE >67:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C55 text31 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C56 text31 CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C23 text30 CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C23 text30 CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C26 text30 CODE >85:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C27 text30 CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C29 text30 CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C94 text29 CODE >52:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C94 text29 CODE >57:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C97 text29 CODE >58:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C98 text29 CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C9B text29 CODE >64:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C9D text29 CODE >69:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C9F text29 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-CA1 text29 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-CA3 text29 CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-CA5 text29 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-CA7 text29 CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-CA9 text29 CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-CAA text29 CODE >89:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
-C2A text28 CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C2A text28 CODE >68:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C2D text28 CODE >71:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C2F text28 CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C30 text28 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C14 text27 CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C14 text27 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C17 text27 CODE >94:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C70 text26 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C70 text26 CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C73 text26 CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C76 text26 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C79 text26 CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C7C text26 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-C7E text26 CODE >78:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
-CC4 text25 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CC4 text25 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CC6 text25 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CC8 text25 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CCC text25 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CD1 text25 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CD6 text25 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-CDA text25 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-C62 text24 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
-C63 text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
-F1B text23 CODE >5:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F1C text23 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F23 text23 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F27 text23 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F2F text23 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F31 text23 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F32 text23 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F39 text23 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F3E text23 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F45 text23 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F49 text23 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F52 text23 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F6D text23 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F6E text23 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F71 text23 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-F7D text23 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
-C39 text22 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C3A text22 CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C3C text22 CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C3E text22 CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C3E text22 CODE >86:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C40 text22 CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DC5 text21 CODE >91:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DC6 text21 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DC7 text21 CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DCA text21 CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DCE text21 CODE >101:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DD1 text21 CODE >103:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DDB text21 CODE >104:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DDC text21 CODE >107:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DEF text21 CODE >110:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DF3 text21 CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DF8 text21 CODE >115:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-DFC text21 CODE >119:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-E09 text21 CODE >121:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-E0D text21 CODE >117:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-E11 text21 CODE >127:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
-C7F text20 CODE >4:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
-C80 text20 CODE >5:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
-C82 text20 CODE >6:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
-C90 text20 CODE >7:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
-C92 text20 CODE >8:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
-D91 text19 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-D91 text19 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-D93 text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-D97 text19 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-D99 text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-D9B text19 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DA0 text19 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DA4 text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DA5 text19 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DAA text19 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DB2 text19 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DB6 text19 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DB7 text19 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DBC text19 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-DC0 text19 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
-4 text18 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-4 text18 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-8 text18 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-A text18 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-C text18 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-11 text18 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-15 text18 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-16 text18 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-1E text18 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-22 text18 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-27 text18 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-2B text18 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
-C31 text17 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C32 text17 CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C32 text17 CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C35 text17 CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C38 text17 CODE >100:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C18 text16 CODE >107:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C19 text16 CODE >109:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-C1C text16 CODE >110:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
-5B3 text15 CODE >464:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5B3 text15 CODE >533:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5B8 text15 CODE >536:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5CB text15 CODE >538:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5CF text15 CODE >541:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5D3 text15 CODE >542:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5D4 text15 CODE >546:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5D7 text15 CODE >548:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5D8 text15 CODE >551:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5D9 text15 CODE >579:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5D9 text15 CODE >580:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5DA text15 CODE >581:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5DE text15 CODE >551:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5E7 text15 CODE >597:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5F1 text15 CODE >598:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-5F4 text15 CODE >600:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-605 text15 CODE >601:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-618 text15 CODE >602:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-623 text15 CODE >718:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-623 text15 CODE >721:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-624 text15 CODE >723:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-625 text15 CODE >734:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-630 text15 CODE >740:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-634 text15 CODE >741:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-638 text15 CODE >745:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-63A text15 CODE >746:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-643 text15 CODE >747:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-647 text15 CODE >746:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-648 text15 CODE >757:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-650 text15 CODE >758:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-655 text15 CODE >760:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-657 text15 CODE >764:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-661 text15 CODE >765:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-665 text15 CODE >764:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-666 text15 CODE >768:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-673 text15 CODE >767:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-67E text15 CODE >799:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-689 text15 CODE >805:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-68D text15 CODE >806:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-691 text15 CODE >807:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-692 text15 CODE >635:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6B3 text15 CODE >822:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6B3 text15 CODE >1251:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6B6 text15 CODE >1259:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6C1 text15 CODE >1261:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6C3 text15 CODE >1262:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6C7 text15 CODE >1263:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6CC text15 CODE >1266:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6CD text15 CODE >1286:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6D8 text15 CODE >1294:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6D9 text15 CODE >1299:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6D9 text15 CODE >1305:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6DF text15 CODE >1306:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6F6 text15 CODE >1305:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6FB text15 CODE >1314:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-6FB text15 CODE >1316:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-701 text15 CODE >1317:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-718 text15 CODE >1316:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-71D text15 CODE >1294:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-726 text15 CODE >1345:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-72E text15 CODE >1346:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-732 text15 CODE >1381:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-743 text15 CODE >1382:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-74E text15 CODE >1384:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-751 text15 CODE >1387:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-753 text15 CODE >1392:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-757 text15 CODE >1393:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-75B text15 CODE >1415:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-760 text15 CODE >1417:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-764 text15 CODE >1418:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-76A text15 CODE >1428:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-76E text15 CODE >1430:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-772 text15 CODE >1431:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-77B text15 CODE >1438:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-77F text15 CODE >1439:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-783 text15 CODE >1472:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-788 text15 CODE >1474:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-789 text15 CODE >1489:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7B0 text15 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7CC text15 CODE >1506:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7D7 text15 CODE >1524:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7DB text15 CODE >1474:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7E3 text15 CODE >1476:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7EC text15 CODE >1474:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-7ED text15 CODE >1541:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-E69 text14 CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E6B text14 CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E70 text14 CODE >89:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E76 text14 CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E7C text14 CODE >91:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E89 text14 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E91 text14 CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E95 text14 CODE >96:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E9A text14 CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-EA0 text14 CODE >98:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-EAD text14 CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-EBF text14 CODE >102:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D03 text13 CODE >298:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D03 text13 CODE >299:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D07 text13 CODE >301:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D0D text13 CODE >302:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D13 text13 CODE >303:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D19 text13 CODE >304:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D1F text13 CODE >305:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D2C text13 CODE >306:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D2F text13 CODE >310:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D5E text12 CODE >281:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D60 text12 CODE >282:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D64 text12 CODE >284:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D69 text12 CODE >285:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D6E text12 CODE >286:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D74 text12 CODE >287:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D7A text12 CODE >288:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D80 text12 CODE >289:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D8D text12 CODE >290:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D90 text12 CODE >294:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CAB text11 CODE >314:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CAD text11 CODE >315:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CB2 text11 CODE >316:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CB8 text11 CODE >317:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CB9 text11 CODE >318:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CC1 text11 CODE >319:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-164 text10 CODE >325:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-164 text10 CODE >326:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-16C text10 CODE >327:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-17B text10 CODE >328:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-18A text10 CODE >329:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-192 text10 CODE >331:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-1A5 text10 CODE >332:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-1B8 text10 CODE >333:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-1CB text10 CODE >334:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-1D3 text10 CODE >336:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-1E6 text10 CODE >337:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-1F9 text10 CODE >338:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-20C text10 CODE >339:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-214 text10 CODE >341:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-227 text10 CODE >342:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-23A text10 CODE >343:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-242 text10 CODE >345:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-255 text10 CODE >346:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-268 text10 CODE >347:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-26F text10 CODE >348:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CDF text9 CODE >41:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CDF text9 CODE >42:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CED text9 CODE >43:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CF9 text9 CODE >44:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CFE text9 CODE >45:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D02 text9 CODE >46:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F82 text8 CODE >51:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F82 text8 CODE >52:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F88 text8 CODE >53:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F8D text8 CODE >56:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F92 text8 CODE >57:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F98 text8 CODE >59:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F9C text8 CODE >61:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FA2 text8 CODE >62:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FA8 text8 CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FAE text8 CODE >64:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FB4 text8 CODE >65:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FBA text8 CODE >66:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FC3 text8 CODE >68:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FC9 text8 CODE >69:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FCF text8 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FD5 text8 CODE >71:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FDE text8 CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FE4 text8 CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FEA text8 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FF0 text8 CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FF9 text8 CODE >78:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FFB text8 CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FFC text8 CODE >81:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-FFF text8 CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-C57 text7 CODE >28:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-C58 text7 CODE >29:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-C5D text7 CODE >30:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-C61 text7 CODE >31:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-270 text6 CODE >179:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-272 text6 CODE >181:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-273 text6 CODE >183:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-278 text6 CODE >184:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-279 text6 CODE >185:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-286 text6 CODE >186:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-28C text6 CODE >187:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-28E text6 CODE >188:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-298 text6 CODE >189:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-29D text6 CODE >190:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2A0 text6 CODE >191:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2AA text6 CODE >192:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2AD text6 CODE >193:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2B0 text6 CODE >194:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2BA text6 CODE >195:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2BC text6 CODE >202:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2C9 text6 CODE >204:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2CF text6 CODE >206:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2D5 text6 CODE >208:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2D6 text6 CODE >210:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2D7 text6 CODE >212:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2DD text6 CODE >215:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2E3 text6 CODE >216:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-2F2 text6 CODE >217:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-309 text6 CODE >215:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-30F text6 CODE >221:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-314 text6 CODE >222:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-320 text6 CODE >224:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-325 text6 CODE >225:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-332 text6 CODE >226:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-333 text6 CODE >227:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-33C text6 CODE >229:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-357 text6 CODE >230:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-35D text6 CODE >231:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-36B text6 CODE >232:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-36C text6 CODE >233:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-375 text6 CODE >235:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-390 text6 CODE >237:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-395 text6 CODE >239:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-3A2 text6 CODE >240:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-3AC text6 CODE >241:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-3AF text6 CODE >242:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-3BC text6 CODE >244:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-30 text5 CODE >109:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-32 text5 CODE >110:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-36 text5 CODE >111:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-41 text5 CODE >112:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-4D text5 CODE >113:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-50 text5 CODE >114:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-53 text5 CODE >115:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-57 text5 CODE >117:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-74 text5 CODE >120:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-7A text5 CODE >121:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-96 text5 CODE >122:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-9C text5 CODE >123:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-A2 text5 CODE >125:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-AB text5 CODE >127:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-AF text5 CODE >128:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-EC0 text4 CODE >30:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-EC0 text4 CODE >32:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-EC4 text4 CODE >33:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-ED5 text4 CODE >34:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-EDA text4 CODE >35:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-EE8 text4 CODE >36:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-EEE text4 CODE >37:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-F02 text4 CODE >36:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-F08 text4 CODE >39:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-F0E text4 CODE >40:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-F0F text4 CODE >41:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-F1A text4 CODE >42:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-B0 text3 CODE >150:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-B2 text3 CODE >157:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-BF text3 CODE >158:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CB text3 CODE >159:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-CF text3 CODE >160:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E7 text3 CODE >161:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-ED text3 CODE >162:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F3 text3 CODE >164:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-F6 text3 CODE >165:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-10B text3 CODE >166:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-121 text3 CODE >167:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-137 text3 CODE >168:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-14D text3 CODE >172:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-152 text3 CODE >173:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-163 text3 CODE >174:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D30 text2 CODE >133:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D32 text2 CODE >134:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D3F text2 CODE >135:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D44 text2 CODE >136:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D4A text2 CODE >137:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D50 text2 CODE >138:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D51 text2 CODE >139:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-D5D text2 CODE >143:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E13 text1 CODE >253:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E13 text1 CODE >255:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E19 text1 CODE >256:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E1A text1 CODE >257:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E27 text1 CODE >258:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E2D text1 CODE >259:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E30 text1 CODE >260:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E32 text1 CODE >261:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E34 text1 CODE >262:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E3E text1 CODE >263:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E42 text1 CODE >264:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E45 text1 CODE >265:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E4F text1 CODE >266:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E53 text1 CODE >267:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E56 text1 CODE >268:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E58 text1 CODE >269:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E5A text1 CODE >270:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E5C text1 CODE >271:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E5E text1 CODE >272:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E62 text1 CODE >274:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E65 text1 CODE >275:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E66 text1 CODE >276:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-E67 text1 CODE >277:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
-3BD maintext CODE >45:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3BD maintext CODE >47:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3BF maintext CODE >50:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3C1 maintext CODE >56:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3C4 maintext CODE >61:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3C6 maintext CODE >62:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3C7 maintext CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3CE maintext CODE >65:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3D0 maintext CODE >69:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3D8 maintext CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3DB maintext CODE >71:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3DD maintext CODE >72:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3DE maintext CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3E0 maintext CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3E0 maintext CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3E3 maintext CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3EB maintext CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-3FF maintext CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-40B maintext CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-410 maintext CODE >81:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-415 maintext CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-419 maintext CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-41F maintext CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-420 maintext CODE >86:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-42A maintext CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-435 maintext CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-436 maintext CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-43B maintext CODE >91:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-43F maintext CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-443 maintext CODE >94:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-449 maintext CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-44C maintext CODE >96:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-451 maintext CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-456 maintext CODE >98:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-458 maintext CODE >100:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-459 maintext CODE >102:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-45D maintext CODE >103:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-45F maintext CODE >104:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-464 maintext CODE >105:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-468 maintext CODE >107:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-46C maintext CODE >108:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-46F maintext CODE >110:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-477 maintext CODE >111:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-47A maintext CODE >112:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-47B maintext CODE >113:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-484 maintext CODE >114:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-486 maintext CODE >115:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-488 maintext CODE >117:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-489 maintext CODE >119:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-48C maintext CODE >120:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-496 maintext CODE >121:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-49A maintext CODE >122:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-49B maintext CODE >125:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4A3 maintext CODE >126:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4B2 maintext CODE >127:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4B6 maintext CODE >128:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4C5 maintext CODE >129:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4CB maintext CODE >130:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4DA maintext CODE >132:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4DB maintext CODE >134:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4DE maintext CODE >135:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4DF maintext CODE >137:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4E2 maintext CODE >138:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4E3 maintext CODE >140:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4EE maintext CODE >141:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4EF maintext CODE >143:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-4FB maintext CODE >144:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-503 maintext CODE >145:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-50B maintext CODE >146:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-513 maintext CODE >147:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-51B maintext CODE >148:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-523 maintext CODE >149:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-52B maintext CODE >150:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-533 maintext CODE >151:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-53B maintext CODE >152:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-543 maintext CODE >153:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-54B maintext CODE >154:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-553 maintext CODE >155:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-55B maintext CODE >156:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-563 maintext CODE >158:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-564 maintext CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-585 maintext CODE >159:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-586 maintext CODE >160:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-58F maintext CODE >162:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-590 maintext CODE >164:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-5A3 maintext CODE >165:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-5A9 maintext CODE >166:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-C1D clrtext CODE >3682:C:\Users\shiny\AppData\Local\Temp\se0o.
-C1D clrtext CODE >3683:C:\Users\shiny\AppData\Local\Temp\se0o.
-C1E clrtext CODE >3684:C:\Users\shiny\AppData\Local\Temp\se0o.
-C1E clrtext CODE >3685:C:\Users\shiny\AppData\Local\Temp\se0o.
-C1F clrtext CODE >3686:C:\Users\shiny\AppData\Local\Temp\se0o.
-C20 clrtext CODE >3687:C:\Users\shiny\AppData\Local\Temp\se0o.
-C21 clrtext CODE >3688:C:\Users\shiny\AppData\Local\Temp\se0o.
-C22 clrtext CODE >3689:C:\Users\shiny\AppData\Local\Temp\se0o.
+7F0 cinit CODE >3805:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F0 cinit CODE >3808:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F0 cinit CODE >3856:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F1 cinit CODE >3857:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F2 cinit CODE >3858:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F3 cinit CODE >3859:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F4 cinit CODE >3860:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F5 cinit CODE >3861:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F6 cinit CODE >3865:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F7 cinit CODE >3866:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F8 cinit CODE >3867:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7F9 cinit CODE >3868:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7FA cinit CODE >3869:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7FB cinit CODE >3870:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7FD cinit CODE >3876:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7FD cinit CODE >3878:C:\Users\shiny\AppData\Local\Temp\s9vc.
+7FE cinit CODE >3879:C:\Users\shiny\AppData\Local\Temp\s9vc.
+B1C text34 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B1C text34 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B1C text34 CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B1F text34 CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B22 text34 CODE >86:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B23 text34 CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B24 text34 CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B26 text33 CODE >53:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B26 text33 CODE >58:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B29 text33 CODE >61:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B2B text33 CODE >64:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B2D text33 CODE >67:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B2F text33 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B30 text33 CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+AFD text32 CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+AFD text32 CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B00 text32 CODE >85:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B01 text32 CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B03 text32 CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B6F text31 CODE >52:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B6F text31 CODE >57:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B72 text31 CODE >58:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B73 text31 CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B76 text31 CODE >64:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B78 text31 CODE >69:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B7A text31 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B7C text31 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B7E text31 CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B80 text31 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B82 text31 CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B84 text31 CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B85 text31 CODE >89:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/pin_manager.c
+B04 text30 CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B04 text30 CODE >68:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B07 text30 CODE >71:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B09 text30 CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B0A text30 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+AEE text29 CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+AEE text29 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+AF1 text29 CODE >94:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B3C text28 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B3C text28 CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B3F text28 CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B42 text28 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B45 text28 CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B48 text28 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B4A text28 CODE >78:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/mcc.c
+B9F text27 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+B9F text27 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BA1 text27 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BA3 text27 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BA7 text27 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BAC text27 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BB1 text27 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+BB5 text27 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+4 text26 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
+5 text26 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
+12 text25 CODE >5:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+13 text25 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+1A text25 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+1E text25 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+26 text25 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+28 text25 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+29 text25 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+30 text25 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+35 text25 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+3C text25 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+40 text25 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+49 text25 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+64 text25 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+65 text25 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+68 text25 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+74 text25 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+B13 text24 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B14 text24 CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B16 text24 CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B18 text24 CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B18 text24 CODE >86:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B1A text24 CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CC5 text23 CODE >91:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CC6 text23 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CC7 text23 CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CCA text23 CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CCE text23 CODE >101:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CD1 text23 CODE >103:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CDB text23 CODE >104:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CDC text23 CODE >107:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CEF text23 CODE >110:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CF3 text23 CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CF8 text23 CODE >115:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+CFC text23 CODE >119:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+D09 text23 CODE >121:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+D0D text23 CODE >117:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+D11 text23 CODE >127:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/spi.c
+B5A text22 CODE >4:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
+B5B text22 CODE >5:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
+B5D text22 CODE >6:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
+B6B text22 CODE >7:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
+B6D text22 CODE >8:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\spi.c
+BDE text21 CODE >115:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BDE text21 CODE >116:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BE4 text21 CODE >117:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BEA text21 CODE >118:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BF0 text21 CODE >119:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BF6 text21 CODE >120:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C02 text21 CODE >121:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C91 text20 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C91 text20 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C93 text20 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C97 text20 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C99 text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C9B text20 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CA0 text20 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CA4 text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CA5 text20 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CAA text20 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CB2 text20 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CB6 text20 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CB7 text20 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CBC text20 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+CC0 text20 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+C04 text19 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C04 text19 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C08 text19 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C0A text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C0C text19 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C11 text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C15 text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C16 text19 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C1E text19 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C22 text19 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C27 text19 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+C2B text19 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+B0B text18 CODE >93:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B0C text18 CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B0C text18 CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B0F text18 CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+B12 text18 CODE >100:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+AF2 text17 CODE >107:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+AF3 text17 CODE >109:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+AF6 text17 CODE >110:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
+5A5 text16 CODE >464:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5A5 text16 CODE >533:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5AA text16 CODE >536:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5BD text16 CODE >538:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5C1 text16 CODE >541:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5C5 text16 CODE >542:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5C6 text16 CODE >546:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5C9 text16 CODE >548:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5CA text16 CODE >551:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5CB text16 CODE >579:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5CB text16 CODE >580:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5CC text16 CODE >581:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5D0 text16 CODE >551:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5D9 text16 CODE >597:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5E3 text16 CODE >598:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5E6 text16 CODE >600:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+5F7 text16 CODE >601:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+60A text16 CODE >602:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+615 text16 CODE >712:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+615 text16 CODE >714:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+616 text16 CODE >718:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+616 text16 CODE >721:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+617 text16 CODE >723:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+618 text16 CODE >734:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+623 text16 CODE >740:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+627 text16 CODE >741:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+62B text16 CODE >745:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+62D text16 CODE >746:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+636 text16 CODE >747:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+63A text16 CODE >746:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+63B text16 CODE >757:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+643 text16 CODE >758:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+648 text16 CODE >760:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+64A text16 CODE >764:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+654 text16 CODE >765:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+658 text16 CODE >764:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+659 text16 CODE >768:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+666 text16 CODE >767:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+671 text16 CODE >799:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+67C text16 CODE >805:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+680 text16 CODE >806:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+684 text16 CODE >807:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+685 text16 CODE >635:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6A9 text16 CODE >822:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6A9 text16 CODE >1251:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6AC text16 CODE >1259:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6B7 text16 CODE >1261:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6B9 text16 CODE >1262:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6BD text16 CODE >1263:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6C2 text16 CODE >1266:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6C3 text16 CODE >1286:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6CE text16 CODE >1294:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6CF text16 CODE >1299:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6CF text16 CODE >1305:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6D5 text16 CODE >1306:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6EC text16 CODE >1305:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6F1 text16 CODE >1314:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6F1 text16 CODE >1316:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+6F7 text16 CODE >1317:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+70E text16 CODE >1316:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+713 text16 CODE >1294:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+71C text16 CODE >1345:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+724 text16 CODE >1346:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+728 text16 CODE >1381:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+739 text16 CODE >1382:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+744 text16 CODE >1384:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+747 text16 CODE >1387:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+749 text16 CODE >1392:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+74D text16 CODE >1393:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+751 text16 CODE >1415:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+756 text16 CODE >1417:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+75A text16 CODE >1418:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+760 text16 CODE >1428:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+764 text16 CODE >1430:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+768 text16 CODE >1431:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+771 text16 CODE >1438:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+775 text16 CODE >1439:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+779 text16 CODE >1472:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+77E text16 CODE >1474:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+77F text16 CODE >1489:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7A4 text16 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7C0 text16 CODE >1502:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7D9 text16 CODE >1524:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7DD text16 CODE >1474:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7E5 text16 CODE >1476:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7EE text16 CODE >1474:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+7EF text16 CODE >1541:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+D69 text15 CODE >96:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D6B text15 CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D70 text15 CODE >98:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D76 text15 CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D7C text15 CODE >100:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D89 text15 CODE >102:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D91 text15 CODE >104:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D95 text15 CODE >105:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D9A text15 CODE >106:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+DA0 text15 CODE >107:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+DAD text15 CODE >108:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+DBF text15 CODE >111:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B4B text14 CODE >320:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B4B text14 CODE >321:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B4F text14 CODE >322:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B56 text14 CODE >323:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B59 text14 CODE >327:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C5E text13 CODE >302:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C60 text13 CODE >303:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C64 text13 CODE >306:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C69 text13 CODE >307:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C6E text13 CODE >308:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C74 text13 CODE >309:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C7A text13 CODE >310:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C80 text13 CODE >311:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C8D text13 CODE >312:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C90 text13 CODE >316:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+79 text12 CODE >339:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+79 text12 CODE >342:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+81 text12 CODE >343:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+87 text12 CODE >344:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+8F text12 CODE >345:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+9D text12 CODE >346:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+A9 text12 CODE >347:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D7 text12 CODE >343:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E0 text12 CODE >349:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E5 text12 CODE >350:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+ED text12 CODE >351:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FB text12 CODE >352:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+107 text12 CODE >353:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+135 text12 CODE >349:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+13E text12 CODE >355:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+144 text12 CODE >356:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B86 text11 CODE >331:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B88 text11 CODE >332:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B8D text11 CODE >333:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B93 text11 CODE >334:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B94 text11 CODE >335:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B9C text11 CODE >336:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+145 text10 CODE >361:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+145 text10 CODE >362:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+14D text10 CODE >363:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+15E text10 CODE >364:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+16F text10 CODE >365:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+177 text10 CODE >367:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+18A text10 CODE >368:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+19D text10 CODE >369:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+1B0 text10 CODE >370:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+1B8 text10 CODE >372:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+1CB text10 CODE >373:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+1DE text10 CODE >374:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+1F1 text10 CODE >375:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+1F9 text10 CODE >377:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+20C text10 CODE >378:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+21F text10 CODE >379:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+227 text10 CODE >381:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+23A text10 CODE >382:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+24D text10 CODE >383:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+254 text10 CODE >384:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BBA text9 CODE >48:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BBA text9 CODE >49:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BC8 text9 CODE >50:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BD4 text9 CODE >51:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BD9 text9 CODE >52:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+BDD text9 CODE >53:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E1B text8 CODE >58:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E1B text8 CODE >59:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E24 text8 CODE >61:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E2A text8 CODE >62:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E32 text8 CODE >65:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E38 text8 CODE >66:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E3E text8 CODE >68:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E42 text8 CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E48 text8 CODE >71:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E4E text8 CODE >72:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E54 text8 CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E5A text8 CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E60 text8 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E69 text8 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E6F text8 CODE >78:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E75 text8 CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E7B text8 CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E84 text8 CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E8A text8 CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E90 text8 CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E96 text8 CODE >85:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+E9F text8 CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EA1 text8 CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EA2 text8 CODE >90:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EA5 text8 CODE >91:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B31 text7 CODE >35:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B32 text7 CODE >36:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B37 text7 CODE >37:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+B3B text7 CODE >38:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+255 text6 CODE >200:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+257 text6 CODE >202:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+258 text6 CODE >204:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+25D text6 CODE >205:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+25E text6 CODE >206:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+26B text6 CODE >207:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+271 text6 CODE >208:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+273 text6 CODE >209:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+27D text6 CODE >210:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+282 text6 CODE >211:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+285 text6 CODE >212:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+28F text6 CODE >213:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+292 text6 CODE >214:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+295 text6 CODE >215:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+29F text6 CODE >216:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2A1 text6 CODE >223:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2AE text6 CODE >225:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2B4 text6 CODE >227:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2BA text6 CODE >229:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2BB text6 CODE >231:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2BC text6 CODE >233:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2C2 text6 CODE >236:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2C8 text6 CODE >237:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2D7 text6 CODE >238:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2EE text6 CODE >236:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2F4 text6 CODE >242:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+2F9 text6 CODE >243:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+305 text6 CODE >245:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+30A text6 CODE >246:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+317 text6 CODE >247:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+318 text6 CODE >248:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+321 text6 CODE >250:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+33C text6 CODE >251:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+342 text6 CODE >252:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+350 text6 CODE >253:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+351 text6 CODE >254:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+35A text6 CODE >256:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+375 text6 CODE >258:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+37A text6 CODE >260:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+387 text6 CODE >261:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+391 text6 CODE >262:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+394 text6 CODE >263:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+3A1 text6 CODE >265:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EA6 text5 CODE >127:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EA8 text5 CODE >128:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EAC text5 CODE >129:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EAF text5 CODE >130:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EBB text5 CODE >131:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EC9 text5 CODE >132:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+ED5 text5 CODE >134:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+ED8 text5 CODE >135:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EE0 text5 CODE >136:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EE7 text5 CODE >138:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+EF0 text5 CODE >139:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F0F text5 CODE >142:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F15 text5 CODE >143:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F31 text5 CODE >144:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F37 text5 CODE >145:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F3D text5 CODE >146:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F46 text5 CODE >148:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F4A text5 CODE >149:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+DC0 text4 CODE >31:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+DC0 text4 CODE >33:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+DC4 text4 CODE >34:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+DD5 text4 CODE >35:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+DDA text4 CODE >36:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+DE8 text4 CODE >37:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+DEE text4 CODE >38:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+E02 text4 CODE >37:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+E08 text4 CODE >40:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+E0E text4 CODE >41:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+E0F text4 CODE >42:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+E1A text4 CODE >43:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+F4B text3 CODE >171:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F4D text3 CODE >178:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F5A text3 CODE >179:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F66 text3 CODE >180:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F6A text3 CODE >181:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F82 text3 CODE >182:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F88 text3 CODE >183:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F8E text3 CODE >185:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+F91 text3 CODE >186:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FA6 text3 CODE >187:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FBC text3 CODE >188:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FD2 text3 CODE >189:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FE8 text3 CODE >193:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FED text3 CODE >194:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+FFF text3 CODE >195:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C30 text2 CODE >154:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C32 text2 CODE >155:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C3F text2 CODE >156:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C44 text2 CODE >157:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C4A text2 CODE >158:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C50 text2 CODE >159:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C51 text2 CODE >160:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+C5D text2 CODE >164:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D13 text1 CODE >274:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D13 text1 CODE >276:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D19 text1 CODE >277:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D1A text1 CODE >278:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D27 text1 CODE >279:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D2D text1 CODE >280:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D30 text1 CODE >281:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D32 text1 CODE >282:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D34 text1 CODE >283:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D3E text1 CODE >284:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D42 text1 CODE >285:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D45 text1 CODE >286:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D4F text1 CODE >287:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D53 text1 CODE >288:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D56 text1 CODE >289:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D58 text1 CODE >290:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D5A text1 CODE >291:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D5C text1 CODE >292:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D5E text1 CODE >293:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D62 text1 CODE >295:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D65 text1 CODE >296:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D66 text1 CODE >297:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+D67 text1 CODE >298:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcp2515.c
+3A2 maintext CODE >46:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3A2 maintext CODE >48:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3A4 maintext CODE >51:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3A6 maintext CODE >57:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3A9 maintext CODE >62:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3AB maintext CODE >63:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3AC maintext CODE >64:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3B3 maintext CODE >66:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3B5 maintext CODE >70:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3BD maintext CODE >71:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3C0 maintext CODE >72:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3C2 maintext CODE >73:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3C3 maintext CODE >74:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3C5 maintext CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3C5 maintext CODE >76:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3C8 maintext CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3D0 maintext CODE >78:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3E4 maintext CODE >80:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3F0 maintext CODE >81:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3F5 maintext CODE >82:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3FA maintext CODE >83:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+3FE maintext CODE >84:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+404 maintext CODE >85:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+405 maintext CODE >87:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+40F maintext CODE >88:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+41A maintext CODE >89:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+41B maintext CODE >91:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+420 maintext CODE >92:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+424 maintext CODE >94:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+428 maintext CODE >95:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+42E maintext CODE >96:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+431 maintext CODE >97:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+436 maintext CODE >98:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+43B maintext CODE >99:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+43D maintext CODE >101:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+43E maintext CODE >103:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+442 maintext CODE >104:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+444 maintext CODE >105:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+449 maintext CODE >106:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+44D maintext CODE >108:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+451 maintext CODE >109:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+454 maintext CODE >111:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+45C maintext CODE >112:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+45F maintext CODE >113:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+460 maintext CODE >114:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+469 maintext CODE >115:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+46B maintext CODE >116:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+46D maintext CODE >118:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+46E maintext CODE >120:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+471 maintext CODE >121:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+47B maintext CODE >122:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+47F maintext CODE >123:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+480 maintext CODE >126:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+488 maintext CODE >127:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+491 maintext CODE >128:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+495 maintext CODE >129:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4A6 maintext CODE >130:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4AC maintext CODE >131:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4BD maintext CODE >133:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4BE maintext CODE >135:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4C1 maintext CODE >136:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4C2 maintext CODE >138:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4C5 maintext CODE >139:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4C6 maintext CODE >141:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4C9 maintext CODE >142:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4CA maintext CODE >144:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4D5 maintext CODE >145:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4D6 maintext CODE >147:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4E2 maintext CODE >148:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4EA maintext CODE >149:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4F2 maintext CODE >150:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+4FA maintext CODE >151:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+502 maintext CODE >152:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+50A maintext CODE >153:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+512 maintext CODE >154:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+51A maintext CODE >155:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+522 maintext CODE >156:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+52A maintext CODE >157:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+532 maintext CODE >158:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+53A maintext CODE >159:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+542 maintext CODE >160:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+54A maintext CODE >161:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+552 maintext CODE >163:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+553 maintext CODE >85:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+577 maintext CODE >164:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+578 maintext CODE >165:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+581 maintext CODE >167:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+582 maintext CODE >169:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+595 maintext CODE >170:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+59B maintext CODE >171:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
+AF7 clrtext CODE >3845:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AF7 clrtext CODE >3846:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AF8 clrtext CODE >3847:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AF8 clrtext CODE >3848:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AF9 clrtext CODE >3849:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AFA clrtext CODE >3850:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AFB clrtext CODE >3851:C:\Users\shiny\AppData\Local\Temp\s9vc.
+AFC clrtext CODE >3852:C:\Users\shiny\AppData\Local\Temp\s9vc.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -755,39 +787,39 @@ C22 clrtext CODE >3689:C:\Users\shiny\AppData\Local\Temp\se0o.
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_EUSART_Read 1884 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
+_EUSART_Read 1638 0 CODE 0 text34 dist/default/production\uart2can.X.production.obj
 ___lwmod@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-_can_baudrate 1ABC 0 CODE 0 text12 dist/default/production\uart2can.X.production.obj
+_can_baudrate 18BC 0 CODE 0 text13 dist/default/production\uart2can.X.production.obj
 __Hspace_0 8009 0 ABS 0 - -
-__Hspace_1 C3 0 ABS 0 - -
+__Hspace_1 D7 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-__end_of_receive 2C8 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
+__end_of_receive 2000 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
 _SSP1STATbits 214 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-can_init@receive_handler 3F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-_SPI_exchange 18FE 0 CODE 0 text20 dist/default/production\uart2can.X.production.obj
+can_init@receive_handler 47 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_SPI_exchange 16B4 0 CODE 0 text22 dist/default/production\uart2can.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 txf_clear@bytes_written 23 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_nm 2856 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
-__end_of_can_set_mask 160 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
-__end_of_WDT_Initialize 1830 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
-main@c B0 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-main@n A6 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+_nm 2966 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
+__end_of_can_set_mask 1E96 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
+__end_of_WDT_Initialize 15E4 0 CODE 0 text29 dist/default/production\uart2can.X.production.obj
+main@c D4 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+main@n CA 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _LATA 10C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _LATC 10E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\se0o.obj
-_atoi 1E36 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
-_main 77A 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
-_mode 62 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+_atoi 24 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
+_main 744 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
+_mode 6A 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-start 4 0 CODE 0 init C:\Users\shiny\AppData\Local\Temp\se0o.obj
-_EUSART_Write 1862 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
-can_send@i 44 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-can_send@n 45 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+start 4 0 CODE 0 init C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+_EUSART_Write 1616 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
+can_send@i 4C 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_send@n 4D 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_atoi 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
@@ -839,75 +871,79 @@ __Hstringtext53 0 0 ABS 0 stringtext53 -
 __Hstringtext54 0 0 ABS 0 stringtext54 -
 __Hstringtext55 0 0 ABS 0 stringtext55 -
 __Hstringtext56 0 0 ABS 0 stringtext56 -
+__Hstringtext57 0 0 ABS 0 stringtext57 -
+__Hstringtext58 0 0 ABS 0 stringtext58 -
+__Hstringtext59 0 0 ABS 0 stringtext59 -
 ?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-can_status_check@bytes_written 5E 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_EUSART_Initialize 18AE 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
+can_status_check@bytes_written 66 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_EUSART_Initialize 1662 0 CODE 0 text33 dist/default/production\uart2can.X.production.obj
 __size_of_can_baudrate 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 txf_clear@n 24 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-printf@c 3A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@c 42 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 printf@f 22 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-can_abort@bytes_written 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-receive@bytes_read 47 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_abort@bytes_written 48 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive@bytes_read 4F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_printf$624 34 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_SPI_exchange 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\se0o.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\se0o.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\se0o.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\se0o.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\se0o.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\se0o.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\s9vc.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
+_abort_pending_transmissions 17BC 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
 __size_of_EUSART_Write 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_can_baudrate 1B22 0 CODE 0 text12 dist/default/production\uart2can.X.production.obj
-receive@rx_buf 48 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_can_baudrate 1922 0 CODE 0 text13 dist/default/production\uart2can.X.production.obj
+receive@rx_buf 50 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_SPI_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 ___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-printf@flag 37 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-printf@prec 2F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_can_abort 1A60 0 CODE 0 text13 dist/default/production\uart2can.X.production.obj
-__end_of_SPI_exchange 1928 0 CODE 0 text20 dist/default/production\uart2can.X.production.obj
+printf@flag 3F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@prec 37 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_can_abort 16B4 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
+__end_of_SPI_exchange 16DE 0 CODE 0 text22 dist/default/production\uart2can.X.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _ANSELC 18E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-receive_handler@pbuf 3C 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive_handler@pbuf 44 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_can_abort 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-printf@width 38 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@width 40 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 _BORCON 116 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of___wmul 19BE 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
-__end_of_EUSART_Write 1872 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
-main@bpr A1 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-main@buf A7 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-main@cmd B1 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-main@idx B2 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-main@sid A0 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-_txbnsidh 2844 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
+__end_of___wmul 1774 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
+__end_of_EUSART_Write 1626 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
+main@bpr C5 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+main@buf CB 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+main@cmd D5 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+main@idx D6 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+main@sid C4 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+_txbnsidh 2954 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
 txf_clear@mask 22 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 SPI_Exchange8bitBuffer@dataOut 72 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 ?_printf 22 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-_can_abort 1A06 0 CODE 0 text13 dist/default/production\uart2can.X.production.obj
-__LnvBANK0 0 0 ABS 0 nvBANK0 -
+_can_abort 1696 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
 ___lwmod@divisor 78 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of___lwdiv 1B8A 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
-__end_of___lwmod 60 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
+__end_of___lwdiv 198A 0 CODE 0 text20 dist/default/production\uart2can.X.production.obj
+__end_of___lwmod 1860 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
 __size_of_isdigit 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_txbnsidh 284A 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
-__end_of_can_set_sid 1A06 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
-_dpowers 27D6 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
+__end_of_txbnsidh 295A 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
+__end_of_can_set_sid 17BC 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
+_dpowers 28E6 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
 __size_of_SPI_Exchange8bitBuffer 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_EUSART_Initialize 1898 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
-receive_handler@i 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_EUSART_Initialize 164C 0 CODE 0 text33 dist/default/production\uart2can.X.production.obj
+receive_handler@i 49 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __size_of_putch 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 SPI_Exchange8bitBuffer@bufLen 71 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-can_send@dlc 3B 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-can_send@len 40 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_send@dlc 43 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_send@len 48 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 ___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 SPI_Exchange8bitBuffer@dataIn 76 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-_PIN_MANAGER_Initialize 1928 0 CODE 0 text29 dist/default/production\uart2can.X.production.obj
+_PIN_MANAGER_Initialize 16DE 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
 __Lstringtext10 0 0 ABS 0 stringtext10 -
 __Lstringtext11 0 0 ABS 0 stringtext11 -
 __Lstringtext12 0 0 ABS 0 stringtext12 -
@@ -955,30 +991,37 @@ __Lstringtext53 0 0 ABS 0 stringtext53 -
 __Lstringtext54 0 0 ABS 0 stringtext54 -
 __Lstringtext55 0 0 ABS 0 stringtext55 -
 __Lstringtext56 0 0 ABS 0 stringtext56 -
-start_initialization FDC 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
-__end_of_hexpowers 27FA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
+__Lstringtext57 0 0 ABS 0 stringtext57 -
+__Lstringtext58 0 0 ABS 0 stringtext58 -
+__Lstringtext59 0 0 ABS 0 stringtext59 -
+start_initialization FE0 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
+__end_of_hexpowers 290A 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-can_baudrate@bpr 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-_handler 69 0 BANK0 1 nvBANK0 dist/default/production\uart2can.X.production.obj
+can_baudrate@bpr 49 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_handler B0 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
+can_dump_masks_and_filters@h 4D 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_dump_masks_and_filters@i 51 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_dump_masks_and_filters@l 4E 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_dump_masks_and_filters@m 4F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 SPI_exchange@buf 7D 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 SPI_exchange@len 78 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_nm 285A 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
-__end_of_SYSTEM_Initialize 18FE 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
-clear_ram0 183A 0 CODE 0 clrtext dist/default/production\uart2can.X.production.obj
+__end_of_nm 296A 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
+__end_of_SYSTEM_Initialize 1696 0 CODE 0 text28 dist/default/production\uart2can.X.production.obj
+clear_ram0 15EE 0 CODE 0 clrtext dist/default/production\uart2can.X.production.obj
 _SPBRGH 19C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _SPBRGL 19B 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-_can_ope_mode 1CD2 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
-main@echo_back A5 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-_can_logging_mode 18AE 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
-_hexpowers 27EA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
-__end_of_printf FDC 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
-_receive 160 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
-_isdigit$792 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
+__pcstackBANK1 C4 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+_can_ope_mode 1AD2 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
+main@echo_back C9 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+_can_logging_mode 1662 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
+_hexpowers 28FA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
+__end_of_printf FE0 0 CODE 0 text16 dist/default/production\uart2can.X.production.obj
+_receive 1E96 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
+_isdigit$815 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _WDTCON 97 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\se0o.obj
-__end_of_EUSART_Read 1898 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+__end_of_EUSART_Read 164C 0 CODE 0 text34 dist/default/production\uart2can.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1040,7 +1083,7 @@ __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_rxfnsidh 2816 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
+_rxfnsidh 2926 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
 SPI_Exchange8bitBuffer@bytesWritten 77 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hcommon 0 0 ABS 0 common -
@@ -1056,8 +1099,8 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
-__end_of_isdigit 18E0 0 CODE 0 text24 dist/default/production\uart2can.X.production.obj
-__Lcinit FDC 0 CODE 0 cinit -
+__end_of_isdigit 24 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
+__Lcinit FE0 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -1082,11 +1125,11 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-_SPI_Exchange8bit 1872 0 CODE 0 text22 dist/default/production\uart2can.X.production.obj
-__end_of_can_dump_registers 4E0 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
+_SPI_Exchange8bit 1626 0 CODE 0 text24 dist/default/production\uart2can.X.production.obj
+__end_of_can_dump_registers 4AA 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
 _APFCON0 11D 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _APFCON1 11E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_rxfnsidh 2822 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
+__end_of_rxfnsidh 2932 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -1116,105 +1159,108 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 27D6 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
-__pstringtext2 27EA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
-__pstringtext3 2816 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
-__pstringtext4 2844 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
-__pstringtext5 284A 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
-__pstringtext6 2856 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
-__pstringtext7 285A 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
-__pstringtext8 285E 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
-__pstringtext9 2000 0 STRCODE 0 stringtext9 dist/default/production\uart2can.X.production.obj
-__pnvBANK0 69 0 BANK0 1 nvBANK0 dist/default/production\uart2can.X.production.obj
-can_set_mask@mask_sidh 4A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-can_set_mask@mask_sidl 4B 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__pstringtext1 28E6 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
+__pstringtext2 28FA 0 STRCODE 0 stringtext2 dist/default/production\uart2can.X.production.obj
+__pstringtext3 2926 0 STRCODE 0 stringtext3 dist/default/production\uart2can.X.production.obj
+__pstringtext4 2954 0 STRCODE 0 stringtext4 dist/default/production\uart2can.X.production.obj
+__pstringtext5 295A 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
+__pstringtext6 2966 0 STRCODE 0 stringtext6 dist/default/production\uart2can.X.production.obj
+__pstringtext7 296A 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
+__pstringtext8 2000 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
+__pstringtext9 2078 0 STRCODE 0 stringtext9 dist/default/production\uart2can.X.production.obj
+can_set_mask@mask_sidh 53 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_set_mask@mask_sidl 54 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 _SSP1CON1 215 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _SSP1STAT 214 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__pstringtext10 2076 0 STRCODE 0 stringtext10 dist/default/production\uart2can.X.production.obj
-__pstringtext11 20EA 0 STRCODE 0 stringtext11 dist/default/production\uart2can.X.production.obj
-__pstringtext12 215C 0 STRCODE 0 stringtext12 dist/default/production\uart2can.X.production.obj
-__pstringtext13 21C8 0 STRCODE 0 stringtext13 dist/default/production\uart2can.X.production.obj
-__pstringtext14 222E 0 STRCODE 0 stringtext14 dist/default/production\uart2can.X.production.obj
-__pstringtext15 2286 0 STRCODE 0 stringtext15 dist/default/production\uart2can.X.production.obj
-__pstringtext16 22DA 0 STRCODE 0 stringtext16 dist/default/production\uart2can.X.production.obj
-__pstringtext17 2326 0 STRCODE 0 stringtext17 dist/default/production\uart2can.X.production.obj
-__pstringtext18 2372 0 STRCODE 0 stringtext18 dist/default/production\uart2can.X.production.obj
-__pstringtext19 23BA 0 STRCODE 0 stringtext19 dist/default/production\uart2can.X.production.obj
-__pstringtext20 23EE 0 STRCODE 0 stringtext20 dist/default/production\uart2can.X.production.obj
-__pstringtext21 2420 0 STRCODE 0 stringtext21 dist/default/production\uart2can.X.production.obj
-__pstringtext22 244E 0 STRCODE 0 stringtext22 dist/default/production\uart2can.X.production.obj
-__pstringtext23 247A 0 STRCODE 0 stringtext23 dist/default/production\uart2can.X.production.obj
-__pstringtext24 24A4 0 STRCODE 0 stringtext24 dist/default/production\uart2can.X.production.obj
-__pstringtext25 24CE 0 STRCODE 0 stringtext25 dist/default/production\uart2can.X.production.obj
-__pstringtext26 24F6 0 STRCODE 0 stringtext26 dist/default/production\uart2can.X.production.obj
-__pstringtext27 251E 0 STRCODE 0 stringtext27 dist/default/production\uart2can.X.production.obj
-__pstringtext28 2542 0 STRCODE 0 stringtext28 dist/default/production\uart2can.X.production.obj
-__pstringtext29 2564 0 STRCODE 0 stringtext29 dist/default/production\uart2can.X.production.obj
-__pstringtext30 2586 0 STRCODE 0 stringtext30 dist/default/production\uart2can.X.production.obj
-__pstringtext31 25A8 0 STRCODE 0 stringtext31 dist/default/production\uart2can.X.production.obj
-__pstringtext32 25CA 0 STRCODE 0 stringtext32 dist/default/production\uart2can.X.production.obj
-__pstringtext33 25EC 0 STRCODE 0 stringtext33 dist/default/production\uart2can.X.production.obj
-__pstringtext34 260C 0 STRCODE 0 stringtext34 dist/default/production\uart2can.X.production.obj
-__pstringtext35 262C 0 STRCODE 0 stringtext35 dist/default/production\uart2can.X.production.obj
-__pstringtext36 264C 0 STRCODE 0 stringtext36 dist/default/production\uart2can.X.production.obj
-__pstringtext37 266C 0 STRCODE 0 stringtext37 dist/default/production\uart2can.X.production.obj
-__pstringtext38 268C 0 STRCODE 0 stringtext38 dist/default/production\uart2can.X.production.obj
-__pstringtext39 26AC 0 STRCODE 0 stringtext39 dist/default/production\uart2can.X.production.obj
-__pstringtext40 26CA 0 STRCODE 0 stringtext40 dist/default/production\uart2can.X.production.obj
-__pstringtext41 26E8 0 STRCODE 0 stringtext41 dist/default/production\uart2can.X.production.obj
-__pstringtext42 2706 0 STRCODE 0 stringtext42 dist/default/production\uart2can.X.production.obj
-__pstringtext43 2722 0 STRCODE 0 stringtext43 dist/default/production\uart2can.X.production.obj
-__pstringtext44 273E 0 STRCODE 0 stringtext44 dist/default/production\uart2can.X.production.obj
-__pstringtext45 275A 0 STRCODE 0 stringtext45 dist/default/production\uart2can.X.production.obj
-__pstringtext46 2774 0 STRCODE 0 stringtext46 dist/default/production\uart2can.X.production.obj
-__pstringtext47 278E 0 STRCODE 0 stringtext47 dist/default/production\uart2can.X.production.obj
-__pstringtext48 27A6 0 STRCODE 0 stringtext48 dist/default/production\uart2can.X.production.obj
-__pstringtext49 27BE 0 STRCODE 0 stringtext49 dist/default/production\uart2can.X.production.obj
-__pstringtext50 27FA 0 STRCODE 0 stringtext50 dist/default/production\uart2can.X.production.obj
-__pstringtext51 2808 0 STRCODE 0 stringtext51 dist/default/production\uart2can.X.production.obj
-__pstringtext52 2822 0 STRCODE 0 stringtext52 dist/default/production\uart2can.X.production.obj
-__pstringtext53 282E 0 STRCODE 0 stringtext53 dist/default/production\uart2can.X.production.obj
-__pstringtext54 283A 0 STRCODE 0 stringtext54 dist/default/production\uart2can.X.production.obj
-__pstringtext55 2850 0 STRCODE 0 stringtext55 dist/default/production\uart2can.X.production.obj
-__pstringtext56 0 0 STRCODE 0 stringtext56 dist/default/production\uart2can.X.production.obj
-___wmul 1988 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
+__pstringtext10 20EC 0 STRCODE 0 stringtext10 dist/default/production\uart2can.X.production.obj
+__pstringtext11 215E 0 STRCODE 0 stringtext11 dist/default/production\uart2can.X.production.obj
+__pstringtext12 21CA 0 STRCODE 0 stringtext12 dist/default/production\uart2can.X.production.obj
+__pstringtext13 2230 0 STRCODE 0 stringtext13 dist/default/production\uart2can.X.production.obj
+__pstringtext14 2288 0 STRCODE 0 stringtext14 dist/default/production\uart2can.X.production.obj
+__pstringtext15 22E0 0 STRCODE 0 stringtext15 dist/default/production\uart2can.X.production.obj
+__pstringtext16 2338 0 STRCODE 0 stringtext16 dist/default/production\uart2can.X.production.obj
+__pstringtext17 238C 0 STRCODE 0 stringtext17 dist/default/production\uart2can.X.production.obj
+__pstringtext18 23D8 0 STRCODE 0 stringtext18 dist/default/production\uart2can.X.production.obj
+__pstringtext19 2424 0 STRCODE 0 stringtext19 dist/default/production\uart2can.X.production.obj
+__pstringtext20 246C 0 STRCODE 0 stringtext20 dist/default/production\uart2can.X.production.obj
+__pstringtext21 24A6 0 STRCODE 0 stringtext21 dist/default/production\uart2can.X.production.obj
+__pstringtext22 24DA 0 STRCODE 0 stringtext22 dist/default/production\uart2can.X.production.obj
+__pstringtext23 250C 0 STRCODE 0 stringtext23 dist/default/production\uart2can.X.production.obj
+__pstringtext24 253A 0 STRCODE 0 stringtext24 dist/default/production\uart2can.X.production.obj
+__pstringtext25 2566 0 STRCODE 0 stringtext25 dist/default/production\uart2can.X.production.obj
+__pstringtext26 2590 0 STRCODE 0 stringtext26 dist/default/production\uart2can.X.production.obj
+__pstringtext27 25BA 0 STRCODE 0 stringtext27 dist/default/production\uart2can.X.production.obj
+__pstringtext28 25E4 0 STRCODE 0 stringtext28 dist/default/production\uart2can.X.production.obj
+__pstringtext29 260C 0 STRCODE 0 stringtext29 dist/default/production\uart2can.X.production.obj
+__pstringtext30 2630 0 STRCODE 0 stringtext30 dist/default/production\uart2can.X.production.obj
+__pstringtext31 2652 0 STRCODE 0 stringtext31 dist/default/production\uart2can.X.production.obj
+__pstringtext32 2674 0 STRCODE 0 stringtext32 dist/default/production\uart2can.X.production.obj
+__pstringtext33 2696 0 STRCODE 0 stringtext33 dist/default/production\uart2can.X.production.obj
+__pstringtext34 26B8 0 STRCODE 0 stringtext34 dist/default/production\uart2can.X.production.obj
+__pstringtext35 26DA 0 STRCODE 0 stringtext35 dist/default/production\uart2can.X.production.obj
+__pstringtext36 26FC 0 STRCODE 0 stringtext36 dist/default/production\uart2can.X.production.obj
+__pstringtext37 271C 0 STRCODE 0 stringtext37 dist/default/production\uart2can.X.production.obj
+__pstringtext38 273C 0 STRCODE 0 stringtext38 dist/default/production\uart2can.X.production.obj
+__pstringtext39 275C 0 STRCODE 0 stringtext39 dist/default/production\uart2can.X.production.obj
+__pstringtext40 277C 0 STRCODE 0 stringtext40 dist/default/production\uart2can.X.production.obj
+__pstringtext41 279C 0 STRCODE 0 stringtext41 dist/default/production\uart2can.X.production.obj
+__pstringtext42 27BC 0 STRCODE 0 stringtext42 dist/default/production\uart2can.X.production.obj
+__pstringtext43 27DA 0 STRCODE 0 stringtext43 dist/default/production\uart2can.X.production.obj
+__pstringtext44 27F8 0 STRCODE 0 stringtext44 dist/default/production\uart2can.X.production.obj
+__pstringtext45 2816 0 STRCODE 0 stringtext45 dist/default/production\uart2can.X.production.obj
+__pstringtext46 2832 0 STRCODE 0 stringtext46 dist/default/production\uart2can.X.production.obj
+__pstringtext47 284E 0 STRCODE 0 stringtext47 dist/default/production\uart2can.X.production.obj
+__pstringtext48 286A 0 STRCODE 0 stringtext48 dist/default/production\uart2can.X.production.obj
+__pstringtext49 2884 0 STRCODE 0 stringtext49 dist/default/production\uart2can.X.production.obj
+__pstringtext50 289E 0 STRCODE 0 stringtext50 dist/default/production\uart2can.X.production.obj
+__pstringtext51 28B6 0 STRCODE 0 stringtext51 dist/default/production\uart2can.X.production.obj
+__pstringtext52 28CE 0 STRCODE 0 stringtext52 dist/default/production\uart2can.X.production.obj
+__pstringtext53 290A 0 STRCODE 0 stringtext53 dist/default/production\uart2can.X.production.obj
+__pstringtext54 2918 0 STRCODE 0 stringtext54 dist/default/production\uart2can.X.production.obj
+__pstringtext55 2932 0 STRCODE 0 stringtext55 dist/default/production\uart2can.X.production.obj
+__pstringtext56 293E 0 STRCODE 0 stringtext56 dist/default/production\uart2can.X.production.obj
+__pstringtext57 294A 0 STRCODE 0 stringtext57 dist/default/production\uart2can.X.production.obj
+__pstringtext58 2960 0 STRCODE 0 stringtext58 dist/default/production\uart2can.X.production.obj
+__pstringtext59 0 0 STRCODE 0 stringtext59 dist/default/production\uart2can.X.production.obj
+___wmul 173E 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __S0 8009 0 ABS 0 - -
-__S1 C3 0 ABS 0 - -
+__S1 D7 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_abc 284A 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
-_buf B3 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
-_sid 64 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_max_idx 2860 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
-_rxmnsidh 285A 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
+_abc 295A 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
+_buf B4 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
+_sid B2 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
+__end_of_max_idx 2002 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
+_rxmnsidh 296A 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
 atoi@sign 7A 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 read_register@addr 21 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_rxmnsidh 285E 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
+__end_of_can_dump_masks_and_filters 28A 0 CODE 0 text12 dist/default/production\uart2can.X.production.obj
+__end_of_rxmnsidh 296E 0 STRCODE 0 stringtext7 dist/default/production\uart2can.X.production.obj
 can_logging_mode@debug 72 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_can_ope_mode 1D80 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
-_can_dump_registers 2C8 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
-_SYSTEM_Initialize 18E0 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
-can_send@data_buf 43 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_can_ope_mode 1B80 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
+_can_dump_registers 28A 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
+_SYSTEM_Initialize 1678 0 CODE 0 text28 dist/default/production\uart2can.X.production.obj
+can_send@data_buf 4B 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 can_set_sid@sidh 75 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 can_set_sid@sidl 76 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_abc 2850 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
+__end_of_abc 2960 0 STRCODE 0 stringtext5 dist/default/production\uart2can.X.production.obj
 __size_of_can_set_sid 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_can_logging_mode 18C4 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
-__HnvBANK0 0 0 ABS 0 nvBANK0 -
+__end_of_can_logging_mode 1678 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
 __Lintentry 4 0 CODE 0 intentry -
 SPI_exchange@bytes_written 7C 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 can_set_sid@can_node 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\shiny\AppData\Local\Temp\se0o.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\shiny\AppData\Local\Temp\s9vc.obj
 __size_of_can_logging_mode 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_read_register 1956 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
+_read_register 170C 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
+abort_pending_transmissions@bytes_written 22 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
@@ -1226,37 +1272,39 @@ __Lstringtext7 0 0 ABS 0 stringtext7 -
 __Lstringtext8 0 0 ABS 0 stringtext8 -
 __Lstringtext9 0 0 ABS 0 stringtext9 -
 _RCSTAbits 19D 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-receive@pbuf 57 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__ptext10 2C8 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
-__ptext11 1956 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
-__ptext12 1ABC 0 CODE 0 text12 dist/default/production\uart2can.X.production.obj
-__ptext13 1A06 0 CODE 0 text13 dist/default/production\uart2can.X.production.obj
-__ptext14 1CD2 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
-__ptext15 B66 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
-__ptext16 1830 0 CODE 0 text16 dist/default/production\uart2can.X.production.obj
-__ptext17 1862 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
-__ptext18 8 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
-__ptext19 1B22 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
-__ptext20 18FE 0 CODE 0 text20 dist/default/production\uart2can.X.production.obj
-__ptext21 1B8A 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
-__ptext22 1872 0 CODE 0 text22 dist/default/production\uart2can.X.production.obj
-__ptext23 1E36 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
-__ptext24 18C4 0 CODE 0 text24 dist/default/production\uart2can.X.production.obj
-__ptext25 1988 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
-__ptext26 18E0 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
-__ptext27 1828 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
-__ptext28 1854 0 CODE 0 text28 dist/default/production\uart2can.X.production.obj
-__ptext29 1928 0 CODE 0 text29 dist/default/production\uart2can.X.production.obj
-__ptext30 1846 0 CODE 0 text30 dist/default/production\uart2can.X.production.obj
-__ptext31 1898 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
-__ptext32 1884 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
+receive@pbuf 5F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__ptext10 28A 0 CODE 0 text10 dist/default/production\uart2can.X.production.obj
+__ptext11 170C 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
+__ptext12 F2 0 CODE 0 text12 dist/default/production\uart2can.X.production.obj
+__ptext13 18BC 0 CODE 0 text13 dist/default/production\uart2can.X.production.obj
+__ptext14 1696 0 CODE 0 text14 dist/default/production\uart2can.X.production.obj
+__ptext15 1AD2 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
+__ptext16 B4A 0 CODE 0 text16 dist/default/production\uart2can.X.production.obj
+__ptext17 15E4 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
+__ptext18 1616 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
+__ptext19 1808 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
+__ptext20 1922 0 CODE 0 text20 dist/default/production\uart2can.X.production.obj
+__ptext21 17BC 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
+__ptext22 16B4 0 CODE 0 text22 dist/default/production\uart2can.X.production.obj
+__ptext23 198A 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
+__ptext24 1626 0 CODE 0 text24 dist/default/production\uart2can.X.production.obj
+__ptext25 24 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
+__ptext26 8 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
+__ptext27 173E 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
+__ptext28 1678 0 CODE 0 text28 dist/default/production\uart2can.X.production.obj
+__ptext29 15DC 0 CODE 0 text29 dist/default/production\uart2can.X.production.obj
+__ptext30 1608 0 CODE 0 text30 dist/default/production\uart2can.X.production.obj
+__ptext31 16DE 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
+__ptext32 15FA 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
+__ptext33 164C 0 CODE 0 text33 dist/default/production\uart2can.X.production.obj
+__ptext34 1638 0 CODE 0 text34 dist/default/production\uart2can.X.production.obj
 __size_of_can_init 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_can_send 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_PIN_MANAGER_Initialize 1956 0 CODE 0 text29 dist/default/production\uart2can.X.production.obj
-can_set_mask@mask 40 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_PIN_MANAGER_Initialize 170C 0 CODE 0 text31 dist/default/production\uart2can.X.production.obj
+can_set_mask@mask 48 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 _BAUDCON 19F 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___lwdiv 1B22 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
-___lwmod 8 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
+___lwdiv 1922 0 CODE 0 text20 dist/default/production\uart2can.X.production.obj
+___lwmod 1808 0 CODE 0 text19 dist/default/production\uart2can.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -1279,36 +1327,37 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 77A 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
+__pmaintext 744 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_SPI_Initialize 1854 0 CODE 0 text28 dist/default/production\uart2can.X.production.obj
-__end_of_SPI_Exchange8bit 1884 0 CODE 0 text22 dist/default/production\uart2can.X.production.obj
-__end_of_receive_handler 1E36 0 CODE 0 text4 dist/default/production\uart2can.X.production.obj
-can_send@status 42 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_SPI_Initialize 1608 0 CODE 0 text30 dist/default/production\uart2can.X.production.obj
+__end_of_SPI_Exchange8bit 1638 0 CODE 0 text24 dist/default/production\uart2can.X.production.obj
+__end_of_receive_handler 1C36 0 CODE 0 text4 dist/default/production\uart2can.X.production.obj
+can_send@status 4A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 ?_atoi 76 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
-_printf B66 0 CODE 0 text15 dist/default/production\uart2can.X.production.obj
+_printf B4A 0 CODE 0 text16 dist/default/production\uart2can.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 ___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _LATAbits 10C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _LATCbits 10E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_can_status_check 1C26 0 CODE 0 text1 dist/default/production\uart2can.X.production.obj
+_can_status_check 1A26 0 CODE 0 text1 dist/default/production\uart2can.X.production.obj
 __size_of_SPI_Exchange8bit 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-main@mask A3 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+__size_of_abort_pending_transmissions 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
+main@mask C7 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
 ___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-_SPI_Exchange8bitBuffer 1B8A 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
+_SPI_Exchange8bitBuffer 198A 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
 __size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-can_status_check@status 5F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-stackhi 23EF 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\se0o.obj
-stacklo 2073 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\se0o.obj
+can_status_check@status 67 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+stackhi 23EF 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\s9vc.obj
+stacklo 2087 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\s9vc.obj
 SPI_Exchange8bit@data 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-receive@id 58 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-can_baudrate@mask 42 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive@id 60 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_baudrate@mask 4A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -1317,50 +1366,52 @@ __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 _PIR1bits 11 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Lend_init 4 0 CODE 0 end_init -
+__end_of_abort_pending_transmissions 1808 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-printf@ap 34 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-printf@cp 30 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@ap 3C 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@cp 38 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
-can_ope_mode@ope_mode 3E 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-receive_handler@dlc 3D 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-receive_handler@sid 3B 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-_can_init 1F04 0 CODE 0 text8 dist/default/production\uart2can.X.production.obj
-_can_send 4E0 0 CODE 0 text6 dist/default/production\uart2can.X.production.obj
+can_ope_mode@ope_mode 46 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive_handler@dlc 45 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive_handler@sid 43 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_can_init 1C36 0 CODE 0 text8 dist/default/production\uart2can.X.production.obj
+_can_send 4AA 0 CODE 0 text6 dist/default/production\uart2can.X.production.obj
 __Hintentry 4 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_printf 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_SPI_Initialize 1862 0 CODE 0 text28 dist/default/production\uart2can.X.production.obj
+__end_of_SPI_Initialize 1616 0 CODE 0 text30 dist/default/production\uart2can.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
-_receive_handler 1D80 0 CODE 0 text4 dist/default/production\uart2can.X.production.obj
+_receive_handler 1B80 0 CODE 0 text4 dist/default/production\uart2can.X.production.obj
 ___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_txf_clear 1ABC 0 CODE 0 text2 dist/default/production\uart2can.X.production.obj
-can_set_mask@cmd 49 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_txf_clear 18BC 0 CODE 0 text2 dist/default/production\uart2can.X.production.obj
+can_set_mask@cmd 52 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 ?___lwdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 ?___lwmod 78 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-receive@n 5B 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-can_ope_mode@bytes_written 3D 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive@n 63 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_ope_mode@bytes_written 45 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __size_of_txf_clear 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-__end_of_can_init 2000 0 CODE 0 text8 dist/default/production\uart2can.X.production.obj
-__end_of_can_send 77A 0 CODE 0 text6 dist/default/production\uart2can.X.production.obj
-__ptext1 1C26 0 CODE 0 text1 dist/default/production\uart2can.X.production.obj
-__ptext2 1A60 0 CODE 0 text2 dist/default/production\uart2can.X.production.obj
-__ptext3 160 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
-__ptext4 1D80 0 CODE 0 text4 dist/default/production\uart2can.X.production.obj
-__ptext5 60 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
-__ptext6 4E0 0 CODE 0 text6 dist/default/production\uart2can.X.production.obj
-__ptext7 18AE 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
-__ptext8 1F04 0 CODE 0 text8 dist/default/production\uart2can.X.production.obj
-__ptext9 19BE 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
-can_baudrate@bytes_written 43 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_can_init 1D4C 0 CODE 0 text8 dist/default/production\uart2can.X.production.obj
+__end_of_can_send 744 0 CODE 0 text6 dist/default/production\uart2can.X.production.obj
+__ptext1 1A26 0 CODE 0 text1 dist/default/production\uart2can.X.production.obj
+__ptext2 1860 0 CODE 0 text2 dist/default/production\uart2can.X.production.obj
+__ptext3 1E96 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
+__ptext4 1B80 0 CODE 0 text4 dist/default/production\uart2can.X.production.obj
+__ptext5 1D4C 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
+__ptext6 4AA 0 CODE 0 text6 dist/default/production\uart2can.X.production.obj
+__ptext7 1662 0 CODE 0 text7 dist/default/production\uart2can.X.production.obj
+__ptext8 1C36 0 CODE 0 text8 dist/default/production\uart2can.X.production.obj
+__ptext9 1774 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
+can_baudrate@bytes_written 4B 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_read_register 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
+__size_of_can_dump_masks_and_filters 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_txf_clear 1A60 0 CODE 0 text2 dist/default/production\uart2can.X.production.obj
-_isdigit 18C4 0 CODE 0 text24 dist/default/production\uart2can.X.production.obj
+_txf_clear 1860 0 CODE 0 text2 dist/default/production\uart2can.X.production.obj
+_isdigit 8 0 CODE 0 text26 dist/default/production\uart2can.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
@@ -1371,67 +1422,70 @@ __Hstringtext6 0 0 ABS 0 stringtext6 -
 __Hstringtext7 0 0 ABS 0 stringtext7 -
 __Hstringtext8 0 0 ABS 0 stringtext8 -
 __Hstringtext9 0 0 ABS 0 stringtext9 -
-__end_of_can_status_check 1CD2 0 CODE 0 text1 dist/default/production\uart2can.X.production.obj
+__end_of_can_status_check 1AD2 0 CODE 0 text1 dist/default/production\uart2can.X.production.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_receive 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-receive@dlc 5A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+receive@dlc 62 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 EUSART_Write@txData 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-_output_format 66 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
+_output_format 6C 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
 __Lfunctab 0 0 ENTRY 0 functab -
-can_send@bytes_written 41 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_send@bytes_written 49 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_can_status_check 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_max_idx 285E 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
-main@status A2 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
-__end_of_read_register 1988 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
+_max_idx 2000 0 STRCODE 0 stringtext8 dist/default/production\uart2can.X.production.obj
+main@status C6 0 BANK1 1 cstackBANK1 dist/default/production\uart2can.X.production.obj
+__end_of_read_register 173E 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 215 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_can_set_sid 19BE 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
+_can_set_sid 1774 0 CODE 0 text9 dist/default/production\uart2can.X.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-_can_set_mask 60 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
+_can_dump_masks_and_filters F2 0 CODE 0 text12 dist/default/production\uart2can.X.production.obj
+_can_set_mask 1D4C 0 CODE 0 text5 dist/default/production\uart2can.X.production.obj
 _SSP1ADD 212 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _SSP1BUF 211 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_can_dump_registers 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hend_init 8 0 CODE 0 end_init -
 putch@txData 71 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__end_of_atoi 1F04 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
-__end_of_main B66 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
+__end_of_atoi F2 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
+__end_of_main B4A 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
 isdigit@c 71 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-printf@idx 2E 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-printf@len 32 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-printf@val 35 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-__end_of_dpowers 27EA 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
+printf@idx 36 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@len 3A 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+printf@val 3D 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_dpowers 28FA 0 STRCODE 0 stringtext1 dist/default/production\uart2can.X.production.obj
 _RCREG 199 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _RCSTA 19D 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _TRISC 8E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _TXSTA 19E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_putch 183A 0 CODE 0 text16 dist/default/production\uart2can.X.production.obj
+__end_of_putch 15EE 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_putch 1830 0 CODE 0 text16 dist/default/production\uart2can.X.production.obj
+_putch 15E4 0 CODE 0 text17 dist/default/production\uart2can.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_operation_mode 68 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
+_operation_mode 6E 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_receive_handler 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_WDT_Initialize 1828 0 CODE 0 text27 dist/default/production\uart2can.X.production.obj
-__end_of_OSCILLATOR_Initialize 1854 0 CODE 0 text30 dist/default/production\uart2can.X.production.obj
+_WDT_Initialize 15DC 0 CODE 0 text29 dist/default/production\uart2can.X.production.obj
+__end_of_OSCILLATOR_Initialize 1608 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
 atoi@a 7B 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 atoi@s 7D 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-__initialization FDC 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
+__initialization FE0 0 CODE 0 cinit dist/default/production\uart2can.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__pbssBANK0 62 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
-__pbssBANK1 B3 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
+__pbssBANK0 6A 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-__end_of_SPI_Exchange8bitBuffer 1C26 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
-_can_set_mask$498 47 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+__end_of_SPI_Exchange8bitBuffer 1A26 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
+_can_set_mask$508 50 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 ___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-can_set_mask@n 3F 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+can_set_mask@n 47 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
+_save_rxfn A0 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
+_save_rxmn AC 0 BANK1 1 bssBANK1 dist/default/production\uart2can.X.production.obj
 __size_of_can_set_mask 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-_OSCILLATOR_Initialize 1846 0 CODE 0 text30 dist/default/production\uart2can.X.production.obj
+_OSCILLATOR_Initialize 15FA 0 CODE 0 text32 dist/default/production\uart2can.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1457,43 +1511,45 @@ _OSCILLATOR_Initialize 1846 0 CODE 0 text30 dist/default/production\uart2can.X.p
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7EE FDC 12 2
-text1 0 E13 1C26 56 2
-text2 0 D30 1A60 2E 2
-text3 0 B0 160 B4 2
-text4 0 EC0 1D80 5B 2
-text5 0 30 60 80 2
-text6 0 270 4E0 14D 2
-text7 0 C57 18AE B 2
-text8 0 F82 1F04 7E 2
-text9 0 CDF 19BE 24 2
-text10 0 164 2C8 10C 2
-text11 0 CAB 1956 19 2
-text12 0 D5E 1ABC 33 2
-text13 0 D03 1A06 2D 2
-text14 0 E69 1CD2 57 2
-text15 0 5B3 B66 23B 2
-text16 0 C18 1830 5 2
-text17 0 C31 1862 8 2
-text19 0 D91 1B22 34 2
-text20 0 C7F 18FE 15 2
-text21 0 DC5 1B8A 4E 2
-text22 0 C39 1872 9 2
-text23 0 F1B 1E36 67 2
-text24 0 C62 18C4 E 2
-text25 0 CC4 1988 1B 2
-text26 0 C70 18E0 F 2
-text27 0 C14 1828 4 2
-text28 0 C2A 1854 7 2
-text29 0 C94 1928 17 2
-text30 0 C23 1846 7 2
-text31 0 C4C 1898 B 2
-text32 0 C42 1884 A 2
-maintext 0 3BD 77A 1F6 2
+cinit 0 7F0 FE0 10 2
+text1 0 D13 1A26 56 2
+text2 0 C30 1860 2E 2
+text3 0 F4B 1E96 B5 2
+text4 0 DC0 1B80 5B 2
+text5 0 EA6 1D4C A5 2
+text6 0 255 4AA 14D 2
+text7 0 B31 1662 B 2
+text8 0 E1B 1C36 8B 2
+text9 0 BBA 1774 24 2
+text10 0 145 28A 110 2
+text11 0 B86 170C 19 2
+text12 0 79 F2 CC 2
+text13 0 C5E 18BC 33 2
+text14 0 B4B 1696 F 2
+text15 0 D69 1AD2 57 2
+text16 0 5A5 B4A 24B 2
+text17 0 AF2 15E4 5 2
+text18 0 B0B 1616 8 2
+text19 0 C04 1808 2C 2
+text20 0 C91 1922 34 2
+text21 0 BDE 17BC 26 2
+text22 0 B5A 16B4 15 2
+text23 0 CC5 198A 4E 2
+text24 0 B13 1626 9 2
+text25 0 12 24 67 2
+text27 0 B9F 173E 1B 2
+text28 0 B3C 1678 F 2
+text29 0 AEE 15DC 4 2
+text30 0 B04 1608 7 2
+text31 0 B6F 16DE 17 2
+text32 0 AFD 15FA 7 2
+text33 0 B26 164C B 2
+text34 0 B1C 1638 A 2
+maintext 0 3A2 744 203 2
 cstackCOMMON 1 70 70 E 1
-cstackBANK0 1 20 20 4B 1
-cstackBANK1 1 A0 A0 23 1
-stringtext9 0 1000 2000 430 2
-reset_vec 0 0 0 30 2
-clrtext 0 C1D 183A 6 2
+cstackBANK0 1 20 20 4F 1
+stringtext8 0 1000 2000 4B7 2
+reset_vec 0 0 0 12 2
+bssBANK1 1 A0 A0 37 1
+clrtext 0 AF7 15EE 6 2
 config 0 8007 1000E 2 2

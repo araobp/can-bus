@@ -4,13 +4,14 @@
  * MCP2515 data sheet: http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf
  * 
  * Version 0.1  March 17, 2018
+ * Version 0.11  March 19, 2018
  */
 
 #include "mcc_generated_files/mcc.h"
 #include "stdlib.h"
 #include "mcp2515.h"
 
-#define VERSION "0.1  March 17, 2018"
+#define VERSION "0.11  March 19, 2018"
 
 #define LED LATCbits.LATC3
 #define ON 1  // Note: this should be 0 and the circuit is not right. 
@@ -123,7 +124,7 @@ void main(void)
                         case 'm':  // Set mask
                         case 'f':  // Set filter
                             n = buf[2] - 0x30u;
-                            mask = (uint8_t)atoi(&buf[3]);
+                            mask = (uint16_t)atoi(&buf[3]);
                             if (cmd == 'm') {
                                 can_set_mask(SET_MASK, n, mask);
                             } else if (cmd == 'f') {
@@ -132,6 +133,9 @@ void main(void)
                             break;
                         case 'a':  // Abort all pending transmissions
                             can_abort();
+                            break;
+                        case 'F':  // Dump masks and filters
+                            can_dump_masks_and_filters();
                             break;
                         case 'd':  // Dump register
                             can_dump_registers();
@@ -149,6 +153,7 @@ void main(void)
                             printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
                             printf("[Set baud rate] @b<bpr>\n");
                             printf("[Abort all pending transmissions] @a\n");
+                            printf("[Dump masks and filters] @F\n");
                             printf("[Dump registers] @d\n");
                             printf("[Send message] <message>\n");
                             printf("[Send message beginning with \'@\' character] @<@message>\n");

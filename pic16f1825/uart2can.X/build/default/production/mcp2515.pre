@@ -3756,14 +3756,14 @@ void WDT_Initialize(void);
 const uint8_t rxfnsidh[6] = {0x00u, 0x04u, 0x08u, 0x10u, 0x14u, 0x18u};
 const uint8_t rxmnsidh[2] = {0x20u, 0x24u};
 
-# 65
+# 66
 const uint8_t nm[2] = {0b00u, 0b10u};
 
 
 
 const uint8_t abc[3] = {0b000u, 0b010u, 0b100u};
 
-# 82
+# 83
 const uint8_t txbnsidh[3] = {0x31u, 0x41u, 0x51u};
 
 
@@ -3773,17 +3773,18 @@ void can_logging_mode(bool debug, bool verbose);
 void can_set_sid (uint16_t can_node);
 void can_init(void *receive_handler);
 bool can_ope_mode(uint8_t ope_mode);
-void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+void can_set_mask(uint8_t cmd, uint8_t n, uint16_t mask);
 bool can_send(uint8_t *data_buf, uint8_t dlc);
 bool can_status_check(void);
 bool can_baudrate(uint8_t bpr);
 bool can_abort(void);
+void can_dump_masks_and_filters(void);
 void can_dump_registers(void);
 
 # 17 "spi.h"
 uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 
-# 14 "mcp2515.c"
+# 18 "mcp2515.c"
 struct {
 uint8_t sidh;
 uint8_t sidl;
@@ -3798,6 +3799,9 @@ uint8_t operation_mode;
 
 void (*handler)(uint8_t, uint8_t *, uint8_t) = (0);
 
+uint16_t save_rxmn[2] = {0u, 0u};
+uint16_t save_rxfn[6] = {0u, 0u, 0u, 0u, 0u, 0u};
+
 void can_logging_mode(bool debug, bool verbose) {
 mode.debug = debug;
 mode.verbose = verbose;
@@ -3805,7 +3809,7 @@ mode.verbose = verbose;
 
 uint8_t buf[16];
 
-# 41
+# 48
 void can_set_sid (uint16_t can_node) {
 uint8_t sidh = (can_node >> 3) & 0x00ff;
 uint8_t sidl = (can_node << 5) & 0x00e0;
@@ -3813,8 +3817,10 @@ sid.sidh = sidh;
 sid.sidl = sidl;
 }
 
-# 51
+# 58
 void can_init(void *receive_handler) {
+_delay((unsigned long)((100)*(2000000/4000.0)));
+
 can_set_sid(0);
 handler = receive_handler;
 
@@ -3822,7 +3828,7 @@ handler = receive_handler;
 buf[0] = 0b11000000u;
 SPI_exchange(buf, 1);
 
-_delay((unsigned long)((2 + 48)*(2000000/4000000.0)));
+_delay((unsigned long)((2+48)*(2000000/4000000.0)));
 
 buf[0] = 0b00000010u;
 buf[1] = 0x28u;
@@ -3847,7 +3853,7 @@ mode.verbose = 0;
 can_ope_mode(0b00000000u);
 }
 
-# 87
+# 96
 bool can_ope_mode(uint8_t ope_mode) {
 buf[0] = 0b00000010u;
 buf[1] = 0x0fu;
@@ -3867,29 +3873,41 @@ return 0;
 }
 }
 
-# 109
-void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
+uint8_t abort_pending_transmissions(void) {
+buf[0] = 0b00000101u;
+buf[1] = 0x0fu;
+buf[2] = 0b00010000u;
+buf[3] = 0b00010000u;
+uint8_t bytes_written = SPI_exchange(buf, 4);
+return bytes_written;
+}
+
+# 127
+void can_set_mask(uint8_t cmd, uint8_t n, uint16_t mask) {
 can_ope_mode(0b10000000u);
-uint8_t mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
-uint8_t mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
-if (mode.debug) {
+abort_pending_transmissions();
+mask = (mask > 0b0000011111111111u)? 0b0000011111111111u: mask;
+uint8_t mask_sidh = ((uint8_t)((mask >> 3) & 0x00ffu));
+uint8_t mask_sidl = ((uint8_t)(((mask & 0x0007u) << 5) & 0x00ffu));
+
 if (cmd == 0u) {
-printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
+save_rxmn[n] = mask;
+if (mode.debug) printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
 } else {
-printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
+save_rxfn[n] = mask;
+if (mode.debug) printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
 }
-}
+
 buf[0] = 0b00000010u;
 buf[1] = (cmd == 0u)? rxmnsidh[n]: rxfnsidh[n];
 buf[2] = mask_sidh;
 buf[3] = mask_sidl;
-
 SPI_exchange(buf, 4);
 
 can_ope_mode(operation_mode);
 }
 
-# 133
+# 154
 bool txf_clear(uint8_t n) {
 uint8_t mask = 0b00000001u << (n + 2);
 buf[0] =0b00000101u;
@@ -3904,7 +3922,7 @@ return 0;
 }
 }
 
-# 150
+# 171
 void receive(uint8_t n) {
 
 
@@ -3931,7 +3949,7 @@ uint8_t *pbuf = &rx_buf[6];
 handler(id, pbuf, dlc);
 }
 
-# 179
+# 200
 bool can_send(uint8_t *data_buf, uint8_t dlc) {
 uint8_t i;
 uint8_t n = 0;
@@ -3951,7 +3969,7 @@ if (mode.debug) printf("TXB0 is idle\n");
 n = 0;
 }
 
-# 202
+# 223
 buf[0] = 0b01000000u + abc[n];
 
 buf[1] = sid.sidh;
@@ -4000,7 +4018,7 @@ return 1;
 return 0;
 }
 
-# 253
+# 274
 bool can_status_check(void) {
 
 buf[0] = 0b10100000u;
@@ -4031,6 +4049,7 @@ return 1;
 
 bool can_baudrate(uint8_t bpr) {
 can_ope_mode(0b10000000u);
+abort_pending_transmissions;
 
 uint8_t mask = 0b00111111;
 buf[0] = 0b00000101u;
@@ -4048,12 +4067,7 @@ return 0;
 
 bool can_abort(void) {
 can_ope_mode(0b10000000u);
-
-buf[0] = 0b00000101u;
-buf[1] = 0x0fu;
-buf[2] = 0b00010000u;
-buf[3] = 0b00010000u;
-uint8_t bytes_written = SPI_exchange(buf, 4);
+uint8_t bytes_written = abort_pending_transmissions();
 can_ope_mode(operation_mode);
 if (bytes_written == 4) {
 return 1;
@@ -4070,7 +4084,26 @@ SPI_exchange(buf, 3);
 return buf[2];
 }
 
-# 325
+void can_dump_masks_and_filters(void) {
+uint8_t i, h, l;
+uint16_t m;
+printf("---\n");
+for(i=0; i<2; i++) {
+m = save_rxmn[i];
+h = ((uint8_t)((m >> 3) & 0x00ffu));
+l = ((uint8_t)(((m & 0x0007u) << 5) & 0x00ffu));
+printf("RXM%d RXM%dSIDH RXM%dSIDL: %4d %02Xh %02Xh\n", i, i, i, m, h, l);
+}
+for(i=0; i<6; i++) {
+m = save_rxfn[i];
+h = ((uint8_t)((m >> 3) & 0x00ffu));
+l = ((uint8_t)(((m & 0x0007u) << 5) & 0x00ffu));
+printf("RXF%d RXF%dSIDH RXF%dSIDL: %4d %02Xh %02Xh\n", i, i, i, m, h, l);
+}
+printf("---\n");
+}
+
+# 361
 void can_dump_registers(void) {
 printf("---\n");
 printf("SIDH: %02x\n", sid.sidh);

@@ -8,6 +8,10 @@
 #include "mcp2515.h"
 #include "spi.h"
 
+#define SIDH(mask) ((uint8_t)((mask >> 3) & 0x00ffu))
+#define SIDL(mask) ((uint8_t)(((mask & 0x0007u) << 5) & 0x00ffu))
+#define SID_MAX 0b0000011111111111u
+
 /*
  *  TXBnSIDH and TXBnSIDL on MCP2515
  */
@@ -24,6 +28,9 @@ struct {
 uint8_t operation_mode;
 //void (*handler)(uint8_t sid, uint8_t *pbuf, uint8_t dlc) = NULL;
 void (*handler)(uint8_t, uint8_t *, uint8_t) = NULL;
+
+uint16_t save_rxmn[2] = {0u, 0u};
+uint16_t save_rxfn[6] = {0u, 0u, 0u, 0u, 0u, 0u};
 
 void can_logging_mode(bool debug, bool verbose) {
     mode.debug = debug;
@@ -49,6 +56,8 @@ void can_set_sid (uint16_t can_node) {
  * Initialize this program and MCP2515 with default config 
  */
 void can_init(void *receive_handler) {
+    __delay_ms(100);
+    
     can_set_sid(0);   
     handler = receive_handler;
     
@@ -56,7 +65,7 @@ void can_init(void *receive_handler) {
     buf[0] = RESET_;
     SPI_exchange(buf, 1);
     
-    __delay_us(T_RL + T_RL_PLUS);
+    __delay_us(DELAY);
 
     buf[0] = WRITE;
     buf[1] = CNF3;
@@ -82,7 +91,7 @@ void can_init(void *receive_handler) {
 }
 
 /*
- * P58 Set MCP2515 to normal mode
+ * P58 Set MCP2515 to specific mode
  */
 bool can_ope_mode(uint8_t ope_mode) {
     buf[0] = WRITE;
@@ -103,27 +112,39 @@ bool can_ope_mode(uint8_t ope_mode) {
     }
 }
 
+uint8_t abort_pending_transmissions(void) {
+    buf[0] = BIT_MODIFY;
+    buf[1] = CANCTRL;
+    buf[2] = ABAT;
+    buf[3] = ABAT;
+    uint8_t bytes_written = SPI_exchange(buf, 4);
+    return bytes_written;
+}
+
 /*
  * Set mask and filter
  */
-void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask) {
+void can_set_mask(uint8_t cmd, uint8_t n, uint16_t mask) {
     can_ope_mode(CONFIGURATION_MODE);  // P33
-    uint8_t mask_sidh = (uint8_t)((mask >> 3) & 0x00ff);
-    uint8_t mask_sidl = (uint8_t)(((mask & 0x0007) << 5) & 0x00ff);
-    if (mode.debug) {
-        if (cmd == SET_MASK) {
-            printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
-        } else {
-            printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);                                    
-        }
+    abort_pending_transmissions();  // P16
+    mask = (mask > SID_MAX)? SID_MAX: mask; 
+    uint8_t mask_sidh = SIDH(mask);
+    uint8_t mask_sidl = SIDL(mask);
+
+    if (cmd == SET_MASK) {
+        save_rxmn[n] = mask;
+        if (mode.debug) printf("mask(%d): %02x %02x\n", n, mask_sidh, mask_sidl);
+    } else {
+        save_rxfn[n] = mask;
+        if (mode.debug) printf("filter(%d): %02x %02x\n", n, mask_sidh, mask_sidl);                                    
     }
+    
     buf[0] = WRITE;
     buf[1] = (cmd == SET_MASK)? rxmnsidh[n]: rxfnsidh[n];
     buf[2] = mask_sidh;
     buf[3] = mask_sidl;
-
     SPI_exchange(buf, 4);
-
+    
     can_ope_mode(operation_mode);   
 }
 
@@ -280,6 +301,7 @@ bool can_status_check(void) {
 
 bool can_baudrate(uint8_t bpr) {
     can_ope_mode(CONFIGURATION_MODE);
+    abort_pending_transmissions;
     // P42
     uint8_t mask = 0b00111111;
     buf[0] = BIT_MODIFY;
@@ -296,13 +318,8 @@ bool can_baudrate(uint8_t bpr) {
 }
 
 bool can_abort(void) {
-    can_ope_mode(CONFIGURATION_MODE);
-    // P16
-    buf[0] = BIT_MODIFY;
-    buf[1] = CANCTRL;
-    buf[2] = ABAT;
-    buf[3] = ABAT;
-    uint8_t bytes_written = SPI_exchange(buf, 4);
+    can_ope_mode(CONFIGURATION_MODE);    
+    uint8_t bytes_written = abort_pending_transmissions();
     can_ope_mode(operation_mode);
     if (bytes_written == 4) {
         return true;
@@ -317,6 +334,25 @@ uint8_t read_register(uint8_t addr) {
     buf[2] = 0x00;
     SPI_exchange(buf, 3);
     return buf[2];
+}
+
+void can_dump_masks_and_filters(void) {
+    uint8_t i, h, l;
+    uint16_t m;
+    printf("---\n");
+    for(i=0; i<2; i++) {
+        m = save_rxmn[i];
+        h = SIDH(m);
+        l = SIDL(m);
+        printf("RXM%d RXM%dSIDH RXM%dSIDL: %4d %02Xh %02Xh\n", i, i, i, m, h, l);
+    }
+    for(i=0; i<6; i++) {
+        m = save_rxfn[i];
+        h = SIDH(m);
+        l = SIDL(m);
+        printf("RXF%d RXF%dSIDH RXF%dSIDL: %4d %02Xh %02Xh\n", i, i, i, m, h, l);
+    }    
+    printf("---\n");
 }
 
 /*

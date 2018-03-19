@@ -44,6 +44,7 @@ const uint8_t rxmnsidh[2] = {0x20u, 0x24u};
 // P57 Trl
 #define T_RL 2  // 2 micro sec
 #define T_RL_PLUS 48  // 48 micro sec
+#define DELAY T_RL+T_RL_PLUS
 
 // P58 CANCTRL
 #define CANCTRL 0x0fu
@@ -88,11 +89,12 @@ void can_logging_mode(bool debug, bool verbose);
 void can_set_sid (uint16_t can_node);
 void can_init(void *receive_handler);
 bool can_ope_mode(uint8_t ope_mode);
-void can_set_mask(uint8_t cmd, uint8_t n, uint8_t mask);
+void can_set_mask(uint8_t cmd, uint8_t n, uint16_t mask);
 bool can_send(uint8_t *data_buf, uint8_t dlc);
 bool can_status_check(void);
 bool can_baudrate(uint8_t bpr);
 bool can_abort(void);
+void can_dump_masks_and_filters(void);
 void can_dump_registers(void);
 
 #ifdef	__cplusplus
