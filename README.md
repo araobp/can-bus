@@ -8,9 +8,7 @@ Version 0.1: March 17, 2018
 
 ## Motivation
 
-Try to use CAN bus as cheap networking for home/office controller.
-
-I am going to create another project on github to develop Android-based home controller.
+Let's use CAN bus as cheap networking for home/office controller.
 
 ## Configuration
 
