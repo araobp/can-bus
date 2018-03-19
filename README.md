@@ -8,7 +8,9 @@ Version 0.1: March 17, 2018
 
 ## Motivation
 
-I am going to develop either mbed-based or ESP32-based home/office controller.
+I am going to develop ARM-embed-based home/office controller:
+- [LPC11U35](http://akizukidenshi.com/img/goods/3/K-12144.jpg)
+- [STM32F4DISCOVERY](http://akizukidenshi.com/catalog/g/gM-05313/)
 
 I also want to connect PIC-MCU-based sensor/actuator blocks to the controller over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
