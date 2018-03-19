@@ -34,7 +34,7 @@ Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plu
 ## Command (UART/USB)
 
 ```
-/// UART2CAN HELP (version 0.1  March 17, 2018) ///
+/// UART2CAN HELP (version 0.11  March 19, 2018) ///
 [Set standard identifier] @i<standard identifier>
 [Set output mode] {debug: @vd, verbose: @vv, normal: @vn}
 [Enable operation mode] {loopback: @ol, normal: @on}
@@ -43,6 +43,7 @@ Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plu
 [Set filter] @f<n><filter(SID10 ~ SID0)>
 [Set baud rate] @b<bpr>
 [Abort all pending transmissions] @a
+[Dump masks and filters] @F
 [Dump registers] @d
 [Send message] <message>
 [Send message beginning with '@' character] @<@message>
