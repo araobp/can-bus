@@ -16,6 +16,14 @@ Once I developed I2C-based sensor network, but I2C is not for such a purpose.
 
 ## Configuration
 
+### With MCU/MPU
+
+```
+[MCU/MPU]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
+                   
+```
+### With PC/Android
+
 ```
 [PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
                    
