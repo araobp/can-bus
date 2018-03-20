@@ -1,4 +1,4 @@
-# CAN adaptor to UART (PIC16F1825)
+# CAN adaptor to UART
 
 ![waveform](./doc/waveform.jpg)
 
@@ -8,15 +8,29 @@ Version 0.1: March 17, 2018
 
 ## Motivation
 
-Try to use CAN bus as cheap networking for home/office controller.
+I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
-I am going to create another project on github to develop Android-based home controller.
+I also want to develop "MQTT-CAN bridge" that runs on RaspPi and [OpenWrt](https://openwrt.org/) to connect CAN to the controller on RaspPi (or on AWS EC2 instance via OpenVPN).
 
-## Configuration
+## CAN adaptor to UART
+
+### With MCU/MPU
+
+```
+[MCU/MPU]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
+```
+
+### With PC/Android
 
 ```
 [PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
                    
+```
+
+### Use it as CAN library for PIC MCU
+
+```
+[PIC16F1XXX]-SPI-[MCP2515]-[TJA1050]-- CAN bus                   
 ```
 
 ## My original PIC16F1825 evaluation board
