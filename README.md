@@ -172,15 +172,23 @@ At first, I am going to use [this universal board](http://akizukidenshi.com/cata
 
 After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
 
-## Datasheet (Microchip/NXP/Murata)
+## Reference
 
-### Microchip
+### Datasheet (Microchip/NXP/Murata)
+
+#### Microchip
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
 - [MCP2515](http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf)
 - [MCP2561](http://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf)
 
-### NXP
+#### NXP
 - [TJA1050](https://www.nxp.com/docs/en/data-sheet/TJA1050.pdf)
 
-### Murata
+#### Murata
 - [Ceralock](https://www.murata.com/~/media/webrenewal/support/library/catalog/products/timingdevice/ceralock/p17e.ashx)
+
+### SocketCAN
+
+- [Official document](https://www.kernel.org/doc/Documentation/networking/can.txt)
+- [SocketCAN paper](https://www.can-cia.org/fileadmin/resources/documents/proceedings/2012_kleine-budde.pdf)
+- [Wikipedia](https://en.wikipedia.org/wiki/SocketCAN)
