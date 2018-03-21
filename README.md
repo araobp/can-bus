@@ -180,6 +180,7 @@ After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
 - [MCP2515](http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf)
 - [MCP2561](http://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf)
+- [MCP2515DM-BM](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=MCP2515DM-BM)
 
 #### NXP
 - [TJA1050](https://www.nxp.com/docs/en/data-sheet/TJA1050.pdf)
