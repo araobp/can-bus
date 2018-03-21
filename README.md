@@ -2,15 +2,33 @@
 
 ![waveform](./doc/waveform.jpg)
 
-## Current status
-
-Version 0.1: March 17, 2018
-
 ## Motivation
 
-I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller over CAN, since CAN is very cheap and supports daisy-chain network topology.
+I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
-I also want to develop "MQTT-CAN bridge" that runs on RaspPi and [OpenWrt](https://openwrt.org/) to connect CAN to the controller on RaspPi (or on AWS EC2 instance via OpenVPN).
+## Current status
+
+### Research
+
+I use cheap PIC 8bit MCU and FTDI with MCP2515/MCP2561 in this project. I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is not suitable for the goal: expensive and over spec.
+
+### Version 0.1 (March 17, 2018)
+
+I purchased CAN adaptors from Amazon.
+
+![board](./doc/board.jpg)
+
+Then I have developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
+
+### Version 0.2 plan
+
+Develop my original CAN adaptor board.
+
+Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.
+
+- [SocketCAN(Linux)](https://elinux.org/CAN_Bus#SocketCAN_Supported_Protocols)
+- [kmod-can-slcan(OpenWrt)](https://openwrt.org/packages/pkgdata/kmod-can-slcan)
+- [CAN2Ethernet](http://lnxpps.de/rpie/)
 
 ## CAN adaptor to UART
 
@@ -164,15 +182,24 @@ At first, I am going to use [this universal board](http://akizukidenshi.com/cata
 
 After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
 
-## Datasheet (Microchip/NXP/Murata)
+## Reference
 
-### Microchip
+### Datasheet (Microchip/NXP/Murata)
+
+#### Microchip
 - [PIC16F1825](http://ww1.microchip.com/downloads/en/DeviceDoc/41440A.pdf)
 - [MCP2515](http://ww1.microchip.com/downloads/en/DeviceDoc/21801d.pdf)
 - [MCP2561](http://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf)
+- [MCP2515DM-BM](http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=MCP2515DM-BM)
 
-### NXP
+#### NXP
 - [TJA1050](https://www.nxp.com/docs/en/data-sheet/TJA1050.pdf)
 
-### Murata
+#### Murata
 - [Ceralock](https://www.murata.com/~/media/webrenewal/support/library/catalog/products/timingdevice/ceralock/p17e.ashx)
+
+### SocketCAN
+
+- [Official document](https://www.kernel.org/doc/Documentation/networking/can.txt)
+- [SocketCAN paper](https://www.can-cia.org/fileadmin/resources/documents/proceedings/2012_kleine-budde.pdf)
+- [Wikipedia](https://en.wikipedia.org/wiki/SocketCAN)
