@@ -32,6 +32,12 @@ Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c
 - [kmod-can-slcan(OpenWrt)](https://openwrt.org/packages/pkgdata/kmod-can-slcan)
 - [CAN2Ethernet](http://lnxpps.de/rpie/)
 
+Confirm if OpenWrt works with the implementation.
+
+### Version 0.3 plan
+
+Develop CAN adaptor board for RasPi, and use SocketCAN SPI driver for MCP2515.
+
 ## CAN adaptor to UART
 
 ### With MCU/MPU
