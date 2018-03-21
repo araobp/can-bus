@@ -6,7 +6,7 @@
 
 I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
-## Current status
+## Current status and plan
 
 ### Research
 
@@ -34,7 +34,7 @@ Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c
 
 Confirm if OpenWrt works with the implementation.
 
-### Version 0.3 plan
+### Extra
 
 Develop CAN adaptor board for RasPi, and use SocketCAN SPI driver for MCP2515.
 
