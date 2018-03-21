@@ -14,11 +14,17 @@ I use cheap PIC 8bit MCU and FTDI with MCP2515/MCP2561 in this project. I have a
 
 ### Version 0.1 (March 17, 2018)
 
-I have developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
+I purchased CAN adaptors from Amazon.
+
+![board](./doc/board.jpg)
+
+Then I have developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
 ### Version 0.2 plan
 
-Next, I will try to add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.
+Develop my original CAN adaptor board.
+
+Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.
 
 - [SocketCAN(Linux)](https://elinux.org/CAN_Bus#SocketCAN_Supported_Protocols)
 - [kmod-can-slcan(OpenWrt)](https://openwrt.org/packages/pkgdata/kmod-can-slcan)
