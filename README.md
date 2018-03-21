@@ -4,13 +4,21 @@
 
 ## Current status
 
-Version 0.1: March 17, 2018
+### Version 0.1 (March 17, 2018)
+
+My original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
+
+### Version 0.2 plan
+
+Next, I will try to add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.
+
+- [SocketCAN(Linux)](https://elinux.org/CAN_Bus#SocketCAN_Supported_Protocols)
+- [kmod-can-slcan(OpenWrt)](https://openwrt.org/packages/pkgdata/kmod-can-slcan)
+- [CAN2Ethernet](http://lnxpps.de/rpie/)
 
 ## Motivation
 
 I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller over CAN, since CAN is very cheap and supports daisy-chain network topology.
-
-I also want to develop "MQTT-CAN bridge" that runs on RaspPi and [OpenWrt](https://openwrt.org/) to connect CAN to the controller on RaspPi (or on AWS EC2 instance via OpenVPN).
 
 ## CAN adaptor to UART
 
