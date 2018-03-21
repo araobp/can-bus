@@ -2,6 +2,10 @@
 
 ![waveform](./doc/waveform.jpg)
 
+## Motivation
+
+I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
+
 ## Current status
 
 ### Version 0.1 (March 17, 2018)
@@ -15,10 +19,6 @@ Next, I will try to add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/dri
 - [SocketCAN(Linux)](https://elinux.org/CAN_Bus#SocketCAN_Supported_Protocols)
 - [kmod-can-slcan(OpenWrt)](https://openwrt.org/packages/pkgdata/kmod-can-slcan)
 - [CAN2Ethernet](http://lnxpps.de/rpie/)
-
-## Motivation
-
-I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
 ## CAN adaptor to UART
 
