@@ -36,6 +36,10 @@ Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c
 
 Confirm if OpenWrt works with the implementation.
 
+### Version 0.3 plan
+
+Create another project to evaluate Ethernet controller "ENC28J60" and develop CAN-MQTT gateway on either Arduino or ARM mbed.
+
 ### Extra
 
 Develop CAN adaptor board for RasPi, and use SocketCAN SPI driver for MCP2515.
