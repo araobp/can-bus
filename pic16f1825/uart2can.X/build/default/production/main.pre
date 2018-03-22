@@ -3885,29 +3885,40 @@ uint8_t run_mode = 0u;
 
 void slcan_send(uint8_t *pbuf) {
 uint16_t id;
-uint8_t dlc;
+uint8_t dlc, i, j;
+uint8_t *ascii_data;
+uint8_t data_buf[8];
 id = atosid(pbuf);
 can_set_sid(id);
 dlc = atoui8(pbuf[3]);
-can_send(&pbuf[4], dlc);
+ascii_data = &pbuf[4];
+for(i=0; i<dlc; i++) {
+j = i * 2u;
+data_buf[i] = atoui8(ascii_data[j]) * 0x10u + atoui8(ascii_data[j+1]);
+}
+can_send(data_buf, dlc);
 }
 
-# 47
-void receive_handler(uint16_t sid, uint8_t *pbuf, uint8_t dlc) {
+# 54
+void receive_handler(uint16_t sid, uint8_t *buf, uint8_t dlc) {
 uint8_t i;
 if (run_mode == 1u) {
-printf("r%03X%d%s\n", sid, dlc, pbuf);
-} else {
-if (output_format.with_sid) {
-printf("%d,%s\n", sid, pbuf);
-} else if (output_format.hex_output) {
-printf("%03x:", sid);
+printf("r%03X%d", sid, dlc);
 for(i=0; i<dlc; i++) {
-printf(" %02x", pbuf[i]);
+printf("%02X", buf[i]);
 }
 printf("\n");
 } else {
-printf("%s\n", pbuf);
+if (output_format.with_sid) {
+printf("%d,%s\n", sid, buf);
+} else if (output_format.hex_output) {
+printf("%03x:", sid);
+for(i=0; i<dlc; i++) {
+printf(" %02x", buf[i]);
+}
+printf("\n");
+} else {
+printf("%s\n", buf);
 }
 }
 }
@@ -3916,7 +3927,7 @@ void main(void)
 {
 LATCbits.LATC3 = 1;
 
-uint8_t buf[16];
+uint8_t buf[22];
 bool echo_back = 0;
 uint8_t c, idx;
 
@@ -3924,6 +3935,8 @@ uint8_t cmd, sid, n, bpr;
 uint16_t mask;
 
 run_mode = DATAEE_ReadByte(0u);
+
+_delay((unsigned long)((100)*(2000000/4000.0)));
 
 SYSTEM_Initialize();
 
