@@ -38,17 +38,16 @@ Create another project to evaluate Ethernet controller "ENC28J60" and develop CA
 
 ## CAN adaptor to UART
 
-### With MCU/MPU
-
-```
-[MCU/MPU]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
-```
-
-### With PC/Android
+### With PC/Android(USB-OTG)
 
 ```
 [PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
 
+```
+### With MCU (PIC, AVR or ARM Cortex-M)
+
+```
+[MCU]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
 ```
 
 ### Use it as CAN library for PIC MCU
