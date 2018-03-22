@@ -8,10 +8,6 @@
 #include "mcp2515.h"
 #include "spi.h"
 
-#define SIDH(mask) ((uint8_t)((mask >> 3) & 0x00ffu))
-#define SIDL(mask) ((uint8_t)(((mask & 0x0007u) << 5) & 0x00ffu))
-#define SID_MAX 0b0000011111111111u
-
 /*
  *  TXBnSIDH and TXBnSIDL on MCP2515
  */
@@ -26,8 +22,7 @@ struct {
 } mode;
 
 uint8_t operation_mode;
-//void (*handler)(uint8_t sid, uint8_t *pbuf, uint8_t dlc) = NULL;
-void (*handler)(uint8_t, uint8_t *, uint8_t) = NULL;
+void (*handler)(uint16_t, uint8_t *, uint8_t) = NULL;
 
 uint16_t save_rxmn[2] = {0u, 0u};
 uint16_t save_rxfn[6] = {0u, 0u, 0u, 0u, 0u, 0u};

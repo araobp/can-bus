@@ -1,0 +1,148 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;hexascii.h: 17: uint8_t atoui8(uint8_t ascii);
+[; ;hexascii.h: 18: uint16_t atosid(uint8_t *ascii);
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"14 hexascii.c
+[v _atoui8 `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;hexascii.c: 14: uint8_t atoui8(uint8_t ascii) {
+[e :U _atoui8 ]
+[v _ascii `uc ~T0 @X0 1 r1 ]
+[f ]
+"15
+[v _minus `uc ~T0 @X0 1 a ]
+[; ;hexascii.c: 15: uint8_t minus = 0;
+[e = _minus -> -> 0 `i `uc ]
+[; ;hexascii.c: 16: if (ascii >= 0x30u && ascii <= 0x39u) {
+"16
+[e $ ! && >= -> _ascii `ui -> 48 `ui <= -> _ascii `ui -> 57 `ui 3  ]
+{
+[; ;hexascii.c: 17: minus = 0x30u;
+"17
+[e = _minus -> -> 48 `ui `uc ]
+"18
+}
+[; ;hexascii.c: 18: } else if (ascii >= 0x41u && ascii <= 0x46u) {
+[e $U 4  ]
+[e :U 3 ]
+[e $ ! && >= -> _ascii `ui -> 65 `ui <= -> _ascii `ui -> 70 `ui 5  ]
+{
+[; ;hexascii.c: 19: minus = 0x41u - 10;
+"19
+[e = _minus -> - -> 65 `ui -> -> 10 `i `ui `uc ]
+"20
+}
+[; ;hexascii.c: 20: } else if (ascii >= 0x61u && ascii <= 0x66u) {
+[e $U 6  ]
+[e :U 5 ]
+[e $ ! && >= -> _ascii `ui -> 97 `ui <= -> _ascii `ui -> 102 `ui 7  ]
+{
+[; ;hexascii.c: 21: minus = 0x61u - 10;
+"21
+[e = _minus -> - -> 97 `ui -> -> 10 `i `ui `uc ]
+"23
+}
+[e :U 7 ]
+"24
+[e :U 6 ]
+[e :U 4 ]
+[; ;hexascii.c: 23: }
+[; ;hexascii.c: 24: return (uint8_t)(ascii - minus);
+[e ) -> - -> _ascii `i -> _minus `i `uc ]
+[e $UE 2  ]
+[; ;hexascii.c: 25: }
+"25
+[e :UE 2 ]
+}
+"27
+[v _atosid `(ui ~T0 @X0 1 ef1`*uc ]
+"28
+{
+[; ;hexascii.c: 27: uint16_t atosid(uint8_t *ascii)
+[; ;hexascii.c: 28: {
+[e :U _atosid ]
+"27
+[v _ascii `*uc ~T0 @X0 1 r1 ]
+"28
+[f ]
+"29
+[v _a `ui ~T0 @X0 1 a ]
+[; ;hexascii.c: 29: uint16_t a = (uint16_t)(atoui8(ascii[0]));
+[e = _a -> ( _atoui8 (1 *U + _ascii * -> -> 0 `i `x -> -> # *U _ascii `i `x `ui ]
+"30
+[v _b `ui ~T0 @X0 1 a ]
+[; ;hexascii.c: 30: uint16_t b = (uint16_t)(atoui8(ascii[1]));
+[e = _b -> ( _atoui8 (1 *U + _ascii * -> -> 1 `i `x -> -> # *U _ascii `i `x `ui ]
+"31
+[v _c `ui ~T0 @X0 1 a ]
+[; ;hexascii.c: 31: uint16_t c = (uint16_t)(atoui8(ascii[2]));
+[e = _c -> ( _atoui8 (1 *U + _ascii * -> -> 2 `i `x -> -> # *U _ascii `i `x `ui ]
+"32
+[v _id `ui ~T0 @X0 1 a ]
+[; ;hexascii.c: 32: uint16_t id = a * 0x100u + b * 0x10u + c;
+[e = _id + + * _a -> 256 `ui * _b -> 16 `ui _c ]
+[; ;hexascii.c: 33: return id;
+"33
+[e ) _id ]
+[e $UE 8  ]
+[; ;hexascii.c: 34: }
+"34
+[e :UE 8 ]
+}

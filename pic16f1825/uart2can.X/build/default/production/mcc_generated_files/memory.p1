@@ -1,52 +1,40 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"177 mcc_generated_files/pin_manager.h
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"83 mcc_generated_files/mcc.h
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"96
-[v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"115 mcc_generated_files/spi.h
-[v _SPI_Initialize `(v ~T0 @X0 0 ef ]
-"94 mcc_generated_files/eusart.h
-[v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
-"1610 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
-[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"1552
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
-"2310
-[v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"1493
-[v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
-"49 mcc_generated_files/mcc.c
-[p x FOSC=INTOSC ]
-"50
-[p x WDTE=OFF ]
-"51
-[p x PWRTE=OFF ]
-"52
-[p x MCLRE=ON ]
-"53
-[p x CP=OFF ]
-"54
-[p x CPD=OFF ]
-"55
-[p x BOREN=ON ]
-"56
-[p x CLKOUTEN=OFF ]
-"57
-[p x IESO=ON ]
-"58
-[p x FCMEN=ON ]
-"61
-[p x WRT=OFF ]
-"62
-[p x PLLEN=OFF ]
-"63
-[p x STVREN=ON ]
-"64
-[p x BORV=LO ]
-"65
-[p x LVP=ON ]
+"355 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
+[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"365
+[s S27 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S27 . . T0IF . T0IE ]
+"354
+[u S25 `S26 1 `S27 1 ]
+[n S25 . . . ]
+"372
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"2833
+[v _EEADRL `Vuc ~T0 @X0 0 e@401 ]
+"2853
+[v _EEADRH `Vuc ~T0 @X0 0 e@402 ]
+"2944
+[s S153 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S153 . RD WR WREN WRERR FREE LWLO CFGS EEPGD ]
+"2943
+[u S152 `S153 1 ]
+[n S152 . . ]
+"2955
+[v _EECON1bits `VS152 ~T0 @X0 0 e@405 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"2918 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
+[v _EEDATH `Vuc ~T0 @X0 0 e@404 ]
+"2880
+[v _EEDATL `Vuc ~T0 @X0 0 e@403 ]
+"163 mcc_generated_files/memory.h
+[v _FLASH_WriteBlock `(c ~T0 @X0 0 ef2`ui`*ui ]
+"188
+[v _FLASH_EraseBlock `(v ~T0 @X0 0 ef1`ui ]
+"3000 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1825.h
+[v _EECON2 `Vuc ~T0 @X0 0 e@406 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2637,8 +2625,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 177: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 189: void PIN_MANAGER_IOC(void);
+[; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -2667,116 +2654,444 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi.h: 115: void SPI_Initialize(void);
-[; ;spi.h: 150: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 190: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 213: bool SPI_IsBufferFull(void);
-[; ;spi.h: 238: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 262: void SPI_ClearWriteCollisionStatus(void);
 [; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
 [; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
 [; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
 [; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
 [; ;memory.h: 219: void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
 [; ;memory.h: 245: uint8_t DATAEE_ReadByte(uint8_t bAdd);
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;eusart.h: 94: void EUSART_Initialize(void);
-[; ;eusart.h: 114: uint8_t EUSART_Read(void);
-[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 96: void WDT_Initialize(void);
-"70 mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"71
+"57 mcc_generated_files/memory.c
+[v _FLASH_ReadWord `(ui ~T0 @X0 1 ef1`ui ]
+"58
 {
-[; ;mcc.c: 70: void SYSTEM_Initialize(void)
-[; ;mcc.c: 71: {
-[e :U _SYSTEM_Initialize ]
+[; ;memory.c: 57: uint16_t FLASH_ReadWord(uint16_t flashAddr)
+[; ;memory.c: 58: {
+[e :U _FLASH_ReadWord ]
+"57
+[v _flashAddr `ui ~T0 @X0 1 r1 ]
+"58
 [f ]
-[; ;mcc.c: 73: PIN_MANAGER_Initialize();
+"59
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[; ;memory.c: 59: uint8_t GIEBitValue = INTCONbits.GIE;
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+[; ;memory.c: 61: INTCONbits.GIE = 0;
+"61
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;memory.c: 62: EEADRL = (flashAddr & 0x00FF);
+"62
+[e = _EEADRL -> & _flashAddr -> -> 255 `i `ui `uc ]
+[; ;memory.c: 63: EEADRH = ((flashAddr & 0xFF00) >> 8);
+"63
+[e = _EEADRH -> >> & _flashAddr -> 65280 `ui -> 8 `i `uc ]
+[; ;memory.c: 65: EECON1bits.CFGS = 0;
+"65
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;memory.c: 66: EECON1bits.EEPGD = 1;
+"66
+[e = . . _EECON1bits 0 7 -> -> 1 `i `uc ]
+[; ;memory.c: 67: EECON1bits.RD = 1;
+"67
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+[; ;memory.c: 68: __nop();
+"68
+[e ( ___nop ..  ]
+[; ;memory.c: 69: __nop();
+"69
+[e ( ___nop ..  ]
+[; ;memory.c: 70: INTCONbits.GIE = GIEBitValue;
+"70
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+[; ;memory.c: 72: return ((uint16_t)((EEDATH << 8) | EEDATL));
+"72
+[e ) -> | << -> _EEDATH `i -> 8 `i -> _EEDATL `i `ui ]
+[e $UE 323  ]
+[; ;memory.c: 73: }
 "73
-[e ( _PIN_MANAGER_Initialize ..  ]
-[; ;mcc.c: 74: OSCILLATOR_Initialize();
-"74
-[e ( _OSCILLATOR_Initialize ..  ]
-[; ;mcc.c: 75: WDT_Initialize();
+[e :UE 323 ]
+}
 "75
-[e ( _WDT_Initialize ..  ]
-[; ;mcc.c: 76: SPI_Initialize();
+[v _FLASH_WriteWord `(v ~T0 @X0 1 ef3`ui`*ui`ui ]
 "76
-[e ( _SPI_Initialize ..  ]
-[; ;mcc.c: 77: EUSART_Initialize();
+{
+[; ;memory.c: 75: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
+[; ;memory.c: 76: {
+[e :U _FLASH_WriteWord ]
+"75
+[v _flashAddr `ui ~T0 @X0 1 r1 ]
+[v _ramBuf `*ui ~T0 @X0 1 r2 ]
+[v _word `ui ~T0 @X0 1 r3 ]
+"76
+[f ]
 "77
-[e ( _EUSART_Initialize ..  ]
-[; ;mcc.c: 78: }
+[v _blockStartAddr `ui ~T0 @X0 1 a ]
+[; ;memory.c: 77: uint16_t blockStartAddr = (uint16_t)(flashAddr & ((0x2000-1) ^ (32-1)));
+[e = _blockStartAddr & _flashAddr -> ^ - -> 8192 `i -> 1 `i - -> 32 `i -> 1 `i `ui ]
 "78
+[v _offset `uc ~T0 @X0 1 a ]
+[; ;memory.c: 78: uint8_t offset = (uint8_t)(flashAddr & (32-1));
+[e = _offset -> & _flashAddr -> - -> 32 `i -> 1 `i `ui `uc ]
+"79
+[v _i `uc ~T0 @X0 1 a ]
+[; ;memory.c: 79: uint8_t i;
+[; ;memory.c: 82: for (i=0; i<32; i++)
+"82
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 32 `i 325  ]
+[e $U 326  ]
+"83
+[e :U 325 ]
+[; ;memory.c: 83: {
+{
+[; ;memory.c: 84: ramBuf[i] = FLASH_ReadWord((blockStartAddr+i));
+"84
+[e = *U + _ramBuf * -> _i `ux -> -> # *U _ramBuf `ui `ux ( _FLASH_ReadWord (1 + _blockStartAddr -> _i `ui ]
+"85
+}
+"82
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 32 `i 325  ]
+[e :U 326 ]
+"85
+}
+[; ;memory.c: 85: }
+[; ;memory.c: 88: ramBuf[offset] = word;
+"88
+[e = *U + _ramBuf * -> _offset `ux -> -> # *U _ramBuf `ui `ux _word ]
+[; ;memory.c: 91: FLASH_WriteBlock(blockStartAddr, ramBuf);
+"91
+[e ( _FLASH_WriteBlock (2 , _blockStartAddr _ramBuf ]
+[; ;memory.c: 92: }
+"92
 [e :UE 324 ]
 }
-"80
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"81
-{
-[; ;mcc.c: 80: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 81: {
-[e :U _OSCILLATOR_Initialize ]
-[f ]
-[; ;mcc.c: 83: OSCCON = 0x60;
-"83
-[e = _OSCCON -> -> 96 `i `uc ]
-[; ;mcc.c: 85: OSCTUNE = 0x00;
-"85
-[e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 87: BORCON = 0x00;
-"87
-[e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 88: }
-"88
-[e :UE 325 ]
-}
-"90
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
-"91
-{
-[; ;mcc.c: 90: void WDT_Initialize(void)
-[; ;mcc.c: 91: {
-[e :U _WDT_Initialize ]
-[f ]
-[; ;mcc.c: 93: WDTCON = 0x16;
-"93
-[e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 94: }
 "94
-[e :UE 326 ]
+[v _FLASH_WriteBlock `(c ~T0 @X0 1 ef2`ui`*ui ]
+"95
+{
+[; ;memory.c: 94: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
+[; ;memory.c: 95: {
+[e :U _FLASH_WriteBlock ]
+"94
+[v _writeAddr `ui ~T0 @X0 1 r1 ]
+[v _flashWordArray `*ui ~T0 @X0 1 r2 ]
+"95
+[f ]
+"96
+[v _blockStartAddr `ui ~T0 @X0 1 a ]
+[; ;memory.c: 96: uint16_t blockStartAddr = (uint16_t )(writeAddr & ((0x2000-1) ^ (32-1)));
+[e = _blockStartAddr & _writeAddr -> ^ - -> 8192 `i -> 1 `i - -> 32 `i -> 1 `i `ui ]
+"97
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[; ;memory.c: 97: uint8_t GIEBitValue = INTCONbits.GIE;
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+"98
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+[v _numberOfWriteBlocks `uc ~T0 @X0 1 a ]
+[; ;memory.c: 98: uint8_t i,j,numberOfWriteBlocks=0,dataCounter=0;
+[e = _numberOfWriteBlocks -> -> 0 `i `uc ]
+[v _dataCounter `uc ~T0 @X0 1 a ]
+[e = _dataCounter -> -> 0 `i `uc ]
+[; ;memory.c: 100: numberOfWriteBlocks = (32/32);
+"100
+[e = _numberOfWriteBlocks -> / -> 32 `i -> 32 `i `uc ]
+[; ;memory.c: 103: if( writeAddr != blockStartAddr )
+"103
+[e $ ! != _writeAddr _blockStartAddr 329  ]
+[; ;memory.c: 104: {
+"104
+{
+[; ;memory.c: 105: return -1;
+"105
+[e ) -> -U -> 1 `i `c ]
+[e $UE 328  ]
+"106
+}
+[e :U 329 ]
+[; ;memory.c: 106: }
+[; ;memory.c: 108: INTCONbits.GIE = 0;
+"108
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;memory.c: 111: FLASH_EraseBlock(writeAddr);
+"111
+[e ( _FLASH_EraseBlock (1 _writeAddr ]
+[; ;memory.c: 113: for(j=0; j<numberOfWriteBlocks; j++)
+"113
+{
+[e = _j -> -> 0 `i `uc ]
+[e $U 333  ]
+"114
+[e :U 330 ]
+[; ;memory.c: 114: {
+{
+[; ;memory.c: 116: EECON1bits.EEPGD = 1;
+"116
+[e = . . _EECON1bits 0 7 -> -> 1 `i `uc ]
+[; ;memory.c: 117: EECON1bits.CFGS = 0;
+"117
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;memory.c: 118: EECON1bits.WREN = 1;
+"118
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;memory.c: 119: EECON1bits.LWLO = 1;
+"119
+[e = . . _EECON1bits 0 5 -> -> 1 `i `uc ]
+[; ;memory.c: 121: for (i=0; i<32; i++)
+"121
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 32 `i 334  ]
+[e $U 335  ]
+"122
+[e :U 334 ]
+[; ;memory.c: 122: {
+{
+[; ;memory.c: 124: EEADRL = (writeAddr & 0xFF);
+"124
+[e = _EEADRL -> & _writeAddr -> -> 255 `i `ui `uc ]
+[; ;memory.c: 126: EEADRH = ((writeAddr & 0xFF00) >> 8);
+"126
+[e = _EEADRH -> >> & _writeAddr -> 65280 `ui -> 8 `i `uc ]
+[; ;memory.c: 129: EEDATL = flashWordArray[dataCounter];
+"129
+[e = _EEDATL -> *U + _flashWordArray * -> _dataCounter `ux -> -> # *U _flashWordArray `ui `ux `uc ]
+[; ;memory.c: 130: EEDATH = ((flashWordArray[dataCounter] & 0xFF00) >> 8);
+"130
+[e = _EEDATH -> >> & *U + _flashWordArray * -> _dataCounter `ux -> -> # *U _flashWordArray `ui `ux -> 65280 `ui -> 8 `i `uc ]
+[; ;memory.c: 131: dataCounter++;
+"131
+[e ++ _dataCounter -> -> 1 `i `uc ]
+[; ;memory.c: 133: if(i == (32-1))
+"133
+[e $ ! == -> _i `i - -> 32 `i -> 1 `i 337  ]
+[; ;memory.c: 134: {
+"134
+{
+[; ;memory.c: 136: EECON1bits.LWLO = 0;
+"136
+[e = . . _EECON1bits 0 5 -> -> 0 `i `uc ]
+"137
+}
+[e :U 337 ]
+[; ;memory.c: 137: }
+[; ;memory.c: 139: EECON2 = 0x55;
+"139
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;memory.c: 140: EECON2 = 0xAA;
+"140
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;memory.c: 141: EECON1bits.WR = 1;
+"141
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;memory.c: 142: __nop();
+"142
+[e ( ___nop ..  ]
+[; ;memory.c: 143: __nop();
+"143
+[e ( ___nop ..  ]
+[; ;memory.c: 145: writeAddr++;
+"145
+[e ++ _writeAddr -> -> 1 `i `ui ]
+"146
+}
+"121
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 32 `i 334  ]
+[e :U 335 ]
+"146
+}
+"147
+}
+"113
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 333 ]
+[e $ < -> _j `i -> _numberOfWriteBlocks `i 330  ]
+[e :U 331 ]
+"147
+}
+[; ;memory.c: 146: }
+[; ;memory.c: 147: }
+[; ;memory.c: 149: EECON1bits.WREN = 0;
+"149
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;memory.c: 150: INTCONbits.GIE = GIEBitValue;
+"150
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+[; ;memory.c: 152: return 0;
+"152
+[e ) -> -> 0 `i `c ]
+[e $UE 328  ]
+[; ;memory.c: 153: }
+"153
+[e :UE 328 ]
+}
+"155
+[v _FLASH_EraseBlock `(v ~T0 @X0 1 ef1`ui ]
+"156
+{
+[; ;memory.c: 155: void FLASH_EraseBlock(uint16_t startAddr)
+[; ;memory.c: 156: {
+[e :U _FLASH_EraseBlock ]
+"155
+[v _startAddr `ui ~T0 @X0 1 r1 ]
+"156
+[f ]
+"157
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[; ;memory.c: 157: uint8_t GIEBitValue = INTCONbits.GIE;
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+[; ;memory.c: 159: INTCONbits.GIE = 0;
+"159
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;memory.c: 161: EEADRL = (startAddr & 0xFF);
+"161
+[e = _EEADRL -> & _startAddr -> -> 255 `i `ui `uc ]
+[; ;memory.c: 163: EEADRH = ((startAddr & 0xFF00) >> 8);
+"163
+[e = _EEADRH -> >> & _startAddr -> 65280 `ui -> 8 `i `uc ]
+[; ;memory.c: 166: EECON1bits.CFGS = 0;
+"166
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;memory.c: 167: EECON1bits.EEPGD = 1;
+"167
+[e = . . _EECON1bits 0 7 -> -> 1 `i `uc ]
+[; ;memory.c: 168: EECON1bits.FREE = 1;
+"168
+[e = . . _EECON1bits 0 4 -> -> 1 `i `uc ]
+[; ;memory.c: 169: EECON1bits.WREN = 1;
+"169
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;memory.c: 172: EECON2 = 0x55;
+"172
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;memory.c: 173: EECON2 = 0xAA;
+"173
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;memory.c: 174: EECON1bits.WR = 1;
+"174
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;memory.c: 175: __nop();
+"175
+[e ( ___nop ..  ]
+[; ;memory.c: 176: __nop();
+"176
+[e ( ___nop ..  ]
+[; ;memory.c: 178: EECON1bits.WREN = 0;
+"178
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;memory.c: 179: INTCONbits.GIE = GIEBitValue;
+"179
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+[; ;memory.c: 180: }
+"180
+[e :UE 338 ]
+}
+"186
+[v _DATAEE_WriteByte `(v ~T0 @X0 1 ef2`uc`uc ]
+"187
+{
+[; ;memory.c: 186: void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData)
+[; ;memory.c: 187: {
+[e :U _DATAEE_WriteByte ]
+"186
+[v _bAdd `uc ~T0 @X0 1 r1 ]
+[v _bData `uc ~T0 @X0 1 r2 ]
+"187
+[f ]
+"188
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[; ;memory.c: 188: uint8_t GIEBitValue = 0;
+[e = _GIEBitValue -> -> 0 `i `uc ]
+[; ;memory.c: 190: EEADRL = (uint8_t)(bAdd & 0x0ff);
+"190
+[e = _EEADRL -> & -> _bAdd `i -> 255 `i `uc ]
+[; ;memory.c: 191: EEDATL = bData;
+"191
+[e = _EEDATL _bData ]
+[; ;memory.c: 192: EECON1bits.EEPGD = 0;
+"192
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;memory.c: 193: EECON1bits.CFGS = 0;
+"193
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;memory.c: 194: EECON1bits.WREN = 1;
+"194
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;memory.c: 196: GIEBitValue = INTCONbits.GIE;
+"196
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+[; ;memory.c: 197: INTCONbits.GIE = 0;
+"197
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;memory.c: 198: EECON2 = 0x55;
+"198
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;memory.c: 199: EECON2 = 0xAA;
+"199
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;memory.c: 200: EECON1bits.WR = 1;
+"200
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;memory.c: 202: while (EECON1bits.WR)
+"202
+[e $U 340  ]
+[e :U 341 ]
+[; ;memory.c: 203: {
+"203
+{
+"204
+}
+[e :U 340 ]
+"202
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 341  ]
+[e :U 342 ]
+[; ;memory.c: 204: }
+[; ;memory.c: 206: EECON1bits.WREN = 0;
+"206
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;memory.c: 207: INTCONbits.GIE = GIEBitValue;
+"207
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+[; ;memory.c: 208: }
+"208
+[e :UE 339 ]
+}
+"210
+[v _DATAEE_ReadByte `(uc ~T0 @X0 1 ef1`uc ]
+"211
+{
+[; ;memory.c: 210: uint8_t DATAEE_ReadByte(uint8_t bAdd)
+[; ;memory.c: 211: {
+[e :U _DATAEE_ReadByte ]
+"210
+[v _bAdd `uc ~T0 @X0 1 r1 ]
+"211
+[f ]
+[; ;memory.c: 212: EEADRL = (uint8_t)(bAdd & 0x0ff);
+"212
+[e = _EEADRL -> & -> _bAdd `i -> 255 `i `uc ]
+[; ;memory.c: 213: EECON1bits.CFGS = 0;
+"213
+[e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
+[; ;memory.c: 214: EECON1bits.EEPGD = 0;
+"214
+[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
+[; ;memory.c: 215: EECON1bits.RD = 1;
+"215
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+[; ;memory.c: 216: __nop();
+"216
+[e ( ___nop ..  ]
+[; ;memory.c: 217: __nop();
+"217
+[e ( ___nop ..  ]
+[; ;memory.c: 219: return (EEDATL);
+"219
+[e ) _EEDATL ]
+[e $UE 343  ]
+[; ;memory.c: 220: }
+"220
+[e :UE 343 ]
 }

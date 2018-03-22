@@ -52,7 +52,7 @@ Develop CAN adaptor board for RasPi, and use SocketCAN SPI driver for MCP2515.
 
 ```
 [PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
-                   
+
 ```
 
 ### Use it as CAN library for PIC MCU
@@ -69,7 +69,7 @@ Develop CAN adaptor board for RasPi, and use SocketCAN SPI driver for MCP2515.
 
 ![connection](./doc/pic16f1825-mcp2515.jpg)
 
-## Development enviroment
+## Development environment
 
 Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
 
@@ -126,7 +126,7 @@ Voltage: CANH - CANL
 
 ![BRP16](./doc/test/BRP16.BMP)
 
-### Logic analyzer 
+### Logic analyzer
 
 I have also got this cheap oscilloscope ["PCB scope"](http://www.picaxestore.com/en_gb/osc001.html) in [my original 3D-printed case](https://github.com/araobp/3D-printing/blob/master/osc001/osc001.stl):
 
@@ -213,3 +213,7 @@ After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original
 - [Official document](https://www.kernel.org/doc/Documentation/networking/can.txt)
 - [SocketCAN paper](https://www.can-cia.org/fileadmin/resources/documents/proceedings/2012_kleine-budde.pdf)
 - [Wikipedia](https://en.wikipedia.org/wiki/SocketCAN)
+- [RaspberryPi & CAN-bus](https://isojed.nl/blog/2017/03/12/raspberry-pi-can-bus/)
+- [Kernel building(RasPi)](https://www.raspberrypi.org/documentation/linux/kernel/building.md)
+- [VSCAN manual](ftp://ftp.visionsystems.de/pub/multiio/archiv/VSCAN_Manual.pdf)
+- [PythonCAN](https://python-can.readthedocs.io/en/2.1.0/index.html)

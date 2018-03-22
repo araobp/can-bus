@@ -5,41 +5,61 @@
  * 
  * Version 0.1  March 17, 2018
  * Version 0.11  March 19, 2018
+ * Version 0.12  March 22, 2018
  */
 
 #include "mcc_generated_files/mcc.h"
 #include "stdlib.h"
 #include "mcp2515.h"
+#include "hexascii.h"
 
-#define VERSION "0.11  March 19, 2018"
+#define VERSION "0.12  March 22, 2018"
 
 #define LED LATCbits.LATC3
 #define ON 1  // Note: this should be 0 and the circuit is not right. 
 #define OFF 0
 
-#define BUFSIZE 9
-const uint8_t max_idx = BUFSIZE - 2;  // append '\0' at the tail
+#define BUFSIZE 16
+#define MAX_IDX 7  // append '\0' at the tail
 
 struct {
     bool with_sid;
     bool hex_output;
 } output_format;
 
+#define EVAL_MODE 0u
+#define SLCAN_MODE 1u
+#define MODE_ADDR 0u
+uint8_t run_mode = EVAL_MODE;
+
+void slcan_send(uint8_t *pbuf) {
+    uint16_t id;
+    uint8_t dlc;
+    id = atosid(pbuf);  // pbuf[0] - pbuf[2]
+    can_set_sid(id);
+    dlc = atoui8(pbuf[3]);
+    can_send(&pbuf[4], dlc);  // TODO: hex input
+}
+
 /*
  * Receive message from CAN bus
  */
-void receive_handler(uint8_t sid, uint8_t *pbuf, uint8_t dlc) {
+void receive_handler(uint16_t sid, uint8_t *pbuf, uint8_t dlc) {
     uint8_t i;
-    if (output_format.with_sid) {
-        printf("%d,%s\n", sid, pbuf);            
-    } else if (output_format.hex_output) {
-        printf("%02x:", sid);
-        for(i=0; i<dlc; i++) {
-            printf(" %02x", pbuf[i]);
-        }
-        printf("\n");
+    if (run_mode == SLCAN_MODE) {
+        printf("r%03X%d%s\n", sid, dlc, pbuf);  // TODO: hex output
     } else {
-        printf("%s\n", pbuf);
+        if (output_format.with_sid) {
+            printf("%d,%s\n", sid, pbuf);            
+        } else if (output_format.hex_output) {
+            printf("%03x:", sid);
+            for(i=0; i<dlc; i++) {
+                printf(" %02x", pbuf[i]);
+            }
+            printf("\n");
+        } else {
+            printf("%s\n", pbuf);
+        }
     }
 }
 
@@ -53,6 +73,8 @@ void main(void)
 
     uint8_t cmd, sid, n, bpr;
     uint16_t mask;
+
+    run_mode = DATAEE_ReadByte(MODE_ADDR);
 
     SYSTEM_Initialize();
 
@@ -80,9 +102,19 @@ void main(void)
             buf[idx] = c;
             if (c == '\n') {
                 buf[idx] = '\0';
-                if (buf[0] == '@') {  // command entered
+                if (run_mode == SLCAN_MODE && buf[0] == 't') {
+                    slcan_send(&buf[1]);
+                } else if (buf[0] == '@') {  // command entered
                     cmd = buf[1];
                     switch(cmd) {
+                        case 'M':  // Set SLCAN mode
+                            if (buf[2] == 's') {
+                                run_mode = SLCAN_MODE;
+                                DATAEE_WriteByte(MODE_ADDR, run_mode);
+                            } else if (buf[2] == 'e') {
+                                run_mode = EVAL_MODE;
+                                DATAEE_WriteByte(MODE_ADDR, run_mode);                                
+                            }
                         case 'i':  // Set standard identifier
                             sid = (uint8_t)atoi(&buf[2]);
                             can_set_sid(sid);
@@ -145,6 +177,7 @@ void main(void)
                             break;
                         case 'h':  // Show help
                             printf("/// UART2CAN HELP (version %s) ///\n", VERSION);
+                            printf("[Set SLCAN/EVAL mode] @Ms: SLCAN, @Me: EVAL\n");
                             printf("[Set standard identifier] @i<standard identifier>\n");
                             printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
                             printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
@@ -166,7 +199,7 @@ void main(void)
                 }
                 idx = 0;
                 
-            } else if (++idx > max_idx) {
+            } else if (++idx > MAX_IDX && run_mode == EVAL_MODE) {
                 buf[idx] = '\0';
                 can_send(buf, idx);
                 idx = 0;

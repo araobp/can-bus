@@ -13,6 +13,10 @@ extern "C" {
 
 #include <stdint.h>
     
+#define SIDH(mask) ((uint8_t)((mask >> 3) & 0x00ffu))
+#define SIDL(mask) ((uint8_t)(((mask & 0x0007u) << 5) & 0x00ffu))
+#define SID_MAX 0b0000011111111111u
+
 // P18 TXB0CTRL
 #define TXB0CTRL 0x30u
 #define TXB1CTRL 0x40u

@@ -50,6 +50,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "spi.h"
+#include "memory.h"
 #include "eusart.h"
 
 #define _XTAL_FREQ  2000000

@@ -1,25 +1,5 @@
 
-# 1 "mcc_generated_files/mcc.c"
-
-
-# 49
-#pragma config FOSC = INTOSC
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config CLKOUTEN = OFF
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-
-
-#pragma config WRT = OFF
-#pragma config PLLEN = OFF
-#pragma config STVREN = ON
-#pragma config BORV = LO
-#pragma config LVP = ON
+# 1 "mcc_generated_files/memory.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3571,11 +3551,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 177 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 189
-void PIN_MANAGER_IOC(void);
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
+typedef unsigned char bool;
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
 typedef signed char int8_t;
@@ -3667,33 +3644,6 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
-typedef unsigned char bool;
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
-typedef int ptrdiff_t;
-
-# 115 "mcc_generated_files/spi.h"
-void SPI_Initialize(void);
-
-# 150
-uint8_t SPI_Exchange8bit(uint8_t data);
-
-# 190
-uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 213
-bool SPI_IsBufferFull(void);
-
-# 238
-bool SPI_HasWriteCollisionOccured(void);
-
-# 262
-void SPI_ClearWriteCollisionStatus(void);
-
 # 98 "mcc_generated_files/memory.h"
 uint16_t FLASH_ReadWord(uint16_t flashAddr);
 
@@ -3712,108 +3662,166 @@ void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
 # 245
 uint8_t DATAEE_ReadByte(uint8_t bAdd);
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
-struct __prbuf
+# 57 "mcc_generated_files/memory.c"
+uint16_t FLASH_ReadWord(uint16_t flashAddr)
 {
-char * ptr;
-void (* func)(char);
-};
+uint8_t GIEBitValue = INTCONbits.GIE;
 
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
-extern int errno;
+INTCONbits.GIE = 0;
+EEADRL = (flashAddr & 0x00FF);
+EEADRH = ((flashAddr & 0xFF00) >> 8);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
-extern void init_uart(void);
+EECON1bits.CFGS = 0;
+EECON1bits.EEPGD = 1;
+EECON1bits.RD = 1;
+__nop();
+__nop();
+INTCONbits.GIE = GIEBitValue;
 
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 94 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-
-# 114
-uint8_t EUSART_Read(void);
-
-# 134
-void EUSART_Write(uint8_t txData);
-
-# 70 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 83
-void OSCILLATOR_Initialize(void);
-
-# 96
-void WDT_Initialize(void);
-
-# 70 "mcc_generated_files/mcc.c"
-void SYSTEM_Initialize(void)
-{
-
-PIN_MANAGER_Initialize();
-OSCILLATOR_Initialize();
-WDT_Initialize();
-SPI_Initialize();
-EUSART_Initialize();
+return ((uint16_t)((EEDATH << 8) | EEDATL));
 }
 
-void OSCILLATOR_Initialize(void)
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
 {
+uint16_t blockStartAddr = (uint16_t)(flashAddr & ((0x2000-1) ^ (32-1)));
+uint8_t offset = (uint8_t)(flashAddr & (32-1));
+uint8_t i;
 
-OSCCON = 0x60;
 
-OSCTUNE = 0x00;
-
-BORCON = 0x00;
+for (i=0; i<32; i++)
+{
+ramBuf[i] = FLASH_ReadWord((blockStartAddr+i));
 }
 
-void WDT_Initialize(void)
+
+ramBuf[offset] = word;
+
+
+FLASH_WriteBlock(blockStartAddr, ramBuf);
+}
+
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
+{
+uint16_t blockStartAddr = (uint16_t )(writeAddr & ((0x2000-1) ^ (32-1)));
+uint8_t GIEBitValue = INTCONbits.GIE;
+uint8_t i,j,numberOfWriteBlocks=0,dataCounter=0;
+
+numberOfWriteBlocks = (32/32);
+
+
+if( writeAddr != blockStartAddr )
+{
+return -1;
+}
+
+INTCONbits.GIE = 0;
+
+
+FLASH_EraseBlock(writeAddr);
+
+for(j=0; j<numberOfWriteBlocks; j++)
 {
 
-WDTCON = 0x16;
+EECON1bits.EEPGD = 1;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+EECON1bits.LWLO = 1;
+
+for (i=0; i<32; i++)
+{
+
+EEADRL = (writeAddr & 0xFF);
+
+EEADRH = ((writeAddr & 0xFF00) >> 8);
+
+
+EEDATL = flashWordArray[dataCounter];
+EEDATH = ((flashWordArray[dataCounter] & 0xFF00) >> 8);
+dataCounter++;
+
+if(i == (32-1))
+{
+
+EECON1bits.LWLO = 0;
+}
+
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+__nop();
+__nop();
+
+writeAddr++;
+}
+}
+
+EECON1bits.WREN = 0;
+INTCONbits.GIE = GIEBitValue;
+
+return 0;
+}
+
+void FLASH_EraseBlock(uint16_t startAddr)
+{
+uint8_t GIEBitValue = INTCONbits.GIE;
+
+INTCONbits.GIE = 0;
+
+EEADRL = (startAddr & 0xFF);
+
+EEADRH = ((startAddr & 0xFF00) >> 8);
+
+
+EECON1bits.CFGS = 0;
+EECON1bits.EEPGD = 1;
+EECON1bits.FREE = 1;
+EECON1bits.WREN = 1;
+
+
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+__nop();
+__nop();
+
+EECON1bits.WREN = 0;
+INTCONbits.GIE = GIEBitValue;
+}
+
+# 186
+void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData)
+{
+uint8_t GIEBitValue = 0;
+
+EEADRL = (uint8_t)(bAdd & 0x0ff);
+EEDATL = bData;
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+
+GIEBitValue = INTCONbits.GIE;
+INTCONbits.GIE = 0;
+EECON2 = 0x55;
+EECON2 = 0xAA;
+EECON1bits.WR = 1;
+
+while (EECON1bits.WR)
+{
+}
+
+EECON1bits.WREN = 0;
+INTCONbits.GIE = GIEBitValue;
+}
+
+uint8_t DATAEE_ReadByte(uint8_t bAdd)
+{
+EEADRL = (uint8_t)(bAdd & 0x0ff);
+EECON1bits.CFGS = 0;
+EECON1bits.EEPGD = 0;
+EECON1bits.RD = 1;
+__nop();
+__nop();
+
+return (EEDATL);
 }
 
