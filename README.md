@@ -12,7 +12,7 @@ I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller
 
 I decided to use cheap PIC 8bit MCU and FTDI with MCP2515/MCP2561 in this project.
 
-I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is not suitable for the goal: expensive and over spec.
+I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is not suitable for the goal: expensive and over spec. I will use [a cheap ARM mbed](http://akizukidenshi.com/catalog/g/gK-12144/) with [ENC28J60](http://akizukidenshi.com/catalog/g/gI-01948/) to develop CAN-MQTT gateway in another project.
 
 ![breadboard](./doc/breadboard.jpg)
 
@@ -35,6 +35,10 @@ Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c
 - [CAN2Ethernet](http://lnxpps.de/rpie/)
 
 Confirm if OpenWrt works with the implementation.
+
+### Version 0.3 plan
+
+Create another project to evaluate Ethernet controller "ENC28J60" and develop CAN-MQTT gateway on either Arduino or ARM mbed.
 
 ### Extra
 
