@@ -16,6 +16,8 @@ I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is n
 
 ![breadboard](./doc/breadboard.jpg)
 
+SocketCAN and SLCAN are interesting, so I have evaluated them. But SLCAN does not support mask/filtering on CAN controller, so I do not adopt them in this project.
+
 ### Version 0.1 (March 17, 2018)
 
 I purchased CAN adaptors from Amazon.
@@ -28,21 +30,11 @@ Then I have developed my original ASCII-based protocol over serial for MCP2515. 
 
 Develop my original CAN adaptor board.
 
-Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.
-
-- [SocketCAN(Linux)](https://elinux.org/CAN_Bus#SocketCAN_Supported_Protocols)
-- [kmod-can-slcan(OpenWrt)](https://openwrt.org/packages/pkgdata/kmod-can-slcan)
-- [CAN2Ethernet](http://lnxpps.de/rpie/)
-
-Confirm if OpenWrt works with the implementation.
+~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
 
 ### Version 0.3 plan
 
 Create another project to evaluate Ethernet controller "ENC28J60" and develop CAN-MQTT gateway on either Arduino or ARM mbed.
-
-### Extra
-
-Develop CAN adaptor board for RasPi, and use SocketCAN SPI driver for MCP2515.
 
 ## CAN adaptor to UART
 
@@ -211,13 +203,3 @@ After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original
 
 #### Murata
 - [Ceralock](https://www.murata.com/~/media/webrenewal/support/library/catalog/products/timingdevice/ceralock/p17e.ashx)
-
-### SocketCAN
-
-- [Official document](https://www.kernel.org/doc/Documentation/networking/can.txt)
-- [SocketCAN paper](https://www.can-cia.org/fileadmin/resources/documents/proceedings/2012_kleine-budde.pdf)
-- [Wikipedia](https://en.wikipedia.org/wiki/SocketCAN)
-- [RaspberryPi & CAN-bus](https://isojed.nl/blog/2017/03/12/raspberry-pi-can-bus/)
-- [Kernel building(RasPi)](https://www.raspberrypi.org/documentation/linux/kernel/building.md)
-- [VSCAN manual](ftp://ftp.visionsystems.de/pub/multiio/archiv/VSCAN_Manual.pdf)
-- [PythonCAN](https://python-can.readthedocs.io/en/2.1.0/index.html)
