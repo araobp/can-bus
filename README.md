@@ -12,7 +12,7 @@ I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller
 
 I decided to use cheap PIC 8bit MCU and FTDI with MCP2515/MCP2561 in this project.
 
-I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is not suitable for the goal: expensive and over spec.
+I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is not suitable for the goal: expensive and over spec. I will use [a cheap ARM mbed](http://akizukidenshi.com/catalog/g/gK-12144/) with [ENC28J60](http://akizukidenshi.com/catalog/g/gI-01948/) to develop CAN-MQTT gateway in another project.
 
 ![breadboard](./doc/breadboard.jpg)
 
