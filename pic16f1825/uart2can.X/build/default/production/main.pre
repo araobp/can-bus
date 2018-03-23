@@ -3674,24 +3674,6 @@ bool SPI_HasWriteCollisionOccured(void);
 # 262
 void SPI_ClearWriteCollisionStatus(void);
 
-# 98 "mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
-
-# 127
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-
-# 163
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-
-# 188
-void FLASH_EraseBlock(uint16_t startAddr);
-
-# 219
-void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-
-# 245
-uint8_t DATAEE_ReadByte(uint8_t bAdd);
-
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
@@ -3761,13 +3743,13 @@ uint8_t EUSART_Read(void);
 # 134
 void EUSART_Write(uint8_t txData);
 
-# 70 "mcc_generated_files/mcc.h"
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 83
+# 82
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 95
 void WDT_Initialize(void);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
@@ -3878,37 +3860,9 @@ bool with_sid;
 bool hex_output;
 } output_format;
 
-
-
-
-uint8_t run_mode = 0u;
-
-void slcan_send(uint8_t *pbuf) {
-uint16_t id;
-uint8_t dlc, i, j;
-uint8_t *ascii_data;
-uint8_t data_buf[8];
-id = atosid(pbuf);
-can_set_sid(id);
-dlc = atoui8(pbuf[3]);
-ascii_data = &pbuf[4];
-for(i=0; i<dlc; i++) {
-j = i * 2u;
-data_buf[i] = atoui8(ascii_data[j]) * 0x10u + atoui8(ascii_data[j+1]);
-}
-can_send(data_buf, dlc);
-}
-
-# 54
+# 33
 void receive_handler(uint16_t sid, uint8_t *buf, uint8_t dlc) {
 uint8_t i;
-if (run_mode == 1u) {
-printf("r%03X%d", sid, dlc);
-for(i=0; i<dlc; i++) {
-printf("%02X", buf[i]);
-}
-printf("\n");
-} else {
 if (output_format.with_sid) {
 printf("%d,%s\n", sid, buf);
 } else if (output_format.hex_output) {
@@ -3921,20 +3875,17 @@ printf("\n");
 printf("%s\n", buf);
 }
 }
-}
 
 void main(void)
 {
 LATCbits.LATC3 = 1;
 
-uint8_t buf[22];
+uint8_t buf[16];
 bool echo_back = 0;
 uint8_t c, idx;
 
 uint8_t cmd, sid, n, bpr;
 uint16_t mask;
-
-run_mode = DATAEE_ReadByte(0u);
 
 _delay((unsigned long)((100)*(2000000/4000.0)));
 
@@ -3962,21 +3913,13 @@ c = EUSART_Read();
 if (echo_back) printf("%c", c);
 
 buf[idx] = c;
+
+
 if (c == '\n') {
 buf[idx] = '\0';
-if (run_mode == 1u && buf[0] == 't') {
-slcan_send(&buf[1]);
-} else if (buf[0] == '@') {
+if (buf[0] == '@') {
 cmd = buf[1];
 switch(cmd) {
-case 'M':
-if (buf[2] == 's') {
-run_mode = 1u;
-DATAEE_WriteByte(0u, run_mode);
-} else if (buf[2] == 'e') {
-run_mode = 0u;
-DATAEE_WriteByte(0u, run_mode);
-}
 case 'i':
 sid = (uint8_t)atoi(&buf[2]);
 can_set_sid(sid);
@@ -4038,8 +3981,7 @@ case '@':
 can_send(&buf[1], idx - 1u);
 break;
 case 'h':
-printf("/// UART2CAN HELP (version %s) ///\n", "0.12  March 22, 2018");
-printf("[Set SLCAN/EVAL mode] @Ms: SLCAN, @Me: EVAL\n");
+printf("/// UART2CAN HELP (version %s) ///\n", "0.13  March 23, 2018");
 printf("[Set standard identifier] @i<standard identifier>\n");
 printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
 printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
@@ -4061,7 +4003,7 @@ can_send(buf, idx);
 }
 idx = 0;
 
-} else if (++idx > 7 && run_mode == 0u) {
+} else if (++idx > 7) {
 buf[idx] = '\0';
 can_send(buf, idx);
 idx = 0;

@@ -2627,7 +2627,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;spi.h: 17: uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
+[; ;spi.h: 23: uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;

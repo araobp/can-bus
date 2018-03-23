@@ -14,6 +14,12 @@ extern "C" {
 
 #define CS_PIN LATAbits.LATA4
 
+/**
+ * SPI data exchange
+ * @param buf
+ * @param len
+ * @return bytes written
+ */
 uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 
 #ifdef	__cplusplus

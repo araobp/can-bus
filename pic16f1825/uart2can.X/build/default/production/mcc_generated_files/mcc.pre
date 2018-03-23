@@ -3694,24 +3694,6 @@ bool SPI_HasWriteCollisionOccured(void);
 # 262
 void SPI_ClearWriteCollisionStatus(void);
 
-# 98 "mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
-
-# 127
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-
-# 163
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-
-# 188
-void FLASH_EraseBlock(uint16_t startAddr);
-
-# 219
-void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-
-# 245
-uint8_t DATAEE_ReadByte(uint8_t bAdd);
-
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
@@ -3781,13 +3763,13 @@ uint8_t EUSART_Read(void);
 # 134
 void EUSART_Write(uint8_t txData);
 
-# 70 "mcc_generated_files/mcc.h"
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 83
+# 82
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 95
 void WDT_Initialize(void);
 
 # 70 "mcc_generated_files/mcc.c"
@@ -3804,7 +3786,7 @@ EUSART_Initialize();
 void OSCILLATOR_Initialize(void)
 {
 
-OSCCON = 0x60;
+OSCCON = 0xE0;
 
 OSCTUNE = 0x00;
 

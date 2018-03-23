@@ -158,7 +158,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 14 "hexascii.c"
+# 19 "hexascii.c"
 uint8_t atoui8(uint8_t ascii) {
 uint8_t minus = 0;
 if (ascii >= 0x30u && ascii <= 0x39u) {
@@ -172,6 +172,7 @@ minus = 0x61u - 10;
 return (uint8_t)(ascii - minus);
 }
 
+# 37
 uint16_t atosid(uint8_t *ascii)
 {
 uint16_t a = (uint16_t)(atoui8(ascii[0]));

@@ -5,12 +5,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "19
 [s S325 `uc 1 `uc 1 ]
 [n S325 . debug verbose ]
-[v F2846 `(v ~T0 @X0 0 tf3`ui`*uc`uc ]
+[v F2830 `(v ~T0 @X0 0 tf3`ui`*uc`uc ]
 [v F2717 `(v ~T0 @X0 1 tf1`ul ]
 "153 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic.h
 [v __delay `JF2717 ~T0 @X0 0 e ]
 [p i __delay ]
-"17 spi.h
+"23 spi.h
 [v _SPI_exchange `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "95 mcp2515.h
 [v _can_ope_mode `(uc ~T0 @X0 0 ef1`uc ]
@@ -2674,18 +2674,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 213: bool SPI_IsBufferFull(void);
 [; ;spi.h: 238: bool SPI_HasWriteCollisionOccured(void);
 [; ;spi.h: 262: void SPI_ClearWriteCollisionStatus(void);
-[; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
-[; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-[; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-[; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
-[; ;memory.h: 219: void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-[; ;memory.h: 245: uint8_t DATAEE_ReadByte(uint8_t bAdd);
 [; ;eusart.h: 94: void EUSART_Initialize(void);
 [; ;eusart.h: 114: uint8_t EUSART_Read(void);
 [; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 96: void WDT_Initialize(void);
+[; ;mcc.h: 69: void SYSTEM_Initialize(void);
+[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 95: void WDT_Initialize(void);
 "36 mcp2515.h
 [v _rxfnsidh `Cuc ~T0 @X0 -> 6 `i e ]
 [i _rxfnsidh
@@ -2748,7 +2742,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcp2515.h: 100: bool can_abort(void);
 [; ;mcp2515.h: 101: void can_dump_masks_and_filters(void);
 [; ;mcp2515.h: 102: void can_dump_registers(void);
-[; ;spi.h: 17: uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
+[; ;spi.h: 23: uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 "17 mcp2515.c
 [v _sid `S324 ~T0 @X0 1 e ]
 [; ;mcp2515.c: 14: struct {
@@ -2765,9 +2759,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _operation_mode `uc ~T0 @X0 1 e ]
 [; ;mcp2515.c: 24: uint8_t operation_mode;
 "25
-[v _handler `*F2846 ~T0 @X0 1 e ]
+[v _handler `*F2830 ~T0 @X0 1 e ]
 [i _handler
--> -> 0 `i `*F2846
+-> -> 0 `i `*F2830
 ]
 [; ;mcp2515.c: 25: void (*handler)(uint16_t, uint8_t *, uint8_t) = (0);
 "27
@@ -2853,7 +2847,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _can_set_sid (1 -> -> 0 `i `ui ]
 [; ;mcp2515.c: 57: handler = receive_handler;
 "57
-[e = _handler -> _receive_handler `*F2846 ]
+[e = _handler -> _receive_handler `*F2830 ]
 [; ;mcp2515.c: 60: buf[0] = 0b11000000u;
 "60
 [e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 192 `ui `uc ]

@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "177 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"83 mcc_generated_files/mcc.h
+"82 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"96
+"95
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "115 mcc_generated_files/spi.h
 [v _SPI_Initialize `(v ~T0 @X0 0 ef ]
@@ -2676,12 +2676,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 213: bool SPI_IsBufferFull(void);
 [; ;spi.h: 238: bool SPI_HasWriteCollisionOccured(void);
 [; ;spi.h: 262: void SPI_ClearWriteCollisionStatus(void);
-[; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
-[; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-[; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-[; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
-[; ;memory.h: 219: void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-[; ;memory.h: 245: uint8_t DATAEE_ReadByte(uint8_t bAdd);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -2714,9 +2708,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 94: void EUSART_Initialize(void);
 [; ;eusart.h: 114: uint8_t EUSART_Read(void);
 [; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 96: void WDT_Initialize(void);
+[; ;mcc.h: 69: void SYSTEM_Initialize(void);
+[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 95: void WDT_Initialize(void);
 "70 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "71
@@ -2752,9 +2746,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 81: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 83: OSCCON = 0x60;
+[; ;mcc.c: 83: OSCCON = 0xE0;
 "83
-[e = _OSCCON -> -> 96 `i `uc ]
+[e = _OSCCON -> -> 224 `i `uc ]
 [; ;mcc.c: 85: OSCTUNE = 0x00;
 "85
 [e = _OSCTUNE -> -> 0 `i `uc ]

@@ -5,12 +5,12 @@
         <group>
             <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/mcc_generated_files/spi.c</file>
             <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/main.c</file>
-            <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/nbproject/Makefile-default.mk</file>
+            <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/spi.c</file>
             <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/mcp2515.h</file>
-            <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/mcc_generated_files/memory.h</file>
             <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/hexascii.h</file>
             <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/hexascii.c</file>
             <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/mcp2515.c</file>
+            <file>file:/C:/Users/shiny/Documents/GitHub/can-bus/pic16f1825/uart2can.X/spi.h</file>
         </group>
     </open-files>
 </project-private>

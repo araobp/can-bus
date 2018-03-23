@@ -3734,24 +3734,6 @@ bool SPI_HasWriteCollisionOccured(void);
 # 262
 void SPI_ClearWriteCollisionStatus(void);
 
-# 98 "mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
-
-# 127
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-
-# 163
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-
-# 188
-void FLASH_EraseBlock(uint16_t startAddr);
-
-# 219
-void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
-
-# 245
-uint8_t DATAEE_ReadByte(uint8_t bAdd);
-
 # 94 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
 
@@ -3761,13 +3743,13 @@ uint8_t EUSART_Read(void);
 # 134
 void EUSART_Write(uint8_t txData);
 
-# 70 "mcc_generated_files/mcc.h"
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 83
+# 82
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 95
 void WDT_Initialize(void);
 
 # 36 "mcp2515.h"
@@ -3799,7 +3781,7 @@ bool can_abort(void);
 void can_dump_masks_and_filters(void);
 void can_dump_registers(void);
 
-# 17 "spi.h"
+# 23 "spi.h"
 uint8_t SPI_exchange(uint8_t *buf, uint8_t len);
 
 # 14 "mcp2515.c"

@@ -3,7 +3,6 @@
  main.c  \
 mcc_generated_files/mcc.h  \
 hexascii.h  \
-mcc_generated_files/memory.h  \
 mcp2515.h  \
 mcc_generated_files/eusart.h  \
 mcc_generated_files/pin_manager.h  \

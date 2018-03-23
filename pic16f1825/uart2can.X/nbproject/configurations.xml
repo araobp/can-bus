@@ -11,7 +11,6 @@
         <itemPath>mcc_generated_files/eusart.h</itemPath>
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/spi.h</itemPath>
-        <itemPath>mcc_generated_files/memory.h</itemPath>
       </logicalFolder>
       <itemPath>mcp2515.h</itemPath>
       <itemPath>spi.h</itemPath>
@@ -31,7 +30,6 @@
         <itemPath>mcc_generated_files/eusart.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/spi.c</itemPath>
-        <itemPath>mcc_generated_files/memory.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>spi.c</itemPath>
