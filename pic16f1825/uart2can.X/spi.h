@@ -12,7 +12,7 @@ extern "C" {
 #include <stdint.h>
 #include<xc.h>
 
-#define CS_PIN LATAbits.LATA4
+#define CS_PIN LATAbits.LATA2
 
 /**
  * SPI data exchange

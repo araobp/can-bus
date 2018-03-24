@@ -3673,8 +3673,8 @@ void SPI_ClearWriteCollisionStatus(void);
 
 # 4 "spi.c"
 uint8_t SPI_exchange(uint8_t *buf, uint8_t len) {
-LATAbits.LATA4 = 0;
+LATAbits.LATA2 = 0;
 uint8_t bytes_written = SPI_Exchange8bitBuffer(buf, len, buf);
-LATAbits.LATA4 = 1;
+LATAbits.LATA2 = 1;
 return bytes_written;
 }

@@ -738,7 +738,7 @@ text17 15F2 15FB CODE 15F2 0
 text29 15EA 15F1 CODE 15EA 0
 %locals
 dist/default/production\uart2can.X.production.obj
-C:\Users\shiny\AppData\Local\Temp\s5o4.
+C:\Users\shiny\AppData\Local\Temp\shck.
 3794 7F0 0 CODE 0
 3797 7F0 0 CODE 0
 3845 7F0 0 CODE 0
@@ -1298,11 +1298,11 @@ mcc_generated_files/pin_manager.c
 64 B7C 0 CODE 0
 69 B7E 0 CODE 0
 70 B80 0 CODE 0
-75 B82 0 CODE 0
-76 B84 0 CODE 0
-77 B86 0 CODE 0
-83 B88 0 CODE 0
-84 B8A 0 CODE 0
+75 B81 0 CODE 0
+76 B83 0 CODE 0
+77 B85 0 CODE 0
+83 B87 0 CODE 0
+84 B89 0 CODE 0
 89 B8B 0 CODE 0
 mcc_generated_files/mcc.c
 80 B04 0 CODE 0

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"177 mcc_generated_files/pin_manager.h
+"181 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "82 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
@@ -2637,8 +2637,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 177: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 189: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 181: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 193: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;

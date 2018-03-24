@@ -2645,16 +2645,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;spi.c: 5: LATAbits.LATA4 = 0;
+[; ;spi.c: 5: LATAbits.LATA2 = 0;
 "5
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "6
 [v _bytes_written `uc ~T0 @X0 1 a ]
 [; ;spi.c: 6: uint8_t bytes_written = SPI_Exchange8bitBuffer(buf, len, buf);
 [e = _bytes_written ( _SPI_Exchange8bitBuffer (3 , , _buf _len _buf ]
-[; ;spi.c: 7: LATAbits.LATA4 = 1;
+[; ;spi.c: 7: LATAbits.LATA2 = 1;
 "7
-[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 [; ;spi.c: 8: return bytes_written;
 "8
 [e ) _bytes_written ]
