@@ -10,9 +10,10 @@ I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller
 
 |Parameter     |Value                       |
 |--------------|----------------------------|
-|UART baud rate|9600 bps (fixed)            |
+|UART baud rate|9600bps (fixed)             |
 |SPI clock     |500kHz (fixed)              |
 |CAN speed     |Max. 250kHz (default 125kHz)|
+|Oscillator for CAN controller|8MHz (ceramic)|
 
 ## Current status and plan
 
