@@ -185,6 +185,10 @@ At first, I am going to use [this universal board](http://akizukidenshi.com/cata
 
 ![universal board](./doc/universal_board.jpg)
 
+I have finished the first prototype (Marth 25, 2018):
+
+![soldering](./doc/soldering.jpg)
+
 After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
 
 ## Reference
