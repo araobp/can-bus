@@ -70,7 +70,7 @@ Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plu
 [Set baud rate] @b<bpr>
 [Abort all pending transmissions] @a
 [Dump masks and filters] @F
-[Dump registers] @d
+[Dump registers] @D
 [Send message] <message>
 [Send message beginning with '@' character] @<@message>
 [Receive message] <message> will be output
