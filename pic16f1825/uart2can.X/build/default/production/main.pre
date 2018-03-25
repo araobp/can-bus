@@ -3974,7 +3974,7 @@ break;
 case 'F':
 can_dump_masks_and_filters();
 break;
-case 'd':
+case 'D':
 can_dump_registers();
 break;
 case '@':
@@ -3991,7 +3991,7 @@ printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
 printf("[Set baud rate] @b<bpr>\n");
 printf("[Abort all pending transmissions] @a\n");
 printf("[Dump masks and filters] @F\n");
-printf("[Dump registers] @d\n");
+printf("[Dump registers] @D\n");
 printf("[Send message] <message>\n");
 printf("[Send message beginning with \'@\' character] @<@message>\n");
 printf("[Receive message] <message> will be output\n");

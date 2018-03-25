@@ -16,7 +16,7 @@
 #define VERSION "0.13  March 23, 2018"
 
 #define LED LATCbits.LATC3
-#define ON 1  // Note: this should be 0 and the circuit is not right. 
+#define ON 1  // Note: this should be 0 (open drain). 
 #define OFF 0
 
 #define BUFSIZE 16
@@ -143,7 +143,7 @@ void main(void)
                         case 'F':  // Dump masks and filters
                             can_dump_masks_and_filters();
                             break;
-                        case 'd':  // Dump register
+                        case 'D':  // Dump register
                             can_dump_registers();
                             break;
                         case '@':  // Data begining with '@' character
@@ -160,7 +160,7 @@ void main(void)
                             printf("[Set baud rate] @b<bpr>\n");
                             printf("[Abort all pending transmissions] @a\n");
                             printf("[Dump masks and filters] @F\n");
-                            printf("[Dump registers] @d\n");
+                            printf("[Dump registers] @D\n");
                             printf("[Send message] <message>\n");
                             printf("[Send message beginning with \'@\' character] @<@message>\n");
                             printf("[Receive message] <message> will be output\n");

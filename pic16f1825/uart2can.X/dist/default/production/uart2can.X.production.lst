@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Sun Mar 25 06:20:13 2018
+                                                                                               Sun Mar 25 12:25:36 2018
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	16F1825
@@ -2076,7 +2076,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2062  12D8  345D               	retlw	93	;']'
   2063  12D9  3420               	retlw	32	;' '
   2064  12DA  3440               	retlw	64	;'@'
-  2065  12DB  3464               	retlw	100	;'d'
+  2065  12DB  3444               	retlw	68	;'D'
   2066  12DC  340A               	retlw	10
   2067  12DD  3400               	retlw	0
   2068                           
@@ -3787,7 +3787,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3768                           ;main.c: 145: break;
   3769  04CF  2BBD               	goto	L1
   3770  04D0                     l2829:	
-  3771                           ;main.c: 146: case 'd':
+  3771                           ;main.c: 146: case 'D':
   3772                           
   3773                           
   3774                           ;main.c: 147: can_dump_registers();
@@ -3900,7 +3900,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3881  0530  00A3               	movwf	printf@f+1
   3882  0531  3185  25A5  3183   	fcall	_printf
   3883                           
-  3884                           ;main.c: 163: printf("[Dump registers] @d\n");
+  3884                           ;main.c: 163: printf("[Dump registers] @D\n");
   3885  0534  30C9               	movlw	low (STR_18| (0+32768))
   3886  0535  0020               	movlb	0	; select bank0
   3887  0536  00A2               	movwf	printf@f
@@ -3959,19 +3959,19 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3940  055F  3A40               	xorlw	64	; case 64
   3941  0560  1903               	skipnz
   3942  0561  2CD4               	goto	l2831
-  3943  0562  3A06               	xorlw	6	; case 70
+  3943  0562  3A04               	xorlw	4	; case 68
   3944  0563  1903               	skipnz
-  3945  0564  2CCC               	goto	l2827
-  3946  0565  3A27               	xorlw	39	; case 97
+  3945  0564  2CD0               	goto	l2829
+  3946  0565  3A02               	xorlw	2	; case 70
   3947  0566  1903               	skipnz
-  3948  0567  2CC8               	goto	l2825
-  3949  0568  3A03               	xorlw	3	; case 98
+  3948  0567  2CCC               	goto	l2827
+  3949  0568  3A27               	xorlw	39	; case 97
   3950  0569  1903               	skipnz
-  3951  056A  2C78               	goto	l2807
-  3952  056B  3A06               	xorlw	6	; case 100
+  3951  056A  2CC8               	goto	l2825
+  3952  056B  3A03               	xorlw	3	; case 98
   3953  056C  1903               	skipnz
-  3954  056D  2CD0               	goto	l2829
-  3955  056E  3A02               	xorlw	2	; case 102
+  3954  056D  2C78               	goto	l2807
+  3955  056E  3A04               	xorlw	4	; case 102
   3956  056F  1903               	skipnz
   3957  0570  2C8A               	goto	l2813
   3958  0571  3A0E               	xorlw	14	; case 104
@@ -10006,7 +10006,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Sun Mar 25 06:20:13 2018
+Symbol Table                                                                                   Sun Mar 25 12:25:36 2018
 
                           _SPI_Initialize 0B0B                               __CFG_CP$OFF 0000  
                         ?_receive_handler 0043                                        l51 0B23  

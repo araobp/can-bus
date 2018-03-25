@@ -111,7 +111,7 @@ stringtext54 STRCODE 0 149A 149A 6 2
 stringtext55 STRCODE 0 14A0 14A0 6 2
 stringtext56 STRCODE 0 14A6 14A6 5 2
 stringtext57 STRCODE 0 14B1 14B1 3 2
-$C:\Users\shiny\AppData\Local\Temp\shck.obj
+$C:\Users\shiny\AppData\Local\Temp\sj10.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 2 2
@@ -205,23 +205,23 @@ STRING 14B6-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\uart2can.X.production.obj
-7F0 cinit CODE >3794:C:\Users\shiny\AppData\Local\Temp\shck.
-7F0 cinit CODE >3797:C:\Users\shiny\AppData\Local\Temp\shck.
-7F0 cinit CODE >3845:C:\Users\shiny\AppData\Local\Temp\shck.
-7F1 cinit CODE >3846:C:\Users\shiny\AppData\Local\Temp\shck.
-7F2 cinit CODE >3847:C:\Users\shiny\AppData\Local\Temp\shck.
-7F3 cinit CODE >3848:C:\Users\shiny\AppData\Local\Temp\shck.
-7F4 cinit CODE >3849:C:\Users\shiny\AppData\Local\Temp\shck.
-7F5 cinit CODE >3850:C:\Users\shiny\AppData\Local\Temp\shck.
-7F6 cinit CODE >3854:C:\Users\shiny\AppData\Local\Temp\shck.
-7F7 cinit CODE >3855:C:\Users\shiny\AppData\Local\Temp\shck.
-7F8 cinit CODE >3856:C:\Users\shiny\AppData\Local\Temp\shck.
-7F9 cinit CODE >3857:C:\Users\shiny\AppData\Local\Temp\shck.
-7FA cinit CODE >3858:C:\Users\shiny\AppData\Local\Temp\shck.
-7FB cinit CODE >3859:C:\Users\shiny\AppData\Local\Temp\shck.
-7FD cinit CODE >3865:C:\Users\shiny\AppData\Local\Temp\shck.
-7FD cinit CODE >3867:C:\Users\shiny\AppData\Local\Temp\shck.
-7FE cinit CODE >3868:C:\Users\shiny\AppData\Local\Temp\shck.
+7F0 cinit CODE >3794:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F0 cinit CODE >3797:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F0 cinit CODE >3845:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F1 cinit CODE >3846:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F2 cinit CODE >3847:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F3 cinit CODE >3848:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F4 cinit CODE >3849:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F5 cinit CODE >3850:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F6 cinit CODE >3854:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F7 cinit CODE >3855:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F8 cinit CODE >3856:C:\Users\shiny\AppData\Local\Temp\sj10.
+7F9 cinit CODE >3857:C:\Users\shiny\AppData\Local\Temp\sj10.
+7FA cinit CODE >3858:C:\Users\shiny\AppData\Local\Temp\sj10.
+7FB cinit CODE >3859:C:\Users\shiny\AppData\Local\Temp\sj10.
+7FD cinit CODE >3865:C:\Users\shiny\AppData\Local\Temp\sj10.
+7FD cinit CODE >3867:C:\Users\shiny\AppData\Local\Temp\sj10.
+7FE cinit CODE >3868:C:\Users\shiny\AppData\Local\Temp\sj10.
 B23 text34 CODE >75:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 B23 text34 CODE >77:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
 B23 text34 CODE >79:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\mcc_generated_files/eusart.c
@@ -764,14 +764,14 @@ DC2 text1 CODE >293:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.
 58C maintext CODE >175:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 596 maintext CODE >176:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
 59B maintext CODE >177:C:\Users\shiny\Documents\GitHub\can-bus\pic16f1825\uart2can.X\main.c
-AFE clrtext CODE >3834:C:\Users\shiny\AppData\Local\Temp\shck.
-AFE clrtext CODE >3835:C:\Users\shiny\AppData\Local\Temp\shck.
-AFF clrtext CODE >3836:C:\Users\shiny\AppData\Local\Temp\shck.
-AFF clrtext CODE >3837:C:\Users\shiny\AppData\Local\Temp\shck.
-B00 clrtext CODE >3838:C:\Users\shiny\AppData\Local\Temp\shck.
-B01 clrtext CODE >3839:C:\Users\shiny\AppData\Local\Temp\shck.
-B02 clrtext CODE >3840:C:\Users\shiny\AppData\Local\Temp\shck.
-B03 clrtext CODE >3841:C:\Users\shiny\AppData\Local\Temp\shck.
+AFE clrtext CODE >3834:C:\Users\shiny\AppData\Local\Temp\sj10.
+AFE clrtext CODE >3835:C:\Users\shiny\AppData\Local\Temp\sj10.
+AFF clrtext CODE >3836:C:\Users\shiny\AppData\Local\Temp\sj10.
+AFF clrtext CODE >3837:C:\Users\shiny\AppData\Local\Temp\sj10.
+B00 clrtext CODE >3838:C:\Users\shiny\AppData\Local\Temp\sj10.
+B01 clrtext CODE >3839:C:\Users\shiny\AppData\Local\Temp\sj10.
+B02 clrtext CODE >3840:C:\Users\shiny\AppData\Local\Temp\sj10.
+B03 clrtext CODE >3841:C:\Users\shiny\AppData\Local\Temp\sj10.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -809,12 +809,12 @@ _LATA 10C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _LATC 10E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\shck.obj
+___sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\sj10.obj
 _atoi 26 0 CODE 0 text25 dist/default/production\uart2can.X.production.obj
 _main 746 0 CODE 0 maintext dist/default/production\uart2can.X.production.obj
 _mode 6B 0 BANK0 1 bssBANK0 dist/default/production\uart2can.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-start 4 0 CODE 0 init C:\Users\shiny\AppData\Local\Temp\shck.obj
+start 4 0 CODE 0 init C:\Users\shiny\AppData\Local\Temp\sj10.obj
 _EUSART_Write 1624 0 CODE 0 text18 dist/default/production\uart2can.X.production.obj
 can_send@i 4C 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 can_send@n 4D 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
@@ -885,12 +885,12 @@ receive@bytes_read 50 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.p
 _printf$635 34 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of_SPI_exchange 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shck.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shck.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shck.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shck.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shck.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\shck.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sj10.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sj10.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sj10.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sj10.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sj10.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\shiny\AppData\Local\Temp\sj10.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 _abort_pending_transmissions 17C8 0 CODE 0 text21 dist/default/production\uart2can.X.production.obj
@@ -1015,7 +1015,7 @@ __end_of_printf FE0 0 CODE 0 text16 dist/default/production\uart2can.X.productio
 _receive 1E96 0 CODE 0 text3 dist/default/production\uart2can.X.production.obj
 _isdigit$826 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _WDTCON 97 0 ABS 0 - dist/default/production\uart2can.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\shck.obj
+___int_sp 0 0 STACK 2 stack C:\Users\shiny\AppData\Local\Temp\sj10.obj
 __end_of_EUSART_Read 165A 0 CODE 0 text34 dist/default/production\uart2can.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -1247,7 +1247,7 @@ __end_of_can_logging_mode 1686 0 CODE 0 text7 dist/default/production\uart2can.X
 __Lintentry 4 0 CODE 0 intentry -
 SPI_exchange@bytes_written 7C 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 can_set_sid@can_node 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\shiny\AppData\Local\Temp\shck.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\shiny\AppData\Local\Temp\sj10.obj
 __size_of_can_logging_mode 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 _read_register 1718 0 CODE 0 text11 dist/default/production\uart2can.X.production.obj
@@ -1345,8 +1345,8 @@ ___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.p
 _SPI_Exchange8bitBuffer 1996 0 CODE 0 text23 dist/default/production\uart2can.X.production.obj
 __size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 can_status_check@status 68 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
-stackhi 23EF 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\shck.obj
-stacklo 208E 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\shck.obj
+stackhi 23EF 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\sj10.obj
+stacklo 208E 0 ABS 0 - C:\Users\shiny\AppData\Local\Temp\sj10.obj
 SPI_Exchange8bit@data 70 0 COMMON 1 cstackCOMMON dist/default/production\uart2can.X.production.obj
 _OSCTUNE 98 0 ABS 0 - dist/default/production\uart2can.X.production.obj
 receive@id 61 0 BANK0 1 cstackBANK0 dist/default/production\uart2can.X.production.obj
