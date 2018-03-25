@@ -32,6 +32,8 @@ Develop my original CAN adaptor board.
 
 ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
 
+Develop a 3D-printed DIN rail enclosure for the board. Try out [Tinckercad](https://www.tinkercad.com/) this time, instead of FreeCAD.
+
 ### Version 0.3 plan
 
 Create another project to evaluate Ethernet controller "ENC28J60" and develop CAN-MQTT gateway on either Arduino or ARM mbed.
