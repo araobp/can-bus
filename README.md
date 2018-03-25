@@ -16,27 +16,31 @@ I have also evaluated ARM mbed with CAN (LPC1768/MCP2561), but ARM Cortex-M is n
 
 ![breadboard](./doc/breadboard.jpg)
 
-SocketCAN and SLCAN are interesting, so I have evaluated them. But SLCAN does not support mask/filtering on CAN controller, so I do not adopt them in this project.
+SocketCAN and SLCAN are interesting, so I evaluated them. But SLCAN does not support mask/filtering on CAN controller, so I do not adopt them in this project.
 
 ### Version 0.1 (March 17, 2018)
 
-I purchased CAN adaptors from Amazon.
-
 ![board](./doc/board.jpg)
 
-Then I have developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
+- Purchased CAN adaptors from Amazon.
+- Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
 ### Version 0.2 plan
 
-Develop my original CAN adaptor board.
-
-~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
-
-Develop a 3D-printed DIN rail enclosure for the board. Try out [Tinckercad](https://www.tinkercad.com/) this time, instead of FreeCAD.
+- Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
+- Develop my original CAN adaptor board.
+- Develop CAN-MQTT gateway on RasPi and OpenWrt.
+- Develop a 3D-printed DIN rail enclosure for the board by using [FreeCAD](https://www.freecadweb.org/).
+- ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
 
 ### Version 0.3 plan
 
-Create another project to evaluate Ethernet controller "ENC28J60" and develop CAN-MQTT gateway on either Arduino or ARM mbed.
+- Purchase [a cheap ARM mbed board](http://akizukidenshi.com/catalog/g/gK-12144/).
+- Develop CAN-MQTT gateway on mbed.
+
+### Version 0.4 plan
+
+- Use KiCAD to redesign the circuit.
 
 ## CAN adaptor to UART
 
