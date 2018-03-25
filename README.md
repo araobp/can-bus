@@ -1,4 +1,4 @@
-# CAN adaptor to UART
+# CAN adapter to UART
 
 ![waveform](./doc/waveform.jpg)
 
