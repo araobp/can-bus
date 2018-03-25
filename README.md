@@ -6,6 +6,14 @@
 
 I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
+## Specification
+
+|Parameter     |Value                       |
+|--------------|----------------------------|
+|UART baud rate|9600 bps (fixed)            |
+|SPI clock     |500kHz (fixed)              |
+|CAN speed     |Max. 250kHz (default 125kHz)|
+
 ## Current status and plan
 
 ### Version 0.1 (March 17, 2018)
