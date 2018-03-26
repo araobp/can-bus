@@ -2939,9 +2939,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 54: uint8_t c, idx;
 [; ;main.c: 56: uint8_t cmd, sid, n, bpr;
 [; ;main.c: 57: uint16_t mask;
-[; ;main.c: 59: _delay((unsigned long)((100)*(2000000/4000.0)));
+[; ;main.c: 59: _delay((unsigned long)((100)*(32000000/4000.0)));
 "59
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 2000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 [; ;main.c: 61: SYSTEM_Initialize();
 "61
 [e ( _SYSTEM_Initialize ..  ]

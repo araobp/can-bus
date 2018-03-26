@@ -3818,7 +3818,7 @@ sid.sidl = sidl;
 
 # 53
 void can_init(void *receive_handler) {
-_delay((unsigned long)((100)*(2000000/4000.0)));
+_delay((unsigned long)((100)*(32000000/4000.0)));
 
 can_set_sid(0);
 handler = receive_handler;
@@ -3827,7 +3827,7 @@ handler = receive_handler;
 buf[0] = 0b11000000u;
 SPI_exchange(buf, 1);
 
-_delay((unsigned long)((2+48)*(2000000/4000000.0)));
+_delay((unsigned long)((2+48)*(32000000/4000000.0)));
 
 buf[0] = 0b00000010u;
 buf[1] = 0x28u;

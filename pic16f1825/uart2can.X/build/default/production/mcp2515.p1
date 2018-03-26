@@ -2839,9 +2839,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _can_init ]
 [v _receive_handler `*v ~T0 @X0 1 r1 ]
 [f ]
-[; ;mcp2515.c: 54: _delay((unsigned long)((100)*(2000000/4000.0)));
+[; ;mcp2515.c: 54: _delay((unsigned long)((100)*(32000000/4000.0)));
 "54
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 2000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 [; ;mcp2515.c: 56: can_set_sid(0);
 "56
 [e ( _can_set_sid (1 -> -> 0 `i `ui ]
@@ -2854,9 +2854,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcp2515.c: 61: SPI_exchange(buf, 1);
 "61
 [e ( _SPI_exchange (2 , &U _buf -> -> 1 `i `uc ]
-[; ;mcp2515.c: 63: _delay((unsigned long)((2+48)*(2000000/4000000.0)));
+[; ;mcp2515.c: 63: _delay((unsigned long)((2+48)*(32000000/4000000.0)));
 "63
-[e ( __delay (1 -> * -> + -> 2 `i -> 48 `i `d / -> -> 2000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> + -> 2 `i -> 48 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 [; ;mcp2515.c: 65: buf[0] = 0b00000010u;
 "65
 [e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux -> -> 2 `ui `uc ]

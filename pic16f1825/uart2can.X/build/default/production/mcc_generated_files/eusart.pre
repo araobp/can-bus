@@ -3731,10 +3731,10 @@ RCSTA = 0x90;
 TXSTA = 0x24;
 
 
-SPBRGL = 0x33;
+SPBRGL = 0x40;
 
 
-SPBRGH = 0x00;
+SPBRGH = 0x03;
 
 
 }

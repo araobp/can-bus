@@ -3887,7 +3887,7 @@ uint8_t c, idx;
 uint8_t cmd, sid, n, bpr;
 uint16_t mask;
 
-_delay((unsigned long)((100)*(2000000/4000.0)));
+_delay((unsigned long)((100)*(32000000/4000.0)));
 
 SYSTEM_Initialize();
 

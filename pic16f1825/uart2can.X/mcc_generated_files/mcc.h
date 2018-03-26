@@ -52,7 +52,7 @@
 #include "spi.h"
 #include "eusart.h"
 
-#define _XTAL_FREQ  2000000
+#define _XTAL_FREQ  32000000
 
 
 /**
