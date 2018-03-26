@@ -12,6 +12,8 @@
 #include "stdlib.h"
 #include "mcp2515.h"
 #include "hexascii.h"
+#include <stdbool.h>
+#include <string.h>
 
 #define VERSION "0.13  March 23, 2018"
 
@@ -22,26 +24,45 @@
 #define BUFSIZE 16
 #define MAX_IDX 7  // append '\0' at the tail
 
+bool with_sid;
+
 struct {
-    bool with_sid;
-    bool hex_output;
-} output_format;
+    uint8_t buf[15];
+    bool printing;
+} receive_buf;
 
 /*
  * Receive message from CAN bus
  */
 void receive_handler(uint16_t sid, uint8_t *buf, uint8_t dlc) {
-    uint8_t i;
-    if (output_format.with_sid) {
-        printf("%d,%s\n", sid, buf);            
-    } else if (output_format.hex_output) {
-        printf("%03x:", sid);
-        for(i=0; i<dlc; i++) {
-            printf(" %02x", buf[i]);
-        }
-        printf("\n");
+    uint16_t sid0, sid1, sid2, sid3, sida, sidb;
+    if (receive_buf.printing) {
+        // Discard the data, unfortunately
     } else {
-        printf("%s\n", buf);
+
+        if (with_sid) {
+
+            // Convert SID into ASCII char array
+            sid0 = sid / 1000u;
+            sida = sid % 1000u;
+            sid1 = sida / 100u;
+            sidb = sida % 100u;
+            sid2 = sidb / 10u;
+            sid3 = sidb % 10u;
+            receive_buf.buf[0] = (uint8_t)(sid0 + 0x30u);
+            receive_buf.buf[1] = (uint8_t)(sid1 + 0x30u);
+            receive_buf.buf[2] = (uint8_t)(sid2 + 0x30u);
+            receive_buf.buf[3] = (uint8_t)(sid3 + 0x30u);
+            receive_buf.buf[4] = ',';
+
+            memcpy(&receive_buf.buf[5], buf, dlc);
+            receive_buf.buf[5+dlc] = '\n';
+            receive_buf.printing = true;
+        } else {
+            memcpy(receive_buf.buf, buf, dlc);
+            receive_buf.buf[dlc] = '\n';
+            receive_buf.printing = true;
+        }
     }
 }
 
@@ -53,9 +74,12 @@ void main(void)
     bool echo_back = false;  // UART echo back
     uint8_t c, idx;
 
-    uint8_t cmd, sid, n, bpr;
-    uint16_t mask;
-       
+    uint8_t cmd, n, bpr;
+    uint16_t sid, mask;
+    
+    uint8_t pos;
+    uint8_t putc_data;
+    
     __delay_ms(100);
 
     SYSTEM_Initialize();
@@ -63,12 +87,14 @@ void main(void)
     //INTERRUPT_GlobalInterruptEnable();
     //INTERRUPT_PeripheralInterruptEnable();
     
-    output_format.with_sid = false;
-    output_format.hex_output = false;
-    can_init(receive_handler);
+    pos = 0;
+    receive_buf.printing = false;
     
     idx = 0;
-       
+
+    with_sid = false;
+    can_init(receive_handler);
+        
     while (1)
     {
         bool status = can_status_check();
@@ -77,6 +103,16 @@ void main(void)
         } else {
             LED = ON;  // Alarm on
         }
+        
+        if (receive_buf.printing) {
+            putc_data = receive_buf.buf[pos++];
+            putch(putc_data);
+            if (putc_data == '\n') {
+                receive_buf.printing = false;
+                pos = 0;
+            }
+        }
+        
         if (EUSART_DataReady) {
             c = EUSART_Read();
             if (echo_back) printf("%c", c);  // echo back
@@ -90,7 +126,7 @@ void main(void)
                     cmd = buf[1];
                     switch(cmd) {
                         case 'i':  // Set standard identifier
-                            sid = (uint8_t)atoi(&buf[2]);
+                            sid = (uint16_t)atoi(&buf[2]);
                             can_set_sid(sid);
                             break;
                         case 'v':  // Set verbosity
@@ -112,14 +148,9 @@ void main(void)
                                 can_ope_mode(NORMAL_MODE);                                
                             }
                             if (buf[3] == '\0') {
-                                output_format.with_sid = false;
-                                output_format.hex_output = false;
+                                with_sid = false;
                             } else if (buf[3] == 's' && buf[4] == '\0') { 
-                                output_format.with_sid = true;
-                                output_format.hex_output = false;
-                            } else if (buf[3] == 'h' && buf[4] == '\0') {
-                                output_format.with_sid = false;
-                                output_format.hex_output = true;
+                                with_sid = true;
                             }
                             break;
                         case 'b':  // Set Baud Rate Prescaller (BPR + 1)
@@ -154,7 +185,7 @@ void main(void)
                             printf("[Set standard identifier] @i<standard identifier>\n");
                             printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
                             printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
-                            printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
+                            printf("     with SID: @ols or @ons\n");
                             printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n"); 
                             printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
                             printf("[Set baud rate] @b<bpr>\n");

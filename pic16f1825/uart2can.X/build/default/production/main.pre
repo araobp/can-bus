@@ -3854,25 +3854,82 @@ void can_dump_registers(void);
 uint8_t atoui8(uint8_t ascii);
 uint16_t atosid(uint8_t *ascii);
 
-# 25 "main.c"
-struct {
-bool with_sid;
-bool hex_output;
-} output_format;
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
 
-# 33
+
+
+
+extern void * __builtin_memcpy(void *, const void *, size_t);
+#pragma intrinsic(__builtin_memcpy)
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 27 "main.c"
+bool with_sid;
+
+struct {
+uint8_t buf[15];
+bool printing;
+} receive_buf;
+
+# 37
 void receive_handler(uint16_t sid, uint8_t *buf, uint8_t dlc) {
-uint8_t i;
-if (output_format.with_sid) {
-printf("%d,%s\n", sid, buf);
-} else if (output_format.hex_output) {
-printf("%03x:", sid);
-for(i=0; i<dlc; i++) {
-printf(" %02x", buf[i]);
-}
-printf("\n");
+uint16_t sid0, sid1, sid2, sid3, sida, sidb;
+if (receive_buf.printing) {
+
 } else {
-printf("%s\n", buf);
+
+if (with_sid) {
+
+
+sid0 = sid / 1000u;
+sida = sid % 1000u;
+sid1 = sida / 100u;
+sidb = sida % 100u;
+sid2 = sidb / 10u;
+sid3 = sidb % 10u;
+receive_buf.buf[0] = (uint8_t)(sid0 + 0x30u);
+receive_buf.buf[1] = (uint8_t)(sid1 + 0x30u);
+receive_buf.buf[2] = (uint8_t)(sid2 + 0x30u);
+receive_buf.buf[3] = (uint8_t)(sid3 + 0x30u);
+receive_buf.buf[4] = ',';
+
+__builtin_memcpy(&receive_buf.buf[5],buf,dlc);
+receive_buf.buf[5+dlc] = '\n';
+receive_buf.printing = 1;
+} else {
+__builtin_memcpy(receive_buf.buf,buf,dlc);
+receive_buf.buf[dlc] = '\n';
+receive_buf.printing = 1;
+}
 }
 }
 
@@ -3884,8 +3941,11 @@ uint8_t buf[16];
 bool echo_back = 0;
 uint8_t c, idx;
 
-uint8_t cmd, sid, n, bpr;
-uint16_t mask;
+uint8_t cmd, n, bpr;
+uint16_t sid, mask;
+
+uint8_t pos;
+uint8_t putc_data;
 
 _delay((unsigned long)((100)*(32000000/4000.0)));
 
@@ -3894,11 +3954,13 @@ SYSTEM_Initialize();
 
 
 
-output_format.with_sid = 0;
-output_format.hex_output = 0;
-can_init(receive_handler);
+pos = 0;
+receive_buf.printing = 0;
 
 idx = 0;
+
+with_sid = 0;
+can_init(receive_handler);
 
 while (1)
 {
@@ -3908,6 +3970,16 @@ LATCbits.LATC3 = 0;
 } else {
 LATCbits.LATC3 = 1;
 }
+
+if (receive_buf.printing) {
+putc_data = receive_buf.buf[pos++];
+putch(putc_data);
+if (putc_data == '\n') {
+receive_buf.printing = 0;
+pos = 0;
+}
+}
+
 if ((PIR1bits.RCIF)) {
 c = EUSART_Read();
 if (echo_back) printf("%c", c);
@@ -3921,7 +3993,7 @@ if (buf[0] == '@') {
 cmd = buf[1];
 switch(cmd) {
 case 'i':
-sid = (uint8_t)atoi(&buf[2]);
+sid = (uint16_t)atoi(&buf[2]);
 can_set_sid(sid);
 break;
 case 'v':
@@ -3943,14 +4015,9 @@ can_ope_mode(0b01000000u);
 can_ope_mode(0b00000000u);
 }
 if (buf[3] == '\0') {
-output_format.with_sid = 0;
-output_format.hex_output = 0;
+with_sid = 0;
 } else if (buf[3] == 's' && buf[4] == '\0') {
-output_format.with_sid = 1;
-output_format.hex_output = 0;
-} else if (buf[3] == 'h' && buf[4] == '\0') {
-output_format.with_sid = 0;
-output_format.hex_output = 1;
+with_sid = 1;
 }
 break;
 case 'b':
@@ -3985,7 +4052,7 @@ printf("/// UART2CAN HELP (version %s) ///\n", "0.13  March 23, 2018");
 printf("[Set standard identifier] @i<standard identifier>\n");
 printf("[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}\n");
 printf("[Enable operation mode] {loopback: @ol, normal: @on}\n");
-printf("     with SID: @ols or @ons, in hex format: @olh or @onh\n");
+printf("     with SID: @ols or @ons\n");
 printf("[Set mask] @m<n><mask(SID10 ~ SID0)>\n");
 printf("[Set filter] @f<n><filter(SID10 ~ SID0)>\n");
 printf("[Set baud rate] @b<bpr>\n");
