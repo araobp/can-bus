@@ -104,16 +104,13 @@ At first, I am going to use [this universal board](http://akizukidenshi.com/cata
 
 ![universal board](./doc/universal_board.jpg)
 
-I have finished the first prototype (Marth 25, 2018):
+I have finished the first prototype (Marth 25-27, 2018):
 
-![soldering](./doc/soldering.jpg)
-
-I made minor modification to support 120 ohm termination resister:
 ![front](./doc/universal_board_front.jpg)
 
 ![back](./doc/universal_board_back.jpg)
 
-After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
+Later on, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original printed board.
 
 ## Reference
 
