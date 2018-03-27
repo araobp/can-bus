@@ -2,8 +2,6 @@
 
 ![daisy_chain](./doc/daisy_chain.jpg)
 
-![waveform](./doc/waveform.jpg)
-
 ## Motivation
 
 I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
