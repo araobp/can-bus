@@ -108,6 +108,11 @@ I have finished the first prototype (Marth 25, 2018):
 
 ![soldering](./doc/soldering.jpg)
 
+I made minor modification to support 120 ohm termination resister:
+![front](./doc/universal_board_front.jpg)
+
+![back](./doc/universal_board_back.jpg)
+
 After that, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original board.
 
 ## Reference
