@@ -1,5 +1,7 @@
 # CAN adapter to UART
 
+![daisy_chain](./doc/daisy_chain.jpg)
+
 ![waveform](./doc/waveform.jpg)
 
 ## Motivation
