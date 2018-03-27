@@ -17,28 +17,28 @@ I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller
 
 ## Specification
 
-|Parameter     |Value                       |Note
-|--------------|----------------------------|---------------------------|
-|MCU clock     |32MHz(Internal OSC 8MHz * 4 PLL)                        |
-|UART baud rate|9600bps (fixed)             |Full-duplex wire-rate is not supported|
-|SPI clock     |2MHz (fixed)                |                           |
-|CAN speed     |Max. 250kHz (default 125kHz)|                           |
-|Oscillator for CAN controller|8MHz (ceramic)|                          |
+|Parameter           |Value                       |Note
+|--------------------|----------------------------|---------------------------|
+|PIC16F1825 MCU clock|32MHz(Internal OSC 8MHz * 4 PLL)                        |
+|UART baud rate      |9600bps (fixed)             |Full-duplex wire-rate is not supported|
+|SPI clock           |2MHz (fixed)                |                           |
+|CAN speed           |Max. 250kHz (default 125kHz)|                           |
+|Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
 
-## Current status and plan
+## Development plan and progress
 
 ### Version 0.1 (March 17, 2018)
 
 ![board](./doc/board.jpg)
 
-- Purchased CAN adaptors from Amazon. X
-- Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md). X
-- Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515. X
+X Purchased CAN adaptors from Amazon.
+X Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md).
+X Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
 ### Version 0.2 plan
 
-- Purchase three pairs of MCP2515 and MCP2561 in Akihabara. X
-- Develop my original CAN adaptor board. X
+X Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
+X Develop my original CAN adaptor board.
 - Develop CAN-MQTT gateway on RasPi and OpenWrt.
 - Develop a 3D-printed DIN rail enclosure for the board by using [FreeCAD](https://www.freecadweb.org/).
 - ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
