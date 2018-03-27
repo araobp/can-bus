@@ -10,12 +10,15 @@
 
 ## Parts
 
-- Microchip PIC16F1825
-- Microchip MCP2515
-- Microchip MCP2561
-- Murata Ceralock 8MHz
-- Resistor: 51k, 10k and 120 ohm
-- Capacitor: 0.1 micro F
+- Microchip PIC16F1825 (150 yen)
+- Microchip MCP2515 (160 yen)
+- Microchip MCP2561 (90 yen)
+- Murata Ceralock 8MHz (35 yen)
+- Resistor: 51k, 10k and 120 ohm (1 yen * 3)
+- Capacitor: 0.1 micro F (10 yen * 3)
+- IC sockets (10 yen * 3)
+- Universal board (30yen)
+- Pin headers, jumper pins etc.
 
 ## Specification
 
