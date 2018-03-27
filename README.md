@@ -8,12 +8,13 @@ I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller
 
 ## Specification
 
-|Parameter     |Value                       |
-|--------------|----------------------------|
-|UART baud rate|9600bps (fixed)             |
-|SPI clock     |500kHz (fixed)              |
-|CAN speed     |Max. 250kHz (default 125kHz)|
-|Oscillator for CAN controller|8MHz (ceramic)|
+|Parameter     |Value                       |Note
+|--------------|----------------------------|---------------------------|
+|MCU clock     |32MHz(Internal OSC 8MHz * 4 PLL)                        |
+|UART baud rate|9600bps (fixed)             |Full-duplex wire-rate is not supported|
+|SPI clock     |2MHz (fixed)                |                           |
+|CAN speed     |Max. 250kHz (default 125kHz)|                           |
+|Oscillator for CAN controller|8MHz (ceramic)|                          |
 
 ## Current status and plan
 
@@ -73,7 +74,7 @@ Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plu
 [Set standard identifier] @i<standard identifier>
 [Set output mode] {debug: @vd, verbose: @vv, normal: @vn}
 [Enable operation mode] {loopback: @ol, normal: @on}
-     with SID: @ols or @ons, in hex format: @olh or @onh
+     with SID: @ols or @ons
 [Set mask] @m<n><mask(SID10 ~ SID0)>
 [Set filter] @f<n><filter(SID10 ~ SID0)>
 [Set baud rate] @b<bpr>
@@ -96,6 +97,7 @@ For example, to receive messages with SID 5, 10 and 15:
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
+
 ## CAN adaptor board
 
 At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
