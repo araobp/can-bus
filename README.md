@@ -34,18 +34,18 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 
 ## Development plan and progress
 
-### Version 0.1 (March 17, 2018)
+### Version 0.1 (completed on March 17, 2018)
 
 ![board](./doc/board.jpg)
 
-X Purchased CAN adaptors from Amazon.
-X Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md).
-X Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
+- Purchased CAN adaptors from Amazon.
+- Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md).
+- Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
 ### Version 0.2 plan
 
-X Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
-X Develop my original CAN adaptor board.
+- Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
+- Develop my original CAN adaptor board.
 - Develop CAN-MQTT gateway on RasPi and OpenWrt.
 - Develop a 3D-printed DIN rail enclosure for the board by using [FreeCAD](https://www.freecadweb.org/).
 - ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
