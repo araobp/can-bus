@@ -6,6 +6,15 @@
 
 I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
+## Parts
+
+- Microchip PIC16F1825
+- Microchip MCP2515
+- Microchip MCP2561
+- Murata Ceralock 8MHz
+- Resistor: 51k, 10k and 120 ohm
+- Capacitor: 0.1 micro F
+
 ## Specification
 
 |Parameter     |Value                       |Note
