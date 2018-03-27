@@ -5,6 +5,7 @@
 ## Motivation
 
 (1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
+
 (2) I already developed I2C-based network in [this project](https://github.com/araobp/sensor-network), but I2C is for inter-board or inter-IC communications -- short-range (within 1 meter).
 
 ## Parts
