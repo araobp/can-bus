@@ -10,6 +10,8 @@
 
 ## Parts
 
+Approximately, the total cost is 500 yen ( < five dollors) per board.
+
 - Microchip PIC16F1825 (150 yen)
 - Microchip MCP2515 (160 yen)
 - Microchip MCP2561 (90 yen)
