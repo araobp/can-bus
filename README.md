@@ -68,13 +68,8 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 [PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
 
 ```
-### With MCU (PIC, AVR or ARM Cortex-M)
 
-```
-[MCU]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
-```
-
-### Use it as CAN library for PIC MCU
+### Use it as CAN library for PIC 16F1829 MCU
 
 ```
 [PIC16F1XXX]-SPI-[MCP2515]-[TJA1050]-- CAN bus                   
