@@ -41,12 +41,12 @@
 
 ```
 "$ node mqtt.js subscribe -t 127-tx" at node-a
-"$ node mqtt.js publish -t 127-rx 12345678" at node-a
 
-  10 9 8 7 6 5 4 3 2 1 0  
-  +-+-+-+-+-+-+-+-+-+-+-+
-  |0|0|1|0|1|1|1|1|0|1|1|  0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38
-  +-+-+-+-+-+-+-+-+-+-+-+
+"$ node mqtt.js publish -t 127-rx 12345678" at node-a
+     10 9 8 7 6 5 4 3 2 1 0  
+     +-+-+-+-+-+-+-+-+-+-+-+
+SID  |0|0|1|0|1|1|1|1|1|1|1|  and 8bytes data "0x31 0x32 0x33 0x34 0x35 0x36 0x37 0x38"
+     +-+-+-+-+-+-+-+-+-+-+-+
 ```
 
 Masks and filters at node-2
