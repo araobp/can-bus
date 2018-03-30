@@ -1,6 +1,6 @@
 # CAN adapter to UART
 
-![daisy_chain](./doc/daisy_chain.jpg)
+![concept](./doc/concept.jpg)
 
 ## Motivation
 
@@ -128,6 +128,8 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 ![front](./doc/universal_board_front.jpg)
 
 ![back](./doc/universal_board_back.jpg)
+
+![daisy_chain](./doc/daisy_chain.jpg)
 
 Later on, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original printed board.
 
