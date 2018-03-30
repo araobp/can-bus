@@ -13,6 +13,7 @@ var args = minimist(process.argv.slice(2), {
   default: {
     p: 0,
     i: 0,
+    f: false,
     _: []
   },
 });
@@ -37,7 +38,9 @@ const port = new SerialPort(PORT, {
     if (err) {
       return console.log('Error:', err.message);
     }
-  }); function write(data) {
+  });
+
+function write(data) {
   port.write(data);
   port.drain();
 }
@@ -45,42 +48,74 @@ const port = new SerialPort(PORT, {
 function init() {
   write('@ons\n');
   write('@i' + sid + '\n');
-  write('@m0768\n');  // 0b01100000000
-  write('@m1768\n');  // 0b01100000000
-  write('@f0768\n');  // 0b01100000000
-  write('@f1512\n');  // 0b01000000000
+  if (args.f) {
+    write('@m0' + 0b01100000000 + '\n');
+    write('@m1' + 0b01100000000 + '\n');
+    write('@f0' + 0b01100000000 + '\n');
+    write('@f1' + 0b01000000000 + '\n');
+  } else {
+    write('@m00\n');
+    write('@m10\n');
+    write('@f00\n');
+    write('@f10\n');
+    write('@f20\n');
+    write('@f30\n');
+    write('@f40\n');
+    write('@f50\n');
+  }
 }
 
 port.on('open', () => {
   init();
-  data.forEach((it) => {
-    console.log(it);
-    write(it+'\n');
-  });
 });
 
 var parser = new Readline('\n');
 port.pipe(parser);
 
+function timestamp() {
+  return new Date().getTime();
+}
+
 client.on('connect', () => {
 
+  client.subscribe('+/tx');
+  client.subscribe('+/rx');
+
   parser.on('data', (data) => {
-    data = data.toString();
-    let data = data.split(',');
+    data = data.toString().split(',');
     let sid = data[0];
     let topic;
     if ((sid & 0b00100000000) > 0) {
-      topic = sid + '-rx';
+      topic = sid + '/rx';
     } else {
-      topic = sid + '-tx';
+      topic = sid + '/tx';
     }
-    let payload = data[1]; 
-    client.publish(topic, data);
+    let payload = JSON.stringify({
+      timestamp: timestamp(),
+      data: data[1]
+    });
+    client.publish(topic, payload);
+    console.log('topic: ' + topic + ', payload: ' + payload);
   });
 
 });
 
 rl.on('line', (input) => {
   write(input+'\n');
+});
+
+client.on('message', (topic, message) => {
+  console.log('topic: ' + topic + ', message: ' + message);
+  message = JSON.parse(message);
+  topic = topic.split('/');
+  let txrx = topic[1];
+  let sid;
+  if (txrx == 'tx') {
+    sid = topic[0];
+  } else if (txrx == 'rx') {
+    sid = (Number(topic[0]) | 0b00100000000).toString();
+  }
+  write('@i' + sid + '\n');
+  write(message.data + '\n');
 });
 

@@ -57,8 +57,9 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 
 ~~### Version 0.4 plan~~
 
-- Use KiCAD to redesign the circuit for PIC16F1829.
-- Support sensors: doppler sensor, CdS etc.
+- Use KiCAD to redesign the circuit for PIC16F1829 that support two MSSPs(i.e., two SPI/I2C interfaces).
+- Adopt moduler architecture: base board and sensor/actuator building blocks.
+- Support sensors and actuators: doppler sensor, CdS, servo motor etc.
 
 ## CAN adaptor to UART
 
@@ -111,6 +112,8 @@ For example, to receive messages with SID 5, 10 and 15:
 ```
 
 ## Standard Identifier format
+
+This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
 
 => [FORMAT](./doc/FORMAT.md)
 
