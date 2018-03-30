@@ -46,18 +46,19 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 
 - Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
 - Develop my original CAN adaptor board.
-- Develop CAN-MQTT gateway on RasPi and OpenWrt.
+- Develop CAN-MQTT gateway on RasPi ~~and OpenWrt~~.
 - Develop a 3D-printed DIN rail enclosure for the board by using [FreeCAD](https://www.freecadweb.org/).
 - ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
 
 ### Version 0.3 plan
 
-- Purchase [a cheap ARM mbed board](http://akizukidenshi.com/catalog/g/gK-12144/).
-- Develop CAN-MQTT gateway on mbed.
+~~- Purchase [a cheap ARM mbed board](http://akizukidenshi.com/catalog/g/gK-12144/).~~
+~~- Develop CAN-MQTT gateway on mbed.~~
 
-### Version 0.4 plan
+~~### Version 0.4 plan~~
 
-- Use KiCAD to redesign the circuit.
+- Use KiCAD to redesign the circuit for PIC16F1829.
+- Support sensors: doppler sensor, CdS etc.
 
 ## CAN adaptor to UART
 
