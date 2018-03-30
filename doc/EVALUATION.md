@@ -18,6 +18,10 @@ And the physical network:
 
 SocketCAN and SLCAN are interesting, so I evaluated them. But SLCAN does not support mask/filtering on CAN controller, so I do not adopt them in this project.
 
+## CANopen
+
+CANopen is over-spec for this project. I will add a thin layer on top of CAN-bus instead of CANopen, because I want to use cheap and low-power 8bit MCUs such as PIC16F1 for CAN nodes.
+
 ## My original PIC16F1825 evaluation board
 
 I use this PIC board to evaluate CAN:
