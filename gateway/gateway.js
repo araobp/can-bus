@@ -78,14 +78,17 @@ function timestamp() {
 
 client.on('connect', () => {
 
+  client.subscribe('+/tx');
+  client.subscribe('+/rx');
+
   parser.on('data', (data) => {
     data = data.toString().split(',');
     let sid = data[0];
     let topic;
     if ((sid & 0b00100000000) > 0) {
-      topic = sid + '-rx';
+      topic = sid + '/rx';
     } else {
-      topic = sid + '-tx';
+      topic = sid + '/tx';
     }
     let payload = JSON.stringify({
       timestamp: timestamp(),
@@ -99,5 +102,20 @@ client.on('connect', () => {
 
 rl.on('line', (input) => {
   write(input+'\n');
+});
+
+client.on('message', (topic, message) => {
+  console.log('topic: ' + topic + ', message: ' + message);
+  message = JSON.parse(message);
+  topic = topic.split('/');
+  let txrx = topic[1];
+  let sid;
+  if (txrx == 'tx') {
+    sid = topic[0];
+  } else if (txrx == 'rx') {
+    sid = (Number(topic[0]) | 0b00100000000).toString();
+  }
+  write('@i' + sid + '\n');
+  write(message.data + '\n');
 });
 
