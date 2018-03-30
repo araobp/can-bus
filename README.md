@@ -113,6 +113,8 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## Standard Identifier format
 
+This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
+
 => [FORMAT](./doc/FORMAT.md)
 
 ## CAN adaptor board
