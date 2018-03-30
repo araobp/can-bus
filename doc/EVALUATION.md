@@ -16,7 +16,7 @@ And the physical network:
 
 ### SocketCAN and SLCAN
 
-SocketCAN and SLCAN are interesting, so I evaluated them. But SLCAN does not support mask/filtering on CAN controller, so I do not adopt them in this project.
+SocketCAN and SLCAN are interesting, so I evaluated them by re-building Raspbian to add SLCAN kernel module. But I noticed that SLCAN does not support mask/filtering on CAN controller, so I do not adopt them in this project.
 
 ## CANopen
 
