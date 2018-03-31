@@ -48,6 +48,7 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 - Develop my original CAN adaptor board.
 - Develop [CAN-MQTT gateway](./gateway/gateway.js) on RasPi ~~and OpenWrt~~.
 - Develop [a 3D-printed DIN rail enclosure](./cad/adapter_to_uart.stl) for the board by using [FreeCAD](https://www.freecadweb.org/).
+- Mount all of them on DIN rail (incl. RasPi).
 - ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
 
 ### Version 0.3 plan
