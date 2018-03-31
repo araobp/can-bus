@@ -1,6 +1,6 @@
 # CAN adapter to UART
 
-![daisy_chain](./doc/daisy_chain.jpg)
+![concept](./doc/concept.jpg)
 
 ## Motivation
 
@@ -60,6 +60,12 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 - Use KiCAD to redesign the circuit for PIC16F1829 that support two MSSPs(i.e., two SPI/I2C interfaces).
 - Adopt moduler architecture: base board and sensor/actuator building blocks.
 - Support sensors and actuators: doppler sensor, CdS, servo motor etc.
+
+### Version 0.4 plan
+
+I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
+
+- Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
 
 ## CAN adaptor to UART
 
@@ -128,6 +134,8 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 ![front](./doc/universal_board_front.jpg)
 
 ![back](./doc/universal_board_back.jpg)
+
+![daisy_chain](./doc/daisy_chain.jpg)
 
 Later on, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original printed board.
 
