@@ -16,7 +16,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ![concept](./doc/concept.jpg)
 
-### Using it with PC/Android(USB-OTG)
+### Using it with RasPi/PC/Android(USB-OTG)
 
 ```
 [PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
