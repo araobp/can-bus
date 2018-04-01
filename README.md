@@ -4,11 +4,13 @@
 
 ## Motivation
 
-(1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
+(1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap, low-power and supports daisy-chain network topology.
 
 (2) I already developed I2C-based network in [this "sensor-network" project](https://github.com/araobp/sensor-network), but I2C is for inter-board or inter-IC communications -- short-range (within 1 meter). I2C is master-slave, so it requires some scheduler to use its bandwidth efficiently. I developed such a scheduler in "sensor-network" project, but it made things complicated.
 
 ## Architecture
+
+I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ![concept](./doc/concept.jpg)
 
