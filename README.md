@@ -1,12 +1,16 @@
 # CAN adapter to UART
 
-![concept](./doc/concept.jpg)
+![3d_printed](./doc/3d_printed.jpg)
 
 ## Motivation
 
 (1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
 
 (2) I already developed I2C-based network in [this "sensor-network" project](https://github.com/araobp/sensor-network), but I2C is for inter-board or inter-IC communications -- short-range (within 1 meter). I2C is master-slave, so it requires some scheduler to use its bandwidth efficiently. I developed such a scheduler in "sensor-network" project, but it made things complicated.
+
+## Architecture
+
+![concept](./doc/concept.jpg)
 
 ## Parts
 
@@ -139,8 +143,6 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 ![back](./doc/universal_board_back.jpg)
 
 ![daisy_chain](./doc/daisy_chain.jpg)
-
-![3d_printed](./doc/3d_printed.jpg)
 
 Later on, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original printed board.
 
