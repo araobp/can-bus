@@ -140,6 +140,8 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 
 ![daisy_chain](./doc/daisy_chain.jpg)
 
+![3d_printed](./doc/3d_printed.jpg)
+
 Later on, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original printed board.
 
 ## Reference
