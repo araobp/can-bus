@@ -2,6 +2,8 @@
 
 ![3d_printed](./doc/3d_printed.jpg)
 
+CAN adapter board in 3D-printed enclosure
+
 ## Motivation
 
 (1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap, low-power and supports daisy-chain network topology.
