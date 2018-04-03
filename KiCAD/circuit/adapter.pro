@@ -1,4 +1,4 @@
-update=2018/04/03 19:57:32
+update=2018/04/04 2:00:08
 version=1
 last_client=kicad
 [pcbnew]
@@ -64,3 +64,13 @@ LibName32=atmel
 LibName33=contrib
 LibName34=valves
 LibName35=microchip_pic16mcu
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
