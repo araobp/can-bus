@@ -140,7 +140,7 @@ At first, I am going to use [this universal board](http://akizukidenshi.com/cata
 
 ![universal board](./doc/universal_board.jpg)
 
-[Circuit](./KiCAD/circuit/v0.1.jpg)
+![Circuit](./KiCAD/circuit/v0.1.jpg)
 
 I have finished the first prototype (Marth 25-27, 2018). I have made three boards, and it took eight hours.
 
