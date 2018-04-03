@@ -1,12 +1,45 @@
 # CAN adapter to UART
 
-![concept](./doc/concept.jpg)
+![3d_printed](./doc/3d_printed.jpg)
+
+CAN adapter board in 3D-printed enclosure
 
 ## Motivation
 
-(1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap and supports daisy-chain network topology.
+(1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap, low-power and supports daisy-chain network topology.
 
 (2) I already developed I2C-based network in [this "sensor-network" project](https://github.com/araobp/sensor-network), but I2C is for inter-board or inter-IC communications -- short-range (within 1 meter). I2C is master-slave, so it requires some scheduler to use its bandwidth efficiently. I developed such a scheduler in "sensor-network" project, but it made things complicated.
+
+## Architecture
+
+### Basic concept
+
+I pursue seamless communications between CAN-bus and MQTT-bus:
+
+![concept](./doc/concept.jpg)
+
+### Using it with RasPi/PC/Android(USB-OTG)
+
+```
+[PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
+
+```
+
+### Using it as CAN library for PIC 16F1829 MCU
+
+```
+[PIC16F1XXX]-SPI-[MCP2515]-[TJA1050]-- CAN bus                   
+```
+
+## Specification
+
+|Parameter           |Value                       |Note
+|--------------------|----------------------------|---------------------------|
+|PIC16F1825 MCU clock|32MHz(Internal OSC 8MHz * 4 PLL)                        |
+|UART baud rate      |9600bps (fixed)             |Full-duplex wire-rate is not supported|
+|SPI clock           |2MHz (fixed)                |                           |
+|CAN speed           |Max. 250kHz (default 125kHz)|                           |
+|Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
 
 ## Parts
 
@@ -22,15 +55,46 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 - Universal board (30yen)
 - Pin headers, jumper pins etc.
 
-## Specification
+## Softwae development environment
 
-|Parameter           |Value                       |Note
-|--------------------|----------------------------|---------------------------|
-|PIC16F1825 MCU clock|32MHz(Internal OSC 8MHz * 4 PLL)                        |
-|UART baud rate      |9600bps (fixed)             |Full-duplex wire-rate is not supported|
-|SPI clock           |2MHz (fixed)                |                           |
-|CAN speed           |Max. 250kHz (default 125kHz)|                           |
-|Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
+Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
+
+## Standard Identifier format
+
+This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
+
+=> [FORMAT](./doc/FORMAT.md)
+
+## Command (UART/USB)
+
+```
+/// UART2CAN HELP (version 0.11  March 19, 2018) ///
+[Set standard identifier] @i<standard identifier>
+[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}
+[Enable operation mode] {loopback: @ol, normal: @on}
+     with SID: @ols or @ons
+[Set mask] @m<n><mask(SID10 ~ SID0)>
+[Set filter] @f<n><filter(SID10 ~ SID0)>
+[Set baud rate] @b<bpr>
+[Abort all pending transmissions] @a
+[Dump masks and filters] @F
+[Dump registers] @D
+[Send message] <message>
+[Send message beginning with '@' character] @<@message>
+[Receive message] <message> will be output
+[Show this help]: @h
+```
+
+## Applying mask and filters to CAN messages
+
+For example, to receive messages with SID 5, 10 and 15:
+```
+@m02047  --> RXM0 0b11111111111
+@f05     --> RXF0 0b00000000101 (SID 5 message to RXB0)
+@f110    --> RXF1 0b00000001010 (SID 10 message to RXB0)
+@m12047  --> RXM1 0b11111111111
+@f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
+```
 
 ## Development plan and progress
 
@@ -70,63 +134,7 @@ I don't like master-slave bus protocols, because once I developed scheduler for 
 
 - Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
 
-## CAN adaptor to UART
-
-### With PC/Android(USB-OTG)
-
-```
-[PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
-
-```
-
-### Use it as CAN library for PIC 16F1829 MCU
-
-```
-[PIC16F1XXX]-SPI-[MCP2515]-[TJA1050]-- CAN bus                   
-```
-
-## Development environment
-
-Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
-
-## Command (UART/USB)
-
-```
-/// UART2CAN HELP (version 0.11  March 19, 2018) ///
-[Set standard identifier] @i<standard identifier>
-[Set output mode] {debug: @vd, verbose: @vv, normal: @vn}
-[Enable operation mode] {loopback: @ol, normal: @on}
-     with SID: @ols or @ons
-[Set mask] @m<n><mask(SID10 ~ SID0)>
-[Set filter] @f<n><filter(SID10 ~ SID0)>
-[Set baud rate] @b<bpr>
-[Abort all pending transmissions] @a
-[Dump masks and filters] @F
-[Dump registers] @D
-[Send message] <message>
-[Send message beginning with '@' character] @<@message>
-[Receive message] <message> will be output
-[Show this help]: @h
-```
-
-## Mask and filters
-
-For example, to receive messages with SID 5, 10 and 15:
-```
-@m02047  --> RXM0 0b11111111111
-@f05     --> RXF0 0b00000000101 (SID 5 message to RXB0)
-@f110    --> RXF1 0b00000001010 (SID 10 message to RXB0)
-@m12047  --> RXM1 0b11111111111
-@f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
-```
-
-## Standard Identifier format
-
-This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
-
-=> [FORMAT](./doc/FORMAT.md)
-
-## CAN adaptor board
+### CAN adaptor board
 
 At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
 
