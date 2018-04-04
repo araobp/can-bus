@@ -122,7 +122,7 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ~~### Version 0.4 plan~~
 
-- Use KiCAD to redesign the circuit for PIC16F1829 that support two MSSPs(i.e., two SPI/I2C interfaces).
+- Use KiCAD to redesign the circuit for [PIC16F18326](http://akizukidenshi.com/catalog/g/gI-11886/) that support two MSSPs(i.e., two SPI/I2C interfaces).
 - Adopt moduler architecture: base board and sensor/actuator building blocks.
 - Support sensors and actuators: doppler sensor, CdS, servo motor etc.
 
