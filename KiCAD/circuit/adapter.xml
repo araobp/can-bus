@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\shiny\Documents\GitHub\can-bus\KiCAD\circuit\adapter.sch</source>
+    <date>2018/04/04 14:00:21</date>
+    <tool>Eeschema 4.0.7</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>CAN adapter to UART</title>
+        <company/>
+        <rev>0.1</rev>
+        <date>2018-04-04</date>
+        <source>adapter.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>PIC16f1825-I/P</value>
+      <libsource lib="can-bus" part="PIC16f1825-I/P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC360AB</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>MCP2561-E/P</value>
+      <libsource lib="can-bus" part="MCP2561-E/P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC360E7</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Pin header</value>
+      <libsource lib="conn" part="Conn_01x04"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC36131</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Pin header</value>
+      <libsource lib="conn" part="Conn_01x04"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC36180</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>MCP2515-I/P</value>
+      <libsource lib="can-bus" part="MCP2515-I/P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC360C2</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>51k</value>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3BFB2</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>120</value>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3C354</tstamp>
+    </comp>
+    <comp ref="JP1">
+      <value>Jumper</value>
+      <libsource lib="device" part="Jumper_NO_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3C46F</tstamp>
+    </comp>
+    <comp ref="Y1">
+      <value>Ceralock 8MHz</value>
+      <libsource lib="device" part="Resonator_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3C58B</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3D47B</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>0.1u</value>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3D780</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>0.1u</value>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3EB19</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>0.1u</value>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AC3EC8B</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="device" part="C_Small">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="Conn_01x04">
+      <description>Generic connector, single row, 01x04</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_??x*mm*</fp>
+        <fp>Connector*:*1x??x*mm*</fp>
+        <fp>Pin?Header?Straight?1X*</fp>
+        <fp>Pin?Header?Angled?1X*</fp>
+        <fp>Socket?Strip?Straight?1X*</fp>
+        <fp>Socket?Strip?Angled?1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="Jumper_NO_Small">
+      <description>Jumper, normally open</description>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_NO_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="can-bus" part="MCP2515-I/P">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP2515-I/P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TXCAN" type="input"/>
+        <pin num="2" name="RXCAN" type="input"/>
+        <pin num="3" name="CLKOUT/SOF" type="input"/>
+        <pin num="4" name="TX0RTS" type="input"/>
+        <pin num="5" name="TX1RTS" type="input"/>
+        <pin num="6" name="TX2RTS" type="input"/>
+        <pin num="7" name="OSC2" type="input"/>
+        <pin num="8" name="OSC1" type="input"/>
+        <pin num="9" name="VSS" type="input"/>
+        <pin num="10" name="RX1BF" type="input"/>
+        <pin num="11" name="RX0BF" type="input"/>
+        <pin num="12" name="INT" type="input"/>
+        <pin num="13" name="SCK" type="input"/>
+        <pin num="14" name="SI" type="input"/>
+        <pin num="15" name="SO" type="input"/>
+        <pin num="16" name="CS" type="input"/>
+        <pin num="17" name="RESET" type="output"/>
+        <pin num="18" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="can-bus" part="MCP2561-E/P">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP2561-E/P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TXD" type="output"/>
+        <pin num="2" name="VSS" type="input"/>
+        <pin num="3" name="VDD" type="power_in"/>
+        <pin num="4" name="RXD" type="output"/>
+        <pin num="5" name="SPLIT" type="input"/>
+        <pin num="6" name="CANL" type="input"/>
+        <pin num="7" name="CANH" type="input"/>
+        <pin num="8" name="STBY" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="can-bus" part="PIC16f1825-I/P">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PIC16f1825-I/P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="RA5" type="output"/>
+        <pin num="3" name="RA4/AN3/SDO" type="output"/>
+        <pin num="4" name="RA3/MCLR" type="output"/>
+        <pin num="5" name="RC5/RX" type="output"/>
+        <pin num="6" name="RC4/TX" type="output"/>
+        <pin num="7" name="RC3/AN7" type="output"/>
+        <pin num="8" name="SDO/AN6/RC2" type="output"/>
+        <pin num="9" name="SDI/SDA/AN5/RC1" type="output"/>
+        <pin num="10" name="SCK/SCL/AN4/RC0" type="output"/>
+        <pin num="11" name="AN2/RA2" type="output"/>
+        <pin num="12" name="RX/AN1/RA1" type="output"/>
+        <pin num="13" name="TX/AN0/RA0" type="output"/>
+        <pin num="14" name="VSS" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="Resonator_Small">
+      <description>Three pin ceramic resonator</description>
+      <footprints>
+        <fp>Filter*</fp>
+        <fp>Resonator*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Resonator_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="can-bus">
+      <uri>C:\Users\shiny\Documents\GitHub\can-bus\KiCAD\library\can-bus.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>C:\Program Files\KiCad\share\kicad\library\device.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>C:\Program Files\KiCad\share\kicad\library\conn.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(U2-Pad2)">
+      <node ref="U3" pin="4"/>
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="2" name="Net-(R2-Pad2)">
+      <node ref="U1" pin="4"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="3" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1"/>
+      <node ref="U3" pin="7"/>
+      <node ref="J2" pin="3"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="4" name="Net-(JP1-Pad2)">
+      <node ref="R1" pin="2"/>
+      <node ref="JP1" pin="2"/>
+    </net>
+    <net code="5" name="Net-(J2-Pad2)">
+      <node ref="J2" pin="4"/>
+      <node ref="J2" pin="2"/>
+      <node ref="U3" pin="6"/>
+      <node ref="JP1" pin="1"/>
+    </net>
+    <net code="6" name="Net-(U2-Pad8)">
+      <node ref="Y1" pin="1"/>
+      <node ref="U2" pin="8"/>
+    </net>
+    <net code="7" name="Net-(U1-Pad10)">
+      <node ref="U2" pin="13"/>
+      <node ref="U1" pin="10"/>
+    </net>
+    <net code="8" name="Net-(U1-Pad9)">
+      <node ref="U1" pin="9"/>
+      <node ref="U2" pin="15"/>
+    </net>
+    <net code="9" name="Net-(U1-Pad11)">
+      <node ref="U2" pin="16"/>
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="10" name="Net-(R3-Pad2)">
+      <node ref="R3" pin="2"/>
+      <node ref="U2" pin="17"/>
+    </net>
+    <net code="11" name="Net-(U1-Pad8)">
+      <node ref="U2" pin="14"/>
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="12" name="Net-(U2-Pad7)">
+      <node ref="Y1" pin="3"/>
+      <node ref="U2" pin="7"/>
+    </net>
+    <net code="13" name="Net-(J1-Pad3)">
+      <node ref="U1" pin="12"/>
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="14" name="Net-(J1-Pad4)">
+      <node ref="J1" pin="4"/>
+      <node ref="U1" pin="13"/>
+    </net>
+    <net code="15" name="Net-(U2-Pad1)">
+      <node ref="U3" pin="1"/>
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="16" name="Net-(U2-Pad3)">
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="17" name="Net-(U2-Pad4)">
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="18" name="Net-(U2-Pad5)">
+      <node ref="U2" pin="5"/>
+    </net>
+    <net code="19" name="Net-(U2-Pad6)">
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="20" name="Net-(U2-Pad10)">
+      <node ref="U2" pin="10"/>
+    </net>
+    <net code="21" name="Net-(U2-Pad11)">
+      <node ref="U2" pin="11"/>
+    </net>
+    <net code="22" name="Net-(U2-Pad12)">
+      <node ref="U2" pin="12"/>
+    </net>
+    <net code="23" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="24" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="25" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="26" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="27" name="Net-(U1-Pad7)">
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="28" name="GND">
+      <node ref="U2" pin="9"/>
+      <node ref="R3" pin="1"/>
+      <node ref="Y1" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C2" pin="1"/>
+      <node ref="J1" pin="2"/>
+      <node ref="U3" pin="8"/>
+      <node ref="U3" pin="2"/>
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="29" name="Net-(U3-Pad5)">
+      <node ref="U3" pin="5"/>
+    </net>
+    <net code="32" name="+5V">
+      <node ref="U1" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="C3" pin="1"/>
+      <node ref="U2" pin="18"/>
+      <node ref="U3" pin="3"/>
+      <node ref="J1" pin="1"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C1" pin="1"/>
+    </net>
+  </nets>
+</export>
