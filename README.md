@@ -117,11 +117,6 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ### M3
 
-- Purchase [ARM Cortex-M4 evaluation board "STM32F4DISCOVERY"](http://akizukidenshi.com/catalog/g/gM-05313/).
-- Evaluate the board to see if CAN-MQTT gateway can be developed on it.
-
-### M4
-
 - Evaluate [PIC16F18326](http://akizukidenshi.com/catalog/g/gI-11886/) that is cheaper than PIC16F1825 and supports two MSSPs.
 - Use KiCAD to redesign the circuit for PIC16F18326.
 - Adopt moduler architecture: base board and sensor/actuator building blocks.
@@ -129,7 +124,7 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ![requirements](./doc/requirements.jpg)
 
-### M5
+### M4
 
 I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
 
