@@ -118,8 +118,7 @@ For example, to receive messages with SID 5, 10 and 15:
 ### M3
 
 - Purchase [ARM Cortex-M4 evaluation board "STM32F4DISCOVERY"](http://akizukidenshi.com/catalog/g/gM-05313/).
-- Follow [this guide](http://www.keil.com/appnotes/files/apnt_230.pdf) to evaluate Keil micro vision 5.
-- Develop CAN-MQTT gateway on the board.
+- Evaluate the board to see if CAN-MQTT gateway can be developed on it.
 
 ### M4
 
