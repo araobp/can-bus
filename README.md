@@ -98,7 +98,7 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ## Development plan and progress
 
-### Version 0.1 (completed on March 17, 2018)
+### M1 (completed on March 17, 2018)
 
 ![board](./doc/board.jpg)
 
@@ -106,21 +106,22 @@ For example, to receive messages with SID 5, 10 and 15:
 - Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md).
 - Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
-### Version 0.2 plan
+### M2 (completed on April 1, 2018)
 
 - Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
 - Develop my original CAN adaptor board.
 - Develop [CAN-MQTT gateway](./gateway/gateway.js) on RasPi ~~and OpenWrt~~.
 - Develop [a 3D-printed DIN rail enclosure](./cad/adapter_to_uart.stl) for the board by using [FreeCAD](https://www.freecadweb.org/).
-- Mount all of them on DIN rail (incl. RasPi).
+- ~~Mount all of them on DIN rail (incl. RasPi).~~
 - ~~Add [SLCAN](https://elixir.bootlin.com/linux/v3.4/source/drivers/net/can/slcan.c) that is ASCII-based protocol for SocketCAN.~~
 
-### Version 0.3 plan
+### M3
 
-~~- Purchase [a cheap ARM mbed board](http://akizukidenshi.com/catalog/g/gK-12144/).~~
-~~- Develop CAN-MQTT gateway on mbed.~~
+- Purchase [ARM Cortex-M4 evaluation board "STM32F4DISCOVERY"](http://akizukidenshi.com/catalog/g/gM-05313/).
+- Follow [this guide](http://www.keil.com/appnotes/files/apnt_230.pdf) to evaluate Keil micro vision 5.
+- Develop CAN-MQTT gateway on the board.
 
-~~### Version 0.4 plan~~
+### M4
 
 - Evaluate [PIC16F18326](http://akizukidenshi.com/catalog/g/gI-11886/) that is cheaper than PIC16F1825 and supports two MSSPs.
 - Use KiCAD to redesign the circuit for PIC16F18326.
@@ -129,7 +130,7 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ![requirements](./doc/requirements.jpg)
 
-### Version 0.4 plan
+### M5
 
 I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
 
