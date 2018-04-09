@@ -1,4 +1,4 @@
-update=2018/04/04 14:06:29
+update=2018/04/09 7:14:52
 version=1
 last_client=kicad
 [pcbnew]
@@ -37,11 +37,11 @@ SpiceUseNetNumbers=0
 LabSize=60
 [eeschema]
 version=1
-LibDir=C:/Users/shiny/Documents/GitHub/can-bus/KiCAD/library
+LibDir=../../../kicad-lib/symbols
 [eeschema/libraries]
 LibName1=adapter-rescue
-LibName2=pic16f
-LibName3=can-bus
+LibName2=C:/Users/shiny/Documents/GitHub/kicad-lib/symbols/can-bus
+LibName3=pic16f
 LibName4=power
 LibName5=device
 LibName6=switches
