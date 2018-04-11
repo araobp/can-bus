@@ -4,4 +4,6 @@
   (lib (name Connector_PinHeader_2.54mm)(type KiCad)(uri C:/Users/shiny/Documents/GitHub/kicad-lib/footprints/Connector_PinHeader_2.54mm.pretty)(options "")(descr ""))
   (lib (name Murata_Capacitor)(type KiCad)(uri C:/Users/shiny/Documents/GitHub/kicad-lib/footprints/Murata_Capacitor.pretty)(options "")(descr ""))
   (lib (name Resistor)(type KiCad)(uri C:/Users/shiny/Documents/GitHub/kicad-lib/footprints/Resistor.pretty)(options "")(descr ""))
+  (lib (name polyswitch)(type KiCad)(uri C:/Users/shiny/Documents/GitHub/kicad-lib/footprints/polyswitch.pretty)(options "")(descr ""))
+  (lib (name diode)(type KiCad)(uri C:/Users/shiny/Documents/GitHub/kicad-lib/footprints/diode.pretty)(options "")(descr ""))
 )
