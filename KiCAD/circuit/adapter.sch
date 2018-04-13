@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:adapter-rescue
 LIBS:can-bus
 LIBS:power
 LIBS:device
@@ -40,33 +39,22 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "CAN adapter to UART"
-Date "2018-04-04"
-Rev "0.1"
-Comp ""
-Comment1 ""
-Comment2 ""
+Title "CAN node base board"
+Date "2018-04-13"
+Rev "0.2"
+Comp "https://github.com/araobp"
+Comment1 "CAN node base board"
+Comment2 "CAN adapter to UART"
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L MCP2561-E/P-RESCUE-adapter U3
-U 1 1 5AC360E7
-P 2400 2550
-F 0 "U3" H 2000 3200 60  0000 C CNN
-F 1 "MCP2561-E/P" H 2250 3100 60  0000 C CNN
-F 2 "IC_Sockets:IC_Socket_8pins" H 2400 2550 60  0001 C CNN
-F 3 "" H 2400 2550 60  0001 C CNN
-	1    2400 2550
-	1    0    0    -1  
-$EndComp
 $Comp
 L Conn_01x04 J1
 U 1 1 5AC36131
 P 8600 5200
 F 0 "J1" H 8600 5400 50  0000 C CNN
 F 1 "Pin header" H 8600 4900 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x4_L_Shape" H 8600 5200 50  0001 C CNN
+F 2 "can-bus:PinHeader_1x4_L_Shape" H 8600 5200 50  0001 C CNN
 F 3 "" H 8600 5200 50  0001 C CNN
 	1    8600 5200
 	1    0    0    -1  
@@ -93,7 +81,7 @@ U 1 1 5AC3BFB2
 P 3750 3850
 F 0 "R2" V 3830 3850 50  0000 C CNN
 F 1 "51k" V 3750 3850 50  0000 C CNN
-F 2 "Resistor:Resistor_FaithfulLink_CF25" V 3680 3850 50  0001 C CNN
+F 2 "can-bus:Resistor_FaithfulLink_CF25" V 3680 3850 50  0001 C CNN
 F 3 "" H 3750 3850 50  0001 C CNN
 	1    3750 3850
 	0    1    1    0   
@@ -104,7 +92,7 @@ U 1 1 5AC3C354
 P 3200 6350
 F 0 "R1" V 3280 6350 50  0000 C CNN
 F 1 "120" V 3200 6350 50  0000 C CNN
-F 2 "Resistor:Resistor_FaithfulLink_CF25" V 3130 6350 50  0001 C CNN
+F 2 "can-bus:Resistor_FaithfulLink_CF25" V 3130 6350 50  0001 C CNN
 F 3 "" H 3200 6350 50  0001 C CNN
 	1    3200 6350
 	1    0    0    -1  
@@ -115,7 +103,7 @@ U 1 1 5AC3C46F
 P 2950 6600
 F 0 "JP1" H 2950 6680 50  0000 C CNN
 F 1 "Jumper" H 2960 6540 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:Jumper_1x2" H 2950 6600 50  0001 C CNN
+F 2 "can-bus:Jumper_1x2" H 2950 6600 50  0001 C CNN
 F 3 "" H 2950 6600 50  0001 C CNN
 	1    2950 6600
 	1    0    0    -1  
@@ -126,7 +114,7 @@ U 1 1 5AC3C58B
 P 3900 1950
 F 0 "Y1" H 4025 2025 50  0000 L CNN
 F 1 "Ceralock 8MHz" H 4025 1950 50  0000 L CNN
-F 2 "Murata_Ceralock:Ceralock" H 3875 1950 50  0001 C CNN
+F 2 "can-bus:Ceralock_Murata" H 3875 1950 50  0001 C CNN
 F 3 "" H 3875 1950 50  0001 C CNN
 	1    3900 1950
 	0    1    1    0   
@@ -137,7 +125,7 @@ U 1 1 5AC3D47B
 P 6650 1450
 F 0 "R3" V 6730 1450 50  0000 C CNN
 F 1 "10k" V 6650 1450 50  0000 C CNN
-F 2 "Resistor:Resistor_FaithfulLink_CF25" V 6580 1450 50  0001 C CNN
+F 2 "can-bus:Resistor_FaithfulLink_CF25" V 6580 1450 50  0001 C CNN
 F 3 "" H 6650 1450 50  0001 C CNN
 	1    6650 1450
 	0    1    1    0   
@@ -148,7 +136,7 @@ U 1 1 5AC3D780
 P 5100 2400
 F 0 "C3" H 5110 2470 50  0000 L CNN
 F 1 "0.1u" H 5110 2320 50  0000 L CNN
-F 2 "Murata_Capacitor:Capacitor" H 5100 2400 50  0001 C CNN
+F 2 "can-bus:Capacitor_2.54mm" H 5100 2400 50  0001 C CNN
 F 3 "" H 5100 2400 50  0001 C CNN
 	1    5100 2400
 	0    1    1    0   
@@ -167,7 +155,7 @@ U 1 1 5AC3EB19
 P 5050 3550
 F 0 "C2" H 5060 3620 50  0000 L CNN
 F 1 "0.1u" H 5060 3470 50  0000 L CNN
-F 2 "Murata_Capacitor:Capacitor" H 5050 3550 50  0001 C CNN
+F 2 "can-bus:Capacitor_2.54mm" H 5050 3550 50  0001 C CNN
 F 3 "" H 5050 3550 50  0001 C CNN
 	1    5050 3550
 	0    1    1    0   
@@ -178,7 +166,7 @@ U 1 1 5AC3EC8B
 P 1050 2350
 F 0 "C1" H 1060 2420 50  0000 L CNN
 F 1 "0.1u" H 1060 2270 50  0000 L CNN
-F 2 "Murata_Capacitor:Capacitor" H 1050 2350 50  0001 C CNN
+F 2 "can-bus:Capacitor_2.54mm" H 1050 2350 50  0001 C CNN
 F 3 "" H 1050 2350 50  0001 C CNN
 	1    1050 2350
 	0    1    1    0   
@@ -294,23 +282,12 @@ F 3 "" H 7000 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MCP2515-I/P-RESCUE-adapter U2
-U 1 1 5AC4EED7
-P 5050 1750
-F 0 "U2" H 4650 2400 60  0000 C CNN
-F 1 "MCP2515-I/P" H 4900 2300 60  0000 C CNN
-F 2 "IC_Sockets:IC_socket_18pins" H 6300 1250 60  0001 C CNN
-F 3 "" H 6300 1250 60  0001 C CNN
-	1    5050 1750
-	1    0    0    -1  
-$EndComp
-$Comp
 L D D1
 U 1 1 5ACCAAED
 P 7800 4600
 F 0 "D1" H 7800 4700 50  0000 C CNN
 F 1 "1A" H 7800 4500 50  0000 C CNN
-F 2 "diode:diode" H 7800 4600 50  0001 C CNN
+F 2 "can-bus:Diode" H 7800 4600 50  0001 C CNN
 F 3 "" H 7800 4600 50  0001 C CNN
 	1    7800 4600
 	-1   0    0    -1  
@@ -321,7 +298,7 @@ U 1 1 5ACCB024
 P 8100 4850
 F 0 "F1" V 8000 4850 50  0000 C CNN
 F 1 "250mA" V 8200 4850 50  0000 C CNN
-F 2 "polyswitch:polyswitch" H 8150 4650 50  0001 L CNN
+F 2 "can-bus:Polyswitch_Tyco" H 8150 4650 50  0001 L CNN
 F 3 "" H 8100 4850 50  0001 C CNN
 	1    8100 4850
 	1    0    0    -1  
@@ -332,7 +309,7 @@ U 1 1 5ACD1EB9
 P 7300 3400
 F 0 "J6" H 7300 3700 50  0000 C CNN
 F 1 "ICSP" H 7300 3000 50  0000 C CNN
-F 2 "" H 7300 3400 50  0001 C CNN
+F 2 "can-bus:PinSocket_1x6" H 7300 3400 50  0001 C CNN
 F 3 "" H 7300 3400 50  0001 C CNN
 	1    7300 3400
 	1    0    0    -1  
@@ -344,7 +321,7 @@ U 1 1 5ACD214B
 P 2250 3650
 F 0 "J2" H 2250 3850 50  0000 C CNN
 F 1 "Pin socket" H 2250 3350 50  0000 C CNN
-F 2 "" H 2250 3650 50  0001 C CNN
+F 2 "can-bus:PinSocket_1x4" H 2250 3650 50  0001 C CNN
 F 3 "" H 2250 3650 50  0001 C CNN
 	1    2250 3650
 	-1   0    0    1   
@@ -355,7 +332,7 @@ U 1 1 5ACD21B4
 P 2250 4450
 F 0 "J3" H 2250 4650 50  0000 C CNN
 F 1 "Pin socket" H 2250 4150 50  0000 C CNN
-F 2 "" H 2250 4450 50  0001 C CNN
+F 2 "can-bus:PinSocket_1x4" H 2250 4450 50  0001 C CNN
 F 3 "" H 2250 4450 50  0001 C CNN
 	1    2250 4450
 	-1   0    0    1   
@@ -388,7 +365,7 @@ U 1 1 5ACE0465
 P 4400 6000
 F 0 "J4" H 4400 6100 50  0000 C CNN
 F 1 "CAN0" H 4400 5800 50  0000 C CNN
-F 2 "" H 4400 6000 50  0001 C CNN
+F 2 "can-bus:PinHeader_1x2_L_Shape" H 4400 6000 50  0001 C CNN
 F 3 "" H 4400 6000 50  0001 C CNN
 	1    4400 6000
 	1    0    0    -1  
@@ -399,7 +376,7 @@ U 1 1 5ACE04C2
 P 4400 6450
 F 0 "J5" H 4400 6550 50  0000 C CNN
 F 1 "CAN1" H 4400 6250 50  0000 C CNN
-F 2 "" H 4400 6450 50  0001 C CNN
+F 2 "can-bus:PinHeader_1x2_L_Shape" H 4400 6450 50  0001 C CNN
 F 3 "" H 4400 6450 50  0001 C CNN
 	1    4400 6450
 	1    0    0    -1  
@@ -410,7 +387,7 @@ U 1 1 5ACDF945
 P 4700 4250
 F 0 "U1" H 4300 4800 60  0000 C CNN
 F 1 "PIC16f18326-I/P" H 4600 4700 60  0000 C CNN
-F 2 "IC_Sockets:IC_socket_14pins" H 4600 4700 60  0001 C CNN
+F 2 "can-bus:IC_socket_14pins" H 4600 4700 60  0001 C CNN
 F 3 "" H 4600 4700 60  0001 C CNN
 	1    4700 4250
 	1    0    0    -1  
@@ -421,7 +398,7 @@ U 1 1 5ACEBAE6
 P 8950 3750
 F 0 "U4" H 8850 4000 60  0000 C CNN
 F 1 "regulator" H 8950 3900 60  0000 C CNN
-F 2 "" H 8950 3800 60  0001 C CNN
+F 2 "can-bus:TA48M05F" H 8950 3800 60  0001 C CNN
 F 3 "" H 8950 3800 60  0001 C CNN
 	1    8950 3750
 	-1   0    0    -1  
@@ -432,7 +409,7 @@ U 1 1 5ACED28B
 P 9450 3950
 F 0 "C5" H 9460 4020 50  0000 L CNN
 F 1 "0.1u" H 9460 3870 50  0000 L CNN
-F 2 "" H 9450 3950 50  0001 C CNN
+F 2 "can-bus:Capacitor_2.54mm" H 9450 3950 50  0001 C CNN
 F 3 "" H 9450 3950 50  0001 C CNN
 	1    9450 3950
 	1    0    0    -1  
@@ -442,8 +419,8 @@ L CP C4
 U 1 1 5ACED2DA
 P 8450 3950
 F 0 "C4" H 8475 4050 50  0000 L CNN
-F 1 "100u" H 8475 3850 50  0000 L CNN
-F 2 "" H 8488 3800 50  0001 C CNN
+F 1 "47u" H 8475 3850 50  0000 L CNN
+F 2 "can-bus:Capacitor_2.54mm" H 8488 3800 50  0001 C CNN
 F 3 "" H 8450 3950 50  0001 C CNN
 	1    8450 3950
 	1    0    0    -1  
@@ -458,7 +435,7 @@ U 1 1 5ACEDCC0
 P 10450 3700
 F 0 "J7" H 10450 3800 50  0000 C CNN
 F 1 "terminal" H 10450 3500 50  0000 C CNN
-F 2 "" H 10450 3700 50  0001 C CNN
+F 2 "can-bus:Terminal_PhoenixContact_2P" H 10450 3700 50  0001 C CNN
 F 3 "" H 10450 3700 50  0001 C CNN
 	1    10450 3700
 	1    0    0    -1  
@@ -480,7 +457,7 @@ U 1 1 5ACEE675
 P 10000 3700
 F 0 "F2" V 9900 3700 50  0000 C CNN
 F 1 "250mA" V 10100 3700 50  0000 C CNN
-F 2 "polyswitch:polyswitch" H 10050 3500 50  0001 L CNN
+F 2 "can-bus:Polyswitch_Tyco" H 10050 3500 50  0001 L CNN
 F 3 "" H 10000 3700 50  0001 C CNN
 	1    10000 3700
 	0    1    1    0   
@@ -491,7 +468,7 @@ U 1 1 5ACEE9DD
 P 9750 3950
 F 0 "D2" H 9750 4050 50  0000 C CNN
 F 1 "1A" H 9750 3850 50  0000 C CNN
-F 2 "diode:diode" H 9750 3950 50  0001 C CNN
+F 2 "can-bus:Diode" H 9750 3950 50  0001 C CNN
 F 3 "" H 9750 3950 50  0001 C CNN
 	1    9750 3950
 	0    -1   1    0   
@@ -555,8 +532,6 @@ Wire Wire Line
 Wire Wire Line
 	6850 5400 8400 5400
 Wire Wire Line
-	1750 2150 1700 2150
-Wire Wire Line
 	1700 2150 1700 1350
 Wire Wire Line
 	1700 1350 4400 1350
@@ -564,8 +539,6 @@ Wire Wire Line
 	4400 1450 1350 1450
 Wire Wire Line
 	1350 1450 1350 2450
-Wire Wire Line
-	1350 2450 1750 2450
 Connection ~ 4250 2750
 Connection ~ 2850 2750
 Wire Wire Line
@@ -772,7 +745,7 @@ U 1 1 5ACEDD63
 P 4300 5500
 F 0 "SW1" H 4350 5600 50  0000 L CNN
 F 1 "SW" H 4300 5440 50  0000 C CNN
-F 2 "" H 4300 5700 50  0001 C CNN
+F 2 "can-bus:TactileSwitch" H 4300 5700 50  0001 C CNN
 F 3 "" H 4300 5700 50  0001 C CNN
 	1    4300 5500
 	1    0    0    -1  
@@ -809,7 +782,7 @@ U 1 1 5ACEE551
 P 3950 5150
 F 0 "R5" V 4030 5150 50  0000 C CNN
 F 1 "1k" V 3950 5150 50  0000 C CNN
-F 2 "Resistor:Resistor_FaithfulLink_CF25" V 3880 5150 50  0001 C CNN
+F 2 "can-bus:Resistor_FaithfulLink_CF25" V 3880 5150 50  0001 C CNN
 F 3 "" H 3950 5150 50  0001 C CNN
 	1    3950 5150
 	0    1    1    0   
@@ -820,7 +793,7 @@ U 1 1 5ACEE6E9
 P 4350 5150
 F 0 "D3" H 4350 5250 50  0000 C CNN
 F 1 "LED" H 4350 5050 50  0000 C CNN
-F 2 "" H 4350 5150 50  0001 C CNN
+F 2 "can-bus:Led" H 4350 5150 50  0001 C CNN
 F 3 "" H 4350 5150 50  0001 C CNN
 	1    4350 5150
 	1    0    0    -1  
@@ -833,7 +806,7 @@ U 1 1 5ACEE949
 P 4800 5150
 F 0 "JP2" H 4800 5230 50  0000 C CNN
 F 1 "Jumper" H 4810 5090 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:Jumper_1x2" H 4800 5150 50  0001 C CNN
+F 2 "can-bus:Jumper_1x2" H 4800 5150 50  0001 C CNN
 F 3 "" H 4800 5150 50  0001 C CNN
 	1    4800 5150
 	1    0    0    -1  
@@ -852,4 +825,30 @@ Wire Wire Line
 Wire Wire Line
 	7550 5200 8400 5200
 Connection ~ 7550 5200
+$Comp
+L MCP2515-I/P U3
+U 1 1 5ACEEDEE
+P 5050 1750
+F 0 "U3" H 4650 2400 60  0000 C CNN
+F 1 "MCP2515-I/P" H 4900 2300 60  0000 C CNN
+F 2 "can-bus:IC_socket_18pins" H 6300 1250 60  0001 C CNN
+F 3 "" H 6300 1250 60  0001 C CNN
+	1    5050 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCP2561-E/P U2
+U 1 1 5ACEEE4B
+P 2400 2550
+F 0 "U2" H 2000 3200 60  0000 C CNN
+F 1 "MCP2561-E/P" H 2250 3100 60  0000 C CNN
+F 2 "can-bus:IC_Socket_8pins" H 2400 2550 60  0001 C CNN
+F 3 "" H 2400 2550 60  0001 C CNN
+	1    2400 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 2450 1750 2450
+Wire Wire Line
+	1700 2150 1750 2150
 $EndSCHEMATC
