@@ -124,7 +124,7 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ![requirements](./doc/requirements.jpg)
 
-![pcb](./doc/v0.2_pcb.jpg)
+![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
 
 ### M4
 
