@@ -124,6 +124,8 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ![requirements](./doc/requirements.jpg)
 
+![pcb](./doc/v0.2_pcb.jpg)
+
 ### M4
 
 I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
