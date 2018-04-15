@@ -1,4 +1,4 @@
-# CAN node
+# IoT with CAN bus
 
 ![pcb_ed](./KiCAD/circuit/v0.2_pcb_3d.jpg)
 
