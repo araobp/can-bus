@@ -29,8 +29,6 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ## Parts
 
-Approximately, the total cost is 500 yen ( < five dollors) per board.
-
 |Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
 |--------------------------|-------------------|-------------|--------|
 |Microchip PIC16F1825-I/P  |http://akizukidenshi.com/catalog/g/gI-10656/|150|1|
