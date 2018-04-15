@@ -1,6 +1,6 @@
 # CAN adapter to UART
 
-![3d_printed](./doc/3d_printed.jpg)
+![pcb_ed](./KiCAD/circuit/v0.2_pcb_3d.jpg)
 
 CAN adapter board in 3D-printed enclosure
 
@@ -107,6 +107,8 @@ For example, to receive messages with SID 5, 10 and 15:
 - Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
 ### M2 (completed on April 1, 2018)
+
+![3d_printed](./doc/3d_printed.jpg)
 
 - Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
 - Develop my original CAN adaptor board.
