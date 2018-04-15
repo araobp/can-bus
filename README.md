@@ -106,6 +106,18 @@ For example, to receive messages with SID 5, 10 and 15:
 - Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md).
 - Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
+At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
+
+![universal board](./doc/universal_board.jpg)
+
+I have finished the first prototype (Marth 25-27, 2018). I have made three boards, and it took eight hours.
+
+![front](./doc/universal_board_front.jpg)
+
+![back](./doc/universal_board_back.jpg)
+
+![daisy_chain](./doc/daisy_chain.jpg)
+
 ### M2 (completed on April 1, 2018)
 
 ![3d_printed](./doc/3d_printed.jpg)
@@ -137,22 +149,6 @@ For example, to receive messages with SID 5, 10 and 15:
 I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
 
 - Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
-
-### CAN adaptor board
-
-At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
-
-![universal board](./doc/universal_board.jpg)
-
-I have finished the first prototype (Marth 25-27, 2018). I have made three boards, and it took eight hours.
-
-![front](./doc/universal_board_front.jpg)
-
-![back](./doc/universal_board_back.jpg)
-
-![daisy_chain](./doc/daisy_chain.jpg)
-
-Later on, I am going to try [KiCAD](http://kicad-pcb.org/) to make my original printed board.
 
 ## Reference
 
