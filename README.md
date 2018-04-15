@@ -25,6 +25,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |SPI clock           |2MHz (fixed)                |                           |
 |CAN speed           |Max. 250kHz (default 125kHz)|                           |
 |Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
+|Expansion board     |8 pins connected to PIC MCU |                           |
 
 ## Parts
 
