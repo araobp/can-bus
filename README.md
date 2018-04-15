@@ -16,7 +16,9 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ![concept](./doc/concept.jpg)
 
-## CAN node base board specification
+## Specification
+
+### CAN node base board
 
 |Parameter           |Value                       |Note
 |--------------------|----------------------------|---------------------------|
@@ -27,7 +29,11 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
 |Expansion board     |8 pins connected to PIC MCU |                           |
 
-## BOM
+![Circuit](./KiCAD/circuit/v0.2.jpg)
+
+![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
+
+#### BOM
 
 |Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
 |--------------------------|-------------------|-------------|--------|
@@ -53,21 +59,15 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |Pin header L shape        |http://akizukidenshi.com/catalog/g/gC-01627/|50|1|
 |Phenix Contact terminal block 2P|http://akizukidenshi.com/catalog/g/gP-08369/|20|1|
 
-## Development environment
-
-- Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
-- [FreeCAD](https://www.freecadweb.org/)
-- [KiCAD](http://kicad-pcb.org/)
-- [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
-- [RaspberryPi](https://www.raspberrypi.org/)
-
-## CAN Standard Identifier format
+### CAN Standard Identifier format
 
 This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
 
 => [FORMAT](./doc/FORMAT.md)
 
-## Command (UART/USB)
+### "CAN adapter to UART" command list
+
+This implementation supports CAN adapter functionality for PC and Android.
 
 ```
 /// UART2CAN HELP (version 0.11  March 19, 2018) ///
@@ -86,10 +86,8 @@ This implementation supports CAN Standard Frame only (does not support Extended 
 [Receive message] <message> will be output
 [Show this help]: @h
 ```
+For example, to receive messages with SID 5, 10 and 15, set masks and filters to the CAN adapter as follows:
 
-### Sample: applying mask and filters to CAN messages
-
-For example, to receive messages with SID 5, 10 and 15:
 ```
 @m02047  --> RXM0 0b11111111111
 @f05     --> RXF0 0b00000000101 (SID 5 message to RXB0)
@@ -97,6 +95,16 @@ For example, to receive messages with SID 5, 10 and 15:
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
+
+---
+## Development environment
+
+- Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
+- [FreeCAD](https://www.freecadweb.org/)
+- [KiCAD](http://kicad-pcb.org/)
+- [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
+- [RaspberryPi](https://www.raspberrypi.org/)
+
 
 ---
 
@@ -143,10 +151,6 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 - Support sensors and actuators: doppler sensor, CdS, servo motor etc.
 
 ![requirements](./doc/requirements.jpg)
-
-![Circuit](./KiCAD/circuit/v0.2.jpg)
-
-![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
 
 ### M4
 
