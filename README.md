@@ -44,6 +44,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |IC sockets 18pins         |                                            |10|1|
 |IC sockets 8pins          |                                            |10|1|
 |Pin header                |                                            |  | |
+|Phenix Contact terminal block 2P|http://akizukidenshi.com/catalog/g/gP-08369/|20|1|
 
 ## Software development environment
 
