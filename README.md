@@ -16,7 +16,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ![concept](./doc/concept.jpg)
 
-## Specification
+## CAN node base board specification
 
 |Parameter           |Value                       |Note
 |--------------------|----------------------------|---------------------------|
@@ -31,15 +31,21 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 Approximately, the total cost is 500 yen ( < five dollors) per board.
 
-- Microchip PIC16F1825 (150 yen)
-- Microchip MCP2515 (160 yen)
-- Microchip MCP2561 (90 yen)
-- Murata Ceralock 8MHz (35 yen)
-- Resistor: 51k, 10k and 120 ohm (1 yen * 3)
-- Capacitor: 0.1 micro F (10 yen * 3)
-- IC sockets (10 yen * 3)
-- Universal board (30yen)
-- Pin headers, jumper pins etc.
+|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
+|--------------------------|-------------------|-------------|--------|
+|Microchip PIC16F1825-I/P  |http://akizukidenshi.com/catalog/g/gI-10656/|150|1|
+|Microchip PIC16F18326-I/P |http://akizukidenshi.com/catalog/g/gI-11886/|130|1|
+|Microchip MCP2515         |http://akizukidenshi.com/catalog/g/gI-12030/|160|1|
+|Microchip MCP2561         |http://akizukidenshi.com/catalog/g/gI-12483/|90|1|
+|Murata Ceralock 8MHz      |http://akizukidenshi.com/catalog/g/gP-00153/|35|1|
+|Regiter 51k ohm           |http://akizukidenshi.com/catalog/g/gR-25513/|1|1|
+|Register 10k ohm          |http://akizukidenshi.com/catalog/g/gR-25103/|1|1|
+|Register 120 ohm          |http://akizukidenshi.com/catalog/g/gR-25121/|1|1|
+|Murata capacitor 0.1 micro F|http://akizukidenshi.com/catalog/g/gP-00090/|10|3|
+|IC sockets 14pins         |                                            |10|1|
+|IC sockets 18pins         |                                            |10|1|
+|IC sockets 8pins          |                                            |10|1|
+|Pin header                |                                            |  | |
 
 ## Software development environment
 
