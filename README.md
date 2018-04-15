@@ -61,7 +61,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 - [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
 - [RaspberryPi](https://www.raspberrypi.org/)
 
-## Standard Identifier format
+## CAN Standard Identifier format
 
 This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
 
@@ -87,7 +87,7 @@ This implementation supports CAN Standard Frame only (does not support Extended 
 [Show this help]: @h
 ```
 
-## Applying mask and filters to CAN messages
+### Sample: applying mask and filters to CAN messages
 
 For example, to receive messages with SID 5, 10 and 15:
 ```
@@ -97,6 +97,8 @@ For example, to receive messages with SID 5, 10 and 15:
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
+
+---
 
 ## Development plan and progress
 
@@ -151,6 +153,8 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
 
 - Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
+
+---
 
 ## Reference
 
