@@ -59,6 +59,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 - [FreeCAD](https://www.freecadweb.org/)
 - [KiCAD](http://kicad-pcb.org/)
 - [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
+- [RaspberryPi](https://www.raspberrypi.org/)
 
 ## Standard Identifier format
 
