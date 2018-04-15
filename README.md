@@ -1,4 +1,4 @@
-# CAN adapter to UART
+# CAN node
 
 ![pcb_ed](./KiCAD/circuit/v0.2_pcb_3d.jpg)
 
@@ -110,6 +110,8 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ![3d_printed](./doc/3d_printed.jpg)
 
+3D printed enclosure for CAN node
+
 - Purchase three pairs of MCP2515 and MCP2561 in Akihabara.
 - Develop my original CAN adaptor board.
 - Develop [CAN-MQTT gateway](./gateway/gateway.js) on RasPi ~~and OpenWrt~~.
@@ -127,8 +129,6 @@ For example, to receive messages with SID 5, 10 and 15:
 ![requirements](./doc/requirements.jpg)
 
 ![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
-
-3D printed enclosure for CAN node
 
 ### M4
 
