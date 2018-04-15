@@ -106,7 +106,7 @@ For example, to receive messages with SID 5, 10 and 15:
 - Evaluate CAN ==> [EVALUATION](./doc/EVALUATION.md).
 - Developed my original ASCII-based protocol over serial for MCP2515. The protocol is mainly for evaluating MCP2515.
 
-At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
+At first, I use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
 
 ![universal board](./doc/universal_board.jpg)
 
