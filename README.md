@@ -40,10 +40,17 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |Register 10k ohm          |http://akizukidenshi.com/catalog/g/gR-25103/|1|1|
 |Register 120 ohm          |http://akizukidenshi.com/catalog/g/gR-25121/|1|1|
 |Murata capacitor 0.1 micro F|http://akizukidenshi.com/catalog/g/gP-00090/|10|3|
-|IC sockets 14pins         |                                            |10|1|
-|IC sockets 18pins         |                                            |10|1|
-|IC sockets 8pins          |                                            |10|1|
-|Pin header                |                                            |  | |
+|Diode 1A                  |http://akizukidenshi.com/catalog/g/gI-08332/|10|1|
+|Toshiba TA48M05F (w/ capacitors)|http://akizukidenshi.com/catalog/g/gI-00451/|100|1|
+|Polyswitch 250mA          |http://akizukidenshi.com/catalog/g/gP-01354|30|2|
+|LED 3mm red               |http://akizukidenshi.com/catalog/g/gI-04780/|20|1|
+|Tactile switch            |http://akizukidenshi.com/catalog/g/gP-08216/|20|1|
+|IC sockets 14pins         |http://akizukidenshi.com/catalog/g/gP-00006/|10|1|
+|IC sockets 18pins         |http://akizukidenshi.com/catalog/g/gP-00008/|10|1|
+|IC sockets 8pins          |http://akizukidenshi.com/catalog/g/gP-00017/|10|1|
+|Pin socket 6pins          |http://akizukidenshi.com/catalog/g/gC-03784/|20|1|
+|Pin socket 4pins          |http://akizukidenshi.com/catalog/g/gC-10099/|20|2|
+|Pin header L shape        |http://akizukidenshi.com/catalog/g/gC-01627/|50|1|
 |Phenix Contact terminal block 2P|http://akizukidenshi.com/catalog/g/gP-08369/|20|1|
 
 ## Software development environment
