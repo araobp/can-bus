@@ -128,6 +128,8 @@ For example, to receive messages with SID 5, 10 and 15:
 
 ![requirements](./doc/requirements.jpg)
 
+![Circuit](./KiCAD/circuit/v0.2.jpg)
+
 ![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
 
 ### M4
@@ -141,8 +143,6 @@ I don't like master-slave bus protocols, because once I developed scheduler for 
 At first, I am going to use [this universal board](http://akizukidenshi.com/catalog/g/gP-08241/) to make a prototype of the CAN adaptor:
 
 ![universal board](./doc/universal_board.jpg)
-
-![Circuit](./KiCAD/circuit/v0.2.jpg)
 
 I have finished the first prototype (Marth 25-27, 2018). I have made three boards, and it took eight hours.
 
