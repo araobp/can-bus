@@ -2,7 +2,7 @@
 
 ![pcb_ed](./KiCAD/circuit/v0.2_pcb_3d.jpg)
 
-CAN adapter board in 3D-printed enclosure
+Printed circuit design for CAN adapter 
 
 ## Motivation
 
@@ -127,6 +127,8 @@ For example, to receive messages with SID 5, 10 and 15:
 ![requirements](./doc/requirements.jpg)
 
 ![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
+
+3D printed enclosure for CAN node
 
 ### M4
 
