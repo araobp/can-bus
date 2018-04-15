@@ -6,9 +6,7 @@ Printed circuit design for CAN node
 
 ## Motivation
 
-(1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap, low-power and supports daisy-chain network topology.
-
-(2) I already developed I2C-based network in [this "sensor-network" project](https://github.com/araobp/sensor-network), but I2C is for inter-board or inter-IC communications -- short-range (within 1 meter). I2C is master-slave, so it requires some scheduler to use its bandwidth efficiently. I developed such a scheduler in "sensor-network" project, but it made things complicated.
+I want to develop very cheap and low power sensor/actuator node with CAN bus.
 
 ## Architecture
 
@@ -18,24 +16,11 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ![concept](./doc/concept.jpg)
 
-### Using it with RasPi/PC/Android(USB-OTG)
-
-```
-[PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
-
-```
-
-### Using it as CAN library for PIC 16F1829 MCU
-
-```
-[PIC16F1XXX]-SPI-[MCP2515]-[TJA1050]-- CAN bus                   
-```
-
 ## Specification
 
 |Parameter           |Value                       |Note
 |--------------------|----------------------------|---------------------------|
-|PIC16F1825 MCU clock|32MHz(Internal OSC 8MHz * 4 PLL)                        |
+|PIC16F1 MCU clock   |32MHz(Internal OSC 8MHz * 4 PLL)                        |
 |UART baud rate      |9600bps (fixed)             |Full-duplex wire-rate is not supported|
 |SPI clock           |2MHz (fixed)                |                           |
 |CAN speed           |Max. 250kHz (default 125kHz)|                           |
@@ -55,7 +40,7 @@ Approximately, the total cost is 500 yen ( < five dollors) per board.
 - Universal board (30yen)
 - Pin headers, jumper pins etc.
 
-## Softwae development environment
+## Software development environment
 
 Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
 
