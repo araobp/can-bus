@@ -27,7 +27,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
 |Expansion board     |8 pins connected to PIC MCU |                           |
 
-## Parts
+## BOM
 
 |Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
 |--------------------------|-------------------|-------------|--------|
