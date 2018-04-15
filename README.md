@@ -53,9 +53,12 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |Pin header L shape        |http://akizukidenshi.com/catalog/g/gC-01627/|50|1|
 |Phenix Contact terminal block 2P|http://akizukidenshi.com/catalog/g/gP-08369/|20|1|
 
-## Software development environment
+## Development environment
 
-Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
+- Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
+- [FreeCAD](https://www.freecadweb.org/)
+- [KiCAD](http://kicad-pcb.org/)
+- [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
 
 ## Standard Identifier format
 
