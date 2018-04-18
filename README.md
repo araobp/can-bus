@@ -101,6 +101,7 @@ For example, to receive messages with SID 5, 10 and 15, set masks and filters to
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
+
 ---
 ## Development environment
 
@@ -109,7 +110,6 @@ For example, to receive messages with SID 5, 10 and 15, set masks and filters to
 - [KiCAD](http://kicad-pcb.org/)
 - [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
 - [RaspberryPi](https://www.raspberrypi.org/)
-
 
 ---
 
@@ -164,7 +164,6 @@ I don't like master-slave bus protocols, because once I developed scheduler for 
 - Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
 
 ---
-
 ## Reference
 
 ### Datasheet (Microchip/NXP/Murata)
