@@ -18,6 +18,10 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ## Specification
 
+The CAN node consists of one base board and one expansion board.
+
+See the following page for expansion boards: (./EXPANSION_BOARDS.md)
+
 ### CAN node base board
 
 |Parameter           |Value                       |Note
@@ -28,6 +32,8 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 |CAN speed           |Max. 250kHz (default 125kHz)|                           |
 |Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
 |Expansion board     |8 pins connected to PIC MCU |                           |
+
+#### Circuit
 
 ![Circuit](./KiCAD/circuit/v0.2.jpg)
 
