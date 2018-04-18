@@ -20,7 +20,7 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 The CAN node consists of one base board and one expansion board.
 
-See the following page for expansion boards: [EXPANSION BOARDS](./EXPANSION_BOARDS.md).
+See this page for expansion boards: [EXPANSION BOARDS](./EXPANSION_BOARDS.md).
 
 ### CAN node base board
 
