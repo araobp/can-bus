@@ -95,19 +95,6 @@ For example, to receive messages with SID 5, 10 and 15, set masks and filters to
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
-
-## Expansion board
-
-### Thermistor
-
-#### BOM
-
-|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
-|--------------------------|-------------------|-------------|--------|
-|Thermistor  |http://akizukidenshi.com/catalog/g/gP-07258/|50|1|
-|Register 10k ohm          |http://akizukidenshi.com/catalog/g/gR-25103/|1|1|
-|Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
-
 ---
 ## Development environment
 
