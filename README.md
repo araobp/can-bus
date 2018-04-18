@@ -6,12 +6,15 @@ Printed circuit design for CAN node
 
 ## Motivation
 
-I want to develop very cheap and low power sensor/actuator node with CAN bus on my own.
+I want to develop very cheap and low power sensor/actuator network with electronic parts sold in [Akizuki-Denshi](http://akizukidenshi.com/catalog/default.aspx), Tokyo.
+
+Most of parts I use are DIP.
 
 ### IoT device makers
 
-Good device makers in the area of IoT:
+Good IoT device makers:
 - [MicroElectronica](https://www.mikroe.com/)
+- [Microchip AVR Click START](https://www.microchip.com/avr-support/atmel-start/clickstart)
 - [Libelium](http://www.libelium.com/)
 
 ## Architecture
