@@ -6,9 +6,7 @@ Printed circuit design for CAN node
 
 ## Motivation
 
-(1) I want to connect PIC-MCU-based sensor/actuator blocks to home/office controller(RasPi or OpenWrt) over CAN, since CAN is very cheap, low-power and supports daisy-chain network topology.
-
-(2) I already developed I2C-based network in [this "sensor-network" project](https://github.com/araobp/sensor-network), but I2C is for inter-board or inter-IC communications -- short-range (within 1 meter). I2C is master-slave, so it requires some scheduler to use its bandwidth efficiently. I developed such a scheduler in "sensor-network" project, but it made things complicated.
+I want to develop very cheap and low power sensor/actuator node with CAN bus.
 
 ## Architecture
 
@@ -18,54 +16,58 @@ I pursue seamless communications between CAN-bus and MQTT-bus:
 
 ![concept](./doc/concept.jpg)
 
-### Using it with RasPi/PC/Android(USB-OTG)
-
-```
-[PC or Android]-USB-[FTDI]-UART-[PIC16F1825]-SPI-[MCP2515]-[TJA1050]-- CAN bus
-
-```
-
-### Using it as CAN library for PIC 16F1829 MCU
-
-```
-[PIC16F1XXX]-SPI-[MCP2515]-[TJA1050]-- CAN bus                   
-```
-
 ## Specification
+
+### CAN node base board
 
 |Parameter           |Value                       |Note
 |--------------------|----------------------------|---------------------------|
-|PIC16F1825 MCU clock|32MHz(Internal OSC 8MHz * 4 PLL)                        |
+|PIC16F1 MCU clock   |32MHz(Internal OSC 8MHz * 4 PLL)                        |
 |UART baud rate      |9600bps (fixed)             |Full-duplex wire-rate is not supported|
 |SPI clock           |2MHz (fixed)                |                           |
 |CAN speed           |Max. 250kHz (default 125kHz)|                           |
 |Oscillator for CAN controller|8MHz (ceramic)     |Murata Ceralock            |
+|Expansion board     |8 pins connected to PIC MCU |                           |
 
-## Parts
+![Circuit](./KiCAD/circuit/v0.2.jpg)
 
-Approximately, the total cost is 500 yen ( < five dollors) per board.
+![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
 
-- Microchip PIC16F1825 (150 yen)
-- Microchip MCP2515 (160 yen)
-- Microchip MCP2561 (90 yen)
-- Murata Ceralock 8MHz (35 yen)
-- Resistor: 51k, 10k and 120 ohm (1 yen * 3)
-- Capacitor: 0.1 micro F (10 yen * 3)
-- IC sockets (10 yen * 3)
-- Universal board (30yen)
-- Pin headers, jumper pins etc.
+#### BOM
 
-## Softwae development environment
+|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
+|--------------------------|-------------------|-------------|--------|
+|Microchip PIC16F1825-I/P  |http://akizukidenshi.com/catalog/g/gI-10656/|150|1|
+|Microchip PIC16F18326-I/P |http://akizukidenshi.com/catalog/g/gI-11886/|130|1|
+|Microchip MCP2515         |http://akizukidenshi.com/catalog/g/gI-12030/|160|1|
+|Microchip MCP2561         |http://akizukidenshi.com/catalog/g/gI-12483/|90|1|
+|Murata Ceralock 8MHz      |http://akizukidenshi.com/catalog/g/gP-00153/|35|1|
+|Regiter 51k ohm           |http://akizukidenshi.com/catalog/g/gR-25513/|1|1|
+|Register 10k ohm          |http://akizukidenshi.com/catalog/g/gR-25103/|1|1|
+|Register 120 ohm          |http://akizukidenshi.com/catalog/g/gR-25121/|1|1|
+|Murata capacitor 0.1 micro F|http://akizukidenshi.com/catalog/g/gP-00090/|10|3|
+|Diode 1A                  |http://akizukidenshi.com/catalog/g/gI-08332/|10|1|
+|Toshiba TA48M05F (w/ capacitors)|http://akizukidenshi.com/catalog/g/gI-00451/|100|1|
+|Polyswitch 250mA          |http://akizukidenshi.com/catalog/g/gP-01354|30|2|
+|LED 3mm red               |http://akizukidenshi.com/catalog/g/gI-04780/|20|1|
+|Tactile switch            |http://akizukidenshi.com/catalog/g/gP-08216/|20|1|
+|IC sockets 14pins         |http://akizukidenshi.com/catalog/g/gP-00006/|10|1|
+|IC sockets 18pins         |http://akizukidenshi.com/catalog/g/gP-00008/|10|1|
+|IC sockets 8pins          |http://akizukidenshi.com/catalog/g/gP-00017/|10|1|
+|Pin socket 6pins          |http://akizukidenshi.com/catalog/g/gC-03784/|20|1|
+|Pin socket 4pins          |http://akizukidenshi.com/catalog/g/gC-10099/|20|2|
+|Pin header L shape        |http://akizukidenshi.com/catalog/g/gC-01627/|50|1|
+|Phenix Contact terminal block 2P|http://akizukidenshi.com/catalog/g/gP-08369/|20|1|
 
-Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
-
-## Standard Identifier format
+### CAN Standard Identifier format
 
 This implementation supports CAN Standard Frame only (does not support Extended Frame). For home networking, 11bit Standard Identifier suffices.
 
 => [FORMAT](./doc/FORMAT.md)
 
-## Command (UART/USB)
+### "CAN adapter to UART" command list
+
+This implementation supports CAN adapter functionality for PC and Android.
 
 ```
 /// UART2CAN HELP (version 0.11  March 19, 2018) ///
@@ -84,10 +86,8 @@ This implementation supports CAN Standard Frame only (does not support Extended 
 [Receive message] <message> will be output
 [Show this help]: @h
 ```
+For example, to receive messages with SID 5, 10 and 15, set masks and filters to the CAN adapter as follows:
 
-## Applying mask and filters to CAN messages
-
-For example, to receive messages with SID 5, 10 and 15:
 ```
 @m02047  --> RXM0 0b11111111111
 @f05     --> RXF0 0b00000000101 (SID 5 message to RXB0)
@@ -95,6 +95,18 @@ For example, to receive messages with SID 5, 10 and 15:
 @m12047  --> RXM1 0b11111111111
 @f215    --> RXF2 0b00000001111 (SID 15 message to RXB1)
 ```
+
+---
+## Development environment
+
+- Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
+- [FreeCAD](https://www.freecadweb.org/)
+- [KiCAD](http://kicad-pcb.org/)
+- [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
+- [RaspberryPi](https://www.raspberrypi.org/)
+
+
+---
 
 ## Development plan and progress
 
@@ -140,15 +152,13 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 
 ![requirements](./doc/requirements.jpg)
 
-![Circuit](./KiCAD/circuit/v0.2.jpg)
-
-![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
-
 ### M4
 
 I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
 
 - Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
+
+---
 
 ## Reference
 
