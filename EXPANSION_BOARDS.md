@@ -1,5 +1,22 @@
 # Expansion boards
 
+## Board layout
+
+Six pins are connected to 14pin PIC16F1 DIP.
+
+```
+ 5V GND RA5 RA4
+ o   o   o   o
+ .   .   .   .
+ .   .   .   .
+ .   .   .   .
+ .   .   .   .
+ .   .   .   .
+ .   .   .   .
+ o   o   o   o
+ RA3 RC5 RC4 RC3
+```
+
 ## Thermistor
 
 ### Circuit
