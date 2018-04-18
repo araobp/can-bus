@@ -40,11 +40,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "CAN node base board"
-Date "2018-04-13"
+Date "2018-04-15"
 Rev "0.2"
 Comp "https://github.com/araobp"
 Comment1 "CAN node base board"
-Comment2 "CAN adapter to UART"
+Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
