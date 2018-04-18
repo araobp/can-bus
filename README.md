@@ -37,6 +37,8 @@ See this page for expansion boards: [EXPANSION BOARDS](./EXPANSION_BOARDS.md).
 
 ![Circuit](./KiCAD/circuit/v0.2.jpg)
 
+#### PCB
+
 ![pcb](./KiCAD/circuit/v0.2_pcb.jpg)
 
 #### BOM
