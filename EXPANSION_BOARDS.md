@@ -33,4 +33,8 @@ Six pins are connected to 14pin PIC16F1 DIP.
 
 ## Doppler sensor
 
+## Luninosity sensor
+
 ## Wall light
+
+## Small camera
