@@ -14,3 +14,6 @@
 |Register 10k ohm          |http://akizukidenshi.com/catalog/g/gR-25103/|1|1|
 |Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
 
+## Doppler sensor
+
+## Wall light
