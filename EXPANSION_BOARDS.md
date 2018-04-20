@@ -37,6 +37,14 @@ Six pins are connected to 14pin PIC16F1 DIP.
 
 ![doppler](./KiCAD/circuit/doppler/doppler_v0.1.jpg)
 
+### BOM
+
+|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
+|--------------------------|-------------------|-------------|--------|
+|Doppler sensor  |http://akizukidenshi.com/catalog/g/gK-07776/|2300|1|
+|Register 1k ohm           |http://akizukidenshi.com/catalog/g/gR-25102/|1|2|
+|LED           ||-|2|
+
 ## Luninosity sensor
 
 ## Wall light
