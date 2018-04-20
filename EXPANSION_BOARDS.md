@@ -45,7 +45,9 @@ Six pins are connected to 14pin PIC16F1 DIP.
 |--------------------------|-------------------|-------------|--------|
 |Doppler sensor  |http://akizukidenshi.com/catalog/g/gK-07776/|2300|1|
 |Register 1k ohm           |http://akizukidenshi.com/catalog/g/gR-25102/|1|2|
-|LED           ||-|2|
+|LED red                   |http://akizukidenshi.com/catalog/g/gI-11577/|10|1|
+|LED green                 |http://akizukidenshi.com/catalog/g/gI-11637|10|1|
+|Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
 
 ## Luninosity sensor
 
