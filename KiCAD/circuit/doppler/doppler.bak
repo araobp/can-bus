@@ -1,0 +1,265 @@
+EESchema Schematic File Version 2
+LIBS:can-bus
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:doppler-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Expansion board -- doppler sensor"
+Date "2018-04-20"
+Rev "v0.1"
+Comp "https://github.com/araobp"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Doppler_sensor U?
+U 1 1 5AD9486E
+P 5700 4050
+F 0 "U?" H 4850 4600 60  0000 C CNN
+F 1 "Doppler_sensor" H 5700 4200 60  0000 C CNN
+F 2 "" V 4800 4250 60  0001 C CNN
+F 3 "" V 4800 4250 60  0001 C CNN
+	1    5700 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AD94916
+P 7500 4400
+F 0 "#PWR?" H 7500 4150 50  0001 C CNN
+F 1 "GND" H 7500 4250 50  0000 C CNN
+F 2 "" H 7500 4400 50  0001 C CNN
+F 3 "" H 7500 4400 50  0001 C CNN
+	1    7500 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 4400 4550 4400
+Wire Wire Line
+	6850 3750 7500 3750
+Wire Wire Line
+	7500 3250 7500 4400
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 5AD9494A
+P 7850 4150
+F 0 "#FLG?" H 7850 4225 50  0001 C CNN
+F 1 "PWR_FLAG" H 7850 4300 50  0000 C CNN
+F 2 "" H 7850 4150 50  0001 C CNN
+F 3 "" H 7850 4150 50  0001 C CNN
+	1    7850 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 4250 7850 4250
+Wire Wire Line
+	7850 4250 7850 4150
+Connection ~ 7500 4250
+NoConn ~ 6850 4200
+NoConn ~ 6850 4300
+NoConn ~ 6850 4400
+$Comp
+L Conn_01x04_Male J?
+U 1 1 5AD94CF3
+P 5550 2450
+F 0 "J?" H 5550 2650 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 5550 2150 50  0000 C CNN
+F 2 "" H 5550 2450 50  0001 C CNN
+F 3 "" H 5550 2450 50  0001 C CNN
+	1    5550 2450
+	0    -1   1    0   
+$EndComp
+$Comp
+L Conn_01x04_Male J?
+U 1 1 5AD94DAD
+P 5700 5500
+F 0 "J?" H 5700 5700 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 5700 5200 50  0000 C CNN
+F 2 "" H 5700 5500 50  0001 C CNN
+F 3 "" H 5700 5500 50  0001 C CNN
+	1    5700 5500
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4000 3250 5450 3250
+Wire Wire Line
+	4000 2900 4000 4400
+Wire Wire Line
+	5550 2650 5550 3250
+Wire Wire Line
+	5550 3250 7500 3250
+Connection ~ 7500 3750
+Wire Wire Line
+	5450 3250 5450 2650
+$Comp
+L +5V #PWR?
+U 1 1 5AD94ED8
+P 4000 2900
+F 0 "#PWR?" H 4000 2750 50  0001 C CNN
+F 1 "+5V" H 4000 3040 50  0000 C CNN
+F 2 "" H 4000 2900 50  0001 C CNN
+F 3 "" H 4000 2900 50  0001 C CNN
+	1    4000 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 4000 3250
+$Comp
+L PWR_FLAG #FLG?
+U 1 1 5AD94F0E
+P 3600 2900
+F 0 "#FLG?" H 3600 2975 50  0001 C CNN
+F 1 "PWR_FLAG" H 3600 3050 50  0000 C CNN
+F 2 "" H 3600 2900 50  0001 C CNN
+F 3 "" H 3600 2900 50  0001 C CNN
+	1    3600 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 2900 3600 3000
+Wire Wire Line
+	3600 3000 4000 3000
+Connection ~ 4000 3000
+Wire Wire Line
+	4550 3800 4100 3800
+Wire Wire Line
+	4100 3800 4100 4750
+Wire Wire Line
+	4100 4750 5600 4750
+Wire Wire Line
+	5600 4750 5600 5300
+Wire Wire Line
+	4550 3900 4200 3900
+Wire Wire Line
+	4200 3900 4200 4650
+Wire Wire Line
+	4200 4650 5700 4650
+Wire Wire Line
+	5700 4650 5700 5300
+NoConn ~ 4550 3700
+NoConn ~ 5800 5300
+NoConn ~ 5650 2650
+NoConn ~ 5750 2650
+NoConn ~ 5500 5300
+$Comp
+L LED D?
+U 1 1 5AD95025
+P 4400 5400
+F 0 "D?" H 4400 5500 50  0000 C CNN
+F 1 "LED" H 4400 5300 50  0000 C CNN
+F 2 "" H 4400 5400 50  0001 C CNN
+F 3 "" H 4400 5400 50  0001 C CNN
+	1    4400 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D?
+U 1 1 5AD95065
+P 4700 5400
+F 0 "D?" H 4700 5500 50  0000 C CNN
+F 1 "LED" H 4700 5300 50  0000 C CNN
+F 2 "" H 4700 5400 50  0001 C CNN
+F 3 "" H 4700 5400 50  0001 C CNN
+	1    4700 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5AD951A6
+P 4400 5900
+F 0 "R?" V 4480 5900 50  0000 C CNN
+F 1 "1k" V 4400 5900 50  0000 C CNN
+F 2 "" V 4330 5900 50  0001 C CNN
+F 3 "" H 4400 5900 50  0001 C CNN
+	1    4400 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5AD95359
+P 4700 5900
+F 0 "R?" V 4780 5900 50  0000 C CNN
+F 1 "R" V 4700 5900 50  0000 C CNN
+F 2 "" V 4630 5900 50  0001 C CNN
+F 3 "" H 4700 5900 50  0001 C CNN
+	1    4700 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AD953A8
+P 4400 6300
+F 0 "#PWR?" H 4400 6050 50  0001 C CNN
+F 1 "GND" H 4400 6150 50  0000 C CNN
+F 2 "" H 4400 6300 50  0001 C CNN
+F 3 "" H 4400 6300 50  0001 C CNN
+	1    4400 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AD953CA
+P 4700 6300
+F 0 "#PWR?" H 4700 6050 50  0001 C CNN
+F 1 "GND" H 4700 6150 50  0000 C CNN
+F 2 "" H 4700 6300 50  0001 C CNN
+F 3 "" H 4700 6300 50  0001 C CNN
+	1    4700 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 4200 4400 4200
+Wire Wire Line
+	4400 4200 4400 5250
+Wire Wire Line
+	4550 4300 4500 4300
+Wire Wire Line
+	4500 4300 4500 4900
+Wire Wire Line
+	4500 4900 4700 4900
+Wire Wire Line
+	4700 4900 4700 5250
+Wire Wire Line
+	4400 5550 4400 5750
+Wire Wire Line
+	4700 5550 4700 5750
+Wire Wire Line
+	4400 6050 4400 6300
+Wire Wire Line
+	4700 6050 4700 6300
+$EndSCHEMATC
