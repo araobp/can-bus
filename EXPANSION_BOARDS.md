@@ -33,6 +33,10 @@ Six pins are connected to 14pin PIC16F1 DIP.
 
 ## Doppler sensor
 
+### Circuit
+
+![doppler](./KiCAD/circuit/doppler/doppler_v0.1.jpg)
+
 ## Luninosity sensor
 
 ## Wall light
