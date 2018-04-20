@@ -49,6 +49,15 @@ Six pins are connected to 14pin PIC16F1 DIP.
 |LED green                 |http://akizukidenshi.com/catalog/g/gI-11637|10|1|
 |Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
 
+## Pyroelectric sensor
+
+### BOM
+
+|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
+|--------------------------|-------------------|-------------|--------|
+|Panasonic pyroelectric sensor (12m)|http://akizukidenshi.com/catalog/g/gM-09751/|500|1|
+|Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
+
 ## Luninosity sensor
 
 ## Wall light
