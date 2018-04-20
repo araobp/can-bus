@@ -5,6 +5,7 @@
 Six pins are connected to 14pin PIC16F1 DIP.
 
 ```
+ 1   2   3   4
  5V GND RA5 RA4
  o   o   o   o
  .   .   .   .
@@ -15,6 +16,7 @@ Six pins are connected to 14pin PIC16F1 DIP.
  .   .   .   .
  o   o   o   o
  RA3 RC5 RC4 RC3
+ 4   3   2   1
 ```
 
 ## Thermistor
