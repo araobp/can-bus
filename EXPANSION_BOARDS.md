@@ -33,7 +33,18 @@ Six pins are connected to 14pin PIC16F1 DIP.
 |Resistor 10k ohm          |http://akizukidenshi.com/catalog/g/gR-25103/|1|1|
 |Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
 
+## Pyroelectric sensor
+
+### BOM
+
+|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
+|--------------------------|-------------------|-------------|--------|
+|Panasonic pyroelectric sensor (12m)|http://akizukidenshi.com/catalog/g/gM-09751/|500|1|
+|Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
+
 ## Doppler sensor
+
+Note: I will not make a PCB for this sensor, because the size is too big.
 
 ### Circuit
 
@@ -47,15 +58,6 @@ Six pins are connected to 14pin PIC16F1 DIP.
 |Resistor 1k ohm           |http://akizukidenshi.com/catalog/g/gR-25102/|1|2|
 |LED red                   |http://akizukidenshi.com/catalog/g/gI-11577/|10|1|
 |LED green                 |http://akizukidenshi.com/catalog/g/gI-11637|10|1|
-|Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
-
-## Pyroelectric sensor
-
-### BOM
-
-|Part                      |Akizuki-denshi URL |Price in Yen |Quantity|
-|--------------------------|-------------------|-------------|--------|
-|Panasonic pyroelectric sensor (12m)|http://akizukidenshi.com/catalog/g/gM-09751/|500|1|
 |Pin header 4pins          |http://akizukidenshi.com/catalog/g/gC-00167/|-|2|
 
 ## Luninosity sensor
