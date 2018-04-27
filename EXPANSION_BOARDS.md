@@ -44,7 +44,7 @@ Six pins are connected to 14pin PIC16F1 DIP.
 
 ## Doppler sensor
 
-Note: I will not make a PCB for this sensor, because the size is too big.
+Note: I will not make a PCB for this sensor, because the size is too big. I will connect the circuit to the CAN node via UART instead.
 
 ### Circuit
 
