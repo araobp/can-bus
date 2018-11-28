@@ -10,13 +10,6 @@ I want to develop very cheap and low power sensor/actuator network with electron
 
 Most of parts I use are DIP.
 
-### IoT device makers
-
-Good IoT device makers:
-- [MicroElectronica](https://www.mikroe.com/)
-- [Microchip AVR Click START](https://www.microchip.com/avr-support/atmel-start/clickstart)
-- [Libelium](http://www.libelium.com/)
-
 ## Architecture
 
 ### Basic concept
