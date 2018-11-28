@@ -161,12 +161,6 @@ I have finished the first prototype (Marth 25-27, 2018). I have made three board
 
 ![requirements](./doc/requirements.jpg)
 
-### M4
-
-I don't like master-slave bus protocols, because once I developed scheduler for I2C-based sensor network in [this project](https://github.com/araobp/sensor-network) that resulted in a very complex system. But LIN can be a solution for ultra-cheap and low-power sensor nodes.
-
-- Study [PIC16F1829LIN](http://ww1.microchip.com/downloads/en/DeviceDoc/41673A.pdf) for non-realtime operations.
-
 ---
 ## Reference
 
