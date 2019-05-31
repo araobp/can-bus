@@ -4,6 +4,8 @@
 
 Printed circuit design for CAN node
 
+(I have not tested the printed circuit board yet, because I have been too busy in other priority works)
+
 ## Motivation
 
 I want to develop very cheap and low power sensor/actuator network with electronic parts sold in [Akizuki-Denshi](http://akizukidenshi.com/catalog/default.aspx), Tokyo.
