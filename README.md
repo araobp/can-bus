@@ -113,7 +113,7 @@ For example, to receive messages with SID 5, 10 and 15, set masks and filters to
 
 - Microchip [MPLAB-X IDE](http://www.microchip.com/mplab/mplab-x-ide) with MCC plugin.
 - [FreeCAD](https://www.freecadweb.org/)
-- [KiCAD](http://kicad-pcb.org/)
+- [KiCAD](http://kicad.org/)
 - [3D printer BIQU Magician](https://www.biqu.equipment/collections/3d-printer/products/biqu-magician-3d-printer-new-diy-kit-mini-kossel-delta-printing)
 - [RaspberryPi](https://www.raspberrypi.org/)
 
